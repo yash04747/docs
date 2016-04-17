@@ -1,2 +1,4 @@
-# docs.redux.io
-Documentation for Redux Framework, the most powerful option framework for WordPress.
+Redux.io Documentation
+====================
+
+Forked from http://mistic100.github.io/jekyll-bootstrap-doc

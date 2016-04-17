@@ -1,0 +1,49 @@
+---
+layout: default
+title: Fields
+description: A type for every need. Complete flexibility with absolute simplicity.
+---
+
+<section class="bs-docs-section">
+    <h1 id="fields" class="page-header">
+        Redux Fields
+    </h1>
+
+    <p class="lead">Redux has over 30+ types of fields. Each of these can be altered quite easily. In addition, each Redux instance can override any field type via a simple filter.</p>
+
+</section>
+
+
+
+<section class="bs-docs-section">
+    <h1 id="fields_types" class="page-header">Field Types</h1>
+
+    {% include field_types/palette.html %}
+</section>
+
+
+<section class="bs-docs-section">
+    <h1 id="arguments" class="page-header">
+        Global Arguments
+    </h1>
+    <p class="lead">Redux has various levels of arguments, one for each type of object. So it makes sense that there would be global arguments which trickle down to all aspects of your project.</p>
+    <div class="bs-callout bs-callout-warning">
+        <h4>Arguments affect all aspects of Redux</h4>
+
+        <p>You'll need to spend some time famililiarizing yourself with the different argument types for each object. For an extensive listing of all global arguments visit our <a href="/basics/global_arguments">Global Arguments</a> page.</p>
+    </div>
+
+    <h3 id="opt_name">Select a Unique opt_name</h3>
+
+    <p class="lead">Redux is built to allow multiple projects to use Redux at once. You must select a unique
+        <code>opt_name</code> to avoid avoid collision with other projects. Make sure you choose something that's not too common. Oh, and no spaces.</p>
+
+    <h3 id="create_redux_instance">Creating a Redux Instance</h3>
+    <p class="lead">Creating a Redux instance is pretty simple.</p>
+    {% highlight php %}
+    <?php Redux::setArgs( 'OPT_NAME', array() );
+{% endhighlight %}
+    <p class="text">Remember the <code>opt_name</code> you selected? This is your unique key. To modify, add, or update anything related to Redux we use it. Oh, and did we mention you can use this same call over and over again to add options? The Redux API will auto-combine and override the argments you pass in.</p>
+
+
+</section>
