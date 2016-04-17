@@ -28,7 +28,7 @@ description: An overview of Redux, how to download and use, and how to just get 
             </p></div>
         <div class="col-sm-4"><h3 id="download-sass">Custom Bundle</h3>
             <p>
-                Looking for a custom build? Want to customize Redux for your needs, or just want to have a solid sample of where to begin, try the Redux Builder. Download a starter package with ease.
+                Looking for a custom build? Want to customize Redux for your needs, or want to have a solid example of where to begin? Try the Redux Builder and you'll be developing in no time at all.
             </p>
             <p>
                 <a href="http://build.reduxframework.com" class="btn btn-lg btn-outline" onclick="ga(&quot;send&quot;,&quot;event&quot;,&quot;Getting started&quot;,&quot;Download&quot;,&quot;Redux_Builder&quot;)">Redux Builder</a>
@@ -76,29 +76,125 @@ description: An overview of Redux, how to download and use, and how to just get 
 
 </section>
 
+<section class="bs-docs-section">
+    <h1 id="whats_included" class="page-header">
+        What's Included
+    </h1>
+
+    <p class="lead">Redux comes in two forms. The first is a plugin form, and the second is the full repo of which you only need a subset to run Redux. In both of these packages, <code>ReduxCore</code> is the only folder that matters, as the rest of the files just add additional features.</code></p>
+
+    <h2 id="plugin-package">Redux Plugin</h2>
+    <p>Once downloaded, unzip the compressed folder to see the structure of (the compiled) Redux Framework plugin. You'll see something like this:</p>
+
+    <pre>
+        <code>
+    redux-framework/
+    ├── code-styles/
+    ├── ReduxCore/
+    ├── sample/
+        ├── sample-config.php
+        ├── barebones-config.php</code>
+    </pre>
+    <p>You'll notice the sample config is present here. You can activate the Redux sample-config file by activating the Redux plugin, and cliicking on the <strong>Activate Demo Mode</strong> on the plugins view within your WordPress admin.</p>
+    <h2 id="repository-package">Repository or Composer</h2>
+    <p>Once downloaded, you will find many more files than the plugin. It should look something like this:</p>
+    <pre>
+        <code>
+    redux-framework/
+    ├── .tx/
+    ├── bin/
+    ├── code-styles/
+    ├── ReduxCore/
+    ├── sample/
+        ├── sample-config.php
+        ├── barebones-config.php</code>
+    ├── tests/
+    </pre>
+    <p>Be warned that if you attempt to embed the entire Redux repo inside a theme or plugin it will not pass approval for many marketplaces including WordPress.org and ThemeForest.</p>
+</section>
 
 <section class="bs-docs-section">
-    <h1 id="arguments" class="page-header">
-        Global Arguments
+    <h1 id="concepts" class="page-header">
+        Core Concepts
     </h1>
-    <p class="lead">Redux has various levels of arguments, one for each type of object. So it makes sense that there would be global arguments which trickle down to all aspects of your project.</p>
-    <div class="bs-callout bs-callout-warning">
-        <h4>Arguments affect all aspects of Redux</h4>
+    <p class="lead">Redux is a single API making it simple to perform various options within the WordPress admin panel. We will go over a our basic concepts so you can properly grasp how Redux works.</p>
 
-        <p>You'll need to spend some time famililiarizing yourself with the different argument types for each object. For an extensive listing of all global arguments visit our <a href="/basics/global_arguments">Global Arguments</a> page.</p>
+    <h3 id="argument_types">Arguments</h3>
+    <p class="lead">Every object has arguments and every level of nested objects can inherit or override those arguments. When looking at an argument, make sure you're sure how it will affect all items below it (children).</p>
+    <h3 id="global_arguments">Global Arguments</h3>
+    <p class="lead">Global arguments are those arguments which affect every field or how this instance of Redux performs. These arguments can enable/disable the customizer by default, change the menu name, and set fields to automatically output CSS or not. For a more detailed breakdown, visit our <a href="">Global Arguments</a> page.</p>
+    <h3 id="opt_name_key">opt_name, your unique key</h3>
+    <p class="lead">One of the most important global variables is your <code>opt_name</code>. This is a unique key to distinguish your Redux instance from all others. It's also where your data is stored in the database and, if you are using the global variable, how you access data within your code.</p>
+    <div class="bs-callout bs-callout-danger">
+        <h4>Choose an uncommon <code>opt_name</code> to avoid issues</h4>
+        <p>If two instances of Redux use the same <code>opt_name</code>, they will only override one another's settings in order of occurance. It is crucial that you pick a unqiue string for your product.</p>
+    </div>
+    <h3 id="never_modify_core">Never modify core files!</h3>
+    <p class="lead">Redux is extremely extensible, which means you can override anything using filters. You will never find a need to modify a core file unless your helping us to solve a bug. <strong><u>NEVER</u> modify anything inside of ReduxCore</strong>. If you want to change how a field works, build an extension instead. Need to modify a value when it's saved? Use a filter.</p>
+    <div class="bs-callout bs-callout-info">
+        <h4>Why is modifying ReduxCore files a bad practice when embedded in my own product?</h4>
+        <p>Redux is built to run with only one instance of the framework. If you modify core files in your version, which you embed in a product, there's no garanteee that your version will be the version loaded should another product be using Redux. By using filters and extensions, you ensure that your code will always be loaded despite the "core" that is instantiated first.</p>
     </div>
 
-    <h3 id="opt_name">Select a Unique opt_name</h3>
+</section>
 
-    <p class="lead">Redux is built to allow multiple projects to use Redux at once. You must select a unique
-        <code>opt_name</code> to avoid avoid collision with other projects. Make sure you choose something that's not too common. Oh, and no spaces.</p>
 
-    <h3 id="create_redux_instance">Creating a Redux Instance</h3>
-    <p class="lead">Creating a Redux instance is pretty simple.</p>
+<section class="bs-docs-section">
+    <h1 id="basic-config" class="page-header">
+        Basic Config
+    </h1>
+    <p class="lead">Start with this basic config, or modify the <a href="https://github.com/reduxframework/redux-framework/blob/master/sample/barebones-config.php">barebones</a>, or the more extensive <a href="https://github.com/reduxframework/redux-framework/blob/master/sample/sample-config.php">sample config</a>, examples files. We hope that you'll customize our examples, adapting them to suit your needs.</p>
+    <p>Copy the example config below to create a very basic Redux instance.</p>
 {% highlight php %}
-<?php Redux::setArgs( 'OPT_NAME', array() );
+<?php
+    if ( ! class_exists( 'Redux' ) ) {
+        return;
+    }
+
+    $opt_name = "redux_demo";
+
+    $theme = wp_get_theme(); // For use with some settings. Not necessary.
+
+    $args = array(
+        'display_name'         => $theme->get( 'Name' ),
+        'display_version'      => $theme->get( 'Version' ),
+        'menu_title'           => __( 'Sample Options', 'redux-framework-demo' ),
+        'customizer'           => true,
+    );
+
+    Redux::setArgs( $opt_name, $args );
+
+    Redux::setSection( $opt_name, array(
+        'title'  => __( 'Basic Field', 'redux-framework-demo' ),
+        'id'     => 'basic',
+        'desc'   => __( 'Basic field with no subsections.', 'redux-framework-demo' ),
+        'icon'   => 'el el-home',
+        'fields' => array(
+            array(
+                'id'       => 'opt-text',
+                'type'     => 'text',
+                'title'    => __( 'Example Text', 'redux-framework-demo' ),
+                'desc'     => __( 'Example description.', 'redux-framework-demo' ),
+                'subtitle' => __( 'Example subtitle.', 'redux-framework-demo' ),
+                'hint'     => array(
+                    'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
+                )
+            )
+        )
+    ) );
 {% endhighlight %}
-    <p class="text">Remember the <code>opt_name</code> you selected? This is your unique key. To modify, add, or update anything related to Redux we use it. Oh, and did we mention you can use this same call over and over again to add options? The Redux API will auto-combine and override the argments you pass in.</p>
+</section>
 
-
+<section class="bs-docs-section">
+    <h1 id="community" class="page-header">
+        Community
+    </h1>
+    <p class="lead">We have an increadibly active community with thousands of developers world wide. Stay up to date on the development of Redux and reach out to our community with these helpful resources.</p>
+    <ul>
+        <li>Read and subscribe to <a href="http://blog.getbootstrap.com/">The Official Bootstrap Blog</a>.</li>
+        <li>Chat with fellow Redux users on our slack channel: <script async defer src="http://slack.redux.io/slackin.js"></script>.</li>
+        <li>For help using Redux, ask on <a href="https://stackoverflow.com/questions/tagged/redux-framework">StackOverflow using the tag <code>redux-framework</code></a>.</li>
+        <li>Find inspiring examples of people building with Redux at the <a href="http://reduxframework.com/showcase/envato/">Redux Showcase</a>.</li>
+        <li>Submit bug issues and pull-requests on our <a href="https://github.com/reduxframework/redux-framework/issues">Issue Tracker</a>. Be sure to read our <a href="https://github.com/reduxframework/redux-framework/blob/master/CONTRIBUTING.md">contributing guidelines</a> before posting, or we'll just point you to that document to get the information we need. :)</li>
+    </ul>
 </section>
