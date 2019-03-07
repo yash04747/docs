@@ -1,5 +1,9 @@
-/_site
-Gemfile.lock
-/dist/bootstrap
-/dist/jquery
-.sass-cache/
+docs/.temp
+old
+vuepress2
+node_modules
+packages
+yarn.lock
+docs/examples
+docs/.vuepress/dist
+yarn.error.log

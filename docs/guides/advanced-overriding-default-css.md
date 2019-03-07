@@ -1,0 +1,68 @@
+---
+title: "Advanced: Overriding Redux CSS"
+---
+
+# Overriding Redux CSS
+
+We understand customization is important to any developer. That’s why we've provided a few useful hooks to enqueue or 
+dequeue our default CSS files. Interested?  Read on!
+
+::: danger
+Be sure to prefix all the function names below to avoid conflicts with other developer's code. 
+:::
+
+::: warning Table of Contents
+[[toc]]
+:::
+
+## Appending CSS
+Let's say you want to append some custom CSS to your panel. Here is how this is accomplished.
+
+```php
+$opt_name = 'OPT_NAME'; # TODO - Replace with your opt_name
+function addPanelCSS() {
+    wp_register_style(
+        'redux-custom-css',
+        'http://urltomyfile',
+        array( 'redux-admin-css' ), // Be sure to include redux-admin-css so it's appended after the core css is applied
+        time(),
+        'all'
+    );  
+    wp_enqueue_style('redux-custom-css');
+}
+// This example assumes your opt_name is set to OPT_NAME, replace with your opt_name value
+add_action( 'redux/page/' . $opt_name . '/enqueue', 'addPanelCSS' );
+```
+
+## Replacing CSS
+If you believe you have a better overall design, it's easy to remove the Redux CSS file completely:
+
+```php
+$opt_name = 'OPT_NAME'; # TODO - Replace with your opt_name
+function removePanelCSS() {
+  wp_dequeue_style( 'redux-admin-css' );
+}
+add_action( 'redux/page/' . $opt_name . '/enqueue', 'removePanelCSS' );
+```
+
+## The Complete Solution
+The above functions may also be rolled together into a single function by doing the following:
+
+```php
+$opt_name = 'OPT_NAME'; # TODO - Replace with your opt_name
+function addAndOverridePanelCSS() {
+  wp_dequeue_style( 'redux-admin-css' );
+  wp_register_style(
+    'redux-custom-css',
+    'http://urltomyfile',
+    array( 'farbtastic' ), // Notice redux-admin-css is removed and the wordpress standard farbtastic is included instead
+    time(),
+    'all'
+  );    
+  wp_enqueue_style('redux-custom-css');
+}
+add_action( 'redux/page/' . $opt_name . '/enqueue', 'addAndOverridePanelCSS' );
+```
+
+The power of full CSS override is now in your hands!
+
