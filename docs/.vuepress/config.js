@@ -25,8 +25,8 @@ function getFilesFromDir(dir, fileTypes) {
 
 
 module.exports = ctx => ({
-	// dest: '../redux_docs',
-	base: '/redux-docs/', // TODO - REMOVE ME
+	// dest: '',
+	// base: '',
 	locales: {
 		'/': {
 			lang: 'en-US',
@@ -48,7 +48,7 @@ module.exports = ctx => ({
 	],
 	// theme: '@vuepress/vue',
 	themeConfig: {
-		repo: 'dovy/redux-docs', // TODO Update me
+		repo: 'reduxframework/docs',
 		editLinks: true,
 		docsDir: 'docs',
 		// #697 Provided by the official algolia team.
@@ -71,7 +71,6 @@ module.exports = ctx => ({
 					'/core-extensions/': getSidebar( 'Core Extensions', '/core-extensions/' )
 				}
 			},
-
 		}
 	},
 	plugins: [
@@ -135,8 +134,6 @@ function getSidebar( title, path, collapsable = false, depth = 0 ) {
 	// 	to_return = new_return + to_return
 	// 	// to_return.unshift( ["hello",top] );
 	// }
-
-
 
 	var the_return = [
 		{
