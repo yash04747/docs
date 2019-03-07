@@ -23,30 +23,16 @@ module.exports = [
 		text: 'Learn More',
 		items: [
 			{
-				text: 'Contributing Guide',
-				items: [
-					{
-						text: 'Design Concepts',
-						link: '/miscellaneous/design-concepts.html'
-					},
-					{
-						text: 'FAQ',
-						link: '/faq/',
-					},
-				]
+				text: 'FAQ',
+				link: '/faq/',
 			},
 			{
-				text: 'Miscellaneous',
-				items: [
-					{
-						text: 'Migrate to Redux 4.x',
-						link: '/guides/migration-guide.html'
-					},
-					{
-						text: 'Changelog',
-						link: 'https://github.com/reduxframework/redux-framework/blob/master/CHANGELOG.md'
-					}
-				]
+				text: 'Migrate to Redux 4.x',
+				link: '/guides/migration-guide.html'
+			},
+			{
+				text: 'Changelog',
+				link: 'https://github.com/reduxframework/redux-framework/blob/master/CHANGELOG.md'
 			}
 		]
 	}
