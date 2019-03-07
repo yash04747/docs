@@ -165,8 +165,8 @@ echo 'Border color: ' . $redux_demo['opt-css-layout']['border-color'];
 
 echo 'Border style: ' . $redux_demo['opt-css-layout']['border-style'];
 // Output: solid
-
 ```
+
 ## CSS Output
 The CSS output from the above example would appear as thus:
 ```css

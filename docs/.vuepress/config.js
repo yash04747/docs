@@ -68,6 +68,7 @@ module.exports = ctx => ({
 					'/configuration/': getSidebar( 'Configuration', '/configuration/' ),
 					'/core-fields/': getSidebar( 'Fields', '/core-fields/' ),
 					'/premium/': getSidebar( 'Premium / Pro', '/premium/' ),
+					'/faq/': getSidebar( 'FAQ', '/faq/' ),
 					'/core-extensions/': getSidebar( 'Core Extensions', '/core-extensions/' )
 				}
 			},
@@ -81,9 +82,9 @@ module.exports = ctx => ({
 			updatePopup: false
 		}],
 		['@vuepress/medium-zoom', true],
-		['@vuepress/notification', true],
+		// ['@vuepress/notification', true],
 		['@vuepress/google-analytics', {
-			ga: '' // TODO - ADD ME
+			ga: 'UA-45553284-5'
 		}],
 	],
 	// clientRootMixin: path.resolve( __dirname, 'mixin.js' ),
