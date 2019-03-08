@@ -71,7 +71,7 @@ Redux::getExtensions( $opt_name, 'EXTENSION_NAME' );
 Creating your own extension is very simple. In fact, if you want to change the way a Redux field works, you should
 **always** use an extension instead of modifying the core. 
 
-To really dig in, try it yourself using out [extension boilerplate](https://github.com/ReduxFramework/extension-boilerplat).
+To really dig in, try it yourself using out [extension boilerplate](https://github.com/ReduxFramework/extension-boilerplate).
 
 ### Extension Folder Structure
 All extensions must follow a similar structure. 
