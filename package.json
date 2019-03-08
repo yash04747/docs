@@ -1,7 +1,7 @@
 {
   "scripts": {
     "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs && cp 404.md docs/.vuepress/dist/ && CNAME docs/.vuepress/dist/"
+    "docs:build": "vuepress build docs && cp 404.md docs/.vuepress/dist/ && cp CNAME docs/.vuepress/dist/"
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "^1.0.0-alpha.42",
