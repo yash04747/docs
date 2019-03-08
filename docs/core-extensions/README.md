@@ -4,7 +4,7 @@ There are a number of default extentions embedded within the Redux Core (Free). 
 and configured.
 
 ::: tip SEE ALSO
-- [Using & Creating Extensions →](../guides/basics-using-extensions.md)
-- [Advanced and Pro/Premium Offerings →](../premium)
+- [Using & Creating Extensions](../guides/basics-using-extensions.md)
+- [Advanced and Pro/Premium Offerings](../premium)
 :::
 
