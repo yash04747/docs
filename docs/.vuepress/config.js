@@ -100,7 +100,7 @@ module.exports = ctx => ({
 function getSidebar( title, path, collapsable = false, depth = 0 ) {
 	var the_path = __filename.split( '/.vuepress' )[0]
 	// This needs to work for both windows AND unix
-	if ( __filename.includes( '\.vuepress' ) ) {
+	if ( the_path.includes( '\.vuepress' ) ) {
 		the_path = __filename.split( '\.vuepress' )[0]
 	}
 
