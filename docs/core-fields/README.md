@@ -9,6 +9,6 @@ exist in the Core as well as how to configure these fields.
 
 ::: tip SEE ALSO
 - [Using & Creating Extensions](../guides/basics-using-extensions.md)
-- [Advanced and Premium / Pro Offerings](../premium)
+- [Advanced and Pro / Premium Offerings](../premium)
 :::
 

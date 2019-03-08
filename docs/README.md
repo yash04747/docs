@@ -1,10 +1,10 @@
 ---
 home: true
 heroImage: /redux.png
-mainTitle: "Here we go"
-actionText: Get Started →
+m2ainTitle: ""
+actionText: "Get Started →"
 actionLink: /guides/
-footer: GPLv2 Licensed | Copyright © 2014-present by Redux
+footer: GPLv2 Licensed | Copyright © 2014-Today by Redux
 ---
 
 

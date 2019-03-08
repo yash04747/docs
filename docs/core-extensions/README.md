@@ -5,6 +5,6 @@ and configured.
 
 ::: tip SEE ALSO
 - [Using & Creating Extensions](../guides/basics-using-extensions.md)
-- [Advanced and Pro/Premium Offerings](../premium)
+- [Advanced and Pro / Premium Offerings](../premium)
 :::
 
