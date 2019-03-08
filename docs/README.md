@@ -1,12 +1,20 @@
 ---
 home: true
-heroImage: /redux.png
+heroImage: /redux-2x.png
 m2ainTitle: ""
 actionText: "Get Started →"
 actionLink: /guides/
 footer: GPLv2 Licensed | Copyright © 2014-Today by Redux
 ---
 
+<style>
+.home .hero h1 {
+  display: none;
+}
+.home .hero img {
+  width: 632px;
+}
+</style>
 
 <div class="features">
   <div class="feature">
