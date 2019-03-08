@@ -7,3 +7,5 @@ yarn.lock
 docs/examples
 docs/.vuepress/dist
 yarn.error.log
+.ideas
+.idea
