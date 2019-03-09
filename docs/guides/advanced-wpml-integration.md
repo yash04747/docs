@@ -24,12 +24,12 @@ This is the variable name saved in the *wp_options* table. In this example opt_n
 
 You'll need to define your own unique variable name for your theme or plugin.
 ```php
-public function set_arguments() {
-    $theme = wp_get_theme();
-    $this->args = array(
-        'opt_name'             => 'my-theme-options',
-        'display_name'         => $theme->get( 'Name' ),
-        'display_version'      => $theme->get( 'Version' ),</pre>
+$opt_name = "OPT_NAME"; // TODO - Replace with your opt_name
+$theme = wp_get_theme();
+Redux::set_args( $opt_name, array(
+    'display_name'         => $theme->get( 'Name' ),
+    'display_version'      => $theme->get( 'Version' )
+) );
 ```
         
 ## Step 2: Select the options you want to translate
