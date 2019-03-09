@@ -3,16 +3,15 @@ title: "Advanced: Panel Templates"
 ---
 
 # Panel Templates
-
-As of Redux <strong>3.4.2.9+</strong>, the Redux templates have been decoupled from the core. That means that ANY 
-developer can take the template files, and override them for their own customized Redux panel.
+As of Redux <strong>3.4.3+</strong>, the Redux templates have been decoupled from the core. That means that ANY 
+developer can take the template files and override them for their own customized Redux panel.
 
 ::: warning Table of Contents
 [[toc]]
 :::
 
 ## How's it done?
-To do this is trivial. First, copy the templates from `~/ReduxCore/templates/panel` to a different location.
+To do this is simple. First, copy the templates from `~/ReduxCore/templates/panel` to a different location.
 
 ::: danger
 Never, ever, **EVER** modify ReduxCore. Always move things out of the core to make modifications.
@@ -21,11 +20,12 @@ Never, ever, **EVER** modify ReduxCore. Always move things out of the core to ma
 Tell Redux where these new new files are, via the `templates_path` argument. That's it!
 
 #### What if you change something?
-Our templates use the same versioning of other products. If your panel is in `dev_mode`, and a template file has been 
-updated in the core, a notice will be displayed in the panel.
+Our templates use the same versioning of other products. If your panel is in `dev_mode` a notice will be displayed in the panel
+when a template file has been updated in the core.
 
 ## Won't this Change All Panels?
-We built it so each panel can have it's own set of templates. It's all powered by the `opt_name` key. As long as you don't share keys with another panel, your customizations are yours and yours alone.
+We built Redux so each panel may have it's own set of templates. It's all powered by the `opt_name` key.  Your customizations 
+are yours and yours aloneAs long as as keys are  not shared with another panel.
 
 ## Template Files
 

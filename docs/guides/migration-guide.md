@@ -5,12 +5,12 @@ title: "Migrating to 4.x"
 
 # 4.x Migration & Compatibility
 
-For all intensive purposes Redux 4.x performs the same as 3.x. To improve greater support of standards, a number of functions
-have been renamed. Despite this, a shim has been placed for every function with a deprecation notice that only appears
-when `WP_DEBUG` is enabled, `dev_mode` is enabled, or you are running the site locally. It is strongly suggested for you 
-to migrate the new function names. Most of these functions are internal, so they should not impact the masses at large.
+For all intents and purposes, Redux 4.x performs the same as 3.x. To improve support of WordPress standards, a number of functions
+have been renamed.  A shim has been included for each of these function with a deprecation notice that only appears
+when `WP_DEBUG` is enabled, `dev_mode` is enabled, or when the site is running locally. It is strongly recommended to 
+migrate the new function names. Most of these functions are internal and will not impact performance.
 
-Below you will find the affected class names, and any function migrations denoted.
+Below are the affected classes and methods.
 
 ::: warning Table of Contents
 [[toc]]

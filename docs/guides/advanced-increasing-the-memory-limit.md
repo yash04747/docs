@@ -3,11 +3,10 @@ title: "Advanced: Increasing the WordPress Memory Limit"
 ---
 
 # Increasing the WordPress Memory Limit
-
-Edit your `wp-config.php` file and enter something similar to the following:
+Edit your `wp-config.php` file and enter the following:
 
 ```php
-define( 'WP_MEMORY_LIMIT', '96M' );
+define( 'WP_MEMORY_LIMIT', '256M' );
 ```
 
 ::: tip
@@ -31,4 +30,4 @@ If you don’t have access to PHP.ini try adding this to an .htaccess file:
 php_value memory_limit 64M
 ```
 
-If none of the above works then talk to your host.
+Consult your hosting provider if none of the above works.

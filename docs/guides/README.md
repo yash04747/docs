@@ -1,7 +1,7 @@
 # Guides
 
-This section contains a variety of guides to help you use Redux. If you are new to Redux, or want to do some advanced things
-this is the area you want to explore.
+Below are guides to help you begin using Redux.  Whether you're new to Redux or looking for advanced guides, this is the 
+area to explore.
 
 ::: tip Good Launch Points
 - [Basics: Getting Started](basics-getting-started.md)

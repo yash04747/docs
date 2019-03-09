@@ -3,7 +3,6 @@ title: "Advanced: Typography Preview w/ Local Fonts"
 ---
 
 # Typography Preview with Local Fonts
-
 When specifying fonts used locally in your theme in the typography field's `fonts` argument, the will not render in the 
 preview field. We've included an undocumented workaround in the typography field to fix this minor oversight. For the 
 record, 'undocumented' is another way of saying the functionality is offered as a courtesy. Officially, the feature is 

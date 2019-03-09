@@ -3,12 +3,11 @@ title: "Advanced: The Health Status Report"
 ---
 
 # Understanding The Health Status Report
-
-The Redux Framework System Status report is a vital tool that is used to troubleshoot issues with your site. With a wide 
-variety of sections and fields, you can check your software versions, server settings, and WordPress configuration in a 
+The Redux Framework System Status report is a vital tool used in troubleshoot issues with your site. With a wide 
+variety of sections and fields, software versions, server settings, and WordPress configuration, all may be checked in a 
 moment’s notice.
 
-Plus, the System Status report is the best way that the Redux Support Team can help you! Before opening a ticket, be 
+The System Status report is also the best way that the Redux Support Team can help you.  Before opening a ticket, be 
 sure to add your settings and check to see if you can troubleshoot an issue with the items below.
 
 ::: warning Table of Contents

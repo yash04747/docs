@@ -1,6 +1,5 @@
 # Framework Converter
-
-To make conversion from a different options framework easier, we've created a conversion utility. It allows you to play 
+We've created a conversion utility to make conversion from a different options framework easier.  It allows you to play 
 with Redux and convert data from other input frameworks. 
 
 [Get the Redux Converter](http://wordpress.org/plugins/redux-converter/)

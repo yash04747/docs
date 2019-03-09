@@ -3,10 +3,9 @@ title: "Basics: Removing Dev Mode"
 ---
 
 # Removing the Demo Mode Notice
-
-Redux Framework, when run as a plugin ships with a sample config in order to permit people to try Redux out without effort. 
-However, if you intend to ship Redux with a premium theme or product, this is less than desirable. You can 
-easily disable these demo items with the code block below.
+The Redux Framework plugin ships with a sample config.  This permits folks to try Redux out without effort. 
+This may be less than desirable if you intend to ship Redux with a premium theme or product. The demo items are easily 
+disabled with the code block below.
 
 ```php
 Redux::disable_demo();

@@ -3,9 +3,8 @@ title: "Advanced: Redux WP_Filesystem Proxy"
 ---
 
 # Using the Redux WP_Filesystem Proxy
-
-Redux has a WordPress filesystem proxy built in to help you read and write files that will pass Theme-Check. You can use 
-these calls the moment a Redux object has been loaded (your Redux config has been run).
+Redux has a WordPress filesystem proxy built in to help you read and write files that will pass Theme Check. These calls are available
+the moment a Redux object has been loaded (your Redux config has been run).
 
 ::: warning Table of Contents
 [[toc]]
@@ -18,13 +17,13 @@ First, you must get the Redux object. The easiest method is as follows:
 $redux = Redux::get_instance('OPT_NAME'); // TODO - Use your opt_name
 ```
 
-Now that you have the object, you can begin using the filesystem. It's pretty easy to do, you run the following call:
+Once the Redux object has been obtained, the filesystem is now available to use. It's easy to do.  Run the following call:
 
 ```php
 $redux->filesystem->execute( 'action', PATH, $args );
 ```
 
-Below you will find a list of all possible calls, and the arguments associated with each.
+Below is a list of available commands and the arguments associated with each.
 
 ## Chmod / File Permissions
 By default the WP_FileSystem API uses default values for chmod (read/write permissions). These are in the form of the 
@@ -38,8 +37,7 @@ object and unzip. To do so, pass a string or int: `0644` as this argument value.
 ## Possible Calls & Arguments.
 
 ### `mkdir`
-This action allows you to generate a directory of any kind. It will even make multiple children directories even it if 
-doesn't exist.
+Creates a directory. It will even make multiple children directories even it if doesn't exist.
 
 ```php
 $redux = Redux::get_instance('OPT_NAME'); // TODO - Use your opt_name
@@ -50,7 +48,7 @@ if ( ! is_dir( $path ) ) {
 ```
 
 ### `copy`
-This allows you to copy files from one location to another.
+Copies files from one location to another.
 
 |name|type|required|description|
 |--- |--- |--- |--- |
@@ -72,8 +70,8 @@ $redux->filesystem->execute(
 ```
 
 ### `put_contents`
-The same as `file_put_contents` in PHP, but using the WordPress filesystem API. This will write the contents of a variable 
-to file. This will override any file if it already exists, just like `file_put_contents`.
+The same as `file_put_contents` in PHP, but uses the WordPress filesystem API. Writes the contents of a variable 
+to file. This will override any file if it already exists.
 
 |name|type|required|description|
 |--- |--- |--- |--- |
@@ -94,7 +92,7 @@ $redux->filesystem->execute(
 ```
 
 ### `get_contents`
-This will get the contents of a filesystem in any way it can. This will attempt to use the WordPress filesystem first. 
+Retrieves the contents of a file. This command will attempt to use the WordPress filesystem first. 
 However, if the file does not have the standard WordPress read permissions, it will fallback to `file_get_contents`.
 
 ```php
@@ -108,7 +106,7 @@ $file_contents = $redux->filesystem->execute(
 ```
 
 ### `object`
-This will simply return a valid WordPress FileSystem API object.
+Return a valid WordPress FileSystem API object.
 
 ```php
 $redux = Redux::get_instance('OPT_NAME'); // TODO - Use your opt_name
@@ -116,7 +114,7 @@ $object = $redux->filesystem->execute( 'object' );
 ```
 
 ### `unzip`
-This allows you to unzip an existing zip file to a new location.
+Unzips an existing zip file to a new location.
 
 ##### Arguments
 |name|type|required|description|
