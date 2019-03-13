@@ -54,7 +54,7 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'opt-text',   
     'type'  => 'text',
     'title' => 'A sample text box',
-) ) );
+) );
 ```
 
 ### Redux::set_fields()
@@ -83,7 +83,7 @@ Redux::set_fields( 'OPT_NAME', 'SECTION_ID', array(
         'type'  => 'text',
         'title' => 'A sample text box2'
     )
-) ) );
+) );
 ```
 
 ## Field Helper Functions
