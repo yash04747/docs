@@ -1,5 +1,5 @@
 ---
-title: "Basics: Removing Dev Mode"
+title: "Basics: Removing the Demo Notice"
 ---
 
 # Removing the Demo Mode Notice
