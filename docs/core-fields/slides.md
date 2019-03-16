@@ -3,6 +3,10 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 
 <span style="display:block;text-align:center">![](./img/slides.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

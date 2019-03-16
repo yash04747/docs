@@ -4,6 +4,10 @@ The media field is an adaption for a core WordPress feature.
 
 <span style="display:block;text-align:center">![](./img/media.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Video Tutorial
 
 [embed width="800" height="400"]http://youtu.be/kEZYIWSk1Tk[/embed]

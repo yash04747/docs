@@ -4,6 +4,10 @@ Multi-Text field supports as many fields as one might need.  Adding and removin
 
 <span style="display:block;text-align:center">![](./img/multi_text.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

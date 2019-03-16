@@ -4,6 +4,10 @@ The Spacing field allows the user to specify either padding or margin units to a
 
 <span style="display:block;text-align:center">![](./img/spacing.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

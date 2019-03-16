@@ -4,6 +4,10 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 
 <span style="display:block;text-align:center">![](./img/sortable.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

@@ -2,6 +2,10 @@
 
 The Raw field provides the ability to output raw HTML directly into the options panel both full width and sectioned.
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ### Full Width
 <span style="display:block;text-align:center">![](./img/raw_full_width.png)</span>
 

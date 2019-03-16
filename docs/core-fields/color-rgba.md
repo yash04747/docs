@@ -4,7 +4,11 @@ The Color RGBA field offers the addition of an alpha channel, initial color sele
 
 <span style="display:block;text-align:center">![](./img/color_rgba.png)</span>
 
-This field makes use of Brian Grinstead's <a target="_blank" href="https://bgrins.github.io/spectrum/">Spectrum "No hassle jQuery color picker"</a>.
+This field makes use of Brian Grinstead's [Spectrum "No hassle jQuery color picker"](https://bgrins.github.io/spectrum/).
+
+::: warning Table of Contents
+[[toc]]
+:::
 
 ## Arguments
 |Name|Type|Default|Description|
@@ -22,6 +26,13 @@ This field makes use of Brian Grinstead's <a target="_blank" href="https://bgrin
 |default|array||Array of color and alpha settings for the color picker. See 'Default Settings' below.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
+::: tip Also See
+- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
+- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `required` Argument](../guide/using-the-required-argument.md)
+:::
 
 ## Color Picker Options
 |Name|Type|Default|Description|

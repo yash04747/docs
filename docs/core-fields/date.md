@@ -4,6 +4,10 @@ The Date field displays the popup jQuery datebox when clicking on the text input
 
 <span style="display:block;text-align:center">![](./img/date.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

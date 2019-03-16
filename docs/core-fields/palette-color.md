@@ -4,6 +4,10 @@ The Palette Color field allows you to display a set of color palettes that a the
 
 <span style="display:block;text-align:center">![](./img/palette_color.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
@@ -19,7 +23,6 @@ The Palette Color field allows you to display a set of color palettes that a the
 |palettes|array||An array of individual arrays defining the color palettes.  See "Setting Palettes" below.|
 |default|string||They key of the default palettes array to set as default.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
-
 
 ::: tip Also See
 - [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)

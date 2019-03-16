@@ -4,6 +4,10 @@ The Spinner field returns the value entered in its input box or via clicks on it
 
 <span style="display:block;text-align:center">![](./img/spinner.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

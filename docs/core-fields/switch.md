@@ -4,6 +4,10 @@ The Switch field sets a true or false value based on the selection.  Users may 
 
 <span style="display:block;text-align:center">![](./img/switch.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
@@ -20,7 +24,6 @@ The Switch field sets a true or false value based on the selection.  Users may 
 |off|string|`Off`|Text display for the false value.|
 |permissions|string||String specifying the capability required to view the section.   More info.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
-
 
 ::: tip Also See
 - [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)

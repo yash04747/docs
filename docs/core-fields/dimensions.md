@@ -4,6 +4,10 @@ The Dimensions field comes in handy when allowing users the ability to set the w
 
 <span style="display:block;text-align:center">![](./img/dimensions.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

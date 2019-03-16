@@ -4,6 +4,10 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 
 <span style="display:block;text-align:center">![](./img/sorter.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

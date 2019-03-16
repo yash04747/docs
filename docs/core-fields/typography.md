@@ -4,6 +4,10 @@ The Redux Typography field in second-to-none when it comes to framework typograp
 
 <span style="display:block;text-align:center">![](./img/typography.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

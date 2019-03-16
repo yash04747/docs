@@ -4,6 +4,10 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 
 <span style="display:block;text-align:center">![](./img/link_color.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

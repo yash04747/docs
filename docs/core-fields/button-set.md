@@ -4,6 +4,10 @@ The button set gives you a button bar to set options. It can be useful when you 
 
 <span style="display:block;text-align:center">![](./img/button_set.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

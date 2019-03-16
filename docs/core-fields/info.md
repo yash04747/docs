@@ -2,6 +2,10 @@
 
 The Info field comes in several varieties to display information as normal, info warning and success formats.  Choose between the WordPress 3.8 styles, or the non-notice styles.
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
@@ -27,6 +31,7 @@ When using the Info field with `required`, the field cannot be hidden by default
 
 
 ## Example Declaration
+
 #### Normal Style
 <span style="display:block;text-align:center">![](./img/info_normal.png)</span>
 

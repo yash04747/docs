@@ -1,18 +1,32 @@
-# Repeater
+# Repeater <Badge text="field" type="warn"/>
 
-The Redux Repeater extension easily allows developers to group like fields in a dynamic manner, or static number. Allowing values to be grouped (nested) under a single key, or under each individual key. All values will be returned as an array.
+The Redux Repeater extension easily allows developers to group like fields in a dynamic manner, or static number. 
+Allowing values to be grouped (nested) under a single key, or under each individual key. All values will be returned 
+as an array.
 
-## 
-Incompatible Fields
-Due to the complexities of this extension, the following Redux fields **WILL NOT** (at this time) function within a repeater.
+::: warning Table of Contents
+[[toc]]
+:::
 
-- Checkbox (Multi) - Multi-check (options array) not functioning, single check is fine
-- Sorter - Not working
-- Typography - Will crash your panel. Don't try it, yet.
-- Editor - Works fine, but CSS is messed up. (jQuery UI stuff)
+::: tip Getting Started
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+ To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
+ knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
+ (or both), please refer to the following guides to get you started: 
+ [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
+ [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+:::
 
-## Getting Started
-To understand how to use extensions, you should read this article on <a href="/redux-framework/advanced/loading-extensions/">Loading Extensions</a>. To shortcut the process, you should use the <a href="http://generate.reduxframework.com/" target="_blank">Redux Generator</a>. Please be aware that a working knowledge of PHP and CSS is required to properly use this field. Should you not be familiar with one or the other (or both), please refer to the basic guides to get you started: <a href="http://www.php.net/manual/en/tutorial.php">Getting Started with PHP</a>, <a href="http://www.w3schools.com/css/css_intro.asp">CSS Introduction</a>.
+## Incompatible Fields
+Due to the complexities of this extension, the following Redux fields **WILL NOT** (at this time) function within a 
+repeater.
+
+|Field|Issue|
+|--|--|
+|[Checkbox](../core-fields/checkbox.md#multi-checkbox) (Multi)|Multi-check (options array) not functioning, single check is fine|
+|[Sorter](../core-fields/sorter.md)|Not functioning|
+|[Typography](../core-fields/typography.md)|Will crash the panel, don't try it yet.|
+|[Editor](../core-fields/typography.md)|Works fine, but CSS styling is messed up. (jQuery UI stuff)|
 
 ## Arguments
 |Name|Type|Default|Description|
@@ -31,6 +45,12 @@ To understand how to use extensions, you should read this article on <a href="/r
 |sortable|boolean|true|Allow your users to drag/drop repeater blocks and by so doing reorder the results.|
 |limit|int|10|If `static` is false, this will limit the number of repeater blocks that can be created.|
 
+::: tip Also See
+- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
+- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `required` Argument](../guide/using-the-required-argument.md)
+:::
 
 ## Extended Argument Details
 
@@ -51,23 +71,23 @@ By default each repeater block is sortable and the values will be returned to th
 
 ## Example Declaration
 ```php
-$this->sections[] = array(
+Redux::set_section( 'OPT_NAME',  array(
     'title' => __('Repeater Field', 'redux-framework-demo' ),
     'icon' => 'el-icon-thumbs-up',
     'fields' => array(
         array(
-            'id'         => 'repeater-field-id',
-            'type'       => 'repeater',
-            'title'      => __( 'Title', 'redux-framework-demo' ),
-            'subtitle'   => __( '', 'redux-framework-demo' ),
-            'desc'       => __( '', 'redux-framework-demo' ),
+            'id'             => 'repeater-field-id',
+            'type'           => 'repeater',
+            'title'          => __( 'Title', 'redux-framework-demo' ),
+            'subtitle'       => __( '', 'redux-framework-demo' ),
+            'desc'           => __( '', 'redux-framework-demo' ),
             //'group_values' => true, // Group all fields below within the repeater ID
-            //'item_name' => '', // Add a repeater block name to the Add and Delete buttons
-            //'bind_title' => '', // Bind the repeater block title to this field ID
-            //'static'     => 2, // Set the number of repeater blocks to be output
-            //'limit' => 2, // Limit the number of repeater blocks a user can create
-            //'sortable' => false, // Allow the users to sort the repeater blocks or not
-            'fields'     => array(
+            //'item_name'    => '', // Add a repeater block name to the Add and Delete buttons
+            //'bind_title'   => '', // Bind the repeater block title to this field ID
+            //'static'       => 2, // Set the number of repeater blocks to be output
+            //'limit'        => 2, // Limit the number of repeater blocks a user can create
+            //'sortable'     => false, // Allow the users to sort the repeater blocks or not
+            'fields'         => array(
                 array(
                     'id'          => 'title_field',
                     'type'        => 'text',
@@ -79,23 +99,25 @@ $this->sections[] = array(
                     'placeholder' => __( 'Text Field', 'redux-framework-demo' ),
                 ),
                 array(
-                    'id'          => 'select_field',
-                    'type'        => 'select',
-                    'title' => __( 'Select Field', 'redux-framework-demo' ),
-                    'options'     => array(
-                        '1'             => __( 'Option 1', 'redux-framework-demo' ),
-                        '2'             => __( 'Option 2', 'redux-framework-demo' ),
-                        '3'             => __( 'Option 3', 'redux-framework-demo' ),
+                    'id'      => 'select_field',
+                    'type'    => 'select',
+                    'title'   => __( 'Select Field', 'redux-framework-demo' ),
+                    'options' => array(
+                        '1'      => __( 'Option 1', 'redux-framework-demo' ),
+                        '2'      => __( 'Option 2', 'redux-framework-demo' ),
+                        '3'      => __( 'Option 3', 'redux-framework-demo' ),
                     ),
                     'placeholder' => __( 'Listing Field', 'redux-framework-demo' ),
                 ),
             )
         )
     )
-);
+) );
 ```
 
-## Example Usage - Non-Grouped Values
+## Example Usage
+ 
+### Non-Grouped Values
 ```php
 // Please remember to replace '$redux_demo' with your project's global variable name, usually your opt_name.
 global $redux_demo;
@@ -106,7 +128,7 @@ echo '<hr>';
 print_r( $redux_demo['select_field'] );
 ```
 
-## Example Usage - Grouped Values
+### Grouped Values
 ```php
 // Please remember to replace '$redux_demo' with your project's global variable name, usually your opt_name.
 // This example assumes you set 'group_values' to true within your repeater field declaration.

@@ -4,6 +4,10 @@ The Editor field offers WYSIWYG editing capability, using the same editing inter
 
 <span style="display:block;text-align:center">![](./img/editor.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

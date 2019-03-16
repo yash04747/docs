@@ -4,6 +4,10 @@ The Textarea field accepts any form of multi-line string input, including custom
 
 <span style="display:block;text-align:center">![](./img/textarea.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

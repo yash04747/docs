@@ -4,6 +4,10 @@ The Redux Slider Field offers a great array features for just about every need.Â
 
 <span style="display:block;text-align:center">![](./img/slider.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

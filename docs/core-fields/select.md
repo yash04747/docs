@@ -2,6 +2,10 @@
 
 The Select field displays information in a drop-down field in both single and multi-select formats.
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
@@ -31,7 +35,6 @@ The Select field displays information in a drop-down field in both single and mu
 - [Using the `permissions` Argument](../guide/the-permissions-argument.md)
 - [Using the `required` Argument](../guide/using-the-required-argument.md)
 :::
-
 
 ## Standard Select
 ![](https://f.cloud.github.com/assets/3412363/1569797/d77655e8-50d4-11e3-8580-cf1eba05ea7e.png)

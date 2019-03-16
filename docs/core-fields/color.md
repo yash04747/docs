@@ -4,6 +4,10 @@ The Color field redefines simplicity. Point and click to chose any color in the 
 
 <span style="display:block;text-align:center">![](./img/color.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 
 |Name|Type|Default|Description|

@@ -4,6 +4,10 @@ With the Gallery field, create a new gallery of images by selecting existing ima
 
 <span style="display:block;text-align:center">![](./img/gallery.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

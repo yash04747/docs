@@ -4,6 +4,10 @@ The Color Gradient controls allows for the selection of two separate colors, for
 
 <span style="display:block;text-align:center">![](./img/color_gradient.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

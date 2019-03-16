@@ -1,12 +1,27 @@
-# CodeMirror - Advanced Code Editor
+# CodeMirror - Advanced Code Editor <Badge text="field" type="warn"/>
 
 ::: danger DEPRECATED
 This extension has been deprecated due to lack of support from the original developer.
 :::
 
-<a href="http://codemirror.net/" target="_blank">CodeMirror</a> is a versatile text editor implemented in JavaScript for the browser. It is specialized for editing code, and comes with a number of language modes and addons that implement more advanced editing functionality.
+[CodeMirror](http://codemirror.net/) is a versatile text editor implemented in JavaScript for the browser. It is 
+specialized for editing code, and comes with a number of language modes and addons that implement more advanced editing 
+functionality.
 
 <span style="display:block;text-align:center">![](./img/codemirror.png)</span>
+
+::: warning Table of Contents
+[[toc]]
+:::
+
+::: tip Getting Started
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+ To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
+ knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
+ (or both), please refer to the following guides to get you started: 
+ [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
+ [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+:::
 
 ## Features
 
@@ -40,7 +55,7 @@ The desktop versions of the following browsers, in standards mode (HTML5 recomme
 - Internet Explorer version 8 and up
 - Opera version 9 and up
 
-Modern mobile browsers tend to partly work as the <a href="http://codemirror.net/#browsersupport" target="_blank">official Codemirror documentation says</a>.
+Modern mobile browsers tend to partly work as the [official Codemirror documentation says](http://codemirror.net/#browsersupport).
 
 ## Basic Usage
 
@@ -76,6 +91,12 @@ array(
 |compiler|boolean||Flag to set the compiler hook, or array of CSS selectors which passes dynamic CSS to the compiler hook.|
 |editor_options|array||Sets codemirror options like field mode, theme, addons, lint, autocomplete, complete on demand (Ctrl+Space).|
 
+::: tip Also See
+- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
+- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `required` Argument](../guide/using-the-required-argument.md)
+:::
 
 ## Codemirror Editor Options
 
@@ -92,7 +113,10 @@ array(
 
 ## Language Modes
 
-This is a list of every mode in the distribution. Each mode lives in a subdirectory of the mode/ directory, and typically defines a single JavaScript file that implements the mode. Loading such file will make the language available to CodeMirror, through the mode option. This extension has the autoloading feature of those files, which searches for defined mode directory and autoloads neccessary files.
+This is a list of every mode in the distribution. Each mode lives in a subdirectory of the mode/ directory, and 
+typically defines a single JavaScript file that implements the mode. Loading such file will make the language available 
+to CodeMirror, through the mode option. This extension has the autoloading feature of those files, which searches for 
+defined mode directory and autoloads neccessary files.
 
 |||||
 |--- |--- |--- |--- |
@@ -122,7 +146,7 @@ This is a list of every mode in the distribution. Each mode lives in a subdirect
 
 |||||
 |--- |--- |--- |--- |
-|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/3024-day_zps82e4cfe9.png)<br />3024-day|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/3024-night_zps7c937c99.png)<br />3024-night|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/ambiance_zps94c9415f.png)<br />ambiance|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/base16-dark_zps24ccbd10.png)<br/>base16-dark|
+|![](./img/codemirror/3024-day_zps82e4cfe9.png)<br />3024-day|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/3024-night_zps7c937c99.png)<br />3024-night|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/ambiance_zps94c9415f.png)<br />ambiance|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/base16-dark_zps24ccbd10.png)<br/>base16-dark|
 |![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/base16-light_zpsb0c03993.png)<br />base16-light|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/blackboard_zps6c079187.png)<br />blackboard|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/cobalt_zps417b347a.png)<br />cobalt|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/eclipse_zpsd7753101.png)<br />eclipse|
 |![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/elegant_zpsadb3abab.png)<br />elegant|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/erlang-dark_zpsc119b74f.png)<br />erlang-dark|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/lesser-dark_zps1d44483b.png)<br />lesser-dark|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/mbo_zps88b8e5b8.png)<br />mbo|
 |![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/mdn-like_zps36501872.png)<br />mdn-like|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/midnight_zps6e4f0873.png)<br />midnight|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/monokai_zpse4d85c35.png)<br />monokai|![](http://i129.photobucket.com/albums/p209/tpaksu/codemirror-images/neat_zps50af0a57.png)<br />neat|

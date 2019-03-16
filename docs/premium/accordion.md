@@ -1,13 +1,23 @@
-# Accordion
+# Accordion <Badge text="field" type="warn"/>
 
-
-The Accordion extension is an improved way to group like items in your options panel, inside a collapsible accordion field.  Such a feature comes in handy when a given options panel has many, many items that don't need to be shown simultaneously. 
+The Accordion extension is an improved way to group like items in your options panel, inside a collapsible accordion 
+field.  Such a feature comes in handy when a given options panel has many, many items that don't need to be shown 
+simultaneously. 
 
 <span style="display:block;text-align:center">![](./img/accordion.png)</span>
 
-## Getting Started
+::: warning Table of Contents
+[[toc]]
+:::
 
-To understand how to use extensions, you should read this article on <a href="/redux-framework/advanced/loading-extensions/">Loading Extensions</a>. To shortcut the process, you should use the <a href="http://generate.reduxframework.com/" target="_blank">Redux Generator</a>. Please be aware that a working knowledge of PHP and CSS is required to properly use this field. Should you not be familiar with one or the other (or both), please refer to the basic guides to get you started: <a href="http://www.php.net/manual/en/tutorial.php">Getting Started with PHP</a>, <a href="http://www.w3schools.com/css/css_intro.asp">CSS Introduction</a>.
+::: tip Getting Started
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+ To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
+ knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
+ (or both), please refer to the following guides to get you started: 
+ [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
+ [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+:::
 
 Arguments
 -----
@@ -23,12 +33,18 @@ Arguments
 |open-icon|string|el-plus|The Elusive Icon to show when the accordion is closed (to be opened).  At this time, only Elusive Icons are supported.|
 |close-icon|string|el-minus|The Elusive Icon to show when the accordion is open (to be closed).  At this time, only Elusive Icons are supported.|
 
+::: tip Also See
+- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
+- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `required` Argument](../guide/using-the-required-argument.md)
+:::
 
 ## Example Declaration
 
 The following example in included with the Accordion extension package.
 
-::: warning NOTE
+::: danger NOTE
 Each Accordion block MUST have an opening array with the `position` argument set to `start`, AND a closing array with the `position` argument set to `end`. Any fields you wish to display inside the accordion block would be added between the `start` and `end` arrays.
 :::
 

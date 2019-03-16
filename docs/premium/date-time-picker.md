@@ -1,16 +1,22 @@
-# Date-Time Picker
+# Date-Time Picker <Badge text="field" type="warn"/>
 
 The Redux Date-Time Picker (DTP) extension is a new way to select dates and times for use in text fields.  The DTP 
 contains several modes based no how you would like to display time and date data.   Include all date-time info in one 
 text box?  No problem!  Split the time into its own text box?  No problem!  Have need to set ranges for dates or times?  
 We've got you covered there too!
 
-## Getting Started
-To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).  
-To shortcut the process, you should use the [Redux Builder](https://build.redux.io).  Please be aware that a working 
-knowledge of PHP and CSS is required to properly use this field. Should you not be familiar with one or the other 
-(or both), please refer to the basic guides to get you started: [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
-[CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+::: warning Table of Contents
+[[toc]]
+:::
+
+::: tip Getting Started
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+ To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
+ knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
+ (or both), please refer to the following guides to get you started: 
+ [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
+ [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+:::
 
 ## Arguments
 |Name|Type|Default|Description|
@@ -42,6 +48,12 @@ knowledge of PHP and CSS is required to properly use this field. Should you not 
 |date-max|int/array|Array of maximum month, day, year values.  See 'Min/Max Date Options' below.|
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
+::: tip Also See
+- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
+- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `required` Argument](../guide/using-the-required-argument.md)
+:::
 
 ## Placeholder Options
 The placeholder argument, if used, must be set in accordance with the split argument.  Consider the following field 

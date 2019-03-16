@@ -1,19 +1,49 @@
-# Metaboxes
+# Metaboxes <Badge text="enhancement" type="warn"/>
 
-If you are used the ReduxFramework declaration arrays, you know Redux Metaboxes. They're one and the same! The only difference is a parent array. We'll go through a few examples to get you up and running. Please know, you MUST have an options page for metaboxes to work. They're inter-connected. You can, however, make a fake options panel, and hide it from the admin menu. But the metaboxes extensions works best when united with a panel.
+If you are used the ReduxFramework declaration arrays, you know Redux Metaboxes. They're one and the same! The only 
+difference is a parent array. We'll go through a few examples to get you up and running. Please know, you MUST have an 
+options page for metaboxes to work. They're inter-connected. You can, however, make a fake options panel, and hide it 
+from the admin menu. But the metaboxes extensions works best when united with a panel.
 
-## Getting Started
-To understand how to use extensions, you should read this article on <a href="/redux-framework/advanced/loading-extensions/">Loading Extensions</a>. To shortcut the process, you should use the <a href="http://generate.reduxframework.com/" target="_blank">Redux Generator</a>. 
+::: warning Table of Contents
+[[toc]]
+:::
+
+::: tip Getting Started
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+ To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
+ knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
+ (or both), please refer to the following guides to get you started: 
+ [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
+ [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+:::
 
 ## Arguments
-<table border="0"><tbody><tr><td>Name</td><td>Type</td><td>Description</td></tr><tr><td>id</td><td>string</td><td>You must provide an ID of some kind. This can be shared with your keys from your panel, and if so the values will be overridden for that given page in your global variable.</td></tr><tr><td>title</td><td>string</td><td>This is the title that appears on the box</td></tr><tr><td>post_types</td><td>array</td><td>Provide any number of post_types for a given metabox to appear.</td></tr><tr><td>page_template</td><td>array</td><td>Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template.</td></tr><tr><td>post_format</td><td>array</td><td>Bind the visibility of a metabox to a given post format. <a href="http://codex.wordpress.org/Post_Formats" target="_blank">List of post formats</a>.</td></tr><tr><td>position</td><td>normal / advanced / side</td><td>Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.</td></tr><tr><td>priority</td><td>high / core / default / low</td><td>Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.</td></tr><tr><td>sections</td><td>array</td><td>Your sections array, the same style as ReduxFramework.</td></tr></tbody></table>
+
+|Name|Type|Description|
+|--- |--- |--- |
+|id|string|You must provide an ID of some kind. This can be shared with your keys from your panel, and if so the values will be overridden for that given page in your global variable.|
+|title|string|This is the title that appears on the box|
+|post_types|array|Provide any number of post_types for a given metabox to appear.|
+|page_template|array|Bind visibility of a metabox to any number of page templates. The value will be equal to the filename of the custom page template.|
+|post_format|array|Bind the visibility of a metabox to a given post format. [List of post formats](http://codex.wordpress.org/Post_Formats).|
+|position|normal / advanced / side|Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.|
+|priority|high / core / default / low|Where you want to place your metabox. Normal and advanced are the to left and side is, well, to the side.|
+|sections|array|Your sections array, the same style as ReduxFramework.|
+
+## Metaboxes API
+To ease the use of Metaboxes, a metaboxes API has been implemented. Nearly all the methods match with the ones had in the
+standard Redux API. However, with metaboxes there is an additional concept of a `box`.
 
 ## Example Declaration
-Since we've kept the structure exactly the same, start by constructing a section array like you normally would. In the included config file for metaboxes, we save these to an array. We've named that array $boxSections for the below examples.
+Since we've kept the structure exactly the same, start by constructing a section array like you normally would. In the 
+included config file for metaboxes, we save these to an array. We've named that array $boxSections for the below examples.
 
-Now once we have that array, we need only add it to a parent array, named below as $metaboxes. Here's an example of how we would add a sidebar metabox to a page.
+Now once we have that array, we need only add it to a parent array, named below as $metaboxes. Here's an example of how 
+we would add a sidebar metabox to a page.
 
 ```php
+
 // BE SURE TO RENAME THE FUNCTION NAMES TO YOUR OWN NAME OR PREFIX
 if ( !function_exists( "redux_add_metaboxes" ) ):
     function redux_add_metaboxes($metaboxes) {

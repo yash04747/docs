@@ -4,6 +4,10 @@ The Text field accepts any form of text and optionally validates the text before
 
 <span style="display:block;text-align:center">![](./img/text.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`text`|Value identifying the field type.|
@@ -55,3 +59,7 @@ global $redux_demo;
 echo 'Text value: ' . $redux_demo['opt-text'];
 ```
 
+
+
+
+<builder>Dovydas</builder>

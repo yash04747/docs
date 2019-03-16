@@ -4,6 +4,10 @@ Select from an array of images as radio buttons.
 
 <span style="display:block;text-align:center">![](./img/image_select.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

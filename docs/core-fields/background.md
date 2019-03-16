@@ -4,6 +4,10 @@ The Redux Background field offers unmatched features not found in any other opti
 
 <span style="display:block;text-align:center">![](./img/background.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

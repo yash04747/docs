@@ -4,6 +4,10 @@ The Checkbox field may be used to offer a single check option, or a group of mul
 
 <span style="display:block;text-align:center">![](./img/checkbox.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

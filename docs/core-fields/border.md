@@ -4,6 +4,10 @@ The Border field is a great way to set the border properties of any HTML object 
 
 <span style="display:block;text-align:center">![](./img/border.png)</span>
 
+::: warning Table of Contents
+[[toc]]
+:::
+
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

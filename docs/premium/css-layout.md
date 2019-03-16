@@ -1,9 +1,19 @@
-# CSS Layout
+# CSS Layout <Badge text="field" type="warn"/>
 
 The CSS Layout extension is a new way to set margins, padding and borders (including radius) all from one field.  
 
-## Getting Started
-To understand how to use extensions, you should read this article on <a href="/redux-framework/advanced/loading-extensions/">Loading Extensions</a>. To shortcut the process, you should use the <a href="http://generate.reduxframework.com/" target="_blank">Redux Generator</a>. Please be aware that a working knowledge of PHP and CSS is required to properly use this field. Should you not be familiar with one or the other (or both), please refer to the basic guides to get you started: <a href="http://www.php.net/manual/en/tutorial.php">Getting Started with PHP</a>, <a href="http://www.w3schools.com/css/css_intro.asp">CSS Introduction</a>.
+::: warning Table of Contents
+[[toc]]
+:::
+
+::: tip Getting Started
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+ To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
+ knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
+ (or both), please refer to the following guides to get you started: 
+ [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
+ [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
+:::
 
 ## Arguments
 |Name|Type|Default|Description|
@@ -28,6 +38,13 @@ To understand how to use extensions, you should read this article on <a href="/r
 |placeholder|string|-|Text to display in the input fields when no value is present.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
+::: tip Also See
+- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
+- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `required` Argument](../guide/using-the-required-argument.md)
+:::
 
 ## CSS Layout Defaults
 Margin, border, and padding values may set be in one of two ways.  Via shorthand properties using the `margin`, `border`, and `padding` arguments, or individually using the `*-top`, `*-right`, `*-bottom` and `*-left` arguments.  While it's possible to set both, it's best to use one or the other, not both.  Individual arguments will override the shorthand arguments.
@@ -60,8 +77,6 @@ Arguments may be set with or without a unit value.  Values without a unit value
 ::: tip
 The `border-color`, `border-radius` and `border-style` properties CANNOT be set using shorthand via the `border` argument.  They must be set via their own arguments.
 :::
-
-
 
 ## CSS Layout Options
 The margin, border, and padding levels of the CSS layout field may be enabled or disabled, depending on your particular needs.  When a level is disabled, default values (if set) will be displayed, although the user will be unable to edit them.
