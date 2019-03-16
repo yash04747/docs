@@ -5,6 +5,9 @@ They also require that all aspects of tracking be removed from themes, even opt-
 platform built in to help us gather statistics about users who use Redux. We use this to debug our code and learn of 
 plugin conflict impact.
 
-There is a new argument titled `disable_tracking`. When a theme embeds Redux, and sets this argument to true, 
-the ReduxTracking class is not called. A developer can then delete the tracking class and be fully compliant with 
-WordPress.org requirements. That class is located in: `~/ReduxCore/inc/classes/tracking.php`.
+There is a new argument titled `disable_tracking`. When set to true, the `Redux_Statistics` class is not called. A develiper can then delete this class and be fully compliant with WordPress.org requirements. The location of this file is found below.
+
+|Redux Version|Path|
+|--|--|
+|<= 3.7|`~/ReduxCore/inc/classes/tracking.php`|
+|>= 4|`~/ReduxCore/inc/classes/class-redux-statistics.php`|
