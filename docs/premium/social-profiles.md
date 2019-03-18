@@ -32,92 +32,96 @@ To understand how to use extensions, you should read this article on [Using Exte
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ## The Include Argument
-The Social Profile extension includes 82 default social profile icons.  The icons and their IDs are as follows.
+The Social Profile extension includes 82 default social profile icons from [FontAwesome 4x](https://fontawesome.com/v4.7.0/).  The icons and their IDs are as follows.
 
-|Icon Name|Shortcode|ID|
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+
+<i class="fa fa-2xs fa-ad"></i>
+
+|Name|Icon|ID|
 |--- |--- |--|
-|ADN|`[icon name="adn" class="fa-2x"]`|adn|
-|Android|`[icon name="android" class="fa-2x"]`|android|
-|Apple|`[icon name="apple" class="fa-2x"]`|apple|
-|behance|`[icon name="behance" class="fa-2x"]`|behance|
-|behance|`[icon name="behance-square" class="fa-2x"]`  (square icon)|behance-square|
-|Bitbucket|`[icon name="bitbucket" class="fa-2x"]`|bitbucket|
-|Bitbucket (square icon)|`[icon name="bitbucket-square" class="fa-2x"]`|bitbucket-square|
-|Bitcoin|`[icon name="btc" class="fa-2x"]`|bitcoin|
-|Codepen|`[icon name="codepen" class="fa-2x"]`|codepen|
-|CSS3|`[icon name="css3" class="fa-2x"]`|css3|
-|Delicious|`[icon name="delicious" class="fa-2x"]`|delicious|
-|Deviantart|`[icon name="deviantart" class="fa-2x"]`|deviantart|
-|Digg|`[icon name="digg" class="fa-2x"]`|digg|
-|Dribbble|`[icon name="dribbble" class="fa-2x"]`|dribbble|
-|Dropbox|`[icon name="dropbox" class="fa-2x"]`|dropbox|
-|Drupal|`[icon name="drupal" class="fa-2x"]`|drupal|
-|Empire|`[icon name="empire" class="fa-2x"]`|empire|
-|Facebook|`[icon name="facebook" class="fa-2x"]`|facebook|
-|Facebook|`[icon name="facebook-square" class="fa-2x"]`  (square icon)|facebook-square|
-|Flickr|`[icon name="flickr" class="fa-2x"]`|flickr|
-|FourSquare|`[icon name="foursquare" class="fa-2x"]`|foursquare|
-|git|`[icon name="git" class="fa-2x"]`|git|
-|git (square icon)|`[icon name="github-square" class="fa-2x"]`|git-square|
-|github|`[icon name="github" class="fa-2x"]`|github|
-|github alt|`[icon name="github-alt" class="fa-2x"]`|github-alt|
-|github (square icon)|`[icon name="github-square" class="fa-2x"]`|github-square|
-|git tip|`[icon name="gittip" class="fa-2x"]`|gittip|
-|Google|`[icon name="google" class="fa-2x"]`|google|
-|Google Plus|`[icon name="google-plus" class="fa-2x"]`|google-plus|
-|Google Plus (square icon)|`[icon name="google-plus-square" class="fa-2x"]`|google-plus-square|
-|Hacker News|`[icon name="hacker-news" class="fa-2x"]`|hacker-news|
-|HTML5|`[icon name="html5" class="fa-2x"]`|html5|
-|Instagram|`[icon name="instagram" class="fa-2x"]`|instagram|
-|Joomla|`[icon name="joomla" class="fa-2x"]`|joomla|
-|JS Fiddle|`[icon name="jsfiddle" class="fa-2x"]`|jsfiddle|
-|LinkedIn|`[icon name="linkedin" class="fa-2x"]`|linkedin|
-|LinkedIn|`[icon name="linkedin-square" class="fa-2x"]`  (square icon)|linkedin-square|
-|Linux|`[icon name="linux" class="fa-2x"]`|linux|
-|MaxCDN|`[icon name="maxcdn" class="fa-2x"]`|maxcdn|
-|OpenID|`[icon name="openid" class="fa-2x"]`|openid|
-|Page Lines|`[icon name="pagelines" class="fa-2x"]`|pagelines|
-|Pied Piper|`[icon name="pied-piper" class="fa-2x"]`|pied-piper|
-|Pied Piper alt|`[icon name="pied-piper-alt" class="fa-2x"]`|pied-piper-alt|
-|Pinterest|`[icon name="pinterest" class="fa-2x"]`|pinterest|
-|Pinterest (square icon)|`[icon name="pinterest-square" class="fa-2x"]`|pinterest-square|
-|QQ|`[icon name="qq" class="fa-2x"]`|qq|
-|Rebel|`[icon name="rebel" class="fa-2x"]`|rebel|
-|Reddit|`[icon name="reddit" class="fa-2x"]`|reddit|
-|Reddit (square icon)|`[icon name="reddit-square" class="fa-2x"]`|reddit-square|
-|Ren Ren|`[icon name="renren" class="fa-2x"]`|renren|
-|Share alt|`[icon name="share-alt" class="fa-2x"]`|share-alt|
-|Share (square icon)|`[icon name="share-alt-square" class="fa-2x"]`|share-alt-square|
-|Skype|`[icon name="skype" class="fa-2x"]`|skype|
-|Slack|`[icon name="slack" class="fa-2x"]`|slack|
-|Sound Cloud|`[icon name="soundcloud" class="fa-2x"]`|soundcloud|
-|Spotify|`[icon name="spotify" class="fa-2x"]`|spotify|
-|Stack Exchange|`[icon name="stack-exchange" class="fa-2x"]`|stack-exchange|
-|Stack Overflow|`[icon name="stack-overflow" class="fa-2x"]`|stack-overflow|
-|Steam|`[icon name="steam" class="fa-2x"]`|steam|
-|Steam (square icon)|`[icon name="steam-square" class="fa-2x"]`|steam-square|
-|Stumble Upon|`[icon name="stumbleupon" class="fa-2x"]`|stumbleupon|
-|Stumble Upon (circle icon)|`[icon name="stumbleupon-circle" class="fa-2x"]`|stumbleupon-circle|
-|Tencent Weibo|`[icon name="tencent-weibo" class="fa-2x"]`|tencent-weibo|
-|Trello|`[icon name="trello" class="fa-2x"]`|trello|
-|Tumblr|`[icon name="tumblr" class="fa-2x"]`|tumblr|
-|Tumblr (square icon)|`[icon name="tumblr-square" class="fa-2x"]`|tumblr-square|
-|Twitter|`[icon name="twitter" class="fa-2x"]`|twitter|
-|Twitter (square icon)|`[icon name="twitter-square" class="fa-2x"]`|twitter-square|
-|Vimeo (square icon)|`[icon name="vimeo-square" class="fa-2x"]`|vimeo-square|
-|Vine|`[icon name="vine" class="fa-2x"]`|vine|
-|VK|`[icon name="vk" class="fa-2x"]`|vk|
-|Weibo|`[icon name="weibo" class="fa-2x"]`|weibo|
-|Weixin|`[icon name="weixin" class="fa-2x"]`|weixin|
-|Windows|`[icon name="windows" class="fa-2x"]`|windows|
-|WordPress|`[icon name="wordpress" class="fa-2x"]`|wordpress|
-|Xing|`[icon name="xing" class="fa-2x"]`|xing|
-|Xing (square icon)|`[icon name="xing-square" class="fa-2x"]`|xing-square|
-|Yahoo|`[icon name="yahoo" class="fa-2x"]`|yahoo|
-|Yelp|`[icon name="yelp" class="fa-2x"]`|yelp|
-|YouTube|`[icon name="youtube" class="fa-2x"]`|youtube|
-|YouTube (play icon)|`[icon name="youtube-play" class="fa-2x"]`|youtube-play|
-|YouTube (square icon)|`[icon name="youtube-square" class="fa-2x"]`|youtube-square|
+|ADN|<i name="adn" class="fa fa-2x fa-adn"></i>|adn|
+|Android|<i class="fa fa-2x fa-android"></i>|android|
+|Apple|<i class="fa fa-2x fa-apple"></i>|apple|
+|behance|<i class="fa fa-2x fa-behance"></i>|behance|
+|behance|<i class="fa fa-2x fa-behance-square"></i>  (square icon)|behance-square|
+|Bitbucket|<i class="fa fa-2x fa-bitbucket"></i>|bitbucket|
+|Bitbucket (square icon)|<i class="fa fa-2x fa-bitbucket-square"></i>|bitbucket-square|
+|Bitcoin|<i class="fa fa-2x fa-btc"></i>|bitcoin|
+|Codepen|<i class="fa fa-2x fa-codepen"></i>|codepen|
+|CSS3|<i class="fa fa-2x fa-css3"></i>|css3|
+|Delicious|<i class="fa fa-2x fa-delicious"></i>|delicious|
+|Deviantart|<i class="fa fa-2x fa-deviantart"></i>|deviantart|
+|Digg|<i class="fa fa-2x fa-digg"></i>|digg|
+|Dribbble|<i class="fa fa-2x fa-dribbble"></i>|dribbble|
+|Dropbox|<i class="fa fa-2x fa-dropbox"></i>|dropbox|
+|Drupal|<i class="fa fa-2x fa-drupal"></i>|drupal|
+|Empire|<i class="fa fa-2x fa-empire"></i>|empire|
+|Facebook|<i class="fa fa-2x fa-facebook"></i>|facebook|
+|Facebook|<i class="fa fa-2x fa-facebook-square"></i>  (square icon)|facebook-square|
+|Flickr|<i class="fa fa-2x fa-flickr"></i>|flickr|
+|FourSquare|<i class="fa fa-2x fa-foursquare"></i>|foursquare|
+|git|<i class="fa fa-2x fa-git"></i>|git|
+|git (square icon)|<i class="fa fa-2x fa-github-square"></i>|git-square|
+|github|<i class="fa fa-2x fa-github"></i>|github|
+|github alt|<i class="fa fa-2x fa-github-alt"></i>|github-alt|
+|github (square icon)|<i class="fa fa-2x fa-github-square"></i>|github-square|
+|git tip|<i class="fa fa-2x fa-gittip"></i>|gittip|
+|Google|<i class="fa fa-2x fa-google"></i>|google|
+|Google Plus|<i class="fa fa-2x fa-google-plus"></i>|google-plus|
+|Google Plus (square icon)|<i class="fa fa-2x fa-google-plus-square"></i>|google-plus-square|
+|Hacker News|<i class="fa fa-2x fa-hacker-news"></i>|hacker-news|
+|HTML5|<i class="fa fa-2x fa-html5"></i>|html5|
+|Instagram|<i class="fa fa-2x fa-instagram"></i>|instagram|
+|Joomla|<i class="fa fa-2x fa-joomla"></i>|joomla|
+|JS Fiddle|<i class="fa fa-2x fa-jsfiddle"></i>|jsfiddle|
+|LinkedIn|<i class="fa fa-2x fa-linkedin"></i>|linkedin|
+|LinkedIn|<i class="fa fa-2x fa-linkedin-square"></i>  (square icon)|linkedin-square|
+|Linux|<i class="fa fa-2x fa-linux"></i>|linux|
+|Max CDN|<i class="fa fa-2x fa-maxcdn"></i>|maxcdn|
+|OpenID|<i class="fa fa-2x fa-openid"></i>|openid|
+|Page Lines|<i class="fa fa-2x fa-pagelines"></i>|pagelines|
+|Pied Piper|<i class="fa fa-2x fa-pied-piper"></i>|pied-piper|
+|Pied Piper alt|<i class="fa fa-2x fa-pied-piper-alt"></i>|pied-piper-alt|
+|Pinterest|<i class="fa fa-2x fa-pinterest"></i>|pinterest|
+|Pinterest (square icon)|<i class="fa fa-2x fa-pinterest-square"></i>|pinterest-square|
+|QQ|<i class="fa fa-2x fa-qq"></i>|qq|
+|Rebel|<i class="fa fa-2x fa-rebel"></i>|rebel|
+|Reddit|<i class="fa fa-2x fa-reddit"></i>|reddit|
+|Reddit (square icon)|<i class="fa fa-2x fa-reddit-square"></i>|reddit-square|
+|Ren Ren|<i class="fa fa-2x fa-renren"></i>|renren|
+|Share alt|<i class="fa fa-2x fa-share-alt"></i>|share-alt|
+|Share (square icon)|<i class="fa fa-2x fa-share-alt-square"></i>|share-alt-square|
+|Skype|<i class="fa fa-2x fa-skype"></i>|skype|
+|Slack|<i class="fa fa-2x fa-slack"></i>|slack|
+|Sound Cloud|<i class="fa fa-2x fa-soundcloud"></i>|soundcloud|
+|Spotify|<i class="fa fa-2x fa-spotify"></i>|spotify|
+|Stack Exchange|<i class="fa fa-2x fa-stack-exchange"></i>|stack-exchange|
+|Stack Overflow|<i class="fa fa-2x fa-stack-overflow"></i>|stack-overflow|
+|Steam|<i class="fa fa-2x fa-steam"></i>|steam|
+|Steam (square icon)|<i class="fa fa-2x fa-steam-square"></i>|steam-square|
+|Stumble Upon|<i class="fa fa-2x fa-stumbleupon"></i>|stumbleupon|
+|Stumble Upon (circle icon)|<i class="fa fa-2x fa-stumbleupon-circle"></i>|stumbleupon-circle|
+|Tencent Weibo|<i class="fa fa-2x fa-tencent-weibo"></i>|tencent-weibo|
+|Trello|<i class="fa fa-2x fa-trello"></i>|trello|
+|Tumblr|<i class="fa fa-2x fa-tumblr"></i>|tumblr|
+|Tumblr (square icon)|<i class="fa fa-2x fa-tumblr-square"></i>|tumblr-square|
+|Twitter|<i class="fa fa-2x fa-twitter"></i>|twitter|
+|Twitter (square icon)|<i class="fa fa-2x fa-twitter-square"></i>|twitter-square|
+|Vimeo (square icon)|<i class="fa fa-2x fa-vimeo-square"></i>|vimeo-square|
+|Vine|<i class="fa fa-2x fa-vine"></i>|vine|
+|VK|<i class="fa fa-2x fa-vk"></i>|vk|
+|Weibo|<i class="fa fa-2x fa-weibo"></i>|weibo|
+|Weixin|<i class="fa fa-2x fa-weixin"></i>|weixin|
+|Windows|<i class="fa fa-2x fa-windows"></i>|windows|
+|WordPress|<i class="fa fa-2x fa-wordpress"></i>|wordpress|
+|Xing|<i class="fa fa-2x fa-xing"></i>|xing|
+|Xing (square icon)|<i class="fa fa-2x fa-xing-square"></i>|xing-square|
+|Yahoo|<i class="fa fa-2x fa-yahoo"></i>|yahoo|
+|Yelp|<i class="fa fa-2x fa-yelp"></i>|yelp|
+|YouTube|<i class="fa fa-2x fa-youtube"></i>|youtube|
+|YouTube (play icon)|<i class="fa fa-2x fa-youtube-play"></i>|youtube-play|
+|YouTube (square icon)|<i class="fa fa-2x fa-youtube-square"></i>|youtube-square|
 
 By default, the extension offers all 82 to the user.  This doesn't mean you must offer each and every one.  Using the `include` argument, you may specify which profile icons you'd prefer to offer by assigning an array of existing icons IDs.  For example, let's say you'd like to offer only Facebook, Twitter, LinkedIn, and Google Plus.  The `include` argument would look as follows:
 
@@ -255,7 +259,7 @@ echo $html;
 
 // Result:
 // <a class="" href="http://www.facebook.com/my_facebook_name">
-//     <i class="fa fa-facebook" style="color: #3b5998; background-color: transparent;" title=""></i>
+//     <i class="fa fa-2x fa-facebook" style="color: #3b5998; background-color: transparent;" title=""></i>
 // </a>
 ```
 
