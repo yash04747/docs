@@ -1,5 +1,9 @@
 # Multi Media <Badge text="field" type="warn"/>
 
+::: danger DEPRECATED
+This extension has been deprecated.
+:::
+
 The Redux Multi Media extension is an improved way to allow your users to upload and/or select multiple files from the WordPress media library, for use in the Redux Framework options panel.
 
 ::: warning Table of Contents
