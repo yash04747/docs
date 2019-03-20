@@ -1,5 +1,9 @@
 # JS Button <Badge text="field" type="warn"/>
 
+::: danger DEPRECATED
+This extension has been deprecated.
+:::
+
 The Redux JS Button extension is a new way to activate JavaScript functions manually from within the options panel.  Once 
 you've set up the field code with the buttons you'd like to display, you simply assign a JavaScript function name to the 
 button, include that function in a JavaScript file assigned to the field and watch the magic happen!
