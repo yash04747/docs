@@ -1,5 +1,9 @@
 # Social Profiles <Badge text="field" type="warn"/>
 
+::: danger DEPRECATED
+This extension has been deprecated.
+:::
+
 The Redux Social Profiles extension easily allows one to create and display links to their social media through code and/or an included widget.
 
 ::: warning Table of Contents
