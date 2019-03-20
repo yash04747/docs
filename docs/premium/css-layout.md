@@ -1,5 +1,9 @@
 # CSS Layout <Badge text="field" type="warn"/>
 
+::: danger DEPRECATED
+This extension has been deprecated.
+:::
+
 The CSS Layout extension is a new way to set margins, padding and borders (including radius) all from one field.  
 
 ::: warning Table of Contents
