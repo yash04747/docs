@@ -42,6 +42,10 @@
 	.panel-body {
 		padding: 15px;
 	}
+	.panel-body small {
+		display: block;
+		margin-bottom: 10px;
+	}
 
 	.seventy {
 		-webkit-box-flex: 1;
@@ -87,6 +91,7 @@
 				Customize This →
 			</div>
 			<div class="panel-body" v-show="showSection">
+				<small>Any changes you make in these fields will be reflected in the example declaration.</small>
 				<vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
 			</div>
 		</div>
