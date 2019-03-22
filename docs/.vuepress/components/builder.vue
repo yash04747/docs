@@ -55,6 +55,13 @@
 		flex-basis: 69%;
 		max-width: 69%;
 	}
+	.seventy pre {
+		margin-top: 0 !important;
+	}
+	.seventy .panel-body {
+		padding-top: 0;
+		margin-top:0;
+	}
 	.thirty {
 		-webkit-box-flex: 1;
 		-ms-flex-positive: 1;
@@ -63,6 +70,13 @@
 		flex-basis: 30%;
 		max-width: 30%;
 	}
+	@media (max-width: 816px) {
+		.thirty, .seventy {
+			max-width: 100%;
+			padding: 0;
+		}
+	}
+
 	#generator {
 		border-top: 1px solid #eaecef;
 		padding: 1.2rem 0;
@@ -88,7 +102,7 @@
 	<div id="generator">
 		<div class="panel thirty">
 			<div class="panel-heading" v-on:click="toggle">
-				Customize This →
+				Customize →
 			</div>
 			<div class="panel-body" v-show="showSection">
 				<small>Any changes you make in these fields will be reflected in the example declaration.</small>
