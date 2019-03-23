@@ -25,16 +25,97 @@ The Text field accepts any form of text and optionally validates the text before
 ::: tip Also See
 - [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
 - [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
 - [Using the `permissions` Argument](../guide/the-permissions-argument.md)
 - [Using the `required` Argument](../guide/using-the-required-argument.md)
 - [Using the `validate` Argument](../guide/using-the-validate-argument.md)
 :::
 
 ## Example Declaration
-Build your own configuration below.
-
-<builder field="text" />
+<builder field="text">
+{
+    "type": "text",
+    "name": "Text",
+    "description": null,
+    "icon": null,
+    "fields": {
+        "compiler": {
+            "name": "compiler",
+            "title": "Compiler",
+            "type": "bool",
+            "description": "Should the field be sent to the compiler",
+            "default": false,
+            "order": 60,
+            "required": false
+        },
+        "required": {
+            "name": "required",
+            "title": "Required",
+            "type": "bool",
+            "description": "Should the field be required",
+            "default": false,
+            "order": 60,
+            "required": false
+        },
+        "readonly": {
+            "name": "readonly",
+            "title": "Readonly",
+            "type": "bool",
+            "description": "Should the field be readonly",
+            "default": false,
+            "order": 60,
+            "required": false
+        },
+        "class": {
+            "name": "class",
+            "title": "Class",
+            "type": "text",
+            "description": "",
+            "default": null,
+            "order": 3,
+            "required": false
+        },
+        "desc": {
+            "name": "desc",
+            "title": "Description",
+            "type": "text",
+            "description": "",
+            "default": null,
+            "order": 3,
+            "required": false
+        },
+        "subtitle": {
+            "name": "subtitle",
+            "title": "Subtitle",
+            "type": "text",
+            "description": "",
+            "default": null,
+            "order": 2,
+            "required": false
+        },
+        "title": {
+            "name": "title",
+            "title": "Title",
+            "type": "text",
+            "description": "",
+            "default": null,
+            "order": 1,
+            "required": false
+        },
+        "id": {
+            "name": "id",
+            "title": "ID",
+            "type": "text",
+            "description": "",
+            "default": null,
+            "order": 0,
+            "required": false
+        }
+    },
+    "model": {
+        "title": "Text Field"
+    }
+}
+</builder>
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
