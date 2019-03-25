@@ -1,38 +1,16 @@
 const path = require( 'path' )
 const container = require( 'markdown-it-container' )
-const fs = require( 'fs' )
-
-// Return a list of files of the specified fileTypes in the provided dir,
-// with the file path relative to the given dir
-// dir: path of the directory you want to search the files for
-// fileTypes: array of file types you are search files, ex: ['.txt', '.jpg']
-function getFilesFromDir(dir, fileTypes) {
-	var filesToReturn = [];
-	function walkDir(currentPath) {
-		var files = fs.readdirSync(currentPath);
-		for (var i in files) {
-			var curFile = path.join(currentPath, files[i]);
-			if (fs.statSync(curFile).isFile() && fileTypes.indexOf(path.extname(curFile)) != -1) {
-				filesToReturn.push(curFile.replace(dir, ''));
-			} else if (fs.statSync(curFile).isDirectory()) {
-				walkDir(curFile);
-			}
-		}
-	};
-	walkDir(dir);
-	return filesToReturn;
-}
-
 
 module.exports = ctx => ({
 	// dest: '',
 	// base: '',
+
 	locales: {
 		'/': {
 			lang: 'en-US',
 			title: 'Redux',
 			description: 'The WordPress Interface Framework',
-			// footer: 'Dovy was here',
+
 		},
 	},
 	head: [
@@ -70,7 +48,7 @@ module.exports = ctx => ({
 					'/premium/': getSidebar( 'Premium / Pro', '/premium/' ),
 					'/faq/': getSidebar( 'FAQ', '/faq/' ),
 					'/core-extensions/': getSidebar( 'Core Extensions', '/core-extensions/' )
-				}
+				},
 			},
 		}
 	},
@@ -86,6 +64,7 @@ module.exports = ctx => ({
 		['@vuepress/google-analytics', {
 			ga: 'UA-45553284-5'
 		}],
+		['plugin-clipboard-copy', true],
 	],
 	// clientRootMixin: path.resolve( __dirname, 'mixin.js' ),
 	extendMarkdown( md ) {
@@ -97,6 +76,31 @@ module.exports = ctx => ({
 	},
 })
 
+
+const fs = require( 'fs' )
+
+// Return a list of files of the specified fileTypes in the provided dir,
+// with the file path relative to the given dir
+// dir: path of the directory you want to search the files for
+// fileTypes: array of file types you are search files, ex: ['.txt', '.jpg']
+function getFilesFromDir( dir, fileTypes ) {
+	var filesToReturn = [];
+
+	function walkDir( currentPath ) {
+		var files = fs.readdirSync( currentPath );
+		for ( var i in files ) {
+			var curFile = path.join( currentPath, files[i] );
+			if ( fs.statSync( curFile ).isFile() && fileTypes.indexOf( path.extname( curFile ) ) != -1 ) {
+				filesToReturn.push( curFile.replace( dir, '' ) );
+			} else if ( fs.statSync( curFile ).isDirectory() ) {
+				walkDir( curFile );
+			}
+		}
+	};
+	walkDir( dir );
+	return filesToReturn;
+}
+
 function getSidebar( title, path, collapsable = false, depth = 0 ) {
 	var the_path = __filename.split( '/.vuepress' )[0]
 	// This needs to work for both windows AND unix
@@ -104,14 +108,8 @@ function getSidebar( title, path, collapsable = false, depth = 0 ) {
 		the_path = __filename.split( '\.vuepress' )[0]
 	}
 
-	var the_files = getFilesFromDir(the_path + path, [".md"]);
+	var the_files = getFilesFromDir( the_path + path, [".md"] );
 	var to_return = []
-
-	// if ($vm.$frontmatter.sidebarDepth) {
-	// 	depth = window.$vm.$frontmatter.sidebarDepth;
-	// }
-	// console.log(module);
-
 
 	// if (introduction !== '') {
 	// 	to_return.push(['', introduction])
@@ -130,17 +128,6 @@ function getSidebar( title, path, collapsable = false, depth = 0 ) {
 		}
 	} );
 
-	// if ( top !== '' ) {
-	// 	// title = resolveHeaders(top)
-	// 	// console.log(ctx);
-	// 	// console.log(themeConfig);
-	// 	// to_return.unshift( ['', top] );
-	// 	var new_return = []
-	// 	new_return.push( ["hello",top] )
-	// 	to_return = new_return + to_return
-	// 	// to_return.unshift( ["hello",top] );
-	// }
-
 	var the_return = [
 		{
 			title: title,
@@ -150,8 +137,5 @@ function getSidebar( title, path, collapsable = false, depth = 0 ) {
 		},
 	];
 	return the_return;
-
-
-
 }
 

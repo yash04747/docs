@@ -115,7 +115,7 @@
 
 		<div class="seventy">
 			<div class="panel-body">
-				<pre class="language-php"><code v-if="model" v-html="toPHP(schema, model)"></code></pre>
+				<div class="language-php extra-class"><pre class="language-php extra-class"><code v-if="model" v-html="toPHP(schema, model)"></code></pre></div>
 			</div>
 		</div>
 		<br style="clear: both;">
