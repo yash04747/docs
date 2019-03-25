@@ -60,10 +60,11 @@ module.exports = ctx => ({
 			updatePopup: false
 		}],
 		['@vuepress/medium-zoom', true],
-		// ['@vuepress/notification', true],
+		['@vuepress/plugin-notification', true],
 		['@vuepress/google-analytics', {
 			ga: 'UA-45553284-5'
 		}],
+		// ['@dovyp/plugin-clipboard-copy', true],
 		['plugin-clipboard-copy', true],
 	],
 	// clientRootMixin: path.resolve( __dirname, 'mixin.js' ),
