@@ -1,4 +1,4 @@
-/* global SELECTOR */
+/* global COPY_SELECTOR */
 
 import './style.css'
 
@@ -17,11 +17,12 @@ export default {
 	methods: {
 		updateCopy() {
 			setTimeout( () => {
-				document.querySelectorAll( SELECTOR ).forEach( this.generateCopyButton )
+				document.querySelectorAll( COPY_SELECTOR ).forEach( this.generateCopyButton )
 			}, 1000 )
 		},
 		generateCopyButton: function( parent ) {
 			if ( parent.classList.contains( 'codecopy-enabled' ) ) return
+			console.log('here');
 			const copyElement = document.createElement( 'span' )
 			copyElement.className = 'code-copy'
 			copyElement.title = 'Click to Copy to Clipboard'
