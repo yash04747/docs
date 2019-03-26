@@ -139,8 +139,9 @@
 		props: ['field'],
 		data() {
 
-			var field_type = this._props.field;
 			var redux_field = JSON.parse(this.$slots.default[0].text);
+			var field_type = redux_field['type'];
+
 			var keys = Object.keys( redux_field['fields'] );
 
 			var to_return = {

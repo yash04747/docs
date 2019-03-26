@@ -13,23 +13,26 @@ The Text field accepts any form of text and optionally validates the text before
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`text`|Value identifying the field type.|
-|readonly|boolean|`false`|Sets the input field to be readonly or not.|
-|placeholder|string or array||Text to display in the input when a value is present.|
+|placeholder|string or array||Text to display inside the input when a value is not present.|
 |data|string|| See [`data` Argument below](#data-argument).|
+|autocomplete|boolean||If set to `false`, the autocomplete attribute will be set to `off`.|
+|readonly|string||If set to `true`, the readonly attribute will be set to `readonly`.|
 
 ::: tip Also See
 - [Default Field Object Arguments](../configuration/object-field.md#default-arguments)
+- [Using the `attributes` Argument](../configuration/argument-attributes.md)
+- [Using the `data` Argument](../configuration/argument-data.md)
 - [Using the `compiler` Argument](../configuration/argument-compiler.md)
 - [Using the `hints` Argument](../configuration/argument-hints.md)
 - [Using the `permissions` Argument](../configuration/argument-permissions.md)
 - [Using the `required` Argument](../configuration/argument-required.md)
 - [Using the `validate` Argument](../configuration/argument-validate.md)
-- [Using the `attributes` Argument](../configuration/argument-attributes.md)
 :::
 
 ## `data` Argument
-This argument serves two purposes with the text field. First, it works like any other [data argument](../configuration/argument-data.md) in Redux. Second,
-it allows a user to pass single array or a multi-dimensional array to output a number of text fields.
+This argument serves two purposes with the text field. First, it works like any other [data](../configuration/argument-data.md) argument.
+Meaning it can populate with WordPress data. Second, it allows a user to pass single array or a multi-dimensional array 
+to output a number of text fields.
 
 ::: danger TAKE NOTE
 The "value" portion of the data array will also be set as the default value if the field has no value stored. The key 
@@ -41,7 +44,7 @@ portion will become the ID by which it is stored under the field ID.
 When defined with an array, the placeholder argument can also be used as long as the IDs match between the `data` and `placeholder` arrays.
 :::
 
-### Simple `data` Array
+#### Simple `data` Array
 
 <span style="display:block;text-align:center">![](./img/text-simple.png)</span>
 
@@ -57,22 +60,15 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 
-### Mixed `data` Array
-<span style="display:block;text-align:center">![](./img/text-mixed.png)</span>
-
+**Example Output**
 ```php
-Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
-    'id' => 'text_field',
-    'title' => 'Field Title',
-    'type' => 'text',
-    'data' => array(
-        'box1' => 'Box 1 Title',
-        'box2',
-    )
-) );
+array(
+    'box1',
+    'box2'
+)
 ```
 
-### Multi-Dimensional Array
+#### Multi-Dimensional Array
 <span style="display:block;text-align:center">![](./img/text-multidimensional.png)</span>
 ```php
 Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
@@ -84,6 +80,14 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
         'box2' => 'Box 2 Title',
     )
 ) );
+```
+
+**Example Output**
+```php
+array(
+    'box1' => 'Box 1 Title',
+    'box2' => 'Box 2 Title' 
+)
 ```
 
 ## Example Declaration
@@ -174,10 +178,14 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
 </builder>
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 
+your [opt_name](../configuration/arguments-global.md#opt-name) argument.
 
 ```php
-global $redux_demo;
+// Using the Redux API
+echo Redux::get_option( 'OPT_NAME', 'FIELD_ID', 'DEFAULT_VALUE' );
 
-echo 'Text value: ' . $redux_demo['opt-text'];
+// Using the global argment
+global $redux_demo; // Same as your opt_name
+echo $redux_demo['FIELD_ID'];
 ```
