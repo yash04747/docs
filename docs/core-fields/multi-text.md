@@ -29,11 +29,11 @@ Multi-Text field supports as many fields as one might need.  Adding and removin
 
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
-- [Using the `validate` Argument](../guide/using-the-validate-argument.md)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `validate` Argument](../configuration/argument-validate.md)
 :::
 
 ## Example Declaration

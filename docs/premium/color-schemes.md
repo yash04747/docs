@@ -48,11 +48,11 @@ Array of individual arrays that set the individual color pickers.  See 'Creatin
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
 :::
 
 ## Color Picker Options

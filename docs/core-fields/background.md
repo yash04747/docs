@@ -38,11 +38,11 @@ The Redux Background field offers unmatched features not found in any other opti
 |transparent|bool|true|Flag to display background color transparency checkbox.|
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
 :::
 
 

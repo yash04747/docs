@@ -4,7 +4,7 @@ title: "Argument: Permissions"
 
 ---
 
-# Using Permissions
+# Using the `permissions` Argument
 
 The `permissions` argument is useful for restricting access to certain [fields](./object-field.md) or [sections](object-section.md)
 that require a specified user role.  For example, if the options panel is set via [page_permissions](arguments-global.md#page-permissions)

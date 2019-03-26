@@ -4,7 +4,7 @@ title: "Argument: Output"
 
 ---
 
-# Using the Output Argument
+# Using the `output` Argument
 
 Using the output argument in fields that support it is a great way to generate dynamic CSS for those fields on the 
 front-end of your WordPress site.  Redux will take the values for those fields, generate the appropriate CSS selectors, 

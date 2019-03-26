@@ -92,10 +92,10 @@ array(
 |editor_options|array||Sets codemirror options like field mode, theme, addons, lint, autocomplete, complete on demand (Ctrl+Space).|
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
 :::
 
 ## Codemirror Editor Options

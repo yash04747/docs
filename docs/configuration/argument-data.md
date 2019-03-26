@@ -3,7 +3,7 @@ title: "Argument: Data"
 sidebarDepth: 2
 ---
 
-# Using the `Data` Argument
+# Using the `data` Argument
 
 The `data` argument allows Redux to populate the [field](object-field.md) using dynamic queries for things 
 like posts, pages, menus, categories, terms, etc. It automatically uses the correct WordPress function to retrieve each 

@@ -27,10 +27,10 @@ The Spinner field returns the value entered in its input box or via clicks on it
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
 :::
 
 ## Example Declaration

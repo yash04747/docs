@@ -28,9 +28,9 @@ The Checkbox field may be used to offer a single check option, or a group of mul
 
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
 :::
 
 ## Default Options

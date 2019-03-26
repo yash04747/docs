@@ -22,8 +22,8 @@ The Section field provides the ability to set any field below it with an indent.
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
 :::
 
 ::: tip

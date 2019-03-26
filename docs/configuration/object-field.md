@@ -12,18 +12,28 @@ default arguments.
 [[toc]]
 :::
 
-## Arguments
-|Name|Type|Description.|
-|--- |--- |--- |
-|id|string|The unique identifier of a field. MUST be unique to the [opt_name](./arguments-global.md#opt-name) except when used by the [metaboxes API](./metaboxes.md).|
-|type|string|Denotes the [field type](../core-fields/). If the field type does not exist a warning will be displayed.|
-|title|string|The title of the field that will be displayed.|
-|desc|string|Text to appear under the field title. HTML is permitted.|
-|class|string|Appends any number of classes to the field’s class attribute.|
-|permissions|string|String specifying the capability required to view the section.  See [Using Permissions](./argument-permissions.md).|
-|customizer_only|bool|A flag to set this field to [customizer_only](object-field.md#customizer-only) display. This argument will override the [customizer_only](object-field.md#customizer-only) setting at the [sections](object-section.md) level.|
-|output|bool|A flag to set all [enable CSS output](./argument-output.md) for any fields that support it.|
-|compiler|bool|A flag to set the [compiler hook](./argument-compiler.md) to fire if this field's value is changed. This can override the [compiler](./argument-compiler.md) setting at the [sections](object-section.md) level.|
+## Default Arguments
+|Name|Type|Required|Description.|
+|--- |--- |--- |--- |
+|id|string|True|The unique identifier of a field. MUST be unique to the [opt_name](./arguments-global.md#opt-name) except when used by the [metaboxes API](./metaboxes.md).|
+|type|string|True|Denotes the [field type](../core-fields/). If the field type does not exist a warning will be displayed.|
+|title|string||The title of the field that will be displayed.|
+|subtitle|string||Subtitle of the option placed beneath the title.|
+|desc|string||Text to appear under the field title. HTML is permitted.|
+|default|string||Default value for the field.|
+|class|string||Appends any number of classes to the field's class attribute.|
+|customizer_only|bool||A flag to set this field to [customizer_only](object-field.md#customizer-only) display. This argument will override the [customizer_only](object-field.md#customizer-only) setting at the [sections](object-section.md) level as well as the [global arguments](arguments-global.md#customizer-only) level.|
+|output|bool||A flag to set all [enable CSS output](argument-output.md) for any fields that support this argument.|
+|compiler|bool||A flag to set the [compiler hook](argument-compiler.md) to fire if this field's value is changed. This can override the [compiler](./argument-compiler.md) setting at the [sections](object-section.md) level.|
+|hints|bool||A flag to set the [hints](argument-hints.md) object that displays a animated window with more details about this field.|
+
+::: tip Also See
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `validate` Argument](../configuration/argument-validate.md)
+:::
 
 Fields are blocks of arrays that represent the individual options within a specific options panel, set via a [section](object-section.md) array. The [section](object-section.md) array contains an argument titled fields, which accepts an array, or several blocks of arrays, separated by commas.  This is where all field arrays are place.  A basic example is shown below. For specific examples, please consult the [sample-config.php](https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php) file that comes with the Redux package.
 

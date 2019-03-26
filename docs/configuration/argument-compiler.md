@@ -3,7 +3,7 @@ title: "Argument: Compiler"
 sidebarDepth: 2
 ---
 
-# Integrating a Compiler
+# Using the `compiler` Argument
 
 This article deals specifically with integrating a basic compiler hook for any field. For an in depth article on how to 
 use the compiler hook to dynamically generate a CSS file, please view the 

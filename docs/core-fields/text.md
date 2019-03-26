@@ -13,22 +13,78 @@ The Text field accepts any form of text and optionally validates the text before
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`text`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|default|string||String that appears in the text input.|
 |readonly|boolean|`false`|Sets the input field to be readonly or not.|
-|placeholder|string||Text to display in the input when n value is present.|
+|placeholder|string or array||Text to display in the input when a value is present.|
+|data|string|| See [`data` Argument below](#data-argument).|
 
 ::: tip Also See
-- [Using the `compiler` Arguments`](../guide/the-compiler-argument.md)
-- [Using the `hints` Argument](../guide/the-hints-argument.md)
-- [Using the `permissions` Argument](../guide/the-permissions-argument.md)
-- [Using the `required` Argument](../guide/using-the-required-argument.md)
-- [Using the `validate` Argument](../guide/using-the-validate-argument.md)
+- [Default Field Object Arguments](../configuration/object-field.md#default-arguments)
+- [Using the `compiler` Argument](../configuration/argument-compiler.md)
+- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `validate` Argument](../configuration/argument-validate.md)
+- [Using the `attributes` Argument](../configuration/argument-attributes.md)
 :::
+
+## `data` Argument
+This argument serves two purposes with the text field. First, it works like any other [data argument](../configuration/argument-data.md) in Redux. Second,
+it allows a user to pass single array or a multi-dimensional array to output a number of text fields.
+
+::: danger TAKE NOTE
+The "value" portion of the data array will also be set as the default value if the field has no value stored. The key 
+portion will become the ID by which it is stored under the field ID.
+:::
+
+
+::: tip USING WITH the <code>placeholder</code> Arg
+When defined with an array, the placeholder argument can also be used as long as the IDs match between the `data` and `placeholder` arrays.
+:::
+
+### Simple `data` Array
+
+<span style="display:block;text-align:center">![](./img/text-simple.png)</span>
+
+```php
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
+    'id' => 'text_field',
+    'title' => 'Field Title',
+    'type' => 'text',
+    'data' => array(
+        'box1',
+        'box2',
+    )
+) );
+```
+
+### Mixed `data` Array
+<span style="display:block;text-align:center">![](./img/text-mixed.png)</span>
+
+```php
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
+    'id' => 'text_field',
+    'title' => 'Field Title',
+    'type' => 'text',
+    'data' => array(
+        'box1' => 'Box 1 Title',
+        'box2',
+    )
+) );
+```
+
+### Multi-Dimensional Array
+<span style="display:block;text-align:center">![](./img/text-multidimensional.png)</span>
+```php
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
+    'id' => 'text_field',
+    'title' => 'Field Title',
+    'type' => 'text',
+    'data' => array(
+        'box1' => 'Box 1 Title',
+        'box2' => 'Box 2 Title',
+    )
+) );
+```
 
 ## Example Declaration
 <builder field="text">
