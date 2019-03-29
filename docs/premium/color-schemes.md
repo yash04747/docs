@@ -1,9 +1,5 @@
 # Color Schemes <Badge text="field" type="warn"/>
 
-::: danger DEPRECATED
-This extension has been deprecated.
-:::
-
 The Redux Color Schemes extension is a new way to take control over the color layout of your theme.  Instead of using 
 individual color pickers to design the color layout of your theme, set them all up in one simple, easy-to-use field!   
 In addition to choosing any color, this extension also offers a per color alpha channel, the option to select no color, 

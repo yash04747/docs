@@ -1,9 +1,5 @@
 # Date-Time Picker <Badge text="field" type="warn"/>
 
-::: danger DEPRECATED
-This extension has been deprecated.
-:::
-
 The Redux Date-Time Picker (DTP) extension is a new way to select dates and times for use in text fields.  The DTP 
 contains several modes based no how you would like to display time and date data.   Include all date-time info in one 
 text box?  No problem!  Split the time into its own text box?  No problem!  Have need to set ranges for dates or times?  

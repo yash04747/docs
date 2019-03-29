@@ -1,9 +1,5 @@
 # Google Maps <Badge text="field" type="warn"/>
 
-::: danger DEPRECATED
-This extension has been deprecated.
-:::
-
 The Redux Google Map extension offers users the ability to search for map locations via the Redux options panel using the Google Maps API.  Such an extension comes in very handy when outputting maps and markers on the front-end of theme pages, using latitude/longitude return values with the Google Maps API.
 
 <span style="display:block;text-align:center">![](./img/google_maps.png)</span>
