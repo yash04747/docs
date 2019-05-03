@@ -33,7 +33,7 @@ When using `required` with the section field, the required statement <strong>mus
 ## Example Declaration
 ```php
 // Begin the section
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
    'id' => 'section-start',
    'type' => 'section',
    'title' => __('Indented Options', 'redux-framework-demo'),
@@ -42,13 +42,13 @@ $fields = array(
 );
 
 // Other field arrays go here.
-$fields[] = array();
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array() );
 
 // End the section
-$fields[] = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'     => 'section-end',
     'type'   => 'section',
     'indent' => false,
-);
+) );
 ```
 

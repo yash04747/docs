@@ -37,7 +37,7 @@ API methods are provided to set, manipulate, and remove sections before they are
 There are two methods to set a section in Redux. The only difference between these two declarations is one is singular
 while the other is plural.
 
-### Redux::set_section()
+### Redux::setSection()
 
 Used to declare a single section cotaining [fields](object-field.md).
 
@@ -49,7 +49,7 @@ Used to declare a single section cotaining [fields](object-field.md).
 |replace|bool|If `true`, any section with this same ID will be replaced. If `false` (default), a varied section ID will be generated.|
 
 ```php
-Redux::set_section( 'OPT_NAME', array(
+Redux::setSection( 'OPT_NAME', array(
    'title'   => 'New Section',
    'icon'    => 'el-icon-cogs',
    'heading' => 'Expanded New Section Title',
@@ -75,7 +75,7 @@ same section_id, and then passing true for the replace variable. All data betwee
 you can only update values this way. If you wish to remove values, you will need to use remove_section outlined below.
 
 ```php
-Redux::set_section( 'OPT_NAME', array(
+Redux::setSection( 'OPT_NAME', array(
    'title'   => 'New Section',
    'icon'    => 'el-icon-cogs',
    'heading' => 'Expanded New Section Title',
@@ -90,7 +90,7 @@ Redux::set_section( 'OPT_NAME', array(
 ), true );
 ```
 
-### Redux::set_sections()
+### Redux::setSections()
 
 Similar to [::set_section()](#set-section), but used to set an unlimited number of sections containing [fields](object-field.md) at once.
 
@@ -104,7 +104,7 @@ This method allows for multiple sections to be added at once. Keep in mind that 
 seen below, but you should remember to wrap the section in an array.
 
 ```php
-Redux::set_section( 'OPT_NAME', array(
+Redux::setSection( 'OPT_NAME', array(
     array(
        'title'   => 'New Section',
        'icon'    => 'el-icon-cogs',
@@ -133,7 +133,7 @@ not exist. If you believe a section should exist, make sure you're not in an ear
 :::
 
 
-### Redux::get_section()
+### Redux::getSection()
 
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
@@ -145,7 +145,7 @@ Say you want to fetch a section object, you can easily do that. This may be usef
 array by ID. Returns `false` if the section cannot be identified.
 
 ```php
-$section = Redux::get_section( 'OPT_NAME', 'SECTION_ID' );
+$section = Redux::getSection( 'OPT_NAME', 'SECTION_ID' );
 ```
 
 
@@ -159,7 +159,7 @@ Now let's say you want to grab all sections for a given opt_name, you can do tha
 |`opt_name`|string|Your unique [opt_name](./arguments-global.md#opt-name)|
 
 ```php
-$sections = Redux::get_sections( 'OPT_NAME' );
+$sections = Redux::getSections( 'OPT_NAME' );
 ```
 
 ### Redux::remove_section()
@@ -174,8 +174,8 @@ $sections = Redux::get_sections( 'OPT_NAME' );
 This method allows you to remove a section by ID from Redux. It can be useful to update a field as follows:
 
 ```php
-$section = Redux::get_section( 'OPT_NAME', 'SECTION_ID' );
+$section = Redux::getSection( 'OPT_NAME', 'SECTION_ID' );
 $section['title'] = __( 'A New Section Title', 'redux-framework' );
-Redux::set_section( 'OPT_NAME', $section );
+Redux::setSection( 'OPT_NAME', $section );
 ```
 

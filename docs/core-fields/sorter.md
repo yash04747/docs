@@ -44,12 +44,10 @@ The first parameter of the value pair must be a string type representing a uniqu
 The key pair of `'placebo' => 'placebo'` IS NO LONGER REQUIRED.
 :::
 
-
-
 ## Example Declaration
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'      => 'homepage-blocks',
     'type'    => 'sorter',
     'title'   => 'Homepage Layout Manager',
@@ -64,7 +62,7 @@ $fields = array(
         'disabled' => array(
         )
     ),
-);
+) );
 ```
 
 ## Example Usage
@@ -85,7 +83,7 @@ This example is a real-use example in case you were looking to include a templat
 global $redux_options;
 $layout = $redux_options['home_blocks']['enabled'];
 
-if ($layout): foreach ($layout as $key=>$value) {
+if ( $layout ): foreach ( $layout as $key => $value ) {
     switch($key) {
         case 'slider': get_template_part( 'templates/content', 'slider' );
         break;

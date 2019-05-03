@@ -40,19 +40,19 @@ When using a single checkbox, the `default` argument accepts a string/int/bool r
 ## Example Declaration
 #### Single Checkbox
 ```php
-$field = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_checkbox',
     'type'     => 'checkbox',
     'title'    => __('Checkbox Option', 'redux-framework-demo'), 
     'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
     'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
     'default'  => '1'// 1 = on | 0 = off
-);
+) );
 ```
 
 #### Multi Checkbox
 ```php
-$field = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_multi_checkbox',
     'type'     => 'checkbox',
     'title'    => __('Multi Checkbox Option', 'redux-framework-demo'), 
@@ -72,7 +72,7 @@ $field = array(
         '2' => '0', 
         '3' => '0'
     )
-);
+) );
 ```
 
 

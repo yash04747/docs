@@ -31,13 +31,13 @@ With the Gallery field, create a new gallery of images by selecting existing ima
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-gallery',
     'type'     => 'gallery',
     'title'    => __('Add/Edit Gallery', 'redux-framework-demo'),
     'subtitle' => __('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'redux-framework-demo'),
     'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-);
+) );
 ```
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>

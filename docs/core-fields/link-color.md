@@ -49,19 +49,19 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 
 ## Example Declaration
 ```php
-    $fields = array(
-        'id'       => 'opt-link-color',
-        'type'     => 'link_color',
-        'title'    => __('Links Color Option', 'redux-framework-demo'),
-        'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
-        'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-        'default'  => array(
-            'regular'  => '#1e73be', // blue
-            'hover'    => '#dd3333', // red
-            'active'   => '#8224e3',  // purple
-            'visited'  => '#8224e3',  // purple
-        )
-    );
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id'       => 'opt-link-color',
+    'type'     => 'link_color',
+    'title'    => __('Links Color Option', 'redux-framework-demo'),
+    'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'default'  => array(
+        'regular'  => '#1e73be', // blue
+        'hover'    => '#dd3333', // red
+        'active'   => '#8224e3',  // purple
+        'visited'  => '#8224e3',  // purple
+    )
+) );
 ```
 
 ## Example Usage

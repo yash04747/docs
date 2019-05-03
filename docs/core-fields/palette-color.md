@@ -36,7 +36,7 @@ Each palette in the palettes argument is a key/pair array that defines each indi
 
 ## Example Declaration
 ```php
-Redux::set_section( $opt_name, array(
+Redux::setSection( 'OPT_NAME', array(
     'title'      => __( 'Palette Colors', 'redux-framework-demo' ),
     'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/palette-color/" target="_blank">docs.reduxframework.com/core/fields/palette-color/</a>',
     'id'         => 'color-palette',

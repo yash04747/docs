@@ -34,7 +34,7 @@ The Select Image field offers the ability to populate a drop-down field with an 
 
 ## Example Declaration
 ```php
-$fields[] = array( 
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-select-image',
     'type'     => 'select_image',
     'title'    => __('Select Image', 'redux-framework-demo'),
@@ -51,7 +51,7 @@ $fields[] = array(
         )
     ),
     'default'  => path_to_img_1,
-);
+) );
 ```
 
 ## Example Usage

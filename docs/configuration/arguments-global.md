@@ -7,7 +7,7 @@ title: Arguments Reference
 Redux has a large amount of arguments. The framework instance itself has arguments, each field has its own arguments.
 
 ::: tip
-For an example of how to set global arguments, see the [Redux API Redux::set_args()](./redux-api.md#Redux::set_args()) documentation.
+For an example of how to set global arguments, see the [Redux API Redux::setArgs()](./redux-api.md#Redux::setArgs()) documentation.
 :::
 
 ::: warning Global arguments in alphabetical order
@@ -153,7 +153,7 @@ Alternatively you can set the global arg `help_sidebar` in this manner to produc
 
 ```php
 $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
-Redux::set_args( $opt_name, array( 'help_sidebar' => $content ) );
+Redux::setArgs( $opt_name, array( 'help_sidebar' => $content ) );
 ```
 
 ::: warning Warning Redux 3.x Users
@@ -192,7 +192,7 @@ Redux::set_help_tab( $opt_name, array(
 Alternatively you can set the global arg `help_tabs` in this manner to produce the same result.
 
 ```php
-Redux::set_args( $opt_name, array( 'help_tabs' => array(
+Redux::setArgs( $opt_name, array( 'help_tabs' => array(
   array(
     'id'      => 'redux-help-tab-1',
     'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),

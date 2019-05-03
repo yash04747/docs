@@ -58,7 +58,7 @@ When specifying your own units array, it will override the `units-extended` argu
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'             => 'opt-spacing',
     'type'           => 'spacing',
     'output'         => array('.site-header'),
@@ -75,7 +75,7 @@ $fields = array(
         'margin-left'    => '4px',
         'units'          => 'em', 
     )
-);
+) );
 ```
 
 ## Example Usage

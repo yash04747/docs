@@ -42,14 +42,14 @@ To set the transparency checkbox by default, use the string `transparent` in pla
 ## Example Declaration
 
 ```php
-$field = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-color',
     'type'     => 'color',
     'title'    => __('Body Background Color', 'redux-framework-demo'), 
     'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
     'default'  => '#FFFFFF',
     'validate' => 'color',
-);
+) );
 ```
 
 ## Example Usage

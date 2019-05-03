@@ -36,11 +36,11 @@ When using the Info field with `required`, the field cannot be hidden by default
 <span style="display:block;text-align:center">![](./img/info_normal.png)</span>
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'   => 'info_normal',
     'type' => 'info',
     'desc' => __('This is the info field, if you want to break sections up.', 'redux-framework-demo')
-);
+) );
 ```
 
 #### Warning Style
@@ -48,13 +48,13 @@ $fields = array(
 <span style="display:block;text-align:center">![](./img/info_warning.png)</span>
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'info_warning',
     'type'  => 'info',
     'title' => __('Danger, Will Robinson!', 'redux-framework-demo'),
     'style' => 'warning',
     'desc'  => __('This is an info field with the warning style applied and a header.', 'redux-framework-demo')
-);
+) );
 ```
 
 #### Success Style
@@ -62,27 +62,27 @@ $fields = array(
 <span style="display:block;text-align:center">![](./img/info_success.png)</span>
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'info_success',
     'type'  => 'info',
     'style' => 'success',
     'title' => __('Success!', 'redux-framework-demo'),
     'icon'  => 'el-icon-info-sign',
     'desc'  => __( 'This is an info field with the success style applied, a header and an icon.', 'redux-framework-demo')
-);
+) );
 ```
 
 #### Critical Style
 <span style="display:block;text-align:center">![](./img/info_critical.png)</span>
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id' => 'info_critical',
     'type' => 'info',
     'style' => 'critical',
     'icon' => 'el-icon-info-sign',
     'title' => __('This is a title.', 'redux-framework-demo'),
     'desc' => __('This is an info field with the critical style applied, a header and an icon.', 'redux-framework-demo')
-);
+) );
 ```
 

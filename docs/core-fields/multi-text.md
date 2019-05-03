@@ -39,7 +39,7 @@ Multi-Text field supports as many fields as one might need.  Adding and removin
 ## Example Declaration
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'=>'multi-text',
     'type' => 'multi_text',
     'title' => __('Multi Text Option - Color Validated', 'redux-framework-demo'),
@@ -47,7 +47,7 @@ $fields = array(
     'subtitle' => __('If you enter an invalid color it will be removed. Try using the text "blue" as a color.  ;)', 'redux-framework-demo'),
     'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo')
     ),
-);
+) );
 ```
 
 ## Example Usage

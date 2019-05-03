@@ -45,18 +45,18 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 ## Example Declaration
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-slides',
     'type'        => 'slides',
     'title'       => __('Slides Options', 'redux-framework-demo'),
     'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
     'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo')
     'placeholder' => array(
-        'title'           => __('This is a title', 'redux-framework-demo'),
-        'description'     => __('Description Here', 'redux-framework-demo'),
-        'url'             => __('Give us a link!', 'redux-framework-demo'),
+        'title'       => __('This is a title', 'redux-framework-demo'),
+        'description' => __('Description Here', 'redux-framework-demo'),
+        'url'         => __('Give us a link!', 'redux-framework-demo'),
     ),
-);
+) );
 ```
 
 ## Example Usage
@@ -69,7 +69,7 @@ Redux does NOT save blank slides to the database.  This means on the initial loa
 ```php
 global $redux_demo;
 
-if (isset($redux_demo['opt-slides']) &amp;&amp; !empty($redux_demo['opt-slides'])) {
+if ( isset( $redux_demo['opt-slides'] ) && !empty( $redux_demo['opt-slides'] ) ) {
     echo 'Slide 1 Title: '         . $redux_demo['opt-slides'][0]['title'];
     echo 'Slide 1 Description: '   . $redux_demo['opt-slides'][0]['description'];
     echo 'Slide 1 URL: '           . $redux_demo['opt-slides'][0]['url'];

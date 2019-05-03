@@ -79,7 +79,7 @@ The Redux Typography field in second-to-none when it comes to framework typograp
 ## Example Declaration
 
 ```php
-$fields = array(
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
     'id'          => 'opt-typography',
     'type'        => 'typography', 
     'title'       => __('Typography', 'redux-framework-demo'),
@@ -96,7 +96,7 @@ $fields = array(
         'font-size'   => '33px', 
         'line-height' => '40'
     ),
-);
+) );
 ```
 
 ## Example Usage

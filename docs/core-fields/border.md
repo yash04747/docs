@@ -57,7 +57,7 @@ Note:  It is only necessary to set the `border-width` default when the `all` ar
 
 ## Example Declaration
 ```php
-$fields = array( 
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'header-border',
     'type'     => 'border',
     'title'    => __('Header Border Option', 'redux-framework-demo'),
@@ -72,7 +72,7 @@ $fields = array(
         'border-bottom' => '3px', 
         'border-left'   => '3px'
     )
-);
+) );
 ```
 
 ## Example Usage

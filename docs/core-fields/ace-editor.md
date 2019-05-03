@@ -37,7 +37,7 @@ Array containing the `content` and optional `title` arguments for the hint toolt
 ## Example Declaration
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'css_editor',
     'type'     => 'ace_editor',
     'title'    => __('CSS Code', 'redux-framework-demo'),
@@ -46,7 +46,7 @@ $fields = array(
     'theme'    => 'monokai',
     'desc'     => 'Possible modes can be found at http://ace.c9.io/.',
     'default'  => "#header{\nmargin: 0 auto;\n}"
-);
+) );
 ```
 
 ## Example Usage

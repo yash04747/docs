@@ -51,7 +51,7 @@ The Editor field offers WYSIWYG editing capability, using the same editing inter
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'               => 'editor-text',
     'type'             => 'editor',
     'title'            => __('Editor Text', 'redux-framework-demo'), 
@@ -61,7 +61,7 @@ $fields = array(
         'teeny'            => true,
         'textarea_rows'    => 10
     )
-);
+) );
 ```
 
 ## Example Usage

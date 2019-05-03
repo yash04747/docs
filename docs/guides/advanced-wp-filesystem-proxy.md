@@ -40,7 +40,7 @@ object and unzip. To do so, pass a string or int: `0644` as this argument value.
 Creates a directory. It will even make multiple children directories even it if doesn't exist.
 
 ```php
-$redux = Redux::get_instance('OPT_NAME'); // TODO - Use your opt_name
+$redux = Redux::get_instance( 'OPT_NAME' ); // TODO - Use your opt_name
 $path = "THE_PATH"; // TODO - Replace with path
 if ( ! is_dir( $path ) ) {
   $redux->filesystem->execute( "mkdir", $path );

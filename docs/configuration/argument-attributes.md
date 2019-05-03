@@ -13,7 +13,7 @@ text field into a password field, or anything else you can think of.
 ## Example Usage
 
 ```php
-Redux::set_field( 'redux_demo', 'SECTION_ID', array(
+Redux::setField( 'redux_demo', 'SECTION_ID', array(
     'id'   => 'field_id',
     'type' => 'text',
     'attributes'       => array(

@@ -40,9 +40,9 @@ We hope you'll customize our examples and adapt them to suit your needs.
         'customizer'           => true,
     );
 
-    Redux::set_args( $opt_name, $args );
+    Redux::setArgs( $opt_name, $args );
 
-    Redux::set_section( $opt_name, array(
+    Redux::setSection( $opt_name, array(
         'title'  => esc_html__( 'Basic Field', 'redux-framework-demo' ),
         'id'     => 'basic',
         'desc'   => esc_html__( 'Basic field with no subsections.', 'redux-framework-demo' ),

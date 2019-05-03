@@ -70,7 +70,7 @@ The Redux Background field offers unmatched features not found in any other opti
 
 ## Example Declaration
 ```php
-$fields[] = array(         
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(         
     'id'       => 'opt-background',
     'type'     => 'background',
     'title'    => __('Body Background', 'redux-framework-demo'),
@@ -79,7 +79,7 @@ $fields[] = array(
     'default'  => array(
         'background-color' => '#1e73be',
     )
-);
+) );
 ```
 
 ### Example Usage

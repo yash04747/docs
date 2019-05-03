@@ -43,65 +43,93 @@ The Redux Slider Field offers a great array features for just about every need.Â
 When setting the `resolution` argument to a floating point value, it will also be necessary to set the `step` argument to a floating point for values after the decimal point to change value. Not doing so will result in the value to the left of the decimal changing value upon slide.
 :::
 
-## Example Declaration
+## Example Declaration(s) 
+
+#### Default
 ```php
-$fields = array(
-    array(
-        'id'        => 'opt-slider-label',
-        'type'      => 'slider',
-        'title'     => __('Slider Example 1', 'redux-framework-demo'),
-        'subtitle'  => __('This slider displays the value as a label.', 'redux-framework-demo'),
-        'desc'      => __('Slider description. Min: 1, max: 500, step: 1, default value: 250', 'redux-framework-demo'),
-        "default"   => 250,
-        "min"       => 1,
-        "step"      => 1,
-        "max"       => 500,
-        'display_value' => 'label'
-    ),
-    array(
-        'id' => 'opt-slider-text',
-        'type' => 'slider',
-        'title' => __('Slider Example 2 with Steps (5)', 'redux-framework-demo'),
-        'subtitle' => __('This example displays the value in a text box', 'redux-framework-demo'),
-        'desc' => __('Slider description. Min: 0, max: 300, step: 5, default value: 75', 'redux-framework-demo'),
-        "default" => 75,
-        "min" => 0,
-        "step" => 5,
-        "max" => 300,
-        'display_value' => 'text'
-    ),
-    array(
-        'id' => 'opt-slider-select',
-        'type' => 'slider',
-        'title' => __('Slider Example 3 with two sliders', 'redux-framework-demo'),
-        'subtitle' => __('This example displays the values in select boxes', 'redux-framework-demo'),
-        'desc' => __('Slider description. Min: 0, max: 500, step: 5, slider 1 default value: 100, slider 2 default value: 300', 'redux-framework-demo'),
-        "default" => array(
-            1 => 100,
-            2 => 300,
-        ),
-        "min" => 0,
-        "step" => 5,
-        "max" => "500",
-        'display_value' => 'select',
-        'handles' => 2,
-    ),
-    array(
-        'id' => 'opt-slider-float',
-        'type' => 'slider',
-        'title' => __('Slider Example 4 with float values', 'redux-framework-demo'),
-        'subtitle' => __('This example displays float values', 'redux-framework-demo'),
-        'desc' => __('Slider description. Min: 0, max: 1, step: .1, default value: .5', 'redux-framework-demo'),
-        "default" => .5,
-        "min" => 0,
-        "step" => .1,
-        "max" => 1,
-        'resolution' => 0.1,
-        'display_value' => 'text'
-    )
-);
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id'        => 'opt-slider-label',
+    'type'      => 'slider',
+    'title'     => __('Slider Example 1', 'redux-framework-demo'),
+    'subtitle'  => __('This slider displays the value as a label.', 'redux-framework-demo'),
+    'desc'      => __('Slider description. Min: 1, max: 500, step: 1, default value: 250', 'redux-framework-demo'),
+    "default"   => 250,
+    "min"       => 1,
+    "step"      => 1,
+    "max"       => 500,
+    'display_value' => 'label'
+) );
 ```
 
+#### Steps
+```php
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id' => 'opt-slider-text',
+    'type' => 'slider',
+    'title' => __('Slider Example 2 with Steps (5)', 'redux-framework-demo'),
+    'subtitle' => __('This example displays the value in a text box', 'redux-framework-demo'),
+    'desc' => __('Slider description. Min: 0, max: 300, step: 5, default value: 75', 'redux-framework-demo'),
+    "default" => 75,
+    "min" => 0,
+    "step" => 5,
+    "max" => 300,
+    'display_value' => 'text'    
+) );
+```
+
+#### Optional Display Text
+```php
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id' => 'opt-slider-text',
+    'type' => 'slider',
+    'title' => __('Slider Example 2 with Steps (5)', 'redux-framework-demo'),
+    'subtitle' => __('This example displays the value in a text box', 'redux-framework-demo'),
+    'desc' => __('Slider description. Min: 0, max: 300, step: 5, default value: 75', 'redux-framework-demo'),
+    "default" => 75,
+    "min" => 0,
+    "step" => 5,
+    "max" => 300,
+    'display_value' => 'text'
+) );
+```
+
+##### Two Sliders
+```php
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id' => 'opt-slider-select',
+    'type' => 'slider',
+    'title' => __('Slider Example 3 with two sliders', 'redux-framework-demo'),
+    'subtitle' => __('This example displays the values in select boxes', 'redux-framework-demo'),
+    'desc' => __('Slider description. Min: 0, max: 500, step: 5, slider 1 default value: 100, slider 2 default value: 300', 'redux-framework-demo'),
+    "default" => array(
+        1 => 100,
+        2 => 300,
+    ),
+    "min" => 0,
+    "step" => 5,
+    "max" => "500",
+    'display_value' => 'select',
+    'handles' => 2, 
+) );
+```
+
+#### Decimal Steps
+```php
+array(
+    'id' => 'opt-slider-float',
+    'type' => 'slider',
+    'title' => __('Slider Example 4 with float values', 'redux-framework-demo'),
+    'subtitle' => __('This example displays float values', 'redux-framework-demo'),
+    'desc' => __('Slider description. Min: 0, max: 1, step: .1, default value: .5', 'redux-framework-demo'),
+    "default" => .5,
+    "min" => 0,
+    "step" => .1,
+    "max" => 1,
+    'resolution' => 0.1,
+    'display_value' => 'text'
+) );
+
+```
 ### Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
 

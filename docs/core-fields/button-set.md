@@ -40,7 +40,7 @@ The value of the default option will depend on whether or not the `multi` argume
 #### Single select
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'button-set-single',
     'type'     => 'button_set',
     'title'    => __('Button Set, Single', 'redux-framework-demo'),
@@ -53,12 +53,12 @@ $fields = array(
         '3' => 'Opt 3'
      ), 
     'default' => '2'
-);
+) );
 ```
 
 #### Multi select
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'button-set-multi',
     'type'     => 'button_set',
     'title'    => __('Button Set, Single', 'redux-framework-demo'),
@@ -72,7 +72,7 @@ $fields = array(
         '3' => 'Opt 3'
      ), 
     'default' => array('2', '3'),
-);
+) );
 ```
 
 ## Example Usage

@@ -26,7 +26,7 @@ You'll need to define your own unique variable name for your theme or plugin.
 ```php
 $opt_name = "OPT_NAME"; // TODO - Replace with your opt_name
 $theme = wp_get_theme();
-Redux::set_args( $opt_name, array(
+Redux::setArgs( $opt_name, array(
     'display_name'         => $theme->get( 'Name' ),
     'display_version'      => $theme->get( 'Version' )
 ) );
@@ -37,41 +37,41 @@ Lets say we want to translate three fields. To make it more interesting we'll de
 
 **A text field**
 ```php
-array(
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       => 'my-sample-textfield',
     'type'     => 'text',
     'title'    => esc_html__( 'Sample Text Field', 'my-text-domain' ),
     'subtitle' => esc_html__( 'This is the subtitle.', 'my-text-domain' ),
     'desc'     => esc_html__( 'This is the description.', 'my-text-domain' ),
     'default'  => 'Sample Text'
-)
+) );
 ```    
 
 **A textarea with editor**
 ```php
-array(
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       => 'my-sample-textarea',
     'type'     => 'editor',
     'title'    => esc_html__( 'Sample Text Area', 'my-text-domain' ),
     'subtitle' => esc_html__( 'Write here your copyright text!', 'my-text-domain' ),
     'default'  => 'Powered by Redux Framework.',
-),    
+) );    
 ```
 
 **A sortable text field array**
 ```php
-array(
-        'id'       => 'my-sample-sortable-textfield',
-        'type'     => 'sortable',
-        'title'    => esc_html__( 'Sample Sortable Text Option', 'my-text-domain' ),
-        'subtitle' => esc_html__( 'This is a subtitle.', 'my-text-domain' ),
-        'desc'     => esc_html__( 'This is the description.', 'my-text-domain' ),
-        'options'  => array(
-            'si1' => 'Item 1',
-            'si2' => 'Item 2',
-            'si3' => 'Item 3',
-        )
-    ),
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
+    'id'       => 'my-sample-sortable-textfield',
+    'type'     => 'sortable',
+    'title'    => esc_html__( 'Sample Sortable Text Option', 'my-text-domain' ),
+    'subtitle' => esc_html__( 'This is a subtitle.', 'my-text-domain' ),
+    'desc'     => esc_html__( 'This is the description.', 'my-text-domain' ),
+    'options'  => array(
+        'si1' => 'Item 1',
+        'si2' => 'Item 2',
+        'si3' => 'Item 3',
+    )
+) );
 ```
 
 To summarize, in our scenario we have:

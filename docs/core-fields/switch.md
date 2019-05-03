@@ -34,13 +34,13 @@ The Switch field sets a true or false value based on the selection.  Users may 
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-switch',
     'type'     => 'switch', 
     'title'    => __('Switch On', 'redux-framework-demo'),
     'subtitle' => __('Look, it\'s on!', 'redux-framework-demo'),
     'default'  => true,
-);
+) );
 ```
 
 ## Example Usage

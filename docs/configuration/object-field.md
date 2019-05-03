@@ -44,11 +44,11 @@ There are two methods to set a field in Redux. The only difference between these
 while the other is plural.
 
 ::: warning
-If the section you are attaching to doesn't exist, that field will never show. It's much easier to use [Redux::set_section()](object-section.md#set-section) instead
+If the section you are attaching to doesn't exist, that field will never show. It's much easier to use [Redux::setSection()](object-section.md#set-section) instead
 to define a [section](object-section.md) with embedded fields all at once.
 :::
 
-### Redux::set_field()
+### Redux::setField()
 
 Used to declare a single field and attach to an existing [section](object-section.md).
 
@@ -60,14 +60,14 @@ Used to declare a single field and attach to an existing [section](object-sectio
 |section_id|string|Section ID to add this field to. Must previously exist.|
 
 ```php
-Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'opt-text',   
     'type'  => 'text',
     'title' => 'A sample text box',
 ) );
 ```
 
-### Redux::set_fields()
+### Redux::setFields()
 
 Similar to [::set_field()](#set-field), but used to set an unlimited number of fields at once.
 
@@ -82,7 +82,7 @@ This method allows for multiple sections to be added at once. Keep in mind that 
 seen below, but you should remember to wrap the section in an array.
 
 ```php
-Redux::set_fields( 'OPT_NAME', 'SECTION_ID', array(
+Redux::setFields( 'OPT_NAME', 'SECTION_ID', array(
     array(
         'id'    => 'opt-text1',   
         'type'  => 'text',
@@ -150,6 +150,6 @@ This method allows you to remove a section by ID from Redux. It can be useful to
 ```php
 $section = Redux::get_section( 'OPT_NAME', 'SECTION_ID' );
 $section['title'] = __( 'A New Section Title', 'redux-framework' );
-Redux::set_section( 'OPT_NAME', $section );
+Redux::setSection( 'OPT_NAME', $section );
 ```
 

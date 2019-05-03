@@ -1,3 +1,7 @@
+---
+title: "Redux Documentation"
+---
+
 # Redux.io Documentation
 
 Documentation for Redux.io, the world's most powerful and widely use WordPress input framework.

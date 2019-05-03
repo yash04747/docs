@@ -51,7 +51,7 @@ Select from an array of images as radio buttons.
 #### Image Select Layout
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-layout',
     'type'     => 'image_select',
     'title'    => __('Main Layout', 'redux-framework-demo'), 
@@ -83,13 +83,13 @@ $fields = array(
         )
     ),
     'default' => '2'
-);
+) );
 ```
 
 #### Image Select Preset
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-presets',
     'type'     => 'image_select', 
     'presets'  => true,
@@ -115,7 +115,7 @@ $fields = array(
             'presets' => '{"slider1":"1", "slider2":"0", "switch-on":"0"}'
         ),
     ),
-);
+) );
 ```
 
 ## Example Usage

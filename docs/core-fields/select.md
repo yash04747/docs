@@ -40,27 +40,27 @@ The Select field displays information in a drop-down field in both single and mu
 ![](https://f.cloud.github.com/assets/3412363/1569797/d77655e8-50d4-11e3-8580-cf1eba05ea7e.png)
 
 ```php
-    $fields = array(
-        'id'       => 'opt-select',
-        'type'     => 'select',
-        'title'    => __('Select Option', 'redux-framework-demo'), 
-        'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-        'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-        // Must provide key => value pairs for select options
-        'options'  => array(
-            '1' => 'Opt 1',
-            '2' => 'Opt 2',
-            '3' => 'Opt 3'
-        ),
-        'default'  => '2',
-    );
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id'       => 'opt-select',
+    'type'     => 'select',
+    'title'    => __('Select Option', 'redux-framework-demo'), 
+    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
+    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    // Must provide key => value pairs for select options
+    'options'  => array(
+        '1' => 'Opt 1',
+        '2' => 'Opt 2',
+        '3' => 'Opt 3'
+    ),
+    'default'  => '2',
+) );
 ```
 
 ## Multi Select
 ![](https://f.cloud.github.com/assets/3412363/1569753/520e4200-50d2-11e3-85e4-7807855811a0.png)
 
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-multi-select',
     'type'     => 'select',
     'multi'    => true,
@@ -73,7 +73,7 @@ $fields = array(
         '2' => 'Opt 2',
         '3' => 'Opt 3'),
     'default'  => array('2','3')
-);
+) );
 ```
 
 ## Example Usage

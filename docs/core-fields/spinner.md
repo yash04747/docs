@@ -35,7 +35,7 @@ The Spinner field returns the value entered in its input box or via clicks on it
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-spinner',
     'type'     => 'spinner', 
     'title'    => __('JQuery UI Spinner Example 1', 'redux-framework-demo'),
@@ -45,7 +45,7 @@ $fields = array(
     'min'      => '20',
     'step'     => '20',
     'max'      => '100',
-);
+) );
 ```
 
 ## Example Usage

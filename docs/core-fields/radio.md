@@ -35,7 +35,7 @@ The Radio field is an excellent way to present a set of choices for users to sel
 
 ### Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-radio',
     'type'     => 'radio',
     'title'    => __('Radio Option', 'redux-framework-demo'), 
@@ -48,7 +48,7 @@ $fields = array(
         '3' => 'Opt 3'
     ),
     'default' => '2'
-);
+) );
 ```
 
 ### Example Usage

@@ -28,10 +28,10 @@ When using the Divide field with `required`, the divider cannot be hidden by def
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'   =>'divider_1',
     'desc' => __('This is the description field.', 'redux-framework-demo'),
     'type' => 'divide'
-);
+) );
 ```
 

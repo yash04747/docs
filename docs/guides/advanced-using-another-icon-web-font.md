@@ -29,13 +29,14 @@ add_action( 'redux/page/' . $opt_name . '/enqueue', 'new_icon_font' );
 Now to use the added icons, you can do the following for a [section](../configuration/object-section.md) declaration:
 
 ```php
-array(
-    'title' => esc_html__('Home Settings', 'redux-framework-demo'),
+Redux::addSection( 'OPT_NAME', array( 
+    'id'     => 'icon_section',
+    'title'  => esc_html__('Home Settings', 'redux-framework-demo'),
     'header' => esc_html__('Welcome to the Redux Framework Demo', 'redux-framework-demo'),
-    'desc' => esc_html__('Description goes here.', 'redux-framework-demo'),
-    'icon' => 'fa fa-bell-o',
+    'desc'   => esc_html__('Description goes here.', 'redux-framework-demo'),
+    'icon'   => 'fa fa-bell-o',
     'fields' => array()
-)
+) );
 ```
 
 That's it! You're good to go!

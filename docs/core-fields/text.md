@@ -71,7 +71,7 @@ array(
 #### Multi-Dimensional Array
 <span style="display:block;text-align:center">![](./img/text-multidimensional.png)</span>
 ```php
-Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
     'id' => 'text_field',
     'title' => 'Field Title',
     'type' => 'text',

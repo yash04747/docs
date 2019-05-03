@@ -36,7 +36,7 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 ## Example Declaration
 ```php
 // Checkbox mode
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'text-sortable',
     'type'     => 'sortable',
     'title'    => __('Sortable Text Option', 'redux-framework-demo'),
@@ -54,10 +54,13 @@ $fields = array(
         '2' => true,
         '3' => false
     ),
-);
+) );
+```
 
-// Text mode.
-$fields = array(
+#### Text mode
+```php
+
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'text-sortable',
     'type'     => 'sortable',
     'title'    => __('Sortable Text Option', 'redux-framework-demo'),
@@ -69,7 +72,7 @@ $fields = array(
          '2' => 'Number two here',
          '3' => 'Three strikes, yer out!',
     ),
-);
+) );
 ```
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change $redux_demo to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">opt_name argument.</a>

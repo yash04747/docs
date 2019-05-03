@@ -37,13 +37,39 @@ The Raw field provides the ability to output raw HTML directly into the options 
 
 ## Example Declaration
 ```php
-$fields = array( 
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-raw',
     'type'     => 'raw',
     'title'    => __('Raw output', 'redux-framework-demo'),
     'subtitle' => __('Subtitle text goes here.', 'redux-framework-demo'),
     'desc'     => __('This is the description field for additional info.', 'redux-framework-demo'),
     'content'  => file_get_contents(dirname(__FILE__) . '/myfile.txt')
-);
+) );
 ```
 
+## Example Declaration with PHP Output
+
+Sometimes you want to do more than just a flat file with raw, and acutally output the results of some PHP code. You
+can easily do that with this approach.
+
+```php
+ob_start( ); // This tells PHP to start putting all output in a buffer.
+echo "HERE I AM";
+?>
+Now we're in HTML mode! Everything here will be saved as text,
+including line breaks!
+<?php // And back to PHP mode
+// Don't forget to use a full php here, the shortcode `<?` will get you in trouble!!!
+
+echo "Now i'm here"; 
+$output = ob_get_clean(); // Now everything is in our variable.
+
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array( 
+    'id'       => 'opt-raw',
+    'type'     => 'raw',
+    'title'    => __('Raw output', 'redux-framework-demo'),
+    'subtitle' => __('Subtitle text goes here.', 'redux-framework-demo'),
+    'desc'     => __('This is the description field for additional info.', 'redux-framework-demo'),
+    'content'  => $output // Now let's set that in the raw field.
+) );
+```

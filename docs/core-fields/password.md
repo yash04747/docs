@@ -47,7 +47,7 @@ The Password field, which can be used as a login with password could be used as 
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-password',
     'type'        => 'password',
     'username'    => true,
@@ -56,7 +56,7 @@ $fields = array(
         'username'   => 'Enter your Username'
         'password'   => 'Enter your Password'
     )
-);
+) );
 ```
 
 ## Example Usage

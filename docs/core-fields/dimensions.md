@@ -51,7 +51,7 @@ The `name` properties also serve as the input placeholder text when no value is 
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_dimensions',
     'type'     => 'dimensions',
     'units'    => array('em','px','%'),
@@ -62,7 +62,7 @@ $fields = array(
         'Width'   => '200', 
         'Height'  => '100'
     ),
-);
+) );
 ```
 
 ## Example Usage

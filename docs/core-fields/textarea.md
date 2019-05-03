@@ -29,7 +29,7 @@ The Textarea field accepts any form of multi-line string input, including custom
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       =>'opt-textarea',
     'type'     => 'textarea',
     'title'    => __('Textarea Option - HTML Validated Custom', 'redux-framework-demo'), 

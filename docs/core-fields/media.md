@@ -55,7 +55,7 @@ The media field is an adaption for a core WordPress feature.
 
 ## Example Declaration
 ```php
-$fields = array(
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-media',
     'type'     => 'media', 
     'url'      => true,
@@ -65,7 +65,7 @@ $fields = array(
     'default'  => array(
         'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
     ),
-);
+) );
 ```
 
 ## Example Usage
