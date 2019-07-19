@@ -59,8 +59,6 @@ module.exports = ctx => ({
             serviceWorker: true,
             updatePopup: false
         }],
-        // ['@vuepress/medium-zoom', true],
-
         ['vuepress-plugin-zooming', {
             // selector for images that you want to be zoomable
             // default: '.content img'
@@ -82,8 +80,6 @@ module.exports = ctx => ({
         ['@vuepress/google-analytics', {
             ga: 'UA-45553284-5'
         }],
-        ['@dovyp/plugin-clipboard-copy', true],
-
         ['copyright', {
             // noCopy: true,   // the selected text will be uncopiable
             minLength: 100, // if its length is greater than 100
@@ -97,7 +93,8 @@ module.exports = ctx => ({
             additionalArgs: '--no-merge',
             onlyFirstAndLastCommit: true,
         }],
-        // ['plugin-clipboard-copy', true],
+        ['@dovyp/vuepress-plugin-clipboard-copy', true],
+
     ],
     // clientRootMixin: path.resolve( __dirname, 'mixin.js' ),
     extendMarkdown(md) {

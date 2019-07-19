@@ -5,23 +5,22 @@
   },
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "next",
-    "@vuepress/plugin-back-to-top": "next",
-    "vuepress-plugin-clean-urls": "next",
-    "vuepress-plugin-container": "next",
+    "@vuepress/plugin-back-to-top": "^1.0.2",
+    "vuepress-plugin-clean-urls": "^1.0.3",
+    "vuepress-plugin-container": "^2.0.2",
     "@vuepress/plugin-google-analytics": "next",
-    "@vuepress/plugin-i18n-ui": "next",
-    "vuepress-plugin-zooming": "next",
-    "vuepress-plugin-nprogress": "next",
+    "vuepress-plugin-zooming": "^1.1.1",
+    "vuepress-plugin-nprogress": "^1.1.1",
     "@vuepress/plugin-pagination": "next",
-    "@vuepress/plugin-pwa": "next",
-    "@vuepress/plugin-register-components": "next",
+    "@vuepress/plugin-pwa": "^1.0.2",
+    "@vuepress/plugin-register-components": "^1.0.2",
     "@vuepress/plugin-notification": "next",
-    "vuepress-plugin-git-log": "next",
-    "vuepress-plugin-copyright": "next",
-
-    "vue": "^2.6.9",
+    "@dovyp/vuepress-plugin-clipboard-copy": "^1.0.0-alpha.7",
+    "vuepress-plugin-git-log": "^1.0.1",
+    "vuepress-plugin-copyright": "^1.0.2",
+    "vue": "^2.6.10",
     "vue-form-generator": "^2.3.4",
-    "vuepress": "next"
+    "vuepress": "^1.0.2"
   },
   "dependencies": {
   }
