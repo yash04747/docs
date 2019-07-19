@@ -59,6 +59,7 @@ module.exports = ctx => ({
             serviceWorker: true,
             updatePopup: false
         }],
+
         ['vuepress-plugin-zooming', {
             // selector for images that you want to be zoomable
             // default: '.content img'
@@ -94,6 +95,7 @@ module.exports = ctx => ({
             onlyFirstAndLastCommit: true,
         }],
         ['@dovyp/vuepress-plugin-clipboard-copy', true],
+        ['reading-progress', true],
 
     ],
     // clientRootMixin: path.resolve( __dirname, 'mixin.js' ),
