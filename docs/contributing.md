@@ -7,7 +7,7 @@ Please read them thoroughly before submitting an issue on our issue tracker.
 ## If You are NOT the Developer
 
 First, and most importantly, we need to know if you are a developer using Redux in their project, or if you are using a 
-theme/plugin that uses Redux. **If you are not the primary developer**, please read out [Getting Support/Help](guides/basics-support-defined.md) guide.
+theme/plugin that uses Redux. **If you are not the primary developer**, please read out [Getting Support/Help](guides/basics/support-defined.md) guide.
 
 ## If You are the Primary Developer 
 
@@ -23,7 +23,7 @@ Please save yourself and us some time by taking this simple step first. Thanks!
 
 Before we will even look into your issue, we need a support hash. The reason is we have found around 80% of all our issues
 are a configuration issue. By looking at the data sent in the support request, we can quickly identify concerns and save
-you and us more time. Please read the [Generate a Support Hash](guides/basics-generating-a-support-hash.md) guide and 
+you and us more time. Please read the [Generate a Support Hash](guides/basics/generating-a-support-hash.md) guide and 
 have that URL handy.
 
 ### 3. Post to the Issue Tracker

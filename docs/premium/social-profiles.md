@@ -7,7 +7,7 @@ The Redux Social Profiles extension easily allows one to create and display link
 :::
 
 ::: tip Getting Started
-To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics/using-extensions.md).
  To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
  knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
  (or both), please refer to the following guides to get you started: 
@@ -237,7 +237,7 @@ own rendering purposes.
 
 |Parameter|Type|Default|Description|
 |--|--|--|--|
-|[opt_name](../configuration/arguments-global.md#opt-name)|string||Required. The [opt_name](../configuration/arguments-global.md#opt-name) specified in your arguments|
+|[opt_name](../configuration/argument/01-global.md#opt-name)|string||Required. The [opt_name](../configuration/argument/01-global.md#opt-name) specified in your arguments|
 |id|string||Required. ID of the social profile field whose information is to be rendered.|
 |echo|bool|`true`|Optional. When set to true, the function automatically echos the rendered HTML. When set to false, the HTML is returned.|
 |a_class|bool||Optional. Sets the passed class name to the a tag of the rendered icon HTML.|
@@ -270,7 +270,7 @@ This function returns the specified value data of the specified social profile I
 
 |Parameter|Description|
 |--|--|
-|[opt_name](../configuration/arguments-global.md#opt-name)|Required. The [opt_name](../configuration/arguments-global.md#opt-name) specified in your arguments|
+|[opt_name](../configuration/argument/01-global.md#opt-name)|Required. The [opt_name](../configuration/argument/01-global.md#opt-name) specified in your arguments|
 |id|Required. ID of the social profile field whose information is to be rendered.|
 |value|Required. Value of the social profile for which whose data you would like returned.  Value options include `id`, `icon`, `enabled`, `name`, `color`, `background`, `label`, or `url`.|
 

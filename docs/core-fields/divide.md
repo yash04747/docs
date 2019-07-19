@@ -19,7 +19,7 @@ The Divide field acts as a divider between other fields.
 
 
 ::: tip Also See
-- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
 :::
 
 ::: warning Tip

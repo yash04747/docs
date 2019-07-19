@@ -5,6 +5,6 @@ to understand more complex configurations and how to use them.
 
 ::: tip Good Starting Points
 - [The Redux API](redux-api.md)
-- [Object: Field](object-field.md)
-- [Object: Section](object-section.md)
+- [Object: Field](objects/field.md)
+- [Object: Section](objects/section.md)
 :::

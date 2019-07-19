@@ -26,10 +26,10 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument-compiler.md)
-- [Using the `hints` Argument](../configuration/argument-hints.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
-- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `compiler` Argument](../configuration/argument/compiler.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
 :::
 
 ### Options Array

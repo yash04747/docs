@@ -7,7 +7,7 @@ If you are used the ReduxFramework declaration arrays, you know Redux Taxonomy. 
 :::
 
 ::: tip Getting Started
-To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics/using-extensions.md).
  To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
  knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
  (or both), please refer to the following guides to get you started: 

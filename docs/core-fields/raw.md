@@ -31,8 +31,8 @@ The Raw field provides the ability to output raw HTML directly into the options 
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `hints` Argument](../configuration/argument-hints.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
 :::
 
 ## Example Declaration

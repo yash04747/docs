@@ -9,3 +9,4 @@ docs/.vuepress/dist
 yarn.error.log
 .ideas
 .idea
+.DS_Store

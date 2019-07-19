@@ -25,10 +25,10 @@ The Palette Color field allows you to display a set of color palettes that a the
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument-compiler.md)
-- [Using the `hints` Argument](../configuration/argument-hints.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
-- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `compiler` Argument](../configuration/argument/compiler.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
 :::
 
 ## Setting Palettes

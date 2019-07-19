@@ -8,7 +8,7 @@ Redux has a large variety of fields to choose from, **35** in fact. This section
 exist in the Core as well as how to configure these fields.
 
 ::: tip SEE ALSO
-- [Using & Creating Extensions](../guides/basics-using-extensions.md)
+- [Using & Creating Extensions](../guides/basics/using-extensions.md)
 - [Pro / Premium Offerings](../premium)
 :::
 

@@ -22,7 +22,7 @@ The Info field comes in several varieties to display information as normal, info
 |icon|string||Name of an Elusive Icon font to use in the info box.|
 
 ::: tip Also See
-- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
 :::
 
 ::: warning Tip

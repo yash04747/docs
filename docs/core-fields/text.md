@@ -19,18 +19,18 @@ The Text field accepts any form of text and optionally validates the text before
 |readonly|string||If set to `true`, the readonly attribute will be set to `readonly`.|
 
 ::: tip Also See
-- [Default Field Object Arguments](../configuration/object-field.md#default-arguments)
-- [Using the `attributes` Argument](../configuration/argument-attributes.md)
-- [Using the `data` Argument](../configuration/argument-data.md)
-- [Using the `compiler` Argument](../configuration/argument-compiler.md)
-- [Using the `hints` Argument](../configuration/argument-hints.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
-- [Using the `required` Argument](../configuration/argument-required.md)
-- [Using the `validate` Argument](../configuration/argument-validate.md)
+- [Default Field Object Arguments](../configuration/objects/field.md#default-arguments)
+- [Using the `attributes` Argument](../configuration/argument/attributes.md)
+- [Using the `data` Argument](../configuration/argument/data.md)
+- [Using the `compiler` Argument](../configuration/argument/compiler.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
+- [Using the `validate` Argument](../configuration/argument/validate.md)
 :::
 
 ## `data` Argument
-This argument serves two purposes with the text field. First, it works like any other [data](../configuration/argument-data.md) argument.
+This argument serves two purposes with the text field. First, it works like any other [data](../configuration/argument/data.md) argument.
 Meaning it can populate with WordPress data. Second, it allows a user to pass single array or a multi-dimensional array 
 to output a number of text fields.
 
@@ -179,7 +179,7 @@ array(
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 
-your [opt_name](../configuration/arguments-global.md#opt-name) argument.
+your [opt_name](../configuration/argument/01-global.md#opt-name) argument.
 
 ```php
 // Using the Redux API

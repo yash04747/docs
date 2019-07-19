@@ -10,7 +10,7 @@ simplicity in mind.
 ::: danger API Method Names Have Changed
 A number of API methods have changed name in Redux 4.x to match PHP naming conventions. There are still shims for the old 
 names, but they will give you a deprecation notice. For a full list of method changes for the API look below at 
-[Deprecated Methods](#deprecated-methods) or the [Redux 4.x Migration & Compatability](../guides/migration-guide.md).
+[Deprecated Methods](#deprecated-methods) or the [Redux 4.x Migration & Compatability](../guides/other/migration-guide.md).
 :::
 
 ::: warning Table of Contents
@@ -27,7 +27,7 @@ Redux 4.x+. It is advised to use the new API methods when possible.
 
 ## Usage and Examples
 
-Redux can have an unlimited number of sessions running at once. Hence, the [opt_name](./arguments-global.md#opt-name) 
+Redux can have an unlimited number of sessions running at once. Hence, the [opt_name](argument/01-global.md#opt-name) 
 is so crucial. It must be unique, and it is the first variable for the methods within the Redux API.
 
 For safety reasons, and to ensure Redux has loaded properly, it is advised to put a if statement before you use the API
@@ -40,8 +40,8 @@ if ( ! class_exists( 'Redux' ) ) {
 }
 ```
 
-### Redux::set_args()
-This method allows you set set [global args](arguments-global.md) for your instance of Redux. It's use is required for
+### Redux::setArgs()
+This method allows you set set [global args](argument/01-global.md) for your instance of Redux. It's use is required for
 virtually any Redux instance. An example of how to use it is below.
 
 ```php
@@ -51,19 +51,19 @@ $args = Array(
     'customizer'  => true
 );
 
-Redux::set_args ( $opt_name, $args );
+Redux::setArgs ( $opt_name, $args );
 ``` 
 
 
-### Redux::get_args()
+### Redux::getArgs()
 
 This method can take one or two parameters depending on the desired output.
 
 #### Fetch All Arguments
 
-The return value is an array of all global arguments for the [opt_name](./arguments-global.md#opt-name) instance.
+The return value is an array of all global arguments for the [opt_name](argument/01-global.md#opt-name) instance.
 ```php
-$args = Redux::get_args( $opt_name );
+$args = Redux::getArgs( $opt_name );
 ```
 
 #### Fetch a Single Argument
@@ -71,13 +71,13 @@ $args = Redux::get_args( $opt_name );
 If a key is provided, and that value is set, the single value will be returned, otherwise null is returned.
 
 ```php
-echo Redux::get_arg( $opt_name, 'opt_name' );
+echo Redux::getArg( $opt_name, 'opt_name' );
 ```
-The above value will return a text value that will equal the [opt_name](./arguments-global.md#opt-name) string value.
+The above value will return a text value that will equal the [opt_name](argument/01-global.md#opt-name) string value.
 
-### Redux::set_help_tab()
+### Redux::setHelpTab()
 
-This method requires two parameters, the [opt_name](./arguments-global.md#opt-name) string value, followed by an array value of tab data.
+This method requires two parameters, the [opt_name](argument/01-global.md#opt-name) string value, followed by an array value of tab data.
 
 ```php
 $opt_name = 'YOUR_OPT_NAME';
@@ -93,27 +93,27 @@ $tabs = array(
         'content' => '<br />This is the tab content, HTML is allowed.<br />')
     )
 );
-Redux::set_help_tab( $opt_name, $tabs );
+Redux::setHelpTab( $opt_name, $tabs );
 ```
 
-### Redux::set_help_sidebar()
+### Redux::setHelpSidebar()
 
-This method requires two parameters. First, the [$opt_name](./arguments-global.md#opt-name) string value, the second, the 
+This method requires two parameters. First, the [$opt_name](argument/01-global.md#opt-name) string value, the second, the 
 `$content` string value.
 
 ```php
 $opt_name = 'YOUR_OPT_NAME';
 $content = '<br />This is the sidebar content, HTML is allowed.<br />');
-Redux::set_help_sidebar( $opt_name, $content );
+Redux::setHelpSidebar( $opt_name, $content );
 ```
 
 ### Setting & Altering Sections
 
-For full examples of how to use the Redux API with sections, see the [sections documentation](../configuration/object-section.md).
+For full examples of how to use the Redux API with sections, see the [sections documentation](objects/section.md).
 
 ### Setting & Altering Fields
 
-For full examples of how to use the Redux API with fields, see the [fields documentation](../configuration/object-field.md).
+For full examples of how to use the Redux API with fields, see the [fields documentation](objects/field.md).
 
 ### Setting and Fetching Extensions
 
@@ -190,7 +190,7 @@ td:first-child { white-space: nowrap; }
 ### Deprecated Methods
 
 A number of these methods were deprecated with Redux 4.x due to naming standards. Shims still exist for all of them, but
-a deprecation notice will be provided if used and in [dev_mode](arguments-global.md#dev-mode).
+a deprecation notice will be provided if used and in [dev_mode](argument/01-global.md#dev-mode).
 
 |Method|Description|
 |--|--|

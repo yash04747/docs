@@ -9,7 +9,7 @@ The Redux Google Map extension offers users the ability to search for map locati
 :::
 
 ::: tip Getting Started
-To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics/using-extensions.md).
  To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
  knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
  (or both), please refer to the following guides to get you started: 
@@ -26,7 +26,7 @@ your theme.
 :::
 
 ## Getting Started
-To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md). 
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics/using-extensions.md). 
 To shortcut the process, you could use the [Redux Builder](https://build.redux.io). Please be aware that a working 
 knowledge of PHP and CSS is required to properly use this field. Should you not be familiar with one or the other 
 (or both), please refer to the following guides to get you started: [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
@@ -67,10 +67,10 @@ knowledge of PHP and CSS is required to properly use this field. Should you not 
 |map_version|string|3.exp|Google Map API version number.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument-compiler.md)
-- [Using the `hints` Argument](../configuration/argument-hints.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
-- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `compiler` Argument](../configuration/argument/compiler.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
 :::
 
 ## Google Map Default Values

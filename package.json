@@ -6,16 +6,19 @@
   "devDependencies": {
     "@vuepress/plugin-active-header-links": "next",
     "@vuepress/plugin-back-to-top": "next",
-    "@vuepress/plugin-clean-urls": "next",
-    "@vuepress/plugin-container": "next",
+    "vuepress-plugin-clean-urls": "next",
+    "vuepress-plugin-container": "next",
     "@vuepress/plugin-google-analytics": "next",
     "@vuepress/plugin-i18n-ui": "next",
-    "@vuepress/plugin-medium-zoom": "next",
-    "@vuepress/plugin-nprogress": "next",
+    "vuepress-plugin-zooming": "next",
+    "vuepress-plugin-nprogress": "next",
     "@vuepress/plugin-pagination": "next",
     "@vuepress/plugin-pwa": "next",
     "@vuepress/plugin-register-components": "next",
     "@vuepress/plugin-notification": "next",
+    "vuepress-plugin-git-log": "next",
+    "vuepress-plugin-copyright": "next",
+
     "vue": "^2.6.9",
     "vue-form-generator": "^2.3.4",
     "vuepress": "next"

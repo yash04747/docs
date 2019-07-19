@@ -18,13 +18,13 @@ The Textarea field accepts any form of multi-line string input, including custom
 |readonly|string||If set to `true`, the readonly attribute will be set to `readonly`.|
 
 ::: tip Also See
-- [Default Field Object Arguments](../configuration/object-field.md#default-arguments)
-- [Using the `attributes` Argument](../configuration/argument-attributes.md)
-- [Using the `compiler` Argument](../configuration/argument-compiler.md)
-- [Using the `hints` Argument](../configuration/argument-hints.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
-- [Using the `required` Argument](../configuration/argument-required.md)
-- [Using the `validate` Argument](../configuration/argument-validate.md)
+- [Default Field Object Arguments](../configuration/objects/field.md#default-arguments)
+- [Using the `attributes` Argument](../configuration/argument/attributes.md)
+- [Using the `compiler` Argument](../configuration/argument/compiler.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
+- [Using the `validate` Argument](../configuration/argument/validate.md)
 :::
 
 ## Example Declaration
@@ -41,7 +41,7 @@ Redux::setField( 'OPT_NAME', 'SECTION_ID', array(
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 
-your [opt_name](../configuration/arguments-global.md#opt-name) argument.
+your [opt_name](../configuration/argument/01-global.md#opt-name) argument.
 
 ```php
 // Using the Redux API

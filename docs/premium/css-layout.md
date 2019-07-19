@@ -7,7 +7,7 @@ The CSS Layout extension is a new way to set margins, padding and borders (inclu
 :::
 
 ::: tip Getting Started
-To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics-using-extensions.md).
+To understand how to use extensions, you should read this article on [Using Extensions](../guides/basics/using-extensions.md).
  To shortcut the process, you can use the [Redux Build](http://build.redux.io/) site. Please be aware that a working 
  knowledge of PHP and CSS is required to properly use this extension. Should you not be familiar with one or the other 
  (or both), please refer to the following guides to get you started: 
@@ -39,11 +39,11 @@ To understand how to use extensions, you should read this article on [Using Exte
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument-compiler.md)
-- [Using the `hints` Argument](../configuration/argument-hints.md)
+- [Using the `compiler` Argument](../configuration/argument/compiler.md)
+- [Using the `hints` Argument](../configuration/argument/hints.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/argument-permissions.md)
-- [Using the `required` Argument](../configuration/argument-required.md)
+- [Using the `permissions` Argument](../configuration/argument/permissions.md)
+- [Using the `required` Argument](../configuration/argument/required.md)
 :::
 
 ## CSS Layout Defaults
