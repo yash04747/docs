@@ -28,12 +28,16 @@ module.exports = [
 			},
 			{
 				text: 'Migrate to Redux 4.x',
-				link: '/guides/migration-guide.html'
+				link: '/guides/other/migration-guide.html'
 			},
 			{
 				text: 'Changelog',
 				link: 'https://github.com/reduxframework/redux-framework/blob/master/CHANGELOG.md'
-			}
+			},
+			{
+				text: 'v3.x Docs',
+				link: 'http://docsv3.redux.io/'
+			},
 		]
 	}
 ]
