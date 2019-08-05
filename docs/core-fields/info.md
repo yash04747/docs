@@ -20,7 +20,7 @@ The Info field comes in several varieties to display information as normal, info
 |notice|bool|true|Set the styling to the non-notice styles, instead of the default WordPress 3.8 notice styles.|
 |color|string||Color that becomes the left border if style is set to custom. Will not work with a non-notice styled field.|
 |icon|string||Name of an Elusive Icon font to use in the info box.|
-|indent|bool|false|If set, left field indent will be applied.|
+|indent|bool|`false`|If set, left field indent will be applied.|
 
 ::: tip Also See
 - [Using the `required` Argument](../configuration/argument/required.md)
