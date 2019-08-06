@@ -10,7 +10,7 @@ The media field is an adaption for a core WordPress feature.
 
 ## Video Tutorial
 
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/kEZYIWSk1Tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/kEZYIWSk1Tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ## Arguments
 |Name|Type|Default|Description|
@@ -33,7 +33,7 @@ The media field is an adaption for a core WordPress feature.
 |readonly|bool|true|Flag to set the readonly attribute of the media text field.|
 |permissions|string||String specifying the capability required to view the section.|
 |mode|string||String specifying either the file type or mime type of files to accept from the media library.|
-|library_filter|array||Array of file extensions (NOT mime types) that the media library should only be permitted to display.|
+|library_filter|array||Accepts an array of strings which correspond to the second part of a [mime type](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) (i.e. video/mp4 would be “mp4”). Only files that match one of the items in the array will appear in the media library.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.|
 
 ::: tip Also See
