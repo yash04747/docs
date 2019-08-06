@@ -29,7 +29,7 @@ API methods are provided to set, manipulate, and remove sections before they are
 
 ::: tip SEE ALSO
 - [Fields](field.md)
-- [Getting Started with Redux](../guide/getting_started.md)
+- [Getting Started with Redux](../../guides/basics/getting-started.md)
 :::
 
 ## Setting Section(s)
@@ -44,7 +44,7 @@ Used to declare a single section cotaining [fields](field.md).
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/arguments_reference.md#opt-name)|
 |section|array|A singular section array|
 |replace|bool|If `true`, any section with this same ID will be replaced. If `false` (default), a varied section ID will be generated.|
 
@@ -97,7 +97,7 @@ Similar to [::setSection()](#set-section), but used to set an unlimited number o
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/arguments_reference.md#opt-name)|
 |sections|array|Array of section arrays|
 
 This method allows for multiple sections to be added at once. Keep in mind that you can still set a single section, as
@@ -138,7 +138,7 @@ not exist. If you believe a section should exist, make sure you're not in an ear
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/arguments_reference.md#opt-name)|
 |`section_id`|string|Unique id of the section you wish to retrieve|
 
 Say you want to fetch a section object, you can easily do that. This may be useful if you wanted to check the section 
@@ -156,7 +156,7 @@ Now let's say you want to grab all sections for a given opt_name, you can do tha
 *Arguments to pass in order of declaration:*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/arguments_reference.md#opt-name)|
 
 ```php
 $sections = Redux::getSections( 'OPT_NAME' );
@@ -167,7 +167,7 @@ $sections = Redux::getSections( 'OPT_NAME' );
 *Arguments to pass in order of declaration*
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
-|`opt_name`|string||Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string||Your unique [opt_name](../arguments/arguments_reference.md#opt-name)|
 |`section_id`|string||Unique id of the section you wish to retrieve|
 |`delete_fields`|bool|`false`|If set to true, all fields below will be deleted as well|
 

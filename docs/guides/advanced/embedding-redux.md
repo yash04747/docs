@@ -34,7 +34,7 @@ Be sure to update the relative path in relation to the file in which the code is
 code at the top of your `functions.php` file.
 
 Here is where the true magic of Redux comes into play. Suppose a user has Redux installed by itself via a plugin. Your 
-theme is now using the plugin class and <strong>not</strong> the embedded version you included with your theme or 
+theme is now using the plugin class and **not** the embedded version you included with your theme or 
 plug-in! Put another way, your project will just work out of the box, no questions asked! Redux, when installed as a 
 plug-in takes priority. Any references that include Redux in your own `framework.php` will be ignored. Redux - installed 
 as a plug-in - can be forever updated by the user and your theme receives the benefit without you ever needing to push 

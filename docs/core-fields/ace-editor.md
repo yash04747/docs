@@ -9,7 +9,7 @@ The ACE Editor field offers the ability to edit back-end code in an easy to use 
 :::
 
 ## Arguments
-Array containing the `content` and optional `title` arguments for the hint tooltip.  <a class="more_info" title="Using Hints in Fields" href="/redux-framework/the-basics/using-hints-in-fields/"><i class="el-icon-circle-arrow-right"></i> More info.</a>
+Array containing the `content` and optional `title` arguments for the [hint](../configuration/arguments/hints.md) tooltip.
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

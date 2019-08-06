@@ -98,19 +98,19 @@ attached to the field by specifying `warning` or `error` in the return array.
 |Key|Description|
 |--|--|
 |`color`|Valid HTML hex color. Works with [color_rgba](../../core-fields/color-rgba.md) field (opacity)|
-|`comma_numeric`|Value is numeric separted by commas|
+|`comma_numeric`|Value is numeric separated by commas|
 |`css`|CSS|
 |`date`|Date|
 |`email`}|Valid Email|
-|`html_custom`|HTML validation - See [html_custom example](argument-validate.mdtml-custom-example) |
+|`html_custom`|HTML validation - See [html_custom example](validate.md#html_custom-example) |
 |`js`|JavaScript|
 |`no_html`|No HTML is permitted|
 |`no_special_chars`|Alpha Numeric, excluding special characters|
 |`not_empty`|If the value is empty|
 |`numeric`|Value is numeric|
-|`preg_replace`|Peform a replace on the contents based on a regex pattern. See [preg_replace Example](argument-validate.mdreg-replace-example)|
-|`str_replace`|Return a string after running through a `str_replace`. See [str_replace Example](argument-validate.mdtr-replace-example)|
-|`unique_slug`|To generate a unqiue slug - optional `'flush_permalinks' => true` argument can be added to force a flush permalinks on successful save|
+|`preg_replace`|Perform a replace on the contents based on a regex pattern. See [preg_replace Example](validate.md#preg_replace-example)|
+|`str_replace`|Return a string after running through a `str_replace`. See [str_replace Example](validate.md#str_replace-example)|
+|`unique_slug`|To generate a unique slug - optional `'flush_permalinks' => true` argument can be added to force a flush permalinks on successful save|
 |`url`|Valid URL|
 
 
@@ -137,8 +137,9 @@ attached to the field by specifying `warning` or `error` in the return array.
 
 ### `html_custom` Example
 
-You can easily set what HTML is allowed in one of your fields by using the code below. This utilizes wp_kses from core. 
-You can find more information about function at [http://codex.wordpress.org/Function_Reference/wp_kses](http://codex.wordpress.org/Function_Reference/wp_kses)
+You can easily set what HTML is allowed in one of your fields by using the code below. This utilizes 
+[wp_kses](http://codex.wordpress.org/Function_Reference/wp_kses) from the WordPress core. You can find more information 
+about function at [http://codex.wordpress.org/Function_Reference/wp_kses](http://codex.wordpress.org/Function_Reference/wp_kses)
 
 ```php    
 'validate'     => 'html_custom',
@@ -157,7 +158,7 @@ You can find more information about function at [http://codex.wordpress.org/Func
 
 ## A Warning
 ::: danger
-The following fields do **NOT** accept validation unless using [validate_callback](argument-validate.mdsing-a-custom-validation).
+The following fields do **NOT** accept validation unless using [validate_callback](validate.md#using-a-custom-validation).
 
 - [Button Set](../../core-fields/button-set.md)
 - [Checkbox](../../core-fields/checkbox.md)
