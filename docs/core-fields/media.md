@@ -10,7 +10,7 @@ The media field is an adaption for a core WordPress feature.
 
 ## Video Tutorial
 
-[embed width="800" height="400"]http://youtu.be/kEZYIWSk1Tk[/embed]
+<iframe width="100%" height="315" src="https://youtu.be/kEZYIWSk1Tk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 ## Arguments
 |Name|Type|Default|Description|
@@ -33,7 +33,7 @@ The media field is an adaption for a core WordPress feature.
 |readonly|bool|true|Flag to set the readonly attribute of the media text field.|
 |permissions|string||String specifying the capability required to view the section.|
 |mode|string||String specifying either the file type or mime type of files to accept from the media library.|
-|library_filter|array||Array of file type values (NOT mime) the media library should only display. [Example Below](./#example-declaration-with-library_filter)|
+|library_filter|array||Array of file extensions (NOT mime types) that the media library should only be permitted to display.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.|
 
 ::: tip Also See
@@ -68,15 +68,14 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 
-### Example Declaration With `library_filter`
+### Example Declaration w/ `library_filter`
+This example will produce a media field that can only find files with the extension denoted. This is useful when you only want specific file types specified for a given field.
+
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-media',
     'type'     => 'media', 
-    'url'      => true,
     'title'    => __('Media w/ Library Filter', 'redux-framework-demo'),
-    'desc'     => __('Basic media uploader with disabled URL input field.', 'redux-framework-demo'),
-    'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
     'library_filter' => array(
         'jpg'
     )
