@@ -41,10 +41,10 @@ In some cases, such as is with [metaboxes](../../core-extensions/metaboxes-lite.
 of [sections](../../configuration/objects/section.md) within it. The primary purpose of a box is placement on the screen.
 
 ### Instance
-Instance level arguments are known as [global arguments](../../configuration/argument/01-global.md). They impact all areas of 
+Instance level arguments are known as [global arguments](../../configuration/arguments/arguments_reference.md). They impact all areas of 
 the instance. Typically these are arguments that affect how Redux performs, but they can set an entire instance to display
-a control panel in the [customizer only](../../configuration/argument/01-global.md#customizer-only). If you're not sure what's
-going on, the problem may be in the [global args](../../configuration/argument/01-global.md).
+a control panel in the [customizer only](../../configuration/arguments/arguments_reference.md#customizer-only). If you're not sure what's
+going on, the problem may be in the [global args](../../configuration/arguments/arguments_reference.md).
 
 Remember, there can be multiple instances of Redux running in a single WordPress install. This means that all products based on
 Redux, be it plugins or the theme can be running at once without impacting one another.
@@ -54,14 +54,14 @@ Every object has arguments and every level of nested objects can inherit or over
 argument, make sure you're thinking of how it will impact all the nested items below it (children).
 
 ### Global Arguments
-[Global arguments](../../configuration/argument/01-global.md) are those arguments which affect every field or how your 
-instance of Redux performs. These arguments can [enable/disable the customizer](../../configuration/argument/01-global.md#customizer-only) 
-by default, change the [menu title](../../configuration/argument/01-global.md#menu-title), and set 
-fields to [automatically output CSS](../../configuration/argument/01-global.md#output) or not. For a more detailed breakdown, 
-visit the [Global Arguments](../../configuration/argument/01-global.md) page as well as the docs related to each field and setting.
+[Global arguments](../../configuration/arguments/arguments_reference.md) are those arguments which affect every field or how your 
+instance of Redux performs. These arguments can [enable/disable the customizer](../../configuration/arguments/arguments_reference.md#customizer-only) 
+by default, change the [menu title](../../configuration/arguments/arguments_reference.md#menu-title), and set 
+fields to [automatically output CSS](../../configuration/arguments/arguments_reference.md#output) or not. For a more detailed breakdown, 
+visit the [Global Arguments](../../configuration/arguments/arguments_reference.md) page as well as the docs related to each field and setting.
 
 ### `opt_name`, your unique instance key
-One of the most important global variables is your [opt_name](../../configuration/argument/01-global.md#opt-name). This is a 
+One of the most important global variables is your [opt_name](../../configuration/arguments/arguments_reference.md#opt-name). This is a 
 unique key to distinguish your Redux instance from all others. It's also where your data is stored in the database and 
 if you're using the global variable, how you access data within your code.
 

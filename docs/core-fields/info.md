@@ -23,7 +23,7 @@ The Info field comes in several varieties to display information as normal, info
 |indent|bool|`false`|If set, left field indent will be applied.|
 
 ::: tip Also See
-- [Using the `required` Argument](../configuration/argument/required.md)
+- [Using the `required` Argument](../configuration/arguments/required.md)
 :::
 
 ::: warning Tip

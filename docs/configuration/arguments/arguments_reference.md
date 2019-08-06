@@ -62,13 +62,13 @@ This argument sets the database mode for how Redux options are stored in the dat
 For normal operation, leave this argument blank, otherwise, choose from one of the following modes. Modes marked as experimental have not been fully tested and may not function properly:
 
 - `network`: For multi-site support
-- `transient`: (experimental) - Sets options as transients, and will expire in the time set via [transient_time](./global-arguments.md#transient-time) .
+- `transient`: (experimental) - Sets options as transients, and will expire in the time set via [transient_time](#transient-time) .
 - `theme_mods`, `theme_mods_expanded` (both experimental) - Saves modifications for the current theme.
 
 ## default_mark
 **Default**: `'default_mark' => ''`
 
-This is the variable specifies the symbol to print by the field's title when the field  is set to the default value. [default_show](./global-arguments.md#default-mark) must be set to true. The `*` symbol is recommended.
+This is the variable specifies the symbol to print by the field's title when the field  is set to the default value. [default_show](#default-mark) must be set to true. The `*` symbol is recommended.
 
 ## default_show
 **Default**: `'default_show' => 'false'`

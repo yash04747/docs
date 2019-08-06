@@ -49,10 +49,10 @@ To understand how to use extensions, you should read this article on [Using Exte
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument/compiler.md)
-- [Using the `hints` Argument](../configuration/argument/hints.md)
-- [Using the `permissions` Argument](../configuration/argument/permissions.md)
-- [Using the `required` Argument](../configuration/argument/required.md)
+- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
+- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
+- [Using the `required` Argument](../configuration/arguments/required.md)
 :::
 
 ## Placeholder Options
@@ -153,7 +153,7 @@ array (
 
 ### Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified 
-in your [opt_name](../configuration/argument/01-global.md#opt-name) argument.
+in your [opt_name](../configuration/arguments/arguments_reference.md#opt-name) argument.
 
 ```php
 global $redux_demo;

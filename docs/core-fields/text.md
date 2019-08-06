@@ -20,17 +20,17 @@ The Text field accepts any form of text and optionally validates the text before
 
 ::: tip Also See
 - [Default Field Object Arguments](../configuration/objects/field.md#default-arguments)
-- [Using the `attributes` Argument](../configuration/argument/attributes.md)
-- [Using the `data` Argument](../configuration/argument/data.md)
-- [Using the `compiler` Argument](../configuration/argument/compiler.md)
-- [Using the `hints` Argument](../configuration/argument/hints.md)
-- [Using the `permissions` Argument](../configuration/argument/permissions.md)
-- [Using the `required` Argument](../configuration/argument/required.md)
-- [Using the `validate` Argument](../configuration/argument/validate.md)
+- [Using the `attributes` Argument](../configuration/arguments/attributes.md)
+- [Using the `data` Argument](../configuration/arguments/data.md)
+- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
+- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
+- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `validate` Argument](../configuration/arguments/validate.md)
 :::
 
 ## `data` Argument
-This argument serves two purposes with the text field. First, it works like any other [data](../configuration/argument/data.md) argument.
+This argument serves two purposes with the text field. First, it works like any other [data](../configuration/arguments/data.md) argument.
 Meaning it can populate with WordPress data. Second, it allows a user to pass single array or a multi-dimensional array 
 to output a number of text fields.
 
@@ -179,7 +179,7 @@ array(
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 
-your [opt_name](../configuration/argument/01-global.md#opt-name) argument.
+your [opt_name](../configuration/arguments/arguments_reference.md#opt-name) argument.
 
 ```php
 // Using the Redux API

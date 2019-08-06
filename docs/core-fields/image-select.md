@@ -31,11 +31,11 @@ Select from an array of images as radio buttons.
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument/compiler.md)
-- [Using the `hints` Argument](../configuration/argument/hints.md)
+- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
+- [Using the `hints` Argument](../configuration/arguments/hints.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/argument/permissions.md)
-- [Using the `required` Argument](../configuration/argument/required.md)
+- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
+- [Using the `required` Argument](../configuration/arguments/required.md)
 :::
 
 ### Layout Options

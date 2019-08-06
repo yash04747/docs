@@ -34,10 +34,10 @@ Arguments
 |close-icon|string|el-minus|The Elusive Icon to show when the accordion is open (to be closed).  At this time, only Elusive Icons are supported.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/argument/compiler.md)
-- [Using the `hints` Argument](../configuration/argument/hints.md)
-- [Using the `permissions` Argument](../configuration/argument/permissions.md)
-- [Using the `required` Argument](../configuration/argument/required.md)
+- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
+- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
+- [Using the `required` Argument](../configuration/arguments/required.md)
 :::
 
 ## Example Declaration
