@@ -14,7 +14,7 @@ If you have an early version, please update.
 
 <span style="display:block;text-align:center">![](../img/support_hash.png)</span>
 
-## Initate a Support Hash Request
+## Initiate a Support Hash Request
 In your control panel, navigate on the left side to Tools -> Redux Framework. Once on that page, click on the `Support` 
 tab and follow the instructions.
 
@@ -29,7 +29,7 @@ Replace `~` with your WordPress base URL (site URL).
 
 ### That didn't work!
 Then Redux isn't running or your theme/plugin developer has modified the core and embedded Redux. You'll need to install a
-different version of Redux. We suggest [installing the WordPress.org plugin](basics-install.md-org-plugin).
+different version of Redux. We suggest [installing the WordPress.org plugin](install.md#wordpressorg-plugin).
 
 ## Ok, now what?
 Once you have the full Support URL/Hash, you need to [post it on our issue tracker](https://github.com/ReduxFramework/redux-framework/issues).

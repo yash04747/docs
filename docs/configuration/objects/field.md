@@ -15,24 +15,24 @@ default arguments.
 ## Default Arguments
 |Name|Type|Required|Description.|
 |--- |--- |--- |--- |
-|id|string|True|The unique identifier of a field. MUST be unique to the [opt_name](../argument/01-global.md#opt-name) except when used by the [metaboxes API](./metaboxes.md).|
+|id|string|True|The unique identifier of a field. MUST be unique to the [opt_name](../arguments/arguments_reference.md#opt-name) except when used by the [metaboxes API](./metaboxes.md).|
 |type|string|True|Denotes the [field type](../core-fields/). If the field type does not exist a warning will be displayed.|
 |title|string||The title of the field that will be displayed.|
 |subtitle|string||Subtitle of the option placed beneath the title.|
 |desc|string||Text to appear under the field title. HTML is permitted.|
 |default|string||Default value for the field.|
 |class|string||Appends any number of classes to the field's class attribute.|
-|customizer_only|bool||A flag to set this field to [customizer_only](field.md#customizer-only) display. This argument will override the [customizer_only](field.md#customizer-only) setting at the [sections](section.md) level as well as the [global arguments](../argument/01-global.md#customizer-only) level.|
-|output|bool||A flag to set all [enable CSS output](../argument/output.md) for any fields that support this argument.|
-|compiler|bool||A flag to set the [compiler hook](../argument/compiler.md) to fire if this field's value is changed. This can override the [compiler](../argument/compiler.md) setting at the [sections](section.md) level.|
-|hints|bool||A flag to set the [hints](../argument/hints.md) object that displays a animated window with more details about this field.|
+|customizer_only|bool||A flag to set this field to [customizer_only](field.md#customizer-only) display. This argument will override the [customizer_only](field.md#customizer-only) setting at the [sections](section.md) level as well as the [global arguments](../arguments/01-global.md#customizer-only) level.|
+|output|bool||A flag to set all [enable CSS output](../arguments/output.md) for any fields that support this argument.|
+|compiler|bool||A flag to set the [compiler hook](../arguments/compiler.md) to fire if this field's value is changed. This can override the [compiler](../arguments/compiler.md) setting at the [sections](section.md) level.|
+|hints|bool||A flag to set the [hints](../arguments/hints.md) object that displays a animated window with more details about this field.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../argument/compiler.md)
-- [Using the `hints` Argument](../argument/hints.md)
-- [Using the `permissions` Argument](../argument/permissions.md)
-- [Using the `required` Argument](../argument/required.md)
-- [Using the `validate` Argument](../argument/validate.md)
+- [Using the `compiler` Argument](../arguments/compiler.md)
+- [Using the `hints` Argument](../arguments/hints.md)
+- [Using the `permissions` Argument](../arguments/permissions.md)
+- [Using the `required` Argument](../arguments/required.md)
+- [Using the `validate` Argument](../arguments/validate.md)
 :::
 
 Fields are blocks of arrays that represent the individual options within a specific options panel, set via a [section](section.md) array. The [section](section.md) array contains an argument titled fields, which accepts an array, or several blocks of arrays, separated by commas.  This is where all field arrays are place.  A basic example is shown below. For specific examples, please consult the [sample-config.php](https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php) file that comes with the Redux package.
@@ -55,7 +55,7 @@ Used to declare a single field and attach to an existing [section](section.md).
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/01-global.md#opt-name)|
 |field|array|A singular field array|
 |section_id|string|Section ID to add this field to. Must previously exist.|
 
@@ -74,7 +74,7 @@ Similar to [::set_field()](#set-field), but used to set an unlimited number of f
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/01-global.md#opt-name)|
 |fields|array|Array of fields arrays|
 |section_id|string|Section ID to add this field to|
 
@@ -112,7 +112,7 @@ not exist. If you believe a field should exist, make sure you're not in an early
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/01-global.md#opt-name)|
 |`section_id`|string|Unique id of the section you wish to retrieve|
 
 Say you want to fetch a section object, you can easily do that. This may be useful if you wanted to check the section 
@@ -130,7 +130,7 @@ Now let's say you want to grab all sections for a given opt_name, you can do tha
 *Arguments to pass in order of declaration:*
 |Name|Type|Description|
 |--- |--- |--- |
-|`opt_name`|string|Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string|Your unique [opt_name](../arguments/01-global.md#opt-name)|
 
 ```php
 $sections = Redux::get_sections( 'OPT_NAME' );
@@ -141,7 +141,7 @@ $sections = Redux::get_sections( 'OPT_NAME' );
 *Arguments to pass in order of declaration*
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
-|`opt_name`|string||Your unique [opt_name](../argument/01-global.md#opt-name)|
+|`opt_name`|string||Your unique [opt_name](../arguments/01-global.md#opt-name)|
 |`section_id`|string||Unique id of the section you wish to retrieve|
 |`delete_fields`|bool|`false`|If set to true, all fields below will be deleted as well|
 

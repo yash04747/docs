@@ -157,7 +157,7 @@ Redux::setArgs( $opt_name, array( 'help_sidebar' => $content ) );
 ```
 
 ::: warning Warning Redux 3.x Users
-For function name changes, please refer the [Redux 4.x Migration](../guide/4x-migration.md) guide.
+For function name changes, please refer the [Redux 4.x Migration](../guides/other/migration-guide.md) guide.
 :::
 
 ## help_tabs
@@ -207,7 +207,7 @@ Redux::setArgs( $opt_name, array( 'help_tabs' => array(
 ```
 
 ::: warning Warning Redux 3.x Users
-For function name changes, please refer the [Redux 4.x Migration](../guide/4x-migration.md) guide.
+For function name changes, please refer the [Redux 4.x Migration](../guides/other/migration-guide.md) guide.
 :::
 
 ## hide_expand

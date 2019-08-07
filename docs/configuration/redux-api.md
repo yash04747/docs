@@ -27,7 +27,7 @@ Redux 4.x+. It is advised to use the new API methods when possible.
 
 ## Usage and Examples
 
-Redux can have an unlimited number of sessions running at once. Hence, the [opt_name](argument/01-global.md#opt-name) 
+Redux can have an unlimited number of sessions running at once. Hence, the [opt_name](arguments/arguments_reference.md#opt-name) 
 is so crucial. It must be unique, and it is the first variable for the methods within the Redux API.
 
 For safety reasons, and to ensure Redux has loaded properly, it is advised to put a if statement before you use the API
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Redux' ) ) {
 ```
 
 ### Redux::setArgs()
-This method allows you set set [global args](argument/01-global.md) for your instance of Redux. It's use is required for
+This method allows you set set [global args](arguments/arguments_reference.md) for your instance of Redux. It's use is required for
 virtually any Redux instance. An example of how to use it is below.
 
 ```php
@@ -61,7 +61,7 @@ This method can take one or two parameters depending on the desired output.
 
 #### Fetch All Arguments
 
-The return value is an array of all global arguments for the [opt_name](argument/01-global.md#opt-name) instance.
+The return value is an array of all global arguments for the [opt_name](arguments/arguments_reference.md#opt-name) instance.
 ```php
 $args = Redux::getArgs( $opt_name );
 ```
@@ -73,11 +73,11 @@ If a key is provided, and that value is set, the single value will be returned, 
 ```php
 echo Redux::getArg( $opt_name, 'opt_name' );
 ```
-The above value will return a text value that will equal the [opt_name](argument/01-global.md#opt-name) string value.
+The above value will return a text value that will equal the [opt_name](arguments/arguments_reference.md#opt-name) string value.
 
 ### Redux::setHelpTab()
 
-This method requires two parameters, the [opt_name](argument/01-global.md#opt-name) string value, followed by an array value of tab data.
+This method requires two parameters, the [opt_name](arguments/arguments_reference.md#opt-name) string value, followed by an array value of tab data.
 
 ```php
 $opt_name = 'YOUR_OPT_NAME';
@@ -98,7 +98,7 @@ Redux::setHelpTab( $opt_name, $tabs );
 
 ### Redux::setHelpSidebar()
 
-This method requires two parameters. First, the [$opt_name](argument/01-global.md#opt-name) string value, the second, the 
+This method requires two parameters. First, the [$opt_name](arguments/arguments_reference.md#opt-name) string value, the second, the 
 `$content` string value.
 
 ```php
@@ -117,7 +117,7 @@ For full examples of how to use the Redux API with fields, see the [fields docum
 
 ### Setting and Fetching Extensions
 
-For full examples of how to use the Redux API with extensions, see the [using extensions documentation](basics-using-extensions.md).
+For full examples of how to use the Redux API with extensions, see the [using extensions documentation](../guides/basics/using-extensions.md).
 
 ### Redux::init()
 
@@ -190,7 +190,7 @@ td:first-child { white-space: nowrap; }
 ### Deprecated Methods
 
 A number of these methods were deprecated with Redux 4.x due to naming standards. Shims still exist for all of them, but
-a deprecation notice will be provided if used and in [dev_mode](argument/01-global.md#dev-mode).
+a deprecation notice will be provided if used and in [dev_mode](arguments/arguments_reference.md#dev-mode).
 
 |Method|Description|
 |--|--|

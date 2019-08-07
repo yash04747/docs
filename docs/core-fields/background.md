@@ -40,7 +40,7 @@ The Redux Background field offers unmatched features not found in any other opti
 ::: tip Also See
 - [Using the `compiler` Argument](../configuration/arguments/compiler.md)
 - [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/arguments/output.md)
 - [Using the `permissions` Argument](../configuration/arguments/permissions.md)
 - [Using the `required` Argument](../configuration/arguments/required.md)
 :::
