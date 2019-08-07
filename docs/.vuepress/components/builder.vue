@@ -125,16 +125,19 @@
 <script>
 
 	import VueFormGenerator from 'vue-form-generator';
+	import { FieldArray } from 'vfg-field-array';
 	// import "vue-form-generator/dist/vfg-core.css";
+	import RequiredConditionListContainer from './RequiredConditionListContainer.vue';
 
 	export default {
 
 		render() {
 
 		},
-
 		components: {
-			"vue-form-generator": VueFormGenerator.component
+			"vue-form-generator": VueFormGenerator.component,
+			FieldArray: FieldArray,
+			RequiredConditionListContainer: RequiredConditionListContainer
 		},
 		props: ['field'],
 		data() {
@@ -152,6 +155,7 @@
 					subtitle: "",
 					description: "",
 					note: "",
+					required: "",
 				},
 				schema: {
 					fields: [],
@@ -194,16 +198,17 @@
 						redux_field['fields'][key]['default'] = false;
 					}
 				} else if ( redux_field['fields'][key]['type'] === "array" ) {
-					// TODO should handle conversion from JSON object to redux_field
+					redux_field['fields'][key]['type'] = "array";
+					redux_field['fields'][key]['showRemoveButton'] = true;
+					redux_field['fields'][key]['itemContainerComponent'] = "RequiredConditionListContainer"
 				}
 
 				redux_field['fields'][key]['label'] = redux_field['fields'][key]['title'];
 				delete redux_field['fields'][key]['title'];
 				redux_field['fields'][key]['hint'] = redux_field['fields'][key]['description'];
+				to_return['schema']['fields'].push( redux_field['fields'][key] );
 				redux_field['fields'][key]['model'] = redux_field['fields'][key]['name'];
 				delete redux_field['fields'][key]['name'];
-
-				to_return['schema']['fields'].push( redux_field['fields'][key] );
 
 				to_return['model'][key] = redux_field['fields'][key]['default'];
 			} );
