@@ -20,7 +20,6 @@
   export default {
     props: ["model"],
     data() {
-      debugger;
       return {
         contentVisible: false
       };
