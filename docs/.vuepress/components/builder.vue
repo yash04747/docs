@@ -193,8 +193,8 @@
 					if ( redux_field['fields'][key]['default'] === null ) {
 						redux_field['fields'][key]['default'] = false;
 					}
-				} else {
-
+				} else if ( redux_field['fields'][key]['type'] === "array" ) {
+					// TODO should handle conversion from JSON object to redux_field
 				}
 
 				redux_field['fields'][key]['label'] = redux_field['fields'][key]['title'];

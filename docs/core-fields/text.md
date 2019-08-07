@@ -110,9 +110,9 @@ array(
         "required": {
             "name": "required",
             "title": "Required",
-            "type": "bool",
+            "type": "array",
             "description": "Should the field be required",
-            "default": false,
+            "default": null,
             "order": 60,
             "required": false
         },
