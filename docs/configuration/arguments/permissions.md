@@ -13,7 +13,7 @@ available only to administrators, the permissions argument makes this possible.
 
 In the above scenario, the line `'permissions' => 'manage_options'` would be added to either the [sections array](../objects/section.md) 
 to control an entire section, or the [fields array](../objects/field.md) to control a specific field.  The permissions 
-argument accepts any [capability name](http://codex.wordpress.org/Roles_and_Capabilities).
+argument accepts any [capability name](https://wordpress.org/support/article/roles-and-capabilities/).
 
 ::: warning
 The [WordPress documentation](https://core.trac.wordpress.org/ticket/22624) strongly recommends **not** using role names (administrator, editor, etc.) in place of capability names as 
