@@ -138,10 +138,44 @@
 		},
 		props: ['field'],
 		data() {
+			let redux_field = JSON.parse(this.$slots.default[0].text);
 
-			var redux_field = JSON.parse(this.$slots.default[0].text);
+			// Add Required Config
+			if ( redux_field.fields.required ) {
+				redux_field.fields.required.newElementButtonLabelClasses= "button is-primary",
+				redux_field.fields.required.showRemoveButton = true;
+				redux_field.fields.required.required = false;
+				redux_field.fields.required.items = {
+					"type": "object",
+					"default": {},
+					"schema": {
+						"fields": [
+							{
+								"type": "input",
+								"inputType": "text",
+								"label": "Linked Field ID",
+								"model": "id",
+								"required": true
+							},
+							{
+								"type": "select",
+								"label": "Operation",
+								"model": "operation",
+								"values": ["=", "equals", "!=", "not", ">", "greater", "is_larger", ">=", "greater_equal", "is_larger_equal", "<", "less", "is_smaller", "<=", "less_equal", "is_smaller_equal", "contains", "doesnt_contain", "not_contain", "is_empty_or", "not_empty_and"],
+								"required": true
+							},
+							{
+								"type": "input",
+								"inputType": "text",
+								"label": "Value",
+								"model": "value",
+								"required": true
+							}]
+					}
+				};
+			}
+
 			var field_type = redux_field['type'];
-
 			var keys = Object.keys( redux_field['fields'] );
 
 			var to_return = {
@@ -162,7 +196,7 @@
 					validateAfterChanged: true
 				},
 				showSection: false
-			}
+			};
 
 			keys.forEach( function( key ) {
 				if ( to_return['schema']['fields'].length === 1 ) {
@@ -225,6 +259,7 @@
 			},
 			toPHP: function( schema, model ) {
 				if ( schema && model ) {
+					// Delete empty values
 					for ( var propName in model ) {
 						if ( model[propName] === null || model[propName] === undefined || model[propName] === '' ) {
 							delete model[propName];
@@ -236,11 +271,49 @@
 								delete model[propName];
 							}
 						}
-
-						// model[propName] = "__( '"+model[propName]+"', 'YOUR_LANG_KEY' )";
-
 					}
-					var json = JSON.stringify( model, undefined, 4 );
+
+					function copy(mainObj) {
+						let objCopy = {}; // objCopy will store a copy of the mainObj
+						let key;
+
+						for (key in mainObj) {
+							objCopy[key] = mainObj[key]; // copies each property to the objCopy object
+						}
+						return objCopy;
+					}
+
+					let prep_model = copy(model);
+
+					// --->  Required Transform
+					if ( model.required ) {
+						prep_model.required = model.required;
+						let arrayLength = model.required.length;
+						if ( arrayLength > 0 ) {
+							let new_required = [];
+							for ( let i = 0; i < arrayLength; i++ ) {
+								if ( undefined !== model.required[i].value && model.required[i].value.length ) {
+									let value_test = model.required[i].value.toLowerCase();
+									if ( value_test === "true" ) {
+										model.required[i].value = true;
+									} else if ( value_test === "false" ) {
+										model.required[i].value = false;
+									}
+								}
+								if ( undefined !== model.required[i]['id'] && undefined !== model.required[i]['operation'] ) {
+									if ( model.required[i]['operation'] === "is_empty_or" ) {
+										new_required.push([model.required[i]['id'], model.required[i]['operation']]);
+									} else if ( undefined !== model.required[i]['value'] ) {
+										new_required.push([model.required[i]['id'], model.required[i]['operation'], model.required[i]['value']]);
+									}
+								}
+							}
+							prep_model.required = new_required
+						}
+					}
+					// <--- END Required Transform
+
+					var json = JSON.stringify( prep_model, undefined, 4 );
 					json = json.replace( /&/g, '&' ).replace( /</g, '<' ).replace( />/g, '>' );
 
 					var to_replace = ['title', 'subtitle', 'description', 'note'];
