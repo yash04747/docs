@@ -197,7 +197,8 @@
 				} else if ( redux_field['fields'][key]['type'] === "array" ) {
 					redux_field['fields'][key]['type'] = "array";
 					redux_field['fields'][key]['showRemoveButton'] = true;
-					redux_field['fields'][key]['itemContainerComponent'] = "RequiredConditionListContainer"
+					redux_field['fields'][key]['newElementButtonLabelClasses'] = 'button is-primary';
+					// redux_field['fields'][key]['itemContainerComponent'] = "RequiredConditionListContainer";
 				}
 
 				redux_field['fields'][key]['label'] = redux_field['fields'][key]['title'];

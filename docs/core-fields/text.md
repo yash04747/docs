@@ -114,6 +114,36 @@ array(
             "description": "Should the field be required",
             "default": null,
             "order": 60,
+            "newElementButtonLabelClasses": "button is-primary",
+            "items": {
+                "type": "object",
+                "default": {},
+                "schema": {
+                    "fields": [
+                    {
+                        "type": "input",
+                        "inputType": "text",
+                        "label": "LINKED FIELD ID",
+                        "model": "linked_field_id",
+                        "required": true
+                    },
+                    {
+                        "type": "select",
+                        "label": "Operation",
+                        "model": "operation",
+                        "values": ["=", "equals", "!=", "not", ">", "greater", "is_larger", ">=", "greater_equal", "is_larger_equal", "<", "less", "is_smaller", "<=", "less_equal", "is_smaller_equal", "contains", "doesnt_contain", "not_contain", "is_empty_or", "not_empty_and"],
+                        "required": true
+                    },
+                    {
+                        "type": "input",
+                        "inputType": "text",
+                        "label": "Value",
+                        "model": "value",
+                        "required": true
+                    }]
+                }
+            },
+            "showRemoveButton": true,
             "required": false
         },
         "readonly": {
