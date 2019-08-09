@@ -123,11 +123,9 @@
 </template>
 
 <script>
-
 	import VueFormGenerator from 'vue-form-generator';
-	// import "vue-form-generator/dist/vfg-core.css";
-	import RequiredConditionListContainer from './RequiredConditionListContainer.vue';
-
+	import { FieldArray } from 'vfg-field-array';
+	import { FieldObject } from 'vfg-field-object';
 	export default {
 
 		render() {
@@ -135,7 +133,8 @@
 		},
 		components: {
 			"vue-form-generator": VueFormGenerator.component,
-			RequiredConditionListContainer: RequiredConditionListContainer
+			FieldArray,
+			FieldObject
 		},
 		props: ['field'],
 		data() {
