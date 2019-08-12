@@ -126,7 +126,6 @@
 	import VueFormGenerator from 'vue-form-generator';
 	import { FieldArray } from 'vfg-field-array';
 	import { FieldObject } from 'vfg-field-object';
-	import { fieldDatalist} from './fields/fieldDatalist';
 	export default {
 
 		render() {
@@ -135,8 +134,7 @@
 		components: {
 			"vue-form-generator": VueFormGenerator.component,
 			FieldArray,
-			FieldObject,
-			fieldDatalist
+			FieldObject
 		},
 		props: ['field'],
 		data() {
