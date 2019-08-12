@@ -126,6 +126,10 @@
 	import VueFormGenerator from 'vue-form-generator';
 	import { FieldArray } from 'vfg-field-array';
 	import { FieldObject } from 'vfg-field-object';
+	import {TextFormatter, BoolFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
+	import RequiredFormatter from '../helper/RequiredFormatter.js';
+	import DataFormatter from '../helper/DataFormatter.js';
+
 	export default {
 
 		render() {
@@ -139,132 +143,17 @@
 		props: ['field'],
 		data() {
 			let redux_field = JSON.parse(this.$slots.default[0].text);
-
-			// Add Required Config
-			if ( redux_field.fields.required ) {
-				redux_field.fields.required.newElementButtonLabelClasses= "button is-primary",
-				redux_field.fields.required.showRemoveButton = true;
-				redux_field.fields.required.required = false;
-				redux_field.fields.required.items = {
-					"type": "object",
-					"default": {},
-					"schema": {
-						"fields": [
-							{
-								"type": "input",
-								"inputType": "text",
-								"label": "Linked Field ID",
-								"model": "id",
-								"required": true
-							},
-							{
-								"type": "select",
-								"label": "Operation",
-								"model": "operation",
-								"values": ["=", "equals", "!=", "not", ">", "greater", "is_larger", ">=", "greater_equal", "is_larger_equal", "<", "less", "is_smaller", "<=", "less_equal", "is_smaller_equal", "contains", "doesnt_contain", "not_contain", "is_empty_or", "not_empty_and"],
-								"required": true
-							},
-							{
-								"type": "input",
-								"inputType": "text",
-								"label": "Value",
-								"model": "value",
-								"required": true
-							}]
-					}
-				};
+			const util = require('util');
+			const formatters = {
+				'text': TextFormatter,
+				'bool': BoolFormatter,
+				'array': ArrayFormatter,
+				'object': ObjectFormatter,
+				'required': RequiredFormatter,
+				'data': DataFormatter
 			}
-
-			// Add Data Config
-			if ( redux_field.fields.data ) {
-				redux_field.fields.data.schema = {
-					"fields": [
-						{
-							"type": "select",
-							"label": "Data Type",
-							"model": "type",
-							"inputName": "type",
-							"required": true,
-							"validator": "string",
-							"values": ["custom", "categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "callback", "users"],
-						},
-						{
-							"type": "array",
-							"label": "Values",
-							"model": "values",
-							"inputName": "values",
-							"validator": "array",
-							"showRemoveButton": true,
-							"itemFieldClasses": "form-control",
-							"itemContainerClasses": "input-group pb-2",
-							"newElementButtonLabelClasses": "btn btn-outline-dark",
-							"removeElementButtonClasses": "btn btn-danger input-group-append",
-							"newElementButtonLabel": "+ Add Arg Item",
-							"items": {
-								"type": "object",
-								"default": {},
-								"schema": {
-									"fields": [
-									{
-										"type": 'input',
-										"inputType": 'text',
-										"label": 'ID',
-										"model": 'id',
-										"required": true
-									},
-									{
-										"type": 'select',
-										"label": 'Type',
-										"model": 'type',
-										"values": ["string", "array"],
-										"required": true
-									},
-									{
-										"type": 'input',
-										"inputType": 'text',
-										"label": 'Value',
-										"model": 'valueText',
-										"required": true,
-										"visible": function(model) {
-											return model && model.type && model.type === "string";
-										}
-									},
-									{
-										"type": 'array',
-										"inputName": 'values',
-										"label": 'Value',
-										"model": 'valueArray',
-										"required": true,
-										"showRemoveButton": true,
-										"newElementButtonLabel": "+ Add Value Array Item",
-										"visible": function(model) {
-											return model && model.type && model.type === "array";
-										}
-									}
-									]
-								}
-							},
-							"visible": function(model) {
-								return model && model.type && model.type !== "custom" && model.type !== "callback";
-							},
-							"required": function(model) {
-								return model && (model.type === "custom" || model.type === "callback");
-							}
-						},
-						{
-							"type": "input",
-							"inputType": "text",
-							"label": "Text Value",
-							"model": "dataText",
-							"inputName": "dataText",
-							"visible": function(model) {
-								return model && (model.type === "custom" || model.type === "callback");
-							}
-						}
-					]
-				}; 
-			}
-
+			
+	
 			var field_type = redux_field['type'];
 			var keys = Object.keys( redux_field['fields'] );
 
@@ -303,27 +192,14 @@
 					to_return['model']['type'] = field_type;
 				}
 
-				if ( redux_field['fields'][key]['type'] === "text" ) {
-					redux_field['fields'][key]['type'] = "input";
-					redux_field['fields'][key]['inputType'] = "text";
-					redux_field['fields'][key]['validator'] = VueFormGenerator.validators.string;
-					if ( redux_field['fields'][key]['default'] === null ) {
-						redux_field['fields'][key]['default'] = "";
-					}
-				} else if ( redux_field['fields'][key]['type'] === "bool" ) {
-					redux_field['fields'][key]['type'] = "switch";
-					redux_field['fields'][key]['multi'] = true;
-					redux_field['fields'][key]['textOn'] = "Enabled";
-					redux_field['fields'][key]['textOff'] = "Disabled";
-					if ( redux_field['fields'][key]['default'] === null ) {
-						redux_field['fields'][key]['default'] = false;
-					}
-				} else if ( redux_field['fields'][key]['type'] === "array" ) {
-					redux_field['fields'][key]['type'] = "array";
-					redux_field['fields'][key]['showRemoveButton'] = true;
-					redux_field['fields'][key]['newElementButtonLabelClasses'] = 'button is-primary';
-					// redux_field['fields'][key]['itemContainerComponent'] = "RequiredConditionListContainer";
-				}
+				let FormatterClass;
+
+				if (key === "required" || key === "data")
+					FormatterClass = formatters[key];
+				else
+					FormatterClass = formatters[redux_field['fields'][key].type];
+				redux_field['fields'][key] = Object.assign(redux_field['fields'][key], FormatterClass.data());
+				redux_field['fields'][key]['default'] = FormatterClass.default(redux_field['fields'][key]['default']);
 
 				redux_field['fields'][key]['label'] = redux_field['fields'][key]['title'];
 				delete redux_field['fields'][key]['title'];
@@ -340,7 +216,8 @@
 			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 )
 
 			to_return['model'] = Object.assign(to_return['model'], redux_field['model'])
-			console.log(to_return.schema);
+			console.log(util.inspect( to_return, false, null, true))
+
 			return to_return;
 		},
 		methods: {

@@ -98,6 +98,11 @@ array(
     "description": null,
     "icon": null,
     "fields": {
+        "data": {
+            "type": "object",
+            "name": "data",
+            "title": "Data"
+        },
         "compiler": {
             "name": "compiler",
             "title": "Compiler",
@@ -168,11 +173,6 @@ array(
             "default": null,
             "order": 0,
             "required": false
-        },
-        "data": {
-            "type": "object",
-            "name": "data",
-            "title": "Data"
         }
     },
     "model": {
