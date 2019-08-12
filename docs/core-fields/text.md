@@ -168,6 +168,13 @@ array(
             "default": null,
             "order": 0,
             "required": false
+        },
+        "data": {
+            "type": "datalist",
+            "name": "data",
+            "title": "Data",
+            "values": ["categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "callback", "users"],
+            "listName": "dataList"
         }
     },
     "model": {

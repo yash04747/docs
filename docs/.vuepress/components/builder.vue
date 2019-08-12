@@ -126,6 +126,7 @@
 	import VueFormGenerator from 'vue-form-generator';
 	import { FieldArray } from 'vfg-field-array';
 	import { FieldObject } from 'vfg-field-object';
+	import { fieldDatalist} from './fields/fieldDatalist';
 	export default {
 
 		render() {
@@ -134,7 +135,8 @@
 		components: {
 			"vue-form-generator": VueFormGenerator.component,
 			FieldArray,
-			FieldObject
+			FieldObject,
+			fieldDatalist
 		},
 		props: ['field'],
 		data() {
@@ -250,7 +252,7 @@
 			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 )
 
 			to_return['model'] = Object.assign(to_return['model'], redux_field['model'])
-
+			console.log(to_return.schema);
 			return to_return;
 		},
 		methods: {
