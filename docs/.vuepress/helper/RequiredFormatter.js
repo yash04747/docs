@@ -36,5 +36,35 @@ export default class RequiredFormatter extends ArrayFormatter{
 			}
 		});
 	}
+
+	static toPHPObject(modelObject) {
+		let arrayLength = modelObject.length;
+		if ( arrayLength > 0 ) {
+			let newObject = [];
+			for ( let i = 0; i < arrayLength; i++ ) {
+				if ( undefined !== modelObject[i].value && modelObject[i].value.length ) {
+					modelObject[i].value = this.convertToRightObject(modelObject[i].value);
+				}
+				if ( undefined !== modelObject[i]['id'] && undefined !== modelObject[i]['operation'] ) {
+					if ( modelObject[i]['operation'] === "is_empty_or" ) {
+						newObject.push([modelObject[i]['id'], modelObject[i]['operation']]);
+					} else if ( undefined !== modelObject[i]['value'] ) {
+						newObject.push([modelObject[i]['id'], modelObject[i]['operation'], modelObject[i]['value']]);
+					}
+				}
+			}
+			return newObject
+		}
+		return null;
+	}
+
+	static convertToRightObject(dataObject) {
+		if ( dataObject === "true" ) {
+			dataObject = true;
+		} else if ( dataObject === "false" ) {
+			dataObject = false;
+		}
+		return dataObject;
+	}
 };
 

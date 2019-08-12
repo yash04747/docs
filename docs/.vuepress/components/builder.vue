@@ -142,8 +142,6 @@
 		},
 		props: ['field'],
 		data() {
-			let redux_field = JSON.parse(this.$slots.default[0].text);
-			const util = require('util');
 			const formatters = {
 				'text': TextFormatter,
 				'bool': BoolFormatter,
@@ -152,8 +150,7 @@
 				'required': RequiredFormatter,
 				'data': DataFormatter
 			}
-			
-	
+			let redux_field = JSON.parse(this.$slots.default[0].text);
 			var field_type = redux_field['type'];
 			var keys = Object.keys( redux_field['fields'] );
 
@@ -216,7 +213,6 @@
 			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 )
 
 			to_return['model'] = Object.assign(to_return['model'], redux_field['model'])
-			console.log(util.inspect( to_return, false, null, true))
 
 			return to_return;
 		},
@@ -254,35 +250,13 @@
 
 					// --->	Required Transform
 					if ( model.required ) {
-						prep_model.required = model.required;
-						let arrayLength = model.required.length;
-						if ( arrayLength > 0 ) {
-							let new_required = [];
-							for ( let i = 0; i < arrayLength; i++ ) {
-								if ( undefined !== model.required[i].value && model.required[i].value.length ) {
-									let value_test = model.required[i].value.toLowerCase();
-									if ( value_test === "true" ) {
-										model.required[i].value = true;
-									} else if ( value_test === "false" ) {
-										model.required[i].value = false;
-									}
-								}
-								if ( undefined !== model.required[i]['id'] && undefined !== model.required[i]['operation'] ) {
-									if ( model.required[i]['operation'] === "is_empty_or" ) {
-										new_required.push([model.required[i]['id'], model.required[i]['operation']]);
-									} else if ( undefined !== model.required[i]['value'] ) {
-										new_required.push([model.required[i]['id'], model.required[i]['operation'], model.required[i]['value']]);
-									}
-								}
-							}
-							prep_model.required = new_required
-						}
+						prep_model.required = RequiredFormatter.toPHPObject(model.required);
 					}
 					// <--- END Required Transform
 
 					// --->	Data Transform
 					if ( model.data ) {
-						prep_model.args = this.generateArgsFromDataModel(model.data);
+						prep_model.args = DataFormatter.toPHPObject(model.data);
 						prep_model.data = model.data.type;
 					}
 					// <--- END Data Transform
@@ -338,39 +312,7 @@
 				}
 			},
 
-			generateArgsFromDataModel: function(dataObject) {
-				var new_args = {};
-				if ( dataObject ) {
-					if (this.isArgsPlainText(dataObject))
-						new_args = dataObject.dataText;
-					else 
-					{
-						var args_array = dataObject.values;
-						for (let i = 0; args_array && i < args_array.length; i++)
-						{
-							if ( undefined === args_array[i].id || undefined === args_array[i].type) continue;
-
-							if (args_array[i].type === "string")
-								new_args[args_array[i].id] = this.convertToRightObject(args_array[i].valueText);
-							else
-								new_args[args_array[i].id] = args_array[i].valueArray
-						}
-					}
-					return new_args;
-				}
-			},
-			isArgsPlainText: function(dataObject) {
-				return (dataObject && dataObject.type && (dataObject.type.toLowerCase() === "custom" || dataObject.type.toLowerCase() === "callback") &&
-						dataObject.dataText && dataObject.dataText.length > 0);
-			},
-			convertToRightObject: function(dataObject) {
-				if ( dataObject === "true" ) {
-					dataObject = true;
-				} else if ( dataObject === "false" ) {
-					dataObject = false;
-				}
-				return dataObject;
-			}
+			
 		},
 	}
 </script>

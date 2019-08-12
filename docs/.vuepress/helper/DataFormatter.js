@@ -95,5 +95,38 @@ export default class DataFormatter extends ObjectFormatter{
 		return defaultObj;
 	}
 
+	static toPHPObject(dataObject) {
+		var new_args = {};
+		if ( dataObject ) {
+			if (this.isArgsPlainText(dataObject))
+				new_args = dataObject.dataText;
+			else 
+			{
+				var args_array = dataObject.values;
+				for (let i = 0; args_array && i < args_array.length; i++)
+				{
+					if ( undefined === args_array[i].id || undefined === args_array[i].type) continue;
+
+					if (args_array[i].type === "string")
+						new_args[args_array[i].id] = this.convertToRightObject(args_array[i].valueText);
+					else
+						new_args[args_array[i].id] = args_array[i].valueArray
+				}
+			}
+			return new_args;
+		}
+	}
+	static isArgsPlainText(dataObject) {
+		return (dataObject && dataObject.type && (dataObject.type.toLowerCase() === "custom" || dataObject.type.toLowerCase() === "callback") &&
+				dataObject.dataText && dataObject.dataText.length > 0);
+	} 
+	static convertToRightObject(dataObject) {
+		if ( dataObject === "true" ) {
+			dataObject = true;
+		} else if ( dataObject === "false" ) {
+			dataObject = false;
+		}
+		return dataObject;
+	}
 };
 
