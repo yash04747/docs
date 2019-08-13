@@ -1,5 +1,5 @@
 import { ObjectFormatter } from './CommonFormatters';
-
+import { compact } from 'lodash';
 export default class DataFormatter extends ObjectFormatter{
 	static data() {
 		return {
@@ -105,12 +105,12 @@ export default class DataFormatter extends ObjectFormatter{
 				var args_array = dataObject.values;
 				for (let i = 0; args_array && i < args_array.length; i++)
 				{
-					if ( undefined === args_array[i].id || undefined === args_array[i].type) continue;
+					if ( undefined === args_array[i].id || undefined === args_array[i].type || (undefined === args_array[i].valueText && undefined === args_array[i].valueArray)) continue;
 
 					if (args_array[i].type === "string")
 						new_args[args_array[i].id] = this.convertToRightObject(args_array[i].valueText);
 					else
-						new_args[args_array[i].id] = args_array[i].valueArray
+						new_args[args_array[i].id] = compact(args_array[i].valueArray);
 				}
 			}
 			return new_args;
