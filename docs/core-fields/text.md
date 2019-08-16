@@ -98,6 +98,11 @@ array(
     "description": null,
     "icon": null,
     "fields": {
+        "attributes": {
+            "name": "attributes",
+            "title": "Attributes",
+            "type": "object"
+        },
         "data": {
             "type": "object",
             "name": "data",

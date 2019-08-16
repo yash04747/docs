@@ -129,6 +129,8 @@
 	import {TextFormatter, BoolFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
 	import RequiredFormatter from '../helper/RequiredFormatter.js';
 	import DataFormatter from '../helper/DataFormatter.js';
+	import AttributesFormatter from '../helper/AttributesFormatter';
+
 
 	export default {
 
@@ -169,6 +171,7 @@
 			};
 
 			keys.forEach( function( key ) {
+				
 				if ( to_return['schema']['fields'].length === 1 ) {
 					to_return['schema']['fields'].push( {
 						type: "input",
@@ -202,6 +205,7 @@
 				this.showSection = !this.showSection
 			},
 
+			// Helper method used in data()
 			formatSchemaField: function(fieldObject, key) {
 				const formatters = {
 					'text': TextFormatter,
@@ -209,11 +213,12 @@
 					'array': ArrayFormatter,
 					'object': ObjectFormatter,
 					'required': RequiredFormatter,
-					'data': DataFormatter
+					'data': DataFormatter,
+					'attributes': AttributesFormatter
 				}
 
 				let FormatterClass;
-				if (key === "required" || key === "data")
+				if (key === "required" || key === "data" || key === "attributes")
 					FormatterClass = formatters[key];
 				else
 					FormatterClass = formatters[fieldObject.type];
@@ -269,19 +274,15 @@
 
 				let prep_model = copy(model);
 
-				// --->	Required Transform
-				if ( model.required ) {
-					prep_model.required = RequiredFormatter.toPHPObject(model.required);
-				}
-				// <--- END Required Transform
+				if ( model.required ) prep_model.required = RequiredFormatter.toPHPObject(model.required);
 
-				// --->	Data Transform
 				if ( model.data ) {
 					prep_model.args = DataFormatter.toPHPObject(model.data);
 					prep_model.data = model.data.type;
 				}
-				// <--- END Data Transform
 
+				if ( model.attributes ) prep_model.attributes = AttributesFormatter.toPHPObject(prep_model.attributes);
+				
 				return prep_model;
 			},
 
