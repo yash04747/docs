@@ -142,19 +142,13 @@
 		},
 		props: ['field'],
 		data() {
-			const formatters = {
-				'text': TextFormatter,
-				'bool': BoolFormatter,
-				'array': ArrayFormatter,
-				'object': ObjectFormatter,
-				'required': RequiredFormatter,
-				'data': DataFormatter
-			}
+			
 			let redux_field = JSON.parse(this.$slots.default[0].text);
-			var field_type = redux_field['type'];
-			var keys = Object.keys( redux_field['fields'] );
+			let that = this;
+			let field_type = redux_field['type'];
+			let keys = Object.keys( redux_field['fields'] );
 
-			var to_return = {
+			let to_return = {
 				model: {
 					id: "FIELD_ID",
 					type: field_type,
@@ -189,26 +183,13 @@
 					to_return['model']['type'] = field_type;
 				}
 
-				let FormatterClass;
+				let schemaFieldObject = that.formatSchemaField(redux_field['fields'][key], key);
 
-				if (key === "required" || key === "data")
-					FormatterClass = formatters[key];
-				else
-					FormatterClass = formatters[redux_field['fields'][key].type];
-				redux_field['fields'][key] = Object.assign(redux_field['fields'][key], FormatterClass.data());
-				redux_field['fields'][key]['default'] = FormatterClass.default(redux_field['fields'][key]['default']);
-
-				redux_field['fields'][key]['label'] = redux_field['fields'][key]['title'];
-				delete redux_field['fields'][key]['title'];
-				redux_field['fields'][key]['hint'] = redux_field['fields'][key]['description'];
-				redux_field['fields'][key]['model'] = redux_field['fields'][key]['name'];
-				delete redux_field['fields'][key]['name'];
-
-				to_return['schema']['fields'].push( redux_field['fields'][key] );
+				to_return['schema']['fields'].push( schemaFieldObject );
 				to_return['model'][key] = redux_field['fields'][key]['default'];
 			} );
 
-			to_return['model']['id'] = "FIELD_ID"
+			to_return['model']['id'] = "FIELD_ID";
 
 			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 )
 
@@ -220,97 +201,141 @@
 			toggle() {
 				this.showSection = !this.showSection
 			},
+
+			formatSchemaField: function(fieldObject, key) {
+				const formatters = {
+					'text': TextFormatter,
+					'bool': BoolFormatter,
+					'array': ArrayFormatter,
+					'object': ObjectFormatter,
+					'required': RequiredFormatter,
+					'data': DataFormatter
+				}
+
+				let FormatterClass;
+				if (key === "required" || key === "data")
+					FormatterClass = formatters[key];
+				else
+					FormatterClass = formatters[fieldObject.type];
+
+				fieldObject = Object.assign(fieldObject, FormatterClass.data());
+				fieldObject['default'] = FormatterClass.default(fieldObject['default']);
+
+				fieldObject['label'] = fieldObject['title'];
+				delete fieldObject['title'];
+				fieldObject['hint'] = fieldObject['description'];
+				fieldObject['model'] = fieldObject['name'];
+				delete fieldObject['name'];
+
+				return fieldObject;
+			},
+
 			toPHP: function( schema, model ) {
-				if ( schema && model ) {
-					// Delete empty values
-					for ( var propName in model ) {
-						if ( model[propName] === null || model[propName] === undefined || model[propName] === '' ) {
-							delete model[propName];
-						}
-						if ( propName !== "type" && schema['redux']['fields'].hasOwnProperty(
-								propName ) && schema['redux']['fields'][propName].hasOwnProperty(
-								'default' ) ) {
-							if ( schema['redux']['fields'][propName]['default'] === model[propName] ) {
-								delete model[propName];
-							}
-						}
-					}
+				if ( schema && model ) {				
+					model = this.deleteEmptyValues(schema, model);
+					model = this.transformCustomArgs(model);
 
-					function copy(mainObj) {
-						let objCopy = {}; // objCopy will store a copy of the mainObj
-						let key;
-
-						for (key in mainObj) {
-							objCopy[key] = mainObj[key]; // copies each property to the objCopy object
-						}
-						return objCopy;
-					}
-
-					let prep_model = copy(model);
-
-					// --->	Required Transform
-					if ( model.required ) {
-						prep_model.required = RequiredFormatter.toPHPObject(model.required);
-					}
-					// <--- END Required Transform
-
-					// --->	Data Transform
-					if ( model.data ) {
-						prep_model.args = DataFormatter.toPHPObject(model.data);
-						prep_model.data = model.data.type;
-					}
-					// <--- END Data Transform
-
-					var json = JSON.stringify( prep_model, undefined, 4 );
-					json = json.replace( /&/g, '&' ).replace( /</g, '<' ).replace( />/g, '>' );
-
-					var to_replace = ['title', 'subtitle', 'description', 'note'];
-					var arrayLength = to_replace.length;
-					for ( var i = 0; i < arrayLength; i++ ) {
-						var key = to_replace[i];
-						var r = new RegExp( '"' + key + '": "(.*)"', "g" ); // global match and ignore case flag
-						json = json.replace( r, '"' + key + '": esc_html__( "$1" , "redux_docs_generator" )' );
-					}
-
-
-					data = json.replace(
-						/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
-						function( match ) {
-							var cls = 'number';
-
-							if ( /^"/.test( match ) ) {
-								cls = 'single-quoted-string string';
-							} else if ( /true|false/.test( match ) ) {
-								cls = 'boolean';
-							} else if ( /null/.test( match ) ) {
-								cls = 'null';
-							}
-							var operator = '';
-							if ( match.endsWith( ':' ) ) {
-								match = match.replace( ':', '' )
-								operator = "=>";
-
-							}
-							var string = '<span class="token ' + cls + '">' + match + '</span>';
-
-							if ( operator == '' ) {
-								return string
-							} else {
-								string += ' <span class="token operator">' + operator + '</span>';
-								return string
-							}
-						}
-					);
-
-					var data = data.replace(
-						/{/g, '<span class="token keyword">array</span>(' ).replace(
-						/}/g, '<span class="">)</span>' ).replace(
-						/\[/g, '<span class="token keyword">array</span>(' ).replace(
-						/]/g, '<span class="">)</span>' ).replace( /"/g, "'" )
-
-					return "<?php <br />Redux<span class=\"token punctuation\">:</span><span class=\"token punctuation\">:</span><span class=\"token function\">set_field</span><span class=\"token punctuation\">(</span> <span class=\"token single-quoted-string string\">'OPT_NAME'</span>, <span class=\"token single-quoted-string string\">'SECTION_ID'</span>, " + data + " <span class=\"token punctuation\">)</span>;"
+					return this.phpify(model);
 				}
 			},
+
+			deleteEmptyValues: function( schema, model ) {
+				// Delete empty values
+				for ( var propName in model ) {
+					if ( model[propName] === null || model[propName] === undefined || model[propName] === '' ) {
+						delete model[propName];
+					}
+					if ( propName !== "type" && schema['redux']['fields'].hasOwnProperty(
+							propName ) && schema['redux']['fields'][propName].hasOwnProperty(
+							'default' ) ) {
+						if ( schema['redux']['fields'][propName]['default'] === model[propName] ) {
+							delete model[propName];
+						}
+					}
+				}
+				return model;
+			},
+
+			transformCustomArgs: function(model) {
+				function copy(mainObj) {
+					let objCopy = {}; // objCopy will store a copy of the mainObj
+					let key;
+
+					for (key in mainObj) {
+						objCopy[key] = mainObj[key]; // copies each property to the objCopy object
+					}
+					return objCopy;
+				}
+
+				let prep_model = copy(model);
+
+				// --->	Required Transform
+				if ( model.required ) {
+					prep_model.required = RequiredFormatter.toPHPObject(model.required);
+				}
+				// <--- END Required Transform
+
+				// --->	Data Transform
+				if ( model.data ) {
+					prep_model.args = DataFormatter.toPHPObject(model.data);
+					prep_model.data = model.data.type;
+				}
+				// <--- END Data Transform
+
+				return prep_model;
+			},
+
+			phpify: function(model) {
+
+				var json = JSON.stringify( model, undefined, 4 );
+				json = json.replace( /&/g, '&' ).replace( /</g, '<' ).replace( />/g, '>' );
+
+				var to_replace = ['title', 'subtitle', 'description', 'note'];
+				var arrayLength = to_replace.length;
+				for ( var i = 0; i < arrayLength; i++ ) {
+					var key = to_replace[i];
+					var r = new RegExp( '"' + key + '": "(.*)"', "g" ); // global match and ignore case flag
+					json = json.replace( r, '"' + key + '": esc_html__( "$1" , "redux_docs_generator" )' );
+				}
+
+
+				var data = json.replace(
+					/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+					function( match ) {
+						var cls = 'number';
+
+						if ( /^"/.test( match ) ) {
+							cls = 'single-quoted-string string';
+						} else if ( /true|false/.test( match ) ) {
+							cls = 'boolean';
+						} else if ( /null/.test( match ) ) {
+							cls = 'null';
+						}
+						var operator = '';
+						if ( match.endsWith( ':' ) ) {
+							match = match.replace( ':', '' )
+							operator = "=>";
+
+						}
+						var string = '<span class="token ' + cls + '">' + match + '</span>';
+
+						if ( operator == '' ) {
+							return string
+						} else {
+							string += ' <span class="token operator">' + operator + '</span>';
+							return string
+						}
+					}
+				);
+
+				data = data.replace(
+					/{/g, '<span class="token keyword">array</span>(' ).replace(
+					/}/g, '<span class="">)</span>' ).replace(
+					/\[/g, '<span class="token keyword">array</span>(' ).replace(
+					/]/g, '<span class="">)</span>' ).replace( /"/g, "'" );
+
+				return "<?php <br />Redux<span class=\"token punctuation\">:</span><span class=\"token punctuation\">:</span><span class=\"token function\">set_field</span><span class=\"token punctuation\">(</span> <span class=\"token single-quoted-string string\">'OPT_NAME'</span>, <span class=\"token single-quoted-string string\">'SECTION_ID'</span>, " + data + " <span class=\"token punctuation\">)</span>;";
+			}
 
 			
 		},
