@@ -9,6 +9,7 @@ export default class AttributesFormatter extends ObjectFormatter {
                         "type": "array",
                         "model": "attributes",
                         "showRemoveButton": true,
+                        "newElementButtonLabel": "+ Add Attribute",
                         "items": {
                             "type": "object",
                             "default": {},

@@ -162,7 +162,6 @@
 					title: "",
 					subtitle: "",
 					description: "",
-					note: "",
 					required: "",
 				},
 				schema: {
