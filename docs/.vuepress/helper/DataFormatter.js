@@ -25,7 +25,7 @@ export default class DataFormatter extends ObjectFormatter{
 						"itemContainerClasses": "input-group pb-2",
 						"newElementButtonLabelClasses": "btn btn-outline-dark",
 						"removeElementButtonClasses": "btn btn-danger input-group-append",
-						"newElementButtonLabel": "+ Add Arg Item",
+						"newElementButtonLabel": "+ Add Argument",
 						"items": {
 							"type": "object",
 							"default": {},
@@ -62,7 +62,7 @@ export default class DataFormatter extends ObjectFormatter{
 										"model": 'valueArray',
 										"required": true,
 										"showRemoveButton": true,
-										"newElementButtonLabel": "+ Add Value Array Item",
+										"newElementButtonLabel": "+ Add Value",
 										"visible": function(model) {
 											return model && model.type && model.type === "array";
 										}
@@ -71,7 +71,7 @@ export default class DataFormatter extends ObjectFormatter{
 							}
 						},
 						"visible": function(model) {
-							return model && model.type && model.type !== "custom" && model.type !== "callback";
+							return model && model.type && model.type !== "custom" && model.type !== "callback" && model.type !== "array";
 						},
 						"required": function(model) {
 							return model && (model.type === "custom" || model.type === "callback");
@@ -87,11 +87,14 @@ export default class DataFormatter extends ObjectFormatter{
 							return model && (model.type === "custom" || model.type === "callback");
 						}
 					},
-
 					{
 						"type": "array",
 						"model": "array",
 						"showRemoveButton": true,
+						"newElementButtonLabel": "+ Add Value",
+						"visible": function(model) {
+							return model && model.type && model.type === "array";
+						},
 						"items": {
 							"type": "object",
 							"default": {},
@@ -100,22 +103,9 @@ export default class DataFormatter extends ObjectFormatter{
 									{
 										"type": 'input',
 										"inputType": 'text',
-										"label": 'Key',
-										"model": 'key',
-										"required": true,
-										"visible": function(model) {
-											return model && model.type && model.type === "array";
-										}
-									},
-									{
-										"type": 'input',
-										"inputType": 'text',
 										"label": 'Value',
 										"model": 'value',
 										"required": true,
-										"visible": function(model) {
-											return model && model.type && model.type === "array";
-										}
 									},
 									]
 							}
@@ -147,18 +137,23 @@ export default class DataFormatter extends ObjectFormatter{
 			for (let i = 0; args_array && i < args_array.length; i++)
 			{
 				if ( undefined === args_array[i].id || undefined === args_array[i].type || (undefined === args_array[i].valueText && undefined === args_array[i].valueArray)) continue;
-
 				if (args_array[i].type === "string")
 					newObject[args_array[i].id] = this.convertToRightObject(args_array[i].valueText);
 				else
 					newObject[args_array[i].id] = compact(args_array[i].valueArray);
 			}
 		}
+
+		if ( newObject['data'] === "custom" ) {
+			newObject['data'] = newObject['args'];
+			delete newObject['args'];
+		}
+
 		// No empty array please
-		// if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
-		//
-		// }
-		return newObject;
+		if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
+			return newObject;
+		}
+
 	}
 	static isArgsPlainText(modelObject) {
 		return (modelObject && modelObject.type && (modelObject.type.toLowerCase() === "custom" || modelObject.type.toLowerCase() === "callback") &&

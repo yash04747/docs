@@ -77,6 +77,13 @@
       "name": "data",
       "title": "Data",
       "order": 50
+    },
+    "permissions": {
+      "type": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 55
     }
   },
   "model": {
