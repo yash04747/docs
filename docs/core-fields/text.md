@@ -91,105 +91,17 @@ array(
 ```
 
 ## Example Declaration
-<builder field="text">
-{
-    "type": "text",
-    "name": "Text",
-    "description": null,
-    "icon": null,
-    "fields": {
-        "validate": {
-            "name": "validate",
-            "title": "Validate",
-            "type": "object"
-        },
-        "attributes": {
-            "name": "attributes",
-            "title": "Attributes",
-            "type": "object"
-        },
-        "data": {
-            "type": "object",
-            "name": "data",
-            "title": "Data"
-        },
-        "compiler": {
-            "name": "compiler",
-            "title": "Compiler",
-            "type": "bool",
-            "description": "Should the field be sent to the compiler",
-            "default": false,
-            "order": 60,
-            "required": false
-        },
-        "required": {
-            "name": "required",
-            "title": "Required",
-            "type": "array",
-            "description": "Should the field be required",
-            "default": null,
-            "order": 60
-        },
-        "readonly": {
-            "name": "readonly",
-            "title": "Readonly",
-            "type": "bool",
-            "description": "Should the field be readonly",
-            "default": false,
-            "order": 60,
-            "required": false
-        },
-        "class": {
-            "name": "class",
-            "title": "Class",
-            "type": "text",
-            "description": "",
-            "default": null,
-            "order": 3,
-            "required": false
-        },
-        "desc": {
-            "name": "desc",
-            "title": "Description",
-            "type": "text",
-            "description": "",
-            "default": null,
-            "order": 3,
-            "required": false
-        },
-        "subtitle": {
-            "name": "subtitle",
-            "title": "Subtitle",
-            "type": "text",
-            "description": "",
-            "default": null,
-            "order": 2,
-            "required": false
-        },
-        "title": {
-            "name": "title",
-            "title": "Title",
-            "type": "text",
-            "description": "",
-            "default": null,
-            "order": 1,
-            "required": false
-        },
-        "id": {
-            "name": "id",
-            "title": "ID",
-            "type": "text",
-            "description": "",
-            "default": null,
-            "order": 0,
-            "required": false
-        }
-    },
-    "model": {
-        "title": "Text Field"
-    }
+<script>
+import builder from './text.json';
+export default {
+  data () {
+      return {
+          builder: builder
+      };
+  }
 }
-</builder>
+</script>
+<builder :builder_json="builder" />
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 

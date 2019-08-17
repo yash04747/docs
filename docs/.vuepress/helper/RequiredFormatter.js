@@ -1,4 +1,5 @@
 import {ArrayFormatter} from './CommonFormatters.js';
+import { pick, identity } from 'lodash';
 export default class RequiredFormatter extends ArrayFormatter{
 	static data() {
 		return Object.assign(super.data(), {
@@ -38,9 +39,11 @@ export default class RequiredFormatter extends ArrayFormatter{
 	}
 
 	static toPHPObject(modelObject) {
+		// No empty array please
+		let newObject = [];
+
 		let arrayLength = modelObject.length;
 		if ( arrayLength > 0 ) {
-			let newObject = [];
 			for ( let i = 0; i < arrayLength; i++ ) {
 				if ( undefined !== modelObject[i].value && modelObject[i].value.length ) {
 					modelObject[i].value = this.convertToRightObject(modelObject[i].value);
@@ -53,9 +56,13 @@ export default class RequiredFormatter extends ArrayFormatter{
 					}
 				}
 			}
-			return newObject
+
 		}
-		return null;
+		// No empty array please
+		if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
+			return newObject;
+		}
+
 	}
 
 	static convertToRightObject(dataObject) {
