@@ -12,7 +12,7 @@ export default class DataFormatter extends ObjectFormatter{
 						"inputName": "type",
 						"required": true,
 						"validator": "string",
-						"values": ["custom", "categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "callback", "users"],
+						"values": ["array", "custom", "categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "callback", "users"],
 					},
 					{
 						"type": "array",
@@ -31,42 +31,42 @@ export default class DataFormatter extends ObjectFormatter{
 							"default": {},
 							"schema": {
 								"fields": [
-								{
-									"type": 'input',
-									"inputType": 'text',
-									"label": 'ID',
-									"model": 'id',
-									"required": true
-								},
-								{
-									"type": 'select',
-									"label": 'Type',
-									"model": 'type',
-									"values": ["string", "array"],
-									"required": true
-								},
-								{
-									"type": 'input',
-									"inputType": 'text',
-									"label": 'Value',
-									"model": 'valueText',
-									"required": true,
-									"visible": function(model) {
-										return model && model.type && model.type === "string";
+									{
+										"type": 'input',
+										"inputType": 'text',
+										"label": 'ID',
+										"model": 'id',
+										"required": true
+									},
+									{
+										"type": 'select',
+										"label": 'Type',
+										"model": 'type',
+										"values": ["string", "array"],
+										"required": true
+									},
+									{
+										"type": 'input',
+										"inputType": 'text',
+										"label": 'Value',
+										"model": 'valueText',
+										"required": true,
+										"visible": function(model) {
+											return model && model.type && model.type === "string";
+										}
+									},
+									{
+										"type": 'array',
+										"inputName": 'values',
+										"label": 'Value',
+										"model": 'valueArray',
+										"required": true,
+										"showRemoveButton": true,
+										"newElementButtonLabel": "+ Add Value Array Item",
+										"visible": function(model) {
+											return model && model.type && model.type === "array";
+										}
 									}
-								},
-								{
-									"type": 'array',
-									"inputName": 'values',
-									"label": 'Value',
-									"model": 'valueArray',
-									"required": true,
-									"showRemoveButton": true,
-									"newElementButtonLabel": "+ Add Value Array Item",
-									"visible": function(model) {
-										return model && model.type && model.type === "array";
-									}
-								}
 								]
 							}
 						},
@@ -86,47 +86,91 @@ export default class DataFormatter extends ObjectFormatter{
 						"visible": function(model) {
 							return model && (model.type === "custom" || model.type === "callback");
 						}
+					},
+
+					{
+						"type": "array",
+						"model": "array",
+						"showRemoveButton": true,
+						"items": {
+							"type": "object",
+							"default": {},
+							"schema": {
+								"fields": [
+									{
+										"type": 'input',
+										"inputType": 'text',
+										"label": 'Key',
+										"model": 'key',
+										"required": true,
+										"visible": function(model) {
+											return model && model.type && model.type === "array";
+										}
+									},
+									{
+										"type": 'input',
+										"inputType": 'text',
+										"label": 'Value',
+										"model": 'value',
+										"required": true,
+										"visible": function(model) {
+											return model && model.type && model.type === "array";
+										}
+									},
+									]
+							}
+						}
 					}
+
+
+
 				]
-			} 
+			}
 		};
 	}
 	static default(defaultObj) {
 		return defaultObj;
 	}
 
-	static toPHPObject(dataObject) {
-		var new_args = {};
-		if ( dataObject ) {
-			if (this.isArgsPlainText(dataObject))
-				new_args = dataObject.dataText;
-			else 
-			{
-				var args_array = dataObject.values;
-				for (let i = 0; args_array && i < args_array.length; i++)
-				{
-					if ( undefined === args_array[i].id || undefined === args_array[i].type || (undefined === args_array[i].valueText && undefined === args_array[i].valueArray)) continue;
+	static toPHPObject(modelObject) {
+		let newObject = {};
+		let modelObjectCopy = {};
+		let key;
+		for (key in modelObject) {
+			modelObjectCopy[key] = modelObject[key]; // copies each property to the objCopy object
+		}
 
-					if (args_array[i].type === "string")
-						new_args[args_array[i].id] = this.convertToRightObject(args_array[i].valueText);
-					else
-						new_args[args_array[i].id] = compact(args_array[i].valueArray);
-				}
+		if (this.isArgsPlainText(modelObject))
+			newObject = modelObject.dataText;
+		else  {
+			var args_array = modelObject.values;
+			for (let i = 0; args_array && i < args_array.length; i++)
+			{
+				if ( undefined === args_array[i].id || undefined === args_array[i].type || (undefined === args_array[i].valueText && undefined === args_array[i].valueArray)) continue;
+
+				if (args_array[i].type === "string")
+					newObject[args_array[i].id] = this.convertToRightObject(args_array[i].valueText);
+				else
+					newObject[args_array[i].id] = compact(args_array[i].valueArray);
 			}
-			return new_args;
 		}
+		// No empty array please
+		// if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
+		//
+		// }
+		return newObject;
 	}
-	static isArgsPlainText(dataObject) {
-		return (dataObject && dataObject.type && (dataObject.type.toLowerCase() === "custom" || dataObject.type.toLowerCase() === "callback") &&
-				dataObject.dataText && dataObject.dataText.length > 0);
-	} 
-	static convertToRightObject(dataObject) {
-		if ( dataObject === "true" ) {
-			dataObject = true;
-		} else if ( dataObject === "false" ) {
-			dataObject = false;
+	static isArgsPlainText(modelObject) {
+		return (modelObject && modelObject.type && (modelObject.type.toLowerCase() === "custom" || modelObject.type.toLowerCase() === "callback") &&
+			modelObject.dataText && modelObject.dataText.length > 0);
+	}
+	static convertToRightObject(modelObject) {
+		if ( modelObject === "true" ) {
+			modelObject = true;
+		} else if ( modelObject === "false" ) {
+			modelObject = false;
 		}
-		return dataObject;
+		return modelObject;
 	}
 };
 

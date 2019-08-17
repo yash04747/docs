@@ -144,8 +144,11 @@
 		},
 		props: ['field'],
 		data() {
-			
-			let redux_field = JSON.parse(this.$slots.default[0].text);
+			if ( ! this.$attrs.builder_json ) {
+				return
+			}
+
+			let redux_field = this.$attrs.builder_json;
 			let that = this;
 			let field_type = redux_field['type'];
 			let keys = Object.keys( redux_field['fields'] );
@@ -170,8 +173,8 @@
 				showSection: false
 			};
 
+			let order = 0;
 			keys.forEach( function( key ) {
-				
 				if ( to_return['schema']['fields'].length === 1 ) {
 					to_return['schema']['fields'].push( {
 						type: "input",
@@ -181,8 +184,15 @@
 						readonly: true,
 						featured: false,
 						disabled: true,
-						order: 0
-					} )
+
+					} );
+					if ( redux_field['fields'][key]['order'] )
+						to_return['schema']['fields']['order'] = redux_field['fields'][key]['order'];
+					else {
+						to_return['schema']['fields']['order'] = order;
+						order++;
+					}
+
 					to_return['model']['type'] = field_type;
 				}
 
@@ -194,9 +204,9 @@
 
 			to_return['model']['id'] = "FIELD_ID";
 
-			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 )
+			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 );
 
-			to_return['model'] = Object.assign(to_return['model'], redux_field['model'])
+			to_return['model'] = Object.assign(to_return['model'], redux_field['model']);
 
 			return to_return;
 		},
@@ -215,7 +225,7 @@
 					'required': RequiredFormatter,
 					'data': DataFormatter,
 					'attributes': AttributesFormatter
-				}
+				};
 
 				let FormatterClass;
 				if (key === "required" || key === "data" || key === "attributes")
@@ -291,7 +301,7 @@
 				var json = JSON.stringify( model, undefined, 4 );
 				json = json.replace( /&/g, '&' ).replace( /</g, '<' ).replace( />/g, '>' );
 
-				var to_replace = ['title', 'subtitle', 'description', 'note'];
+				var to_replace = ['title', 'subtitle', 'description', 'note', 'desc'];
 				var arrayLength = to_replace.length;
 				for ( var i = 0; i < arrayLength; i++ ) {
 					var key = to_replace[i];
