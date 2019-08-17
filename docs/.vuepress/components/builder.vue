@@ -100,7 +100,7 @@
 	}
 
 </style>
-
+<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <template>
 	<div id="generator">
 		<div class="panel thirty">
@@ -124,13 +124,14 @@
 
 <script>
 	import VueFormGenerator from 'vue-form-generator';
+	import vueMultiselect from "vue-multiselect";
 	import { FieldArray } from 'vfg-field-array';
 	import { FieldObject } from 'vfg-field-object';
 	import {TextFormatter, BoolFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
 	import RequiredFormatter from '../helper/RequiredFormatter.js';
 	import DataFormatter from '../helper/DataFormatter.js';
 	import AttributesFormatter from '../helper/AttributesFormatter';
-
+	import ValidateFormatter from '../helper/ValidateFormatter';
 
 	export default {
 
@@ -139,6 +140,7 @@
 		},
 		components: {
 			"vue-form-generator": VueFormGenerator.component,
+			vueMultiselect,
 			FieldArray,
 			FieldObject
 		},
@@ -187,7 +189,6 @@
 				}
 
 				let schemaFieldObject = that.formatSchemaField(redux_field['fields'][key], key);
-
 				to_return['schema']['fields'].push( schemaFieldObject );
 				to_return['model'][key] = redux_field['fields'][key]['default'];
 			} );
@@ -214,11 +215,12 @@
 					'object': ObjectFormatter,
 					'required': RequiredFormatter,
 					'data': DataFormatter,
-					'attributes': AttributesFormatter
+					'attributes': AttributesFormatter,
+					'validate': ValidateFormatter
 				}
 
 				let FormatterClass;
-				if (key === "required" || key === "data" || key === "attributes")
+				if (["required", "data", "attributes", "validate"].indexOf(key) != -1)
 					FormatterClass = formatters[key];
 				else
 					FormatterClass = formatters[fieldObject.type];
@@ -282,6 +284,7 @@
 				}
 
 				if ( model.attributes ) prep_model.attributes = AttributesFormatter.toPHPObject(prep_model.attributes);
+				if ( model.validate ) prep_model.validate = AttributesFormatter.toPHPObject(prep_model.validate);
 				
 				return prep_model;
 			},

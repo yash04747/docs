@@ -98,6 +98,11 @@ array(
     "description": null,
     "icon": null,
     "fields": {
+        "validate": {
+            "name": "validate",
+            "title": "Validate",
+            "type": "object"
+        },
         "attributes": {
             "name": "attributes",
             "title": "Attributes",

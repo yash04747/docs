@@ -1,4 +1,5 @@
 import VueFormGenerator from 'vue-form-generator';
+import Multiselect from 'vue-multiselect'
 import {FieldArray} from 'vfg-field-array';
 import { FieldObject } from 'vfg-field-object';
 export default ({
@@ -9,6 +10,7 @@ export default ({
                 }) => {
 	if (typeof process === 'undefined') { // process is undefined in a browser         
 		Vue.component('VueFormGenerator', VueFormGenerator.component);
+		Vue.component('Multiselect', Multiselect);
 		Vue.component('FieldObject', FieldObject);
 		Vue.component('FieldArray', FieldArray);
     }
