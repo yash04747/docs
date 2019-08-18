@@ -33,41 +33,41 @@ Array of individual arrays that set the individual color pickers.  See 'Creatin
 |subtitle|string||Subtitle display of the field, situated beneath the title.|
 |desc|string||Description of the field, appearing beneath the field control.|
 |class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool|false|Flag to run the compiler hook or array.  With this extension, the value only need be true or false.  See 'Outputting the Color Values' below.|
-|output|bool|false|Flag to output dynamically generate CSS.  With this extension, the value only need be true or false.  See 'Outputting the Color Values' below.|
+|compiler|bool|`false`|Flag to run the compiler hook or array.  With this extension, the value only need be true or false.  See 'Outputting the Color Values' below.|
+|output|bool|`false`|Flag to output dynamically generate CSS.  With this extension, the value only need be true or false.  See 'Outputting the Color Values' below.|
 |options|array||Array of options that sets the behavior of the color picker.  See `Color Picker Options` below.|
-|output_transparent|bool|false|Flag that sets whether or not a blank color outputs as an empty space or as the string `transparent`.|
-|no_compiler_output|bool|false|Flag that determines whether or not CSS will be outwith with the compiler flag set to `true`.  Useful when only desiring to fire the compiler without any output.|
+|output_transparent|bool|`false`|Flag that sets whether or not a blank color outputs as an empty space or as the string `transparent`.|
+|no_compiler_output|bool|`false`|Flag that determines whether or not CSS will be outwith with the compiler flag set to `true`.  Useful when only desiring to fire the compiler without any output.|
 |groups|array||Array of color group categories to which color pickers will be grouped. See 'Creating Color Groupings' below.|
-|accordion|bool|true|Flag to set the accordion folding for color groups.|
-|simple|bool|false|Flag to set the display of the scheme saving options.  See 'Using Schemes' below.|
+|accordion|bool|`true`|Flag to set the accordion folding for color groups.|
+|simple|bool|`false`|Flag to set the display of the scheme saving options.  See 'Using Schemes' below.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Color Picker Options
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
-|show_input|bool|true|Flag to allow free form typing input.|
-|show_initial|bool|true|Flag to set the display of the color initially set when opening the color picker.|
-|show_alpha|bool|true|Flag to set the alpha transparency selector.|
-|show_palette|bool|true|Flag to set the display of the color picker's color palette.|
-|show_palette_only|bool|false|Flag to display the color palette only, and nothing else.|
-|show_selection_palette|bool|true|Flag to display a palette of previously selected colors.|
+|show_input|bool|`true`|Flag to allow free form typing input.|
+|show_initial|bool|`true`|Flag to set the display of the color initially set when opening the color picker.|
+|show_alpha|bool|`true`|Flag to set the alpha transparency selector.|
+|show_palette|bool|`true`|Flag to set the display of the color picker's color palette.|
+|show_palette_only|bool|`false`|Flag to display the color palette only, and nothing else.|
+|show_selection_palette|bool|`true`|Flag to display a palette of previously selected colors.|
 |max_palette_size|int|10|Integer value setting the number of colors to display horizontally in the color palette.|
-|allow_empty|bool|true|Flag to set the display of of 'clear' button, removing the color value.|
-|clickout_fires_change|bool|false|Flag that determines if clicking outside the color picker forces a color change.|
+|allow_empty|bool|`true`|Flag to set the display of of 'clear' button, removing the color value.|
+|clickout_fires_change|bool|`false`|Flag that determines if clicking outside the color picker forces a color change.|
 |choose_text|string|'Choose'|String to display for the color picker Choose button.|
 |cancel_text|string|'Cancel'|String to display for the color picker Cancel button.|
-|show_buttons|bool|true|Flag that sets the display of the Choose and Cancel buttons.|
-|use_extended_classes|bool|false|Flag enabled the use of CSS Container and Replacer classes.  See 'Extended Classes' below.|
+|show_buttons|bool|`true`|Flag that sets the display of the Choose and Cancel buttons.|
+|use_extended_classes|bool|`false`|Flag enabled the use of CSS Container and Replacer classes.  See 'Extended Classes' below.|
 |palette|array||Individual arrays color values.  See 'Color Palettes' below.|
 
 
@@ -77,8 +77,8 @@ To sort color pickers into a particular groups, we must first define the group c
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |desc|string||Optional.  The description to display beneath the color grouping's name.|
-|hidden|bool|false|Optional.  Flag setting the visibility of the color grouping.  This is useful in event you'd like to hide certain group under certain circumstances while retaining the color data in the database.|
-|accordion_open|bool|false|Optional.  Flag to set whether or not the group's accordion is open or closed by default.|
+|hidden|bool|`false`|Optional.  Flag setting the visibility of the color grouping.  This is useful in event you'd like to hide certain group under certain circumstances while retaining the color data in the database.|
+|accordion_open|bool|`false`|Optional.  Flag to set whether or not the group's accordion is open or closed by default.|
 
 
 Alternatively, set the value of the group key/pair to a string to indicate the description. In doing so, the `hidden` and `accordion_open` will be set to their default values. See the example below.
@@ -153,7 +153,7 @@ Let's examine the arguments for each color selector first.  These arrays are pl
 |alpha|float|1|Float value of the default alpha value.  Value must be a decimal value between `0` and `1`.|
 |selector|string||CSS class or ID to which the color will be used with.|
 |mode|string|'color'|CSS mode in which the color is assigned to.|
-|important|bool|false|Flag to set the CSS `!important` value.|
+|important|bool|`false`|Flag to set the CSS `!important` value.|
 |group|string||String of a group name set in the group array.  If left blank, or using the name of a group that does not exist, the color picker will appear in a nameless group.|
 
 

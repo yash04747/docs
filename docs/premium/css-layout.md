@@ -24,9 +24,9 @@ To understand how to use extensions, you should read this article on [Using Exte
 |subtitle|string||Subtitle display of the field, situated beneath the title.|
 |desc|string||Description of the field, appearing beneath the field control.|
 |class|string||Appends any number of classes to the field`s class attribute.|
-|compiler|bool/array|false|Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
+|compiler|bool/array|`false`|Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
 |output|array||Array of CSS selectors to dynamically generate CSS.  More info|
-|output-shorthand|bool|false|Flag to set whether or not outputted CSS for `margin`, `border`, and `padding` is in shorthand format.|
+|output-shorthand|bool|`false`|Flag to set whether or not outputted CSS for `margin`, `border`, and `padding` is in shorthand format.|
 |units|array|`%`, `px`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `pt`, `pc`|Array of permissible units to be used in the CSS layout field.  Units not specified in this array will be rejected and replaced with the default.|
 |margin-unit|string|`px`|Default unit for the margin layout.|
 |border-unit|string|`px`|Default unit for the border layout.|
@@ -39,11 +39,11 @@ To understand how to use extensions, you should read this article on [Using Exte
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## CSS Layout Defaults
@@ -85,12 +85,12 @@ The radius inputs for value, color and style may also be independently enabled o
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
-|margin_enabled|bool|true|Flag to enable or disable margin inputs.|
-|border_enabled|bool|true|Flag to enable or disable border inputs.|
-|padding_enabled|bool|true|Flag to enable or disable padding inputs.|
-|radius_enabled|bool|true|Flag to enable or disable the radius value input.|
-|color_enabled|bool|true|Flag to enable or disable the radius color selector.|
-|style_enabled|bool|true|Flag to enable or disable the radius style selector.|
+|margin_enabled|bool|`true`|Flag to enable or disable margin inputs.|
+|border_enabled|bool|`true`|Flag to enable or disable border inputs.|
+|padding_enabled|bool|`true`|Flag to enable or disable padding inputs.|
+|radius_enabled|bool|`true`|Flag to enable or disable the radius value input.|
+|color_enabled|bool|`true`|Flag to enable or disable the radius color selector.|
+|style_enabled|bool|`true`|Flag to enable or disable the radius style selector.|
 
 
 ## Example Declaration

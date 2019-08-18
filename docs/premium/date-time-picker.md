@@ -31,9 +31,9 @@ To understand how to use extensions, you should read this article on [Using Exte
 |date-format|str|`mm-dd-yy`|String to assign the format of the date output.  For more info, please see 'Date Formatting' below.|
 |time-format|str|`h:mm TT z`|String to assign the format of the time output.  For more info, please see 'Time Formatting' below.|
 |required|array|Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|date-picker|string|true|Flag that sets the display or hiding of the date picker portion of the picker window.|
+|date-picker|string|`true`|Flag that sets the display or hiding of the date picker portion of the picker window.|
 |time-picker|bool|`true`|Flag that sets the display or hiding of the time picker portion of the picker window.|
-|split|bool|false|Flag to set whether the date and time will be separated into their own fields.  See 'Split Mode' below.|
+|split|bool|`false`|Flag to set whether the date and time will be separated into their own fields.  See 'Split Mode' below.|
 |separator|string|'  ' (two spaces)|String that appears between the date and time when split more is false.  Blanks or characters may be used.|
 |control-type|string|`slider`|string command determining the interface of the time picker.  Choose between select slider.|
 |placeholder|string/array|Text to display in the input when no value is present.  See 'Placeholder Options' below.|
@@ -49,10 +49,10 @@ To understand how to use extensions, you should read this article on [Using Exte
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Placeholder Options
@@ -153,7 +153,7 @@ array (
 
 ### Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified 
-in your [opt_name](../configuration/arguments/arguments_reference.md#opt-name) argument.
+in your [opt_name](../configuration/global_arguments.md#opt-name) argument.
 
 ```php
 global $redux_demo;

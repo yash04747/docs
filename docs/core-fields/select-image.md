@@ -12,24 +12,15 @@ The Select Image field offers the ability to populate a drop-down field with an 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`select_image`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |options|array||Any array of options in key pair format. For example `'img_name' => 'img_path'`.|
 |default|string||Full url to the default image.|
 |placeholder|string|`Select an item`|Text to display in the selector when no value is present.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Example Declaration

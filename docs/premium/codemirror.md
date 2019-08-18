@@ -92,10 +92,10 @@ array(
 |editor_options|array||Sets codemirror options like field mode, theme, addons, lint, autocomplete, complete on demand (Ctrl+Space).|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Codemirror Editor Options
@@ -105,10 +105,10 @@ array(
 |mode|array||Mode(s) of the editor like CSS, Javascript, CoffeeScript, Markdown etc. For avaliable modes, see Language Modes section.|
 |addon|array||Defines the editor’s addon(s) like search box implementation, selection marking, rulers etc. For available addons, refer to Add-ons section.|
 |theme|string|`default`|Sets the theme of the editor.  See Themes below.|
-|lint|boolean|false|Enables on-the-fly code lint checks like jshint, csslint etc. Not available for mixed modes like htmlmixed.|
-|hint|boolean|false|Enables autocomplete feature. If autohint is set to false, this feature triggers on `Ctrl + Space` key combination. If not, it shows the autocomplete box as you type.|
-|autohint|boolean|false|Enables showing the autocomplete box as you type.|
-|lineNumbers|boolean|true|Enables the line number gutter display.|
+|lint|boolean|`false`|Enables on-the-fly code lint checks like jshint, csslint etc. Not available for mixed modes like htmlmixed.|
+|hint|boolean|`false`|Enables autocomplete feature. If autohint is set to false, this feature triggers on `Ctrl + Space` key combination. If not, it shows the autocomplete box as you type.|
+|autohint|boolean|`false`|Enables showing the autocomplete box as you type.|
+|lineNumbers|boolean|`true`|Enables the line number gutter display.|
 
 
 ## Language Modes

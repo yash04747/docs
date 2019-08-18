@@ -9,29 +9,20 @@ The ACE Editor field offers the ability to edit back-end code in an easy to use 
 :::
 
 ## Arguments
-Array containing the `content` and optional `title` arguments for the [hint](../configuration/arguments/hints.md) tooltip.
+Array containing the `content` and optional `title` arguments for the [hint](../configuration/fields/hints.md) tooltip.
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`ace_editor`|Value identifying the field type.|
-|id|string||Unique ID identifying the field.  Must be different from all other field IDs.|
-|title|string||Display title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to set the compiler hook, or array of CSS selectors which passes dynamic CSS to the compiler hook.   More info.|
-|required|array||Array of three values: Parent field ID, comparison operator, and value which affects the field's visibility.   More info.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|default|string||Default text to be displayed in the editor.|
 |mode|string|`javascript`|Sets the language mode of the editor.  Accepts:  `css` `html` `javascript ` `json` `less` `markdown` `mysql` `php` `plain_text` `sass` `scss` `text` `xml`|
 |theme|string|`monokai`|Sets the theme of the editor.  Accepts: `chrome` or `monokai`|
-|options|array|array(<br/>'&nbsp;&nbsp;minLines'=> 12, <br/>&nbsp;&nbsp;'maxLines'=> 30<br/>)|Pass any option to the Ace Editor object. For more details visit: http://ace.c9.io/ and the Configuring Ace Wiki.|
+|options|array|<pre class="language-php codecopy-enabled"><code>array(<br/>&nbsp;&nbsp;'minLines' => 12, <br/>&nbsp;&nbsp;'maxLines' => 30<br/>)</code></pre>|Pass any option to the Ace Editor object. For more details visit: http://ace.c9.io/ and the Configuring Ace Wiki.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
+- [Using the `validate` Argument](../fields/validate.md)
 :::
 
 ## Example Declaration

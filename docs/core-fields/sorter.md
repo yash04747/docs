@@ -12,24 +12,14 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`sorter`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |options|array||Array specifying the enabled or disables state for the individual blocks.  See 'Options Array' below.|
-|data|string||String value that populates the check boxes with WordPress values.  Accepts:  `category` `categories` `menu` `menus` `menu_location` `menu_locations` `page` `pages` `post` `posts` `post_type` `post_types` `tag` `tags`.  More info|
-|args|array||Array of WordPress arguments for the specific data to be retrieved.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `data` Argument](../configuration/fields/data.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ### Options Array

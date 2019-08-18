@@ -12,14 +12,10 @@ The Divide field acts as a divider between other fields.
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`divide`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-
 
 ::: tip Also See
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ::: warning Tip

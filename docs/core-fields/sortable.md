@@ -12,25 +12,15 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`sortable`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |options|array||Array of key pair data defining the input objects.  The key represents the object's ID.  The second the display text.  See the example.|
-|default|array||Default value in key pair format to match the selected option.|
-|label|bool|false|Flag to display values before text areas when mode is not checkbox.|
+|label|bool|`false`|Flag to display values before text areas when mode is not checkbox.|
 |mode|string|`text`|Sets the mode of the input objects text or checkbox.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the content and optional title arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Example Declaration
