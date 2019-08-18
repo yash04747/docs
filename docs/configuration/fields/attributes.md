@@ -35,7 +35,8 @@ The attributes of this field will be as follows:
     type="password" 
     data-json="{&quot;example&quot;:&quot;json&quot;}" 
     id="field_id" 
-    name="redux_demo[field_id]">
+    name="redux_demo[field_id]"
+>
 ```
 
 ::: tip

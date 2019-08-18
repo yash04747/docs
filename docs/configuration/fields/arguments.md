@@ -17,13 +17,11 @@ These arguments are available for every field.
 |title|string|Display title of the field.|
 |subtitle|string|Subtitle display of the field, situated beneath the title.|
 |desc|string|Description of the option, appearing beneath the field control.|
-|[class](../fields/class.md)|string|Appends the value to the class of the parent container of this field.|
 |default|string|Default value for the field.|
 |[permissions](../fields/permissions.md)|string|String specifying the capability required to view the section.|
 |[hint(s)](../fields/hints.md)|array|Array containing the `content` and optional `title` arguments for the hint tooltip.|
 
 ::: tip Also See
-- [Using the `class` Argument](../fields/class.md)
 - [Using the `hint(s)` Argument](../fields/hints.md)
 - [Using the `permissions` Argument](../fields/permissions.md)
 :::
