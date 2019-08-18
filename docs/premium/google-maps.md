@@ -41,24 +41,24 @@ knowledge of PHP and CSS is required to properly use this field. Should you not 
 |subtitle|string|Subtitle display of the field, situated beneath the title.|
 |desc|string|Description of the field, appearing beneath the field control.|
 |class|string|Appends any number of classes to the field's class attribute.|
-|full_width|bool|false|Flag to set the field full width or tabled.|
+|full_width|bool|`false`|Flag to set the field full width or tabled.|
 |placeholder|string|"Enter your address"|Text to appear in the search box when no data is present.|
 |marker_tooltip|string|"Left mouse down on top of me to move me!"|Set's the tooltip text that appears when hovering over the place marker.|
 |no_geometry_alert|string|"The returned place contains no geometric data."|Set's the message to appear via JavaScript alert when the selected place contains no geometric data.|
 |map_height|string|250px|Adjust the height of the map on screen.  Please include the unit type with your settings (px, em, %, etc).|
-|show_api_key|bool|true|Displays a button beneath the map where clients may enter their own Google Maps API key data.  See Google Maps API Key below.|
-|scroll_wheel|bool|false|Sets the flag which allows or prevents map zooming when using the mouse wheel.|
-|street_view_control|bool|true|Sets the flag to display or hide the street view control.|
-|map_type_control|bool|true|Sets the flag to display or hide the map type (satellite) control.|
-|show_controls|bool|true|Flag to set the autocomplete control bat the the top of the map.|
-|show_address|bool|true|Flag to display or hide the street name and number text boxes.|
-|show_city|bool|true|Flag to display or hide the city text box.|
-|show_state|bool|true|Flag to display or hide the state text box.|
-|show_postal|bool|true|Flag to display or hide the zip/post code text box.|
-|show_country|bool|true|Flag to display or hide the country text box.|
-|show_latitude|bool|true|Flag to display or hide the latitude text box.|
-|show_longitude|bool|true|Flag to display or hide the longitude text box.|
-|show_marker_info|bool|true|Flag to display or hide the marker info text box.|
+|show_api_key|bool|`true`|Displays a button beneath the map where clients may enter their own Google Maps API key data.  See Google Maps API Key below.|
+|scroll_wheel|bool|`false`|Sets the flag which allows or prevents map zooming when using the mouse wheel.|
+|street_view_control|bool|`true`|Sets the flag to display or hide the street view control.|
+|map_type_control|bool|`true`|Sets the flag to display or hide the map type (satellite) control.|
+|show_controls|bool|`true`|Flag to set the autocomplete control bat the the top of the map.|
+|show_address|bool|`true`|Flag to display or hide the street name and number text boxes.|
+|show_city|bool|`true`|Flag to display or hide the city text box.|
+|show_state|bool|`true`|Flag to display or hide the state text box.|
+|show_postal|bool|`true`|Flag to display or hide the zip/post code text box.|
+|show_country|bool|`true`|Flag to display or hide the country text box.|
+|show_latitude|bool|`true`|Flag to display or hide the latitude text box.|
+|show_longitude|bool|`true`|Flag to display or hide the longitude text box.|
+|show_marker_info|bool|`true`|Flag to display or hide the marker info text box.|
 |default|array|Array of values specifying the default values of the map.  See Google Map Default Values below.|
 |compiler|bool|Flag to run the compiler hook.  More info|
 |required|array|Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
@@ -67,10 +67,10 @@ knowledge of PHP and CSS is required to properly use this field. Should you not 
 |map_version|string|3.exp|Google Map API version number.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Google Map Default Values

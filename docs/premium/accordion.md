@@ -29,15 +29,15 @@ Arguments
 |subtitle|string||Subtitle display of the field, situated beneath the title.|
 |class|string||Appends any number of classes to the field's class attribute.|
 |position|string||Either start or end, depending on whether the array begins or ends the accordion block.  See Example Declaration below.|
-|open|boolean|false|If set to true, accordion will be open. If set to false, accordion will be closed by default.|
+|open|boolean|`false`|If set to true, accordion will be open. If set to false, accordion will be closed by default.|
 |open-icon|string|el-plus|The Elusive Icon to show when the accordion is closed (to be opened).  At this time, only Elusive Icons are supported.|
 |close-icon|string|el-minus|The Elusive Icon to show when the accordion is open (to be closed).  At this time, only Elusive Icons are supported.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Example Declaration

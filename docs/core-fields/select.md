@@ -10,30 +10,19 @@ The Select field displays information in a drop-down field in both single and mu
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`select`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |options|array||Array of options in key pair format.  The key represents the ID of the option.  The value represents the text to appear in the selector.|
-|default|string|string|Key value from the `options` array to set as default.|
-|data|string||Value to populate the selector with WordPress values.  Accepts:  `category` `categories` `menu` `menus` `menu_location` `menu_locations` `page` `pages` `post` `posts` `post_type` `post_types` `tag` `tags` `taxonomy` `taxonomies` `roles` `sidebar` `sidebars` `capabilities`. To list icons, specify `elusive-icons`  More info|
-|args|array||WordPress arguments for the specific data to be retrieved.|
 |width|string|40%|Value to set the width of the selector.|
-|multi|bool|false|Flag to set the multi-select variation of the field.|
+|multi|bool|`false`|Flag to set the multi-select variation of the field.|
 |placeholder|string||Text to display in the selector when no value is present.|
-|sortable|bool|false|Flag to enable data sorting.|
+|sortable|bool|`false`|Flag to enable data sorting.|
 |select2|array||Array of select2 arguments.  For more information see the 'Constructor' section of the Select2 docs.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `data` Argument](../configuration/fields/data.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Standard Select

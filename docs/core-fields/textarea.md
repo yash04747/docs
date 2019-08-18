@@ -12,36 +12,35 @@ The Textarea field accepts any form of multi-line string input, including custom
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`textarea`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
 |rows|int|6|Numbers of text rows to display.|
 |autocomplete|boolean||If set to `false`, the autocomplete attribute will be set to `off`.|
 |readonly|string||If set to `true`, the readonly attribute will be set to `readonly`.|
 
 ::: tip Also See
-- [Default Field Object Arguments](../configuration/objects/field.md#default-arguments)
-- [Using the `attributes` Argument](../configuration/arguments/attributes.md)
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
-- [Using the `validate` Argument](../configuration/arguments/validate.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `attributes` Argument](../configuration/fields/attributes.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
+- [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
 ## Example Declaration
-```php
-Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
-    'id'       =>'opt-textarea',
-    'type'     => 'textarea',
-    'title'    => __('Textarea Option - HTML Validated Custom', 'redux-framework-demo'), 
-    'subtitle' => __('Custom HTML Allowed (wp_kses)', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-    'default'  => '<br />Some HTML is allowed in here.<br />',
-);
-```
+<script>
+import builder from './textarea.json';
+export default {
+  data () {
+      return {
+          builder: builder
+      };
+  }
+}
+</script>
+<builder :builder_json="builder" />
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 
-your [opt_name](../configuration/arguments/arguments_reference.md#opt-name) argument.
+your [opt_name](../configuration/global_arguments.md#opt-name) argument.
 
 ```php
 // Using the Redux API

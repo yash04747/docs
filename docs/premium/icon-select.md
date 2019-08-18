@@ -32,17 +32,17 @@ Alternatively, you can provide any of the arguments below for a more customized 
 |prefix|string|Some font frameworks append a class prefix to denote their class. This is used here. An example of this would be fa, a class used by font-awesome to tell you this is a font-awesome font.|
 |selector|string|Icon Select parses the classes from a CSS file by denoting a selector. Let’s take a look at a typical font class name for elusive fonts: el-icon-youtube. The selector would be el- or el-icon-, and we would need to pass this into the selector argument to parse the class file appropriately.|
 |height|string|250px|Change the height of the area displaying the icons. This area will always be scrollable. You may pass any unit you choose.|
-|enqueue|boolen|true|You can disable the enqueing of this font in the admin panel, but I don’t know why anyone would want to do that.|
-|enqueue_frontend|bool|true|Use this to disable the enqueuing of your font in the front-end if you’ve already done so in your own code.|
-|compiler|bool|false|Flag to run the compiler hook.|
+|enqueue|boolen|`true`|You can disable the enqueing of this font in the admin panel, but I don’t know why anyone would want to do that.|
+|enqueue_frontend|bool|`true`|Use this to disable the enqueuing of your font in the front-end if you’ve already done so in your own code.|
+|compiler|bool|`false`|Flag to run the compiler hook.|
 |required|array|Provide the parent, comparison operator, and value which affects the field's visibility.|
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Example Declaration
@@ -67,7 +67,7 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
 
 ### Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in 
-your [opt_name](../configuration/arguments/arguments_reference.md#opt-name) argument.
+your [opt_name](../configuration/global_arguments.md#opt-name) argument.
 
 ```php
 global $redux_demo;

@@ -12,33 +12,23 @@ The Border field is a great way to set the border properties of any HTML object 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`border`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool/array||Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
-|output|array||Array of CSS selectors to dynamically generate CSS.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |default|array||Array of default values. See 'Default Options' below.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
 |select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 |validate|string|`color`|String value `color` to validate the color selection.  It is the only accepted value for this field.|
-|all|bool|true|Flag to enable all borders using one value.|
-|left|bool|true|Flag to enable the left field border input.|
-|right|bool|true|Flag to enable the right field border input.|
-|top|bool|true|Flag to enable the top field border input.|
-|bottom|bool|true|Flag to enable the bottom field border input.|
-|style|bool|true|Flag to enable the style selector.|
-|color|bool|true|Flag to enable the color picker.|
+|all|bool|`true`|Flag to enable all borders using one value.|
+|left|bool|`true`|Flag to enable the left field border input.|
+|right|bool|`true`|Flag to enable the right field border input.|
+|top|bool|`true`|Flag to enable the top field border input.|
+|bottom|bool|`true`|Flag to enable the bottom field border input.|
+|style|bool|`true`|Flag to enable the style selector.|
+|color|bool|`true`|Flag to enable the color picker.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Default Options

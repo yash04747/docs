@@ -12,30 +12,18 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`link_color`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool/array||Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
-|output|array||Array of CSS selectors to dynamically generate CSS.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|validate|string|`color`|String value of `color` to validate the chosen color.  More info.|
-|default|array||Array of default values. See 'Default Options' below.|
-|regular|bool|true|Flag to display the regular hyperlink color picker.|
-|hover|bool|true|Flag to display the hover hyperlink color picker.|
-|visited|bool|true|Flag to display the visited hyperlink color picker.|
-|active|bool|true|Flag to display the active hyperlink color picker.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
+|regular|bool|`true`|Flag to display the regular hyperlink color picker.|
+|hover|bool|`true`|Flag to display the hover hyperlink color picker.|
+|visited|bool|`true`|Flag to display the visited hyperlink color picker.|
+|active|bool|`true`|Flag to display the active hyperlink color picker.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
-- [Using the `validate` Argument](../configuration/arguments/validate.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
+- [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
 

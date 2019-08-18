@@ -38,18 +38,18 @@ repeater.
 |desc|string|Description of the repeatable block of fields, appearing beneath the field control.|
 |class|string|Appends any number of classes to the field's class attribute.|
 |fields|array|Array of fields to be within each repeater block.|
-|group_values|boolen|false|Argument to group all fields within the repeater ID.|
-|item_name|string|true|String added after Add/Delete to denote the name of the items you are adding to or deleting. Example: `Delete Fields`, Fields being the item_name.|
-|bind_title|string|true|By default the first field will be used as the title for each repeater block. You may also pass in a string denoting an ID to use as the title for each repeater block.|
+|group_values|boolen|`false`|Argument to group all fields within the repeater ID.|
+|item_name|string|`true`|String added after Add/Delete to denote the name of the items you are adding to or deleting. Example: `Delete Fields`, Fields being the item_name.|
+|bind_title|string|`true`|By default the first field will be used as the title for each repeater block. You may also pass in a string denoting an ID to use as the title for each repeater block.|
 |static|int|Number of static repeater groups to display. This will also disable the add/remove buttons next to each repeater block.|
-|sortable|boolean|true|Allow your users to drag/drop repeater blocks and by so doing reorder the results.|
+|sortable|boolean|`true`|Allow your users to drag/drop repeater blocks and by so doing reorder the results.|
 |limit|int|10|If `static` is false, this will limit the number of repeater blocks that can be created.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Extended Argument Details

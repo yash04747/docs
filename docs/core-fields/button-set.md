@@ -12,29 +12,23 @@ The button set gives you a button bar to set options. It can be useful when you 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`button_set`|Value identifying the field type.|
-|id|string||Unique ID identifying the field.  Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.   More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |options|array||Array of key pairs representing the individual ticks.|
-|default|vari||String/int or array value representing the default.  See 'Default Option' below.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
-|multi|bool|false|Flag to set the field to multi-select.|
+|default|string/int/array||See [Default Argument](#default-argument) below.|
+|multi|bool|`false`|Flag to set the field to multi-select.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
-## Default Option
-The value of the default option will depend on whether or not the `multi` argument is set to true.  By default, the `multi` argument is set to false.  In this case, the `default` argument accepts a string or int value representing the key value from the `options` argument to set as selected.  When `multi` is set to true, the `default` argument accepts an array of values representing the key of the option from `options` to set as selected.
+## Default Argument
+The value of the default option will depend on whether or not the `multi` argument is set to true.  By default, the 
+`multi` argument is set to false.  In this case, the `default` argument accepts a string or int value representing the 
+key value from the `options` argument to set as selected.  When `multi` is set to true, the `default` argument accepts 
+an array of values representing the key of the option from `options` to set as selected.
 
 ## Example Declaration
 #### Single select

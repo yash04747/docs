@@ -12,28 +12,15 @@ Multi-Text field supports as many fields as one might need.  Adding and removin
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`multi_text`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.   More info|
-|output|array||Array of CSS selectors to dynamically generate CSS.   More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.   More info|
-|validate|string||String value of `color` to validate the chosen color.  More info.|
-|default|array||Array of default values to provide for multiple text boxes.|
 |add_text|string|`Add More`|Text to display on the `Add` button|
-|show_empty|bool|true|Flag that permits the display of empty text boxes.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
-
+|show_empty|bool|`true`|Flag that permits the display of empty text boxes.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
-- [Using the `validate` Argument](../configuration/arguments/validate.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
+- [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
 ## Example Declaration

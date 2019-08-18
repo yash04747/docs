@@ -15,24 +15,24 @@ default arguments.
 ## Default Arguments
 |Name|Type|Required|Description.|
 |--- |--- |--- |--- |
-|id|string|True|The unique identifier of a field. MUST be unique to the [opt_name](../arguments/arguments_reference.md#opt-name) except when used by the [metaboxes API](./metaboxes.md).|
-|type|string|True|Denotes the [field type](../core-fields/). If the field type does not exist a warning will be displayed.|
+|id|string|`true`|The unique identifier of a field. MUST be unique to the [opt_name](../global_arguments.md#opt-name) except when used by the [metaboxes API](./metaboxes.md).|
+|type|string|`true`|Denotes the [field type](../core-fields/). If the field type does not exist a warning will be displayed.|
 |title|string||The title of the field that will be displayed.|
 |subtitle|string||Subtitle of the option placed beneath the title.|
 |desc|string||Text to appear under the field title. HTML is permitted.|
 |default|string||Default value for the field.|
 |class|string||Appends any number of classes to the field's class attribute.|
 |customizer_only|bool||A flag to set this field to [customizer_only](field.md#customizer-only) display. This argument will override the [customizer_only](field.md#customizer-only) setting at the [sections](section.md) level as well as the [global arguments](../arguments/01-global.md#customizer-only) level.|
-|output|bool||A flag to set all [enable CSS output](../arguments/output.md) for any fields that support this argument.|
-|compiler|bool||A flag to set the [compiler hook](../arguments/compiler.md) to fire if this field's value is changed. This can override the [compiler](../arguments/compiler.md) setting at the [sections](section.md) level.|
-|hints|bool||A flag to set the [hints](../arguments/hints.md) object that displays a animated window with more details about this field.|
+|output|bool||A flag to set all [enable CSS output](../fields/output.md) for any fields that support this argument.|
+|compiler|bool||A flag to set the [compiler hook](../fields/compiler.md) to fire if this field's value is changed. This can override the [compiler](../fields/compiler.md) setting at the [sections](section.md) level.|
+|hints|bool||A flag to set the [hints](../fields/hints.md) object that displays a animated window with more details about this field.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../arguments/compiler.md)
-- [Using the `hints` Argument](../arguments/hints.md)
-- [Using the `permissions` Argument](../arguments/permissions.md)
-- [Using the `required` Argument](../arguments/required.md)
-- [Using the `validate` Argument](../arguments/validate.md)
+- [Using the `compiler` Argument](../fields/compiler.md)
+- [Using the `hints` Argument](../fields/hints.md)
+- [Using the `permissions` Argument](../fields/permissions.md)
+- [Using the `required` Argument](../fields/required.md)
+- [Using the `validate` Argument](../fields/validate.md)
 :::
 
 Fields are blocks of arrays that represent the individual options within a specific options panel, set via a [section](section.md) array. The [section](section.md) array contains an argument titled fields, which accepts an array, or several blocks of arrays, separated by commas.  This is where all field arrays are place.  A basic example is shown below. For specific examples, please consult the [sample-config.php](https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php) file that comes with the Redux package.
