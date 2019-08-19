@@ -229,9 +229,10 @@
 					'attributes': AttributesFormatter,
 					'validate': ValidateFormatter
 				}
+				const specialFieldsName = ["required", "data", "attributes", "validate"];
 
 				let FormatterClass;
-				if (["required", "data", "attributes", "validate"].indexOf(key) != -1)
+				if (specialFieldsName.indexOf(key) != -1)
 					FormatterClass = formatters[key];
 				else
 					FormatterClass = formatters[fieldObject.type];
@@ -286,16 +287,15 @@
 				}
 
 				let prep_model = copy(model);
-
-				if ( model.required ) prep_model.required = RequiredFormatter.toPHPObject(model.required);
-
+		
 				if ( model.data ) {
 					prep_model.args = DataFormatter.toPHPObject(model.data);
 					prep_model.data = model.data.type;
 				}
 
+				if ( model.required ) prep_model.required = RequiredFormatter.toPHPObject(model.required);
 				if ( model.attributes ) prep_model.attributes = AttributesFormatter.toPHPObject(prep_model.attributes);
-				if ( model.validate ) prep_model.validate = ValidateFormatter.toPHPObject(prep_model.validate);
+				if ( model.validate ) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(prep_model.validate));
 				
 				return prep_model;
 			},

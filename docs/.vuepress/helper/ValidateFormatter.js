@@ -23,13 +23,6 @@ export default class ValidateFormatter extends ObjectFormatter{
                         "model": "validate_callback"
                     },
                     {
-                        "type": "switch",
-                        "label": "Autocomplete",
-                        "model": "autocomplete",
-                        "valueOn": "autocomplete",
-                        "valueOff": "off"
-                    },
-                    {
                         "type": "object",
                         "label": "Preg",
                         "model": "preg",
