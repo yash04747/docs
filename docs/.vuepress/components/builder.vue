@@ -287,16 +287,13 @@
 				}
 
 				let prep_model = copy(model);
-		
-				if ( model.data ) {
-					prep_model.args = DataFormatter.toPHPObject(model.data);
-					prep_model.data = model.data.type;
-				}
+				delete prep_model.data;
+				delete prep_model.validate;
 
 				if ( model.required ) prep_model.required = RequiredFormatter.toPHPObject(model.required);
 				if ( model.attributes ) prep_model.attributes = AttributesFormatter.toPHPObject(prep_model.attributes);
-				if ( model.validate ) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(prep_model.validate));
-				
+				if ( model.data ) prep_model = Object.assign(prep_model, DataFormatter.toPHPObject(model.data));
+				if ( model.validate ) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
 				return prep_model;
 			},
 

@@ -127,7 +127,10 @@ export default class ValidateFormatter extends ObjectFormatter{
 					return dataObj;
 				}, {});
 		}
-		return newObject;
+
+        if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
+            return newObject;
+        }
 	}
 };
 

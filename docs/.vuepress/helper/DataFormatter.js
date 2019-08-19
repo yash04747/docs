@@ -16,7 +16,7 @@ export default class DataFormatter extends ObjectFormatter{
 					},
 					{
 						"type": "array",
-						"label": "Values",
+						"label": "Arguments",
 						"model": "values",
 						"validator": "array",
 						"showRemoveButton": true,
@@ -93,25 +93,8 @@ export default class DataFormatter extends ObjectFormatter{
 						"newElementButtonLabel": "+ Add Value",
 						"visible": function(model) {
 							return model && model.type && model.type === "array";
-						},
-						"items": {
-							"type": "object",
-							"default": {},
-							"schema": {
-								"fields": [
-									{
-										"type": 'input',
-										"inputType": 'text',
-										"label": 'Value',
-										"model": 'value',
-										"required": true,
-									},
-									]
-							}
 						}
 					}
-
-
 
 				]
 			}
@@ -122,16 +105,24 @@ export default class DataFormatter extends ObjectFormatter{
 	}
 
 	static toPHPObject(modelObject) {
-		let newObject = {};
-		let modelObjectCopy = {};
-		let key;
-		for (key in modelObject) {
-			modelObjectCopy[key] = modelObject[key]; // copies each property to the objCopy object
-		}
+		let newObject = this.generateNewObject(modelObject);
 
+		if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
+			if ( modelObject.type === "custom" ||  modelObject.type === "array")
+				return {data: newObject};
+			else {
+				return {data: modelObject.type, args: newObject};
+			}
+		}
+	}
+
+	static generateNewObject(modelObject) {
+		let newObject = {};
 		if (this.isArgsPlainText(modelObject))
 			newObject = modelObject.dataText;
-		else  {
+		else if (modelObject && modelObject.type && modelObject.type === "array")
+			newObject = compact(modelObject.array);
+		else {
 			var args_array = modelObject.values;
 			for (let i = 0; args_array && i < args_array.length; i++)
 			{
@@ -143,21 +134,14 @@ export default class DataFormatter extends ObjectFormatter{
 			}
 		}
 
-		if ( newObject['data'] === "custom" ) {
-			newObject['data'] = newObject['args'];
-			delete newObject['args'];
-		}
-
-		// No empty array please
-		if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
-			return newObject;
-		}
-
+		return newObject;
 	}
+
 	static isArgsPlainText(modelObject) {
 		return (modelObject && modelObject.type && (modelObject.type.toLowerCase() === "custom" || modelObject.type.toLowerCase() === "callback") &&
 			modelObject.dataText && modelObject.dataText.length > 0);
 	}
+
 	static convertToRightObject(modelObject) {
 		if ( modelObject === "true" ) {
 			modelObject = true;
