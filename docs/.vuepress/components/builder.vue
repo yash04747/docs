@@ -124,15 +124,18 @@
 
 <script>
 	import VueFormGenerator from 'vue-form-generator';
+	import BootstrapVue from 'bootstrap-vue';
 	import vueMultiselect from "vue-multiselect";
 	import { FieldArray } from 'vfg-field-array';
 	import { FieldObject } from 'vfg-field-object';
+	import FieldArrayBootstrapAccordionItem from './fields/bootstrap-accordion-container';
 	import { fieldDatalist} from './fields/fieldDatalist';
 	import {TextFormatter, BoolFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
 	import RequiredFormatter from '../helper/RequiredFormatter.js';
 	import DataFormatter from '../helper/DataFormatter.js';
 	import AttributesFormatter from '../helper/AttributesFormatter';
 	import ValidateFormatter from '../helper/ValidateFormatter';
+	
 
 	export default {
 
@@ -141,9 +144,11 @@
 		},
 		components: {
 			"vue-form-generator": VueFormGenerator.component,
+			BootstrapVue,
 			vueMultiselect,
 			FieldArray,
 			FieldObject,
+			FieldArrayBootstrapAccordionItem,
 			fieldDatalist
 		},
 		props: ['field'],

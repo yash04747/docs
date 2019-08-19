@@ -4,9 +4,16 @@ export default class RequiredFormatter extends ArrayFormatter{
 	static data() {
 		return Object.assign(super.data(), {
 			"type": "array",
-			"newElementButtonLabelClasses": "button is-primary",
-			"showRemoveButton": true,
+			"showModeElementUpButton": false,
+            "showModeElementDownButton": false,
+            "itemFieldClasses": "form-control",
+            "itemContainerClasses": "input-group pb-2",
+            "newElementButtonLabelClasses": "btn btn-outline-dark",
+            "itemContainerComponent": "field-array-bootstrap-accordion-item",
+            // "itemContainerComponent": "WidgetListColumnEditorContainer",
+  			"showRemoveButton": false,
 			"required": false,
+			"id": "s99999",
 			"items": {
 				"type": "object",
 				"default": {},
