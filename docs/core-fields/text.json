@@ -61,6 +61,7 @@
     "required": {
       "name": "required",
       "title": "Required",
+      "fieldClasses": "full-width",
       "type": "array",
       "description": "Should the field be required",
       "default": null,

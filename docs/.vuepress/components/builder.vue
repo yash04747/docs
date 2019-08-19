@@ -99,6 +99,16 @@
 		justify-content: space-between;
 	}
 
+	.full-width, .full-width span {
+		width: 100%;
+	}
+
+	.heading {
+		border: 1px solid #ccc;
+		border-radius: 3px;
+		padding: 5px;
+	}
+
 </style>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <template>

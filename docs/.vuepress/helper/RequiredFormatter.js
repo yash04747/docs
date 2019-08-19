@@ -5,15 +5,18 @@ export default class RequiredFormatter extends ArrayFormatter{
 		return Object.assign(super.data(), {
 			"type": "array",
 			"showModeElementUpButton": false,
-            "showModeElementDownButton": false,
-            "itemFieldClasses": "form-control",
-            "itemContainerClasses": "input-group pb-2",
-            "newElementButtonLabelClasses": "btn btn-outline-dark",
-            "itemContainerComponent": "field-array-bootstrap-accordion-item",
-            // "itemContainerComponent": "WidgetListColumnEditorContainer",
+			"showModeElementDownButton": false,
+			"itemFieldClasses": "form-control",
+			"itemContainerClasses": "input-group pb-2",
+			"newElementButtonLabelClasses": "btn btn-outline-dark",
+			"itemContainerComponent": "field-array-bootstrap-accordion-item",
+			"itemContainerHeader": function(model, schema, index) {
+				if (model && model.id)
+					return model.id + (model.operation ? " " + model.operation + " ..." : "");
+				return "Untitled";
+			},
   			"showRemoveButton": false,
 			"required": false,
-			"id": "s99999",
 			"items": {
 				"type": "object",
 				"default": {},
@@ -49,10 +52,9 @@ export default class RequiredFormatter extends ArrayFormatter{
 	}
 
 	static toPHPObject(modelObject) {
-		// No empty array please
 		let newObject = [];
-
 		let arrayLength = modelObject.length;
+
 		if ( arrayLength > 0 ) {
 			for ( let i = 0; i < arrayLength; i++ ) {
 				if ( undefined !== modelObject[i].value && modelObject[i].value.length ) {
@@ -66,9 +68,8 @@ export default class RequiredFormatter extends ArrayFormatter{
 					}
 				}
 			}
-
 		}
-		// No empty array please
+
 		if ( JSON.stringify( newObject ) !== JSON.stringify( {} ) ) {
 			return newObject;
 		}
