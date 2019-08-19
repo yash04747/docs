@@ -1,4 +1,5 @@
 import {ObjectFormatter} from './CommonFormatters.js';
+import {cloneDeep, compact} from 'lodash';
 export default class ValidateFormatter extends ObjectFormatter{
 	static data() {
 		return Object.assign(super.data(), {
@@ -78,7 +79,7 @@ export default class ValidateFormatter extends ObjectFormatter{
                     },
                     {
                         "type": "array",
-                        "label": "Allowed HTMl",
+                        "label": "Allowed HTML",
                         "model": "allowed_html",
                         "validator": "array",
                         "showRemoveButton": true,
@@ -103,33 +104,13 @@ export default class ValidateFormatter extends ObjectFormatter{
                                         "required": true
                                     },
                                     {
-                                        "type": 'select',
-                                        "label": 'Type',
-                                        "model": 'type',
-                                        "values": ["string", "array"],
-                                        "required": true
-                                    },
-                                    {
-                                        "type": 'input',
-                                        "inputType": 'text',
-                                        "label": 'Value',
-                                        "model": 'valueText',
-                                        "required": true,
-                                        "visible": function(model) {
-                                            return model && model.type && model.type === "string";
-                                        }
-                                    },
-                                    {
                                         "type": 'array',
-                                        "inputName": 'values',
-                                        "label": 'Value',
-                                        "model": 'valueArray',
+                                        "inputName": 'attributes',
+                                        "label": 'Attribute',
+                                        "model": 'attributes',
                                         "required": true,
                                         "showRemoveButton": true,
-                                        "newElementButtonLabel": "+ Add Value",
-                                        "visible": function(model) {
-                                            return model && model.type && model.type === "array";
-                                        }
+                                        "newElementButtonLabel": "+ Add Attribute"
                                     }
                                 ]
                             }
@@ -144,21 +125,16 @@ export default class ValidateFormatter extends ObjectFormatter{
 	}
 
 	static toPHPObject(modelObject) {
-        console.log(JSON.stringify(modelObject));
-		/* let newObject = {
-			'autocomplete': modelObject.autocomplete,
-			'type': modelObject.type
-		};
-		if  (modelObject['data-json'] !== undefined) {
-			newObject['data-json'] = modelObject['data-json']
-				.filter(dataObj => (dataObj.key !== undefined && dataObj.value !== undefined))
+        let newObject = cloneDeep(modelObject);
+		if  (modelObject['allowed_html'] !== undefined) {
+			newObject['allowed_html'] = modelObject['allowed_html']
+				.filter(dataObj => dataObj.tag !== undefined)
 				.reduce((dataObj, item) => {
-					dataObj[item.key] = item.value;
+					dataObj[item.tag] = compact(item.attributes);
 					return dataObj;
 				}, {});
 		}
-		if (modelObject.readonly !== "" && modelObject.readonly !== undefined) newObject.readonly = modelObject.readonly; */
-		return modelObject;
+		return newObject;
 	}
 };
 

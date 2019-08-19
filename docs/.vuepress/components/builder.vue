@@ -295,7 +295,7 @@
 				}
 
 				if ( model.attributes ) prep_model.attributes = AttributesFormatter.toPHPObject(prep_model.attributes);
-				if ( model.validate ) prep_model.validate = AttributesFormatter.toPHPObject(prep_model.validate);
+				if ( model.validate ) prep_model.validate = ValidateFormatter.toPHPObject(prep_model.validate);
 				
 				return prep_model;
 			},
