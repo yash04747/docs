@@ -84,6 +84,12 @@
       "title": "Permissions",
       "default": null,
       "order": 55
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "object",
+      "order": 80
     }
   },
   "model": {

@@ -127,6 +127,7 @@
 	import vueMultiselect from "vue-multiselect";
 	import { FieldArray } from 'vfg-field-array';
 	import { FieldObject } from 'vfg-field-object';
+	import { fieldDatalist} from './fields/fieldDatalist';
 	import {TextFormatter, BoolFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
 	import RequiredFormatter from '../helper/RequiredFormatter.js';
 	import DataFormatter from '../helper/DataFormatter.js';
@@ -142,7 +143,8 @@
 			"vue-form-generator": VueFormGenerator.component,
 			vueMultiselect,
 			FieldArray,
-			FieldObject
+			FieldObject,
+			fieldDatalist
 		},
 		props: ['field'],
 		data() {

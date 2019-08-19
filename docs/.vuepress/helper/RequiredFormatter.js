@@ -31,7 +31,10 @@ export default class RequiredFormatter extends ArrayFormatter{
 							"inputType": "text",
 							"label": "Value",
 							"model": "value",
-							"required": true
+							"required": true,
+							"visible": function(model) {
+								return model && model.operation !== "is_empty_or";
+							}
 						}]
 				}
 			}
@@ -65,13 +68,13 @@ export default class RequiredFormatter extends ArrayFormatter{
 
 	}
 
-	static convertToRightObject(dataObject) {
-		if ( dataObject === "true" ) {
-			dataObject = true;
-		} else if ( dataObject === "false" ) {
-			dataObject = false;
+	static convertToRightObject(modelObject) {
+		if ( modelObject === "true" ) {
+			modelObject = true;
+		} else if ( modelObject === "false" ) {
+			modelObject = false;
 		}
-		return dataObject;
+		return modelObject;
 	}
 };
 

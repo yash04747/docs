@@ -18,7 +18,6 @@ export default class DataFormatter extends ObjectFormatter{
 						"type": "array",
 						"label": "Values",
 						"model": "values",
-						"inputName": "values",
 						"validator": "array",
 						"showRemoveButton": true,
 						"itemFieldClasses": "form-control",
