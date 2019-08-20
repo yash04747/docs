@@ -12,7 +12,7 @@ The Text field accepts any form of text and optionally validates the text before
 
 </style>
 
-## Arguments2
+## Arguments
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
