@@ -17,7 +17,7 @@ export default class DataFormatter extends ObjectFormatter {
                             "multiple": false,
                             "showLabels": false
                         },
-                        "values": ["categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "users", "array", "callback", "custom"],
+                        "values": ["categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "users", "array", "multi_dimensional", "callback", "custom"],
                     },
                     {
                         "type": "array",
@@ -27,7 +27,7 @@ export default class DataFormatter extends ObjectFormatter {
                         "showModeElementUpButton": false,
                         "showModeElementDownButton": false,
                         "itemFieldClasses": "form-control",
-                        "itemContainerClasses": "input-group pb-2",
+                        "itemContainerClasses": "input-group pb-2 collapse-container",
                         "newElementButtonLabelClasses": "",
                         "itemContainerComponent": "field-array-bootstrap-accordion-item",
                         "newElementButtonLabel": "+ Add Data Argument",
@@ -96,7 +96,13 @@ export default class DataFormatter extends ObjectFormatter {
                             }
                         },
                         "visible": function (model) {
-                            return model && model.type && model.type !== "custom" && model.type !== "callback" && model.type !== "array";
+                            let invalid = [
+                                'custom',
+                                'callback',
+                                'array',
+                                'multi_dimensional'
+                            ];
+                            return model && model.type && !invalid.includes(model.type);
                         },
                         "required": function (model) {
                             return model && (model.type === "custom" || model.type === "callback");
@@ -109,18 +115,66 @@ export default class DataFormatter extends ObjectFormatter {
                         "model": "dataText",
                         "inputName": "dataText",
                         "visible": function (model) {
-                            return model && (model.type === "custom" || model.type === "callback");
+                            let valid = [
+                                'model',
+                                'custom'
+                            ];
+                            return model && model.type && valid.includes(model.type);
                         }
                     },
                     {
                         "type": "array",
                         "model": "array",
                         "showRemoveButton": true,
-                        "newElementButtonLabel": "+ Add Value",
+                        "newElementButtonLabel": "+ Add Array Value",
                         "visible": function (model) {
-                            return model && model.type && model.type === "array";
+                            return model && model.type === "array";
                         }
-                    }
+                    },
+                    {
+                        "type": "array",
+                        "model": "multi_dimensional",
+                        "showModeElementUpButton": false,
+                        "showModeElementDownButton": false,
+                        "itemFieldClasses": "form-control",
+                        "itemContainerClasses": "input-group pb-2",
+                        "newElementButtonLabelClasses": "",
+                        "visible": function (model) {
+                            return model && model.type && model.type === "multi_dimensional";
+                        },
+                        "itemContainerComponent": "field-array-bootstrap-accordion-item",
+                        "itemContainerHeader": function (model, schema, index) {
+                            let string = "Undefined";
+                            if (model && model.key) {
+                                string = model.key;
+                                if (model.value) {
+                                    string += " => " + model.value;
+                                }
+                            }
+                            return string;
+                        },
+                        // "itemContainerClasses": "input-group attributes",
+                        "newElementButtonLabel": "+ Add Array Element",
+                        "items": {
+                            "type": "object",
+                            "default": {},
+                            "schema": {
+                                "fields": [
+                                    {
+                                        "type": "input",
+                                        "inputType": "text",
+                                        "label": "Key",
+                                        "model": "key"
+                                    },
+                                    {
+                                        "type": "input",
+                                        "inputType": "text",
+                                        "label": "Value",
+                                        "model": "value"
+                                    }]
+                            }
+                        }
+                    },
 
                 ]
             }
@@ -135,7 +189,7 @@ export default class DataFormatter extends ObjectFormatter {
         let newObject = this.generateNewObject(modelObject);
 
         if (JSON.stringify(newObject) !== JSON.stringify({})) {
-            if (modelObject.type === "custom" || modelObject.type === "array")
+            if (modelObject.type === "custom" || modelObject.type === "array" || modelObject.type === "multi_dimensional")
                 return {data: newObject};
             else {
                 return {data: modelObject.type, args: newObject};
@@ -149,6 +203,12 @@ export default class DataFormatter extends ObjectFormatter {
             newObject = modelObject.dataText;
         else if (modelObject && modelObject.type && modelObject.type === "array")
             newObject = compact(modelObject.array);
+        else if (modelObject && modelObject.type && modelObject.type === "multi_dimensional") {
+            for (let i = 0; modelObject.multi_dimensional && i < modelObject.multi_dimensional.length; i++) {
+                newObject[modelObject.multi_dimensional[i]['key']] = modelObject.multi_dimensional[i]['value'];
+            }
+        }
+
         else {
             var args_array = modelObject.values;
             for (let i = 0; args_array && i < args_array.length; i++) {

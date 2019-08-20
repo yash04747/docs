@@ -3,8 +3,8 @@ import BootstrapVue from 'bootstrap-vue';
 import Multiselect from 'vue-multiselect'
 import {FieldArray} from 'vfg-field-array';
 import { FieldObject } from 'vfg-field-object';
-import fieldDatalist from './components/fields/fieldDatalist.vue';
-import FieldArrayBootstrapAccordionItem from './components/fields/bootstrap-accordion-container.vue';
+import fieldDatalist from './components/builder/fields/fieldDatalist.vue';
+import FieldArrayBootstrapAccordionItem from './components/builder/fields/bootstrap-accordion-container.vue';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 export default ({

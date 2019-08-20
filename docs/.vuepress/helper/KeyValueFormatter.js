@@ -1,6 +1,6 @@
 import {ObjectFormatter} from './CommonFormatters.js';
 
-export default class AttributesFormatter extends ObjectFormatter {
+export default class KeyValueFormatter extends ObjectFormatter {
     static data() {
         return Object.assign(super.data(), {
             "schema": {
