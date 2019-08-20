@@ -188,7 +188,7 @@
 	import DataFormatter from '../helper/DataFormatter.js';
 	import AttributesFormatter from '../helper/AttributesFormatter';
 	import ValidateFormatter from '../helper/ValidateFormatter';
-	
+	import StoreWithExpiration from '../helper/StoreWithExpiration';
 
 	export default {
 
@@ -214,6 +214,7 @@
 			let that = this;
 			let field_type = redux_field['type'];
 			let keys = Object.keys( redux_field['fields'] );
+			let cachedModel = StoreWithExpiration.get('model');
 
 			let to_return = {
 				model: {
@@ -263,6 +264,7 @@
 			} );
 
 			to_return['model']['id'] = "FIELD_ID";
+			if (cachedModel !== null) to_return.model = cachedModel;
 			to_return['schema']['fields'].sort( ( a, b ) => {
 				(a['order'] > b['order']) ? 1 : -1 
 			});
@@ -319,10 +321,10 @@
 			},
 
 			toPHP: function( schema, model ) {
-				if ( schema && model ) {				
+				if ( schema && model ) {
+					StoreWithExpiration.set('model', model, 1000 * 60 * 30);
 					model = this.deleteEmptyValues(schema, model);
 					model = this.transformCustomArgs(model);
-
 					return this.phpify(model);
 				}
 			},
