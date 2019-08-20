@@ -161,6 +161,7 @@
 			</div>
 			<div class="panel-body" v-show="showSection">
 				<small>Any changes you make in these fields will be reflected in the example declaration.</small>
+				<input type="button" class="btn btn-danger right" value="Reset" v-on:click="reset" />
 				<vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
 			</div>
 		</div>
@@ -272,6 +273,17 @@
 		methods: {
 			toggle() {
 				this.showSection = !this.showSection
+			},
+
+			reset() {
+				this.model = {
+					id: "FIELD_ID",
+					type: this.model.type,
+					title: "",
+					subtitle: "",
+					description: "",
+					required: "",
+				};
 			},
 
 			// Helper method used in data()
