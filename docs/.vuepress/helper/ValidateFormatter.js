@@ -26,7 +26,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                     },
                     {
                         "type": "object",
-                        "label": "Preg",
+                        "label": "preg_replace",
                         "model": "preg",
                         "default": {},
                         "schema": {
@@ -50,7 +50,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                     },
                     {
                         "type": "object",
-                        "label": "Str",
+                        "label": "str_replace",
                         "model": "str",
                         "default": {},
                         "schema": {
@@ -122,27 +122,47 @@ export default class ValidateFormatter extends ObjectFormatter {
     }
 
     static toPHPObject(modelObject) {
+        if (modelObject['validate'] && modelObject['validate'].length == 0) {
+            return {}
+        }
         let newObject = cloneDeep(modelObject);
         if (modelObject['allowed_html'] !== undefined) {
             newObject['allowed_html'] = modelObject['allowed_html']
                 .filter(dataObj => dataObj.tag !== undefined)
                 .reduce((dataObj, item) => {
                     dataObj[item.tag] = compact(item.attributes);
+                    let newAttributes = {};
+                    for (var i = 0; i < dataObj[item.tag].length; i++) {
+                        newAttributes[dataObj[item.tag][i]] = [];
+                    }
+                    dataObj[item.tag] = newAttributes;
                     return dataObj;
                 }, {});
         }
         if (modelObject['validate'] && modelObject['validate'].includes("custom")) {
             delete newObject['validate'];
             modelObject['validate'] = "custom";
-        } else {
-            delete modelObject['validate_callback'];
-            delete newObject['validate_callback'];
-            delete modelObject['str'];
-            delete newObject['str'];
         }
-        if (newObject['validate'] && newObject['validate'].length == 0) {
-            newObject = {}
+
+        let mapping = {
+            'str_replace': 'str',
+            'preg_replace': 'preg_match',
+            'html_custom': 'allowed_html',
+            'custom': 'validate_callback'
+        };
+
+        if (modelObject['validate'] && modelObject['validate'].length == 0) {
+            Object.keys(mapping).forEach(function (key, index) {
+                console.log(key);
+                if (!modelObject['validate'].includes(key)) {
+                    if (newObject[mapping[key]])
+                        delete newObject[newObject[mapping[key]]];
+                    if (modelObject[mapping[key]])
+                        delete modelObject[newObject[mapping[key]]];
+                }
+            });
         }
+
 
         if (JSON.stringify(newObject) !== JSON.stringify({})) {
             return newObject;
