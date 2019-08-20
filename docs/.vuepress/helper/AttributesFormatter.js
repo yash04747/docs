@@ -8,7 +8,23 @@ export default class AttributesFormatter extends ObjectFormatter {
                     {
                         "type": "array",
                         "model": "attributes",
-                        "showRemoveButton": true,
+                        "showModeElementUpButton": false,
+                        "showModeElementDownButton": false,
+                        "itemFieldClasses": "form-control",
+                        "itemContainerClasses": "input-group pb-2",
+                        "newElementButtonLabelClasses": "",
+                        "itemContainerComponent": "field-array-bootstrap-accordion-item",
+                        "itemContainerHeader": function (model, schema, index) {
+                            let string = "Undefined";
+                            if (model && model.key) {
+                                string = model.key;
+                                if (model.value) {
+                                    string += " => " + model.value;
+                                }
+                            }
+                            return string;
+                        },
+                        // "itemContainerClasses": "input-group attributes",
                         "newElementButtonLabel": "+ Add Attribute",
                         "items": {
                             "type": "object",

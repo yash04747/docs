@@ -8,7 +8,11 @@ The Text field accepts any form of text and optionally validates the text before
 [[toc]]
 :::
 
-## Arguments
+<style>
+
+</style>
+
+## Arguments2
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |

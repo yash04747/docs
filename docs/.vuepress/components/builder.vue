@@ -81,9 +81,7 @@
 	}
 
 	#generator {
-		border-top: 1px solid #eaecef;
 		padding: 1.2rem 0;
-		margin-top: 2.5rem;
 		display: -webkit-box;
 		display: -ms-flexbox;
 		display: flex;
@@ -103,10 +101,54 @@
 		width: 100%;
 	}
 
-	.heading {
-		border: 1px solid #ccc;
-		border-radius: 3px;
-		padding: 5px;
+	#generator .heading .button {
+	}
+	#generator label {
+		margin-bottom: 0;
+	}
+	#generator .heading {
+		width: 100%;
+		position: relative;
+		display: inline-flex;
+		vertical-align: middle;
+	}
+	#generator .heading {
+	}
+	#generator .heading input, #generator .heading button {
+		border-radius: 0;
+	}
+	#generator .card {
+		border-top: 0;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	#generator .heading button {
+		width: 100%;
+		margin-right: 0;
+	}
+	#generator .heading button:focus {
+		outline-color: transparent;
+		outline-style: none;
+	}
+
+
+	#generator .form-group {
+		margin-bottom: .5rem;
+	}
+
+	#generator .input-group.attributes {
+		border: 1px solid #eee;
+		padding: .5rem 1rem;
+		margin-bottom: .25em;
+	}
+	#generator .field-array-group input:first-child {
+		width: 85%;
+		margin-bottom: .25em;
+	}
+
+	#generator #data-arguments, #generator #attributes {
+		width: 100%;
 	}
 
 </style>
