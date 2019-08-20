@@ -262,9 +262,9 @@
 			} );
 
 			to_return['model']['id'] = "FIELD_ID";
-
-			to_return['schema']['fields'].sort( ( a, b ) => (a['order'] > b['order']) ? 1 : -1 );
-
+			to_return['schema']['fields'].sort( ( a, b ) => {
+				(a['order'] > b['order']) ? 1 : -1 
+			});
 			to_return['model'] = Object.assign(to_return['model'], redux_field['model']);
 
 			return to_return;
