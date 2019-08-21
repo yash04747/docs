@@ -45,7 +45,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                                 }]
                         },
                         "visible": function (model) {
-                            return model && model.validate && model.validate.indexOf("preg_replace") !== -1;
+                            return model && model.validate && model.validate.includes("preg_replace");
                         }
                     },
                     {
@@ -69,7 +69,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                                 }]
                         },
                         "visible": function (model) {
-                            return model && model.validate && model.validate.indexOf("str_replace") !== -1;
+                            return model && model.validate && model.validate.includes("str_replace");
                         }
                     },
                     {
@@ -84,6 +84,9 @@ export default class ValidateFormatter extends ObjectFormatter {
                         "newElementButtonLabelClasses": "btn btn-outline-dark",
                         "removeElementButtonClasses": "btn btn-danger input-group-append",
                         "newElementButtonLabel": "+ Add Allowed HTML",
+                        "itemContainerHeader": function (model, schema, index) {
+                            return (model && model.tag) ? model.tag : "Undefined";
+                        },
                         "items": {
                             "type": "object",
                             "default": {},
@@ -113,7 +116,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                             }
                         },
                         "visible": function (model) {
-                            return model && model.validate && model.validate.indexOf("html_custom") !== -1;
+                            return model && model.validate && model.validate.includes("html_custom");
                         }
                     }
                 ]
@@ -153,7 +156,6 @@ export default class ValidateFormatter extends ObjectFormatter {
 
         if (modelObject['validate'] && modelObject['validate'].length == 0) {
             Object.keys(mapping).forEach(function (key, index) {
-                console.log(key);
                 if (!modelObject['validate'].includes(key)) {
                     if (newObject[mapping[key]])
                         delete newObject[newObject[mapping[key]]];

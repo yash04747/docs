@@ -61,12 +61,11 @@
             if (!this.$attrs.builder_json) {
                 return
             }
-
-            let redux_field = this.$attrs.builder_json;
+            let redux_field = _.cloneDeep(this.$attrs.builder_json);
             let that = this;
             let field_type = redux_field.type;
             let keys = Object.keys(redux_field['fields']);
-            let cachedModel = StoreWithExpiration.get('model');
+            let cachedModel = StoreWithExpiration.get(field_type, 'model');
             let to_return = {
                 model: {
                     id: "FIELD_ID",
@@ -116,7 +115,6 @@
             });
             if (this.$attrs.builder_json.model)
                 to_return['model'] = Object.assign(to_return['model'], this.$attrs.builder_json.model);
-
             return to_return;
         },
         methods: {
@@ -129,6 +127,8 @@
                     id: "FIELD_ID",
                     type: this.$attrs.builder_json.type
                 };
+
+                // let keys = Object.keys(redux_field['fields']);
                 if (this.$attrs.builder_json.model)
                     this.model = Object.assign(this.model, this.$attrs.builder_json.model);
             },
@@ -136,8 +136,10 @@
             // Helper method used in data()
             formatSchemaField: function (fieldObject, key) {
                 const formatters = {
+                    'input': TextFormatter,
                     'text': TextFormatter,
                     'bool': BoolFormatter,
+                    'switch': BoolFormatter,
                     'array': ArrayFormatter,
                     'object': ObjectFormatter,
                     'required': RequiredFormatter,
@@ -167,7 +169,7 @@
 
             toPHP: function (schema, model) {
                 if (schema && model) {
-                    StoreWithExpiration.set('model', model, 1000 * 60 * 30);
+                    StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
                     model = this.deleteEmptyValues(schema, model);
                     model = this.transformCustomArgs(model);
                     return this.phpify(model);
