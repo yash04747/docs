@@ -57,32 +57,19 @@
       "order": 25,
       "required": false
     },
-    "attributes": {
-      "name": "attributes",
-      "title": "Attributes",
-      "type": "object",
-      "order": 30
-    },
     "rows": {
-      "name": "rows",
-      "title": "Rows",
+      "name": "on",
+      "title": "On",
       "type": "text",
-      "default": 6,
+      "default": "On",
       "order": 35
     },
     "autocomplete": {
-      "name": "autocomplete",
-      "title": "Autocomplete",
-      "default": true,
-      "type": "bool",
+      "name": "off",
+      "title": "Off",
+      "default": "Off",
+      "type": "text",
       "order": 40
-    },
-    "readonly": {
-      "name": "readonly",
-      "title": "Read-only",
-      "type": "bool",
-      "default": 1,
-      "order": 45
     },
     "permissions": {
       "type": "text",
