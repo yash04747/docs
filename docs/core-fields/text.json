@@ -73,6 +73,7 @@
       "name": "autocomplete",
       "title": "Autocomplete",
       "type": "bool",
+      "default": true,
       "order": 40
     },
     "readonly": {
@@ -110,8 +111,5 @@
       "type": "object",
       "order": 80
     }
-  },
-  "model": {
-    "title": "Text Field"
   }
 }

@@ -19,7 +19,7 @@
       "type": "text",
       "description": "",
       "default": null,
-      "order": 1,
+      "order": 5,
       "required": false
     },
     "subtitle": {
@@ -28,7 +28,7 @@
       "type": "text",
       "description": "",
       "default": null,
-      "order": 3,
+      "order": 10,
       "required": false
     },
     "desc": {
@@ -37,7 +37,7 @@
       "type": "text",
       "description": "",
       "default": null,
-      "order": 5,
+      "order": 15,
       "required": false
     },
     "class": {
@@ -46,42 +46,64 @@
       "type": "text",
       "description": "",
       "default": null,
-      "order": 7,
+      "order": 20,
       "required": false
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
-      "description": "Should the field be sent to the compiler",
       "default": false,
-      "order": 60,
+      "order": 25,
       "required": false
-    },
-    "required": {
-      "name": "required",
-      "title": "Required",
-      "type": "array",
-      "description": "Should the field be required",
-      "default": null,
-      "order": 70
-    },
-    "rows": {
-      "type": "text",
-      "name": "rows",
-      "title": "Rows",
-      "description": "Integer for number of rows to display.",
-      "default": 6,
-      "order": 70
     },
     "attributes": {
       "name": "attributes",
       "title": "Attributes",
       "type": "object",
+      "order": 30
+    },
+    "rows": {
+      "name": "rows",
+      "title": "Rows",
+      "type": "text",
+      "order": 35
+    },
+    "autocomplete": {
+      "name": "autocomplete",
+      "title": "Autocomplete",
+      "default": true,
+      "type": "bool",
       "order": 40
+    },
+    "readonly": {
+      "name": "readonly",
+      "title": "Read-only",
+      "type": "bool",
+      "default": 1,
+      "order": 45
+    },
+    "permissions": {
+      "type": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "object",
+      "order": 80
     }
-  },
-  "model": {
-    "title": "Textarea Field"
   }
 }
