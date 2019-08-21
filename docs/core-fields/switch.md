@@ -23,6 +23,19 @@ The Switch field sets a true or false value based on the selection.  Users may 
 :::
 
 ## Example Declaration
+<script>
+import builder from './switch.json';
+export default {
+  data () {
+      return {
+          builder: builder
+      };
+  }
+}
+</script>
+<builder :builder_json="builder" />
+
+## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-switch',
