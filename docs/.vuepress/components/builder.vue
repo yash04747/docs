@@ -185,7 +185,7 @@
                     if (propName !== "type" && schema['redux']['fields'].hasOwnProperty(
                         propName) && schema['redux']['fields'][propName].hasOwnProperty(
                         'default')) {
-                        if (schema['redux']['fields'][propName]['default'] === model[propName]) {
+                        if (schema['redux']['fields'][propName]['default'] === model[propName] && schema['redux']['fields'][propName]['default'] !== true) {
                             delete model[propName];
                         }
                     }
