@@ -68,7 +68,7 @@
 			let that = this;
 			let field_type = redux_field['type'];
 			let keys = Object.keys( redux_field['fields'] );
-			let cachedModel = StoreWithExpiration.get('model');
+			let cachedModel = StoreWithExpiration.get(field_type, 'model');
 
 			let to_return = {
 				model: {
@@ -176,7 +176,7 @@
 
 			toPHP: function( schema, model ) {
 				if ( schema && model ) {
-					StoreWithExpiration.set('model', model, 1000 * 60 * 30);
+					StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
 					model = this.deleteEmptyValues(schema, model);
 					model = this.transformCustomArgs(model);
 					return this.phpify(model);
