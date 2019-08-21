@@ -63,6 +63,25 @@
       "type": "object",
       "order": 30
     },
+    "placeholder": {
+      "name": "placeholder",
+      "title": "Placeholder",
+      "type": "text",
+      "order": 35
+    },
+    "autocomplete": {
+      "name": "autocomplete",
+      "title": "Autocomplete",
+      "type": "bool",
+      "order": 40
+    },
+    "readonly": {
+      "name": "readonly",
+      "title": "Read-only",
+      "type": "bool",
+      "default": true,
+      "order": 45
+    },
     "data": {
       "type": "object",
       "name": "data",

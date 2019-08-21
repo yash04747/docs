@@ -410,6 +410,7 @@ fieldset {
 .redux-builder .heading button {
     width: 100%;
     margin-right: 0 !important;
+    border-right: 0;
 }
 
 .redux-builder .heading button:focus {
@@ -433,6 +434,7 @@ fieldset {
     margin-bottom: .25em;
 }
 
-.redux-builder #data-arguments, .redux-builder #attributes, .collapse-container span:first-child {
+.redux-builder #data-arguments, .redux-builder #attributes, .redux-builder .collapse-container span:first-child {
     width: 100%;
 }
+

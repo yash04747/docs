@@ -64,14 +64,6 @@ export default class KeyValueFormatter extends ObjectFormatter {
         let newObject = {};
 
         if (modelObject['attributes']) {
-            if (modelObject['attributes'] && modelObject['attributes'].autocomplete) {
-                newObject['autocomplete'] = "off";
-                delete modelObjectCopy['attributes'].autocomplete;
-            }
-            if (modelObject['attributes'] && modelObject['attributes'].readonly) {
-                newObject['readonly'] = modelObject['attributes'].readonly;
-                delete modelObjectCopy['attributes'].readonly;
-            }
             for (let i = 0; modelObjectCopy['attributes'] && i < modelObjectCopy['attributes'].length; i++) {
                 newObject[modelObjectCopy['attributes'][i]['key']] = modelObjectCopy['attributes'][i]['value'];
             }
