@@ -22,4 +22,8 @@ export default ({
 		Vue.component('field-array-bootstrap-accordion-item', FieldArrayBootstrapAccordionItem);
 		Vue.component('fieldDatalist', fieldDatalist);
     }
+
+    if (typeof window === 'undefined') {
+        global.window = {}
+    }
 }
