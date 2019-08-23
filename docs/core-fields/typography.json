@@ -1,0 +1,68 @@
+{
+  "type": "typography",
+  "name": "Typography",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "google": {
+      "name": "google",
+      "title": "Google",
+      "type": "bool",
+      "default": true,
+      "order": 10,
+      "required": false
+    },
+    "font-backup": {
+      "name": "font-backup",
+      "title": "Font Backup",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "default": null,
+      "order": 20
+    },
+    "units": {
+      "type": "select",
+      "name": "units",
+      "title": "Unit",
+      "values": ["px", "em", "rem", "%"],
+      "required": true,
+      "default": null,
+      "order": 25
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 30,
+      "required": false
+    }
+  }
+}

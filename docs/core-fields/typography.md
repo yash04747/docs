@@ -64,6 +64,28 @@ The Redux Typography field in second-to-none when it comes to framework typograp
 |font-size|33px|Value to set the font size in the preview area.|
 |always_display|`false`|Flag that sets whether or not the font preview will display, even when no changes are made.|
 
+
+## Example Declaration
+<script>
+import builder from './typography.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 
 ```php

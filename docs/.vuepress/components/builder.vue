@@ -34,7 +34,7 @@
     import {FieldObject} from 'vfg-field-object';
     import FieldArrayBootstrapAccordionItem from './builder/fields/bootstrap-accordion-container';
     import {fieldDatalist} from './builder/fields/fieldDatalist';
-    import {TextFormatter, BoolFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
+    import {TextFormatter, BoolFormatter, SelectFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
     import RequiredFormatter from '../helper/RequiredFormatter.js';
     import DataFormatter from '../helper/DataFormatter.js';
     import KeyValueFormatter from '../helper/KeyValueFormatter';
@@ -140,6 +140,7 @@
                     'text': TextFormatter,
                     'bool': BoolFormatter,
                     'switch': BoolFormatter,
+                    'select': SelectFormatter,
                     'array': ArrayFormatter,
                     'object': ObjectFormatter,
                     'required': RequiredFormatter,

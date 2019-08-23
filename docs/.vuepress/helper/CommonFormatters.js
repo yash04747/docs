@@ -26,6 +26,17 @@ export class TextFormatter{
 	}
 };
 
+export class SelectFormatter{
+	static data() {
+		return {
+			"type": "select"
+		};
+	}
+	static default(defaultObj) {
+		return defaultObj === null ? "" : defaultObj;
+	}
+};
+
 export class ArrayFormatter{
 	static data() {
 		return {
