@@ -39,6 +39,7 @@
     import DataFormatter from '../helper/DataFormatter.js';
     import KeyValueFormatter from '../helper/KeyValueFormatter';
     import ValidateFormatter from '../helper/ValidateFormatter';
+    import OutputFormatter from '../helper/OutputFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
     import {cloneDeep} from 'lodash';
 
@@ -146,9 +147,10 @@
                     'required': RequiredFormatter,
                     'data': DataFormatter,
                     'attributes': KeyValueFormatter,
-                    'validate': ValidateFormatter
+                    'validate': ValidateFormatter,
+                    'output': OutputFormatter
                 }
-                const specialFieldsName = ["required", "data", "attributes", "validate"];
+                const specialFieldsName = ["required", "data", "attributes", "validate", "output"];
 
                 let FormatterClass;
                 if (specialFieldsName.indexOf(key) != -1)

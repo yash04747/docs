@@ -42,7 +42,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "type": "array",
+      "type": "object",
       "default": null,
       "order": 20
     },
