@@ -1,6 +1,6 @@
 {
-  "type": "textarea",
-  "name": "Textarea",
+  "type": "switch",
+  "name": "Switch",
   "description": null,
   "icon": null,
   "fields": {
