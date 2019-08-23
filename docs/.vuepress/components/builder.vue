@@ -173,6 +173,7 @@
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
                     model = this.deleteEmptyValues(schema, model);
                     model = this.transformCustomArgs(model);
+                    model = this.sortModel(schema, model);
                     return this.phpify(model);
                 }
             },
@@ -195,17 +196,8 @@
             },
 
             transformCustomArgs: function (model) {
-                function copy(mainObj) {
-                    let objCopy = {}; // objCopy will store a copy of the mainObj
-                    let key;
+                let prep_model = cloneDeep(model);
 
-                    for (key in mainObj) {
-                        objCopy[key] = mainObj[key]; // copies each property to the objCopy object
-                    }
-                    return objCopy;
-                }
-
-                let prep_model = copy(model);
                 delete prep_model.data;
                 delete prep_model.validate;
 
@@ -214,6 +206,14 @@
                 if (model.data) prep_model = Object.assign(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
                 return prep_model;
+            },
+
+            sortModel: function(schema, model) {
+                let newModel = {};
+                schema.fields.forEach(obj => {
+                    if (model[obj.model]) newModel[obj.model] = model[obj.model]
+                })
+                return newModel
             },
 
             phpify: function (model) {

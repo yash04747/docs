@@ -131,15 +131,15 @@ export default class ValidateFormatter extends ObjectFormatter {
         let newObject = cloneDeep(modelObject);
         if (modelObject['allowed_html'] !== undefined) {
             newObject['allowed_html'] = modelObject['allowed_html']
-                .filter(dataObj => dataObj.tag !== undefined)
-                .reduce((dataObj, item) => {
-                    dataObj[item.tag] = compact(item.attributes);
+                .filter(obj => obj.tag !== undefined)
+                .reduce((obj, item) => {
+                    obj[item.tag] = compact(item.attributes);
                     let newAttributes = {};
-                    for (var i = 0; i < dataObj[item.tag].length; i++) {
-                        newAttributes[dataObj[item.tag][i]] = [];
+                    for (var i = 0; i < obj[item.tag].length; i++) {
+                        newAttributes[obj[item.tag][i]] = [];
                     }
-                    dataObj[item.tag] = newAttributes;
-                    return dataObj;
+                    obj[item.tag] = newAttributes;
+                    return obj;
                 }, {});
         }
         if (modelObject['validate'] && modelObject['validate'].includes("custom")) {
