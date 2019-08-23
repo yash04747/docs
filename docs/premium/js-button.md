@@ -36,10 +36,10 @@ To understand how to use extensions, you should read this article on [Using Exte
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `hints` Argument](../configuration/fields/hints.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Settings up the Script Argument
@@ -52,7 +52,7 @@ function parameters, as the extension uses this WordPress API to enqueue your sc
 |url|string|Fully qualified URL to and including the JavaScript file name.  See Notes below.|
 |dep|array|Array of the handles of all the registered scripts that this script depends on, that is the scripts that must be loaded before this script. This parameter is only required when the script with the given $handle has not been already registered using wp_register_script(). Default handles are all in lower case.|
 |ver|string|time()|String specifying the script version number, if it has one, which is concatenated to the end of the path as a query string.|
-|in_footer|bool|true|Normally, scripts are placed in  of the HTML document. If this parameter is true, the script is placed before the  end tag.|
+|in_footer|bool|`true`|Normally, scripts are placed in  of the HTML document. If this parameter is true, the script is placed before the  end tag.|
 
 ::: tip NOTES
 While it doesn't matter where you might choose to store your script, it is important to never hard code the path to the 

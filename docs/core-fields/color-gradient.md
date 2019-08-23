@@ -12,28 +12,18 @@ The Color Gradient controls allows for the selection of two separate colors, for
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`color_gradient`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|default|string||Array of default values. See 'Default Values' below.|
-|validate|string||String value of `color` to validate the chosen color.  More info.|
-|transparent|bool|true|Flag to set the visibility of the transparency checkbox.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
+|default|string||See [Default Argument](#default-argument) below.|
+|validate|string||The only accepted validation type is `color`.|
+|transparent|bool|`true`|Flag to set the visibility of the transparency checkbox.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
-## Default Values
+## Default Argument
 |Name|Type|Description|
 |--- |--- |--- |
 |to|string|Hex string value for the left gradient color.|

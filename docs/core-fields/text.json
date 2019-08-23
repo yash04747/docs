@@ -1,0 +1,115 @@
+{
+  "type": "text",
+  "name": "Text",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Description",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 20,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "attributes": {
+      "name": "attributes",
+      "title": "Attributes",
+      "type": "object",
+      "order": 30
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "title": "Placeholder",
+      "type": "text",
+      "order": 35
+    },
+    "autocomplete": {
+      "name": "autocomplete",
+      "title": "Autocomplete",
+      "type": "bool",
+      "default": true,
+      "order": 40
+    },
+    "readonly": {
+      "name": "readonly",
+      "title": "Read-only",
+      "type": "bool",
+      "default": true,
+      "order": 45
+    },
+    "data": {
+      "type": "object",
+      "name": "data",
+      "title": "Data",
+      "order": 50
+    },
+    "permissions": {
+      "type": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "object",
+      "order": 80
+    }
+  }
+}

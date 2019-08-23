@@ -14,46 +14,37 @@ This field makes use of Brian Grinstead's [Spectrum "No hassle jQuery color pick
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`color_rgba`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the field.|
-|subtitle|string||Subtitle display of the field, situated beneath the title.|
-|desc|string||Description of the field, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool/array||Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.   More info.|
-|output|array||Array of CSS selectors to dynamically generate CSS.  More info.|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |options|array||Array of options that sets the behavior of the color picker. See 'Color Picker Options' below.|
-|default|array||Array of color and alpha settings for the color picker. See 'Default Settings' below.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
+|default|array||See [Default Argument](#default-argument) below.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Color Picker Options
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |input_text|string|`Select Color`|String specifying the button caption.|
-|show_input|bool|true|Flag to allow free form typing input.|
-|show_initial|bool|true|Flag to set the display of the color initially set when opening the color picker.|
-|show_alpha|bool|true|Flag to set the alpha transparency selector.|
-|show_palette|bool|true|Flag to set the display of the color picker's color palette.|
-|show_palette_only|bool|false|Flag to display the color palette only, and nothing else.|
-|show_selection_palette|bool|true|Flag to display a palette of previously selected colors.|
+|show_input|bool|`true`|Flag to allow free form typing input.|
+|show_initial|bool|`true`|Flag to set the display of the color initially set when opening the color picker.|
+|show_alpha|bool|`true`|Flag to set the alpha transparency selector.|
+|show_palette|bool|`true`|Flag to set the display of the color picker's color palette.|
+|show_palette_only|bool|`false`|Flag to display the color palette only, and nothing else.|
+|show_selection_palette|bool|`true`|Flag to display a palette of previously selected colors.|
 |max_palette_size|int|10|Integer value setting the number of colors to display horizontally in the color palette.|
-|allow_empty|bool|true|Flag to set the display of of 'clear' button, removing the color value.|
-|clickout_fires_change|bool|false|Flag that determines if clicking outside the color picker forces a color change.|
+|allow_empty|bool|`true`|Flag to set the display of of 'clear' button, removing the color value.|
+|clickout_fires_change|bool|`false`|Flag that determines if clicking outside the color picker forces a color change.|
 |choose_text|string|`Choose`|String to display for the color picker Choose button.|
 |cancel_text|string|`Cancel`|String to display for the color picker Cancel button.|
-|show_buttons|bool|true|Flag that sets the display of the Choose and Cancel buttons.|
+|show_buttons|bool|`true`|Flag that sets the display of the Choose and Cancel buttons.|
 |palette|array||Individual arrays color values. See 'Color Palettes' below.|
 
 
-## Default Settings
+## Default Argument
 The default argument requires an array with two key/pair values: `color` and `alpha`.
 
 |Name|Type|Default|Description|

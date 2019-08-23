@@ -9,45 +9,35 @@ The Redux Background field offers unmatched features not found in any other opti
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|<div style="width:177px;">Name</div>|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`background`|Controls the field type|
-|id|string||Must be unique to all other options.|
-|title|string||Title of item to be displayed.|
-|subtitle|string||Subtitle of item to be displayed.|
-|desc|string||Description of item to be displayed.|
-|class|string||Append any number of classes to the field.|
-|compiler|bool/array||Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
-|output|array||Array of CSS selectors to dynamically generate CSS.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|default|string||Array of default values.  See 'Default Options' below.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
+|default|string||See [Default Argument](#default-argument) below.|
 |select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.|
-|hint|array||Array containing the hint `content` and optional `title`.  More info|
-|background-color|bool|true|Flag to display the background color picker.|
-|background-repeat|bool|true|Flag to display the background repeat select field.|
-|background-attachment|bool|true|Flag to display the background attachment select field.|
-|background-position|bool|true|Flag to display the background position select field.|
-|background-image|bool|true|Flag to display the background image media uploader.|
-|background-clip|bool|false|Flag to display the background clip select field.|
-|background-origin|bool|false|Flag to display the background origin select field.|
-|background-size|bool|true|Flag to display the background size select field.|
-|preview_media|bool|false|Flag to display background media preview.|
-|preview|bool|true|Flag to display the background preview box.|
+|background-color|bool|`true`|Flag to display the background color picker.|
+|background-repeat|bool|`true`|Flag to display the background repeat select field.|
+|background-attachment|bool|`true`|Flag to display the background attachment select field.|
+|background-position|bool|`true`|Flag to display the background position select field.|
+|background-image|bool|`true`|Flag to display the background image media uploader.|
+|background-clip|bool|`false`|Flag to display the background clip select field.|
+|background-origin|bool|`false`|Flag to display the background origin select field.|
+|background-size|bool|`true`|Flag to display the background size select field.|
+|preview_media|bool|`false`|Flag to display background media preview.|
+|preview|bool|`true`|Flag to display the background preview box.|
 |preview_height|string|`200px`|String to set background preview height.|
-|transparent|bool|true|Flag to display background color transparency checkbox.|
+|transparent|bool|`true`|Flag to display background color transparency checkbox.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `output` Argument](../configuration/arguments/output.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
+- [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
 
-## Default Options
-|Name|Type|Description|
+## `Default` Argument
+|<div style="width:177px;">Name</div>|Type|Description|
 |--- |--- |--- |
 |background-color|string|Hex string representing the default background color.|
 |background-repeat|string|String representing the default background repeat value. Accepts: `no-repeat` `repeat` `repeat-x` `repeat-y` `inherit`|

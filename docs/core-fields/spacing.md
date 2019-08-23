@@ -12,34 +12,24 @@ The Spacing field allows the user to specify either padding or margin units to a
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`spacing`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool/array||Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
-|output|array||Array of CSS selectors to dynamically generate CSS.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|default|string||Array of default values. See 'Default Options' below.|
 |units|array/string||String of a single unit or array of units.  Accepts: `px` `em` `%`.|
-|units_extended|bool|false|Flag to allow users to select any type of unit.|
-|display_units|bool|true|Flag to set the display of the units field when units are specified.|
-|top|bool|true|Flag to display the top value input.|
-|bottom|bool|true|Flag to display the bottom value input.|
-|left|bool|true|Flag to display the left value input.|
-|right|bool|true|Flag to display the right value input.|
-|all|bool|false|Flag to display all position value inputs.|
+|units_extended|bool|`false`|Flag to allow users to select any type of unit.|
+|display_units|bool|`true`|Flag to set the display of the units field when units are specified.|
+|top|bool|`true`|Flag to display the top value input.|
+|bottom|bool|`true`|Flag to display the bottom value input.|
+|left|bool|`true`|Flag to display the left value input.|
+|right|bool|`true`|Flag to display the right value input.|
+|all|bool|`false`|Flag to display all position value inputs.|
 |mode|string|'padding'|Accepts:  `absolute` `padding` or `margin`.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
 |select2|array||Array of select2 arguments.  For more information see the 'Constructor' section of the Select2 docs.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `data` Argument](../configuration/fields/data.md)
 - [Using the `output` Argument](../guide/the-output-argument.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Default Options

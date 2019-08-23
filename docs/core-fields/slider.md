@@ -12,31 +12,21 @@ The Redux Slider Field offers a great array features for just about every need.Â
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`slider`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.  More info|
-|output|array||Array of CSS selectors to dynamically generate CSS.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|default|string||Value setting the default slider value.|
-|min|int/float|0|Value setting the minimum slider value.|
-|max|int/float|1|Value setting the maximum slider value.|
-|step|int/float|1|Value setting the slider step value.|
-|handles|int|1|Sets the number of slider handles, either `1` or `2`. Any other value will default to `1`|
+|min|int/float|`0`|Value setting the minimum slider value.|
+|max|int/float|`1`|Value setting the maximum slider value.|
+|step|int/float|`1`|Value setting the slider step value.|
+|handles|int|`1`|Sets the number of slider handles, either `1` or `2`. Any other value will default to `1`|
 |display_value|string|`text`|Sets output mode for the slider value. Accepted values include `none` for no output, `label` for a printed value, `text` for an editable text box, or `select` for a select box of values. Any other or incorrect values will default to `text`.|
-|resolution|int/float|1|Sets the value's decimal significance. Acceptable values are: `1`, `0.1`, `0.01`, `0.001`, `0.0001`, `0.00001`. Any improper value will default to `1`.|
+|resolution|int/float|`1`|Sets the value's decimal significance. Acceptable values are: `1`, `0.1`, `0.01`, `0.001`, `0.0001`, `0.00001`. Any improper value will default to `1`.|
 |float_mark|string|(decimal)|Sets the floating point marker to either `.` (decimal) or `,` (comma). Any other value will default to the decimal value.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
 |select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.Â  Only applies when `display_value` is set to `select`.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ::: warning NOTE

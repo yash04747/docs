@@ -12,25 +12,28 @@ The Switch field sets a true or false value based on the selection.  Users may 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`switch`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool/array||Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
-|default|bool||Default value of the switch.|
 |on|string|`On`|Text display for the true value.|
 |off|string|`Off`|Text display for the false value.|
-|permissions|string||String specifying the capability required to view the section.   More info.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
+
+## Example Declaration
+<script>
+import builder from './switch.json';
+export default {
+  data () {
+      return {
+          builder: builder
+      };
+  }
+}
+</script>
+<builder :builder_json="builder" />
 
 ## Example Declaration
 ```php

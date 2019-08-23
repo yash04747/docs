@@ -10,20 +10,15 @@ The Info field comes in several varieties to display information as normal, info
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`info`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |style|string|`normal`|Sets the mode of the info box.  Accepts:  `normal` `info` `warning` `success ```critical`` or `custom`|
-|notice|bool|true|Set the styling to the non-notice styles, instead of the default WordPress 3.8 notice styles.|
+|notice|bool|`true`|Set the styling to the non-notice styles, instead of the default WordPress 3.8 notice styles.|
 |color|string||Color that becomes the left border if style is set to custom. Will not work with a non-notice styled field.|
 |icon|string||Name of an Elusive Icon font to use in the info box.|
 |indent|bool|`false`|If set, left field indent will be applied.|
 
 ::: tip Also See
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ::: warning Tip

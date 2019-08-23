@@ -16,31 +16,20 @@ The media field is an adaption for a core WordPress feature.
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`media`|Value identifying the field type.|
-|id|string||Unique ID identifying the field. Must be different from all other field IDs.|
-|title|string||Displays title of the option.|
-|subtitle|string||Subtitle display of the option, situated beneath the title.|
-|desc|string||Description of the option, appearing beneath the field control.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|compiler|bool||Flag to run the compiler hook.|
-|required|array||Provide the parent, comparison operator, and value which affects the field's visibility.|
-|validate|string||String value of `color` to validate the chosen color.  More info.|
-|default|array||Array of default values.  See 'Default Options' below.|
 |width|string||Sets the width of the image.|
 |height|string||Sets the height of the image.|
-|url|bool|false|Flag to display the image of the URL.|
-|preview|bool|true|Flag to display a preview of the image.|
+|url|bool|`false`|Flag to display the image of the URL.|
+|preview|bool|`true`|Flag to display a preview of the image.|
 |placeholder|string|`No media selected`|Sets the text that appears in the URL input box when no value is present.|
-|readonly|bool|true|Flag to set the readonly attribute of the media text field.|
-|permissions|string||String specifying the capability required to view the section.|
+|readonly|bool|`true`|Flag to set the readonly attribute of the media text field.|
 |mode|string||String specifying either the file type or mime type of files to accept from the media library.|
 |library_filter|array||Accepts an array of strings which correspond to the second part of a [mime type](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) (i.e. video/mp4 would be “mp4”). Only files that match one of the items in the array will appear in the media library.|
-|hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.|
 
 ::: tip Also See
-- [Using the `compiler` Argument](../configuration/arguments/compiler.md)
-- [Using the `hints` Argument](../configuration/arguments/hints.md)
-- [Using the `permissions` Argument](../configuration/arguments/permissions.md)
-- [Using the `required` Argument](../configuration/arguments/required.md)
+- [Global Field Arguments](../configuration/fields/arguments.md)
+- [Using the `compiler` Argument](../configuration/fields/compiler.md)
+- [Using the `permissions` Argument](../configuration/fields/permissions.md)
+- [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Default Options

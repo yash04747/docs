@@ -237,7 +237,7 @@ own rendering purposes.
 
 |Parameter|Type|Default|Description|
 |--|--|--|--|
-|[opt_name](../configuration/arguments/arguments_reference.md#opt-name)|string||Required. The [opt_name](../configuration/arguments/arguments_reference.md#opt-name) specified in your arguments|
+|[opt_name](../configuration/global_arguments.md#opt-name)|string||Required. The [opt_name](../configuration/global_arguments.md#opt-name) specified in your arguments|
 |id|string||Required. ID of the social profile field whose information is to be rendered.|
 |echo|bool|`true`|Optional. When set to true, the function automatically echos the rendered HTML. When set to false, the HTML is returned.|
 |a_class|bool||Optional. Sets the passed class name to the a tag of the rendered icon HTML.|
@@ -270,7 +270,7 @@ This function returns the specified value data of the specified social profile I
 
 |Parameter|Description|
 |--|--|
-|[opt_name](../configuration/arguments/arguments_reference.md#opt-name)|Required. The [opt_name](../configuration/arguments/arguments_reference.md#opt-name) specified in your arguments|
+|[opt_name](../configuration/global_arguments.md#opt-name)|Required. The [opt_name](../configuration/global_arguments.md#opt-name) specified in your arguments|
 |id|Required. ID of the social profile field whose information is to be rendered.|
 |value|Required. Value of the social profile for which whose data you would like returned.  Value options include `id`, `icon`, `enabled`, `name`, `color`, `background`, `label`, or `url`.|
 
