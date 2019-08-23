@@ -16,6 +16,9 @@ The Select field displays information in a drop-down field in both single and mu
 |placeholder|string||Text to display in the selector when no value is present.|
 |sortable|bool|`false`|Flag to enable data sorting.|
 |select2|array||Array of select2 arguments.  For more information see the 'Constructor' section of the Select2 docs.|
+|ajax|bool|`false`|Set to true to use ajax to fetch options when the [data](../configuration/fields/data.md) argument is used. **Requires Redux 4.x**|
+|min-input-length|integer|`1`|For use when the ajax flag is set to true. This controls how many charactrs must be typed before the ajax request is performed. **Requires Redux 4.x**|
+
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
