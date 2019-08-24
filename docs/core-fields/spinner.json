@@ -30,6 +30,66 @@
       "default": null,
       "order": 30,
       "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 30,
+      "required": false
+    },
+    "permissions": {
+      "type": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
+    },
+    "min": {
+      "name": "min",
+      "title": "Min",
+      "type": "text",
+      "inputType": "nubmer",
+      "default": 0,
+      "order": 75,
+      "required": false
+    },
+    "max": {
+      "name": "max",
+      "title": "Max",
+      "type": "text",
+      "inputType": "nubmer",
+      "default": 1,
+      "order": 80,
+      "required": false
+    },
+    "step": {
+      "name": "step",
+      "title": "Step",
+      "type": "text",
+      "inputType": "nubmer",
+      "default": 1,
+      "order": 85,
+      "required": false
     }
   }
 }
