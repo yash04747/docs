@@ -41,7 +41,7 @@ To understand how to use extensions, you should read this article on [Using Exte
 ::: tip Also See
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `hints` Argument](../configuration/fields/hints.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::

@@ -22,7 +22,7 @@ Array containing the `content` and optional `title` arguments for the [hint](../
 - [Using Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
-- [Using the `validate` Argument](../fields/validate.md)
+- [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
 ## Example Declaration

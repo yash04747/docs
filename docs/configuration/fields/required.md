@@ -49,27 +49,27 @@ support the majority of needs.
 
 |Operation|Test Equivalent|
 |--- |--- |
-|=|$a = $b|
-|equals|$a = $b|
-|!=|$a != $b|
-|not|$a != $b|
-|>|$a > $b|
-|greater|$a > $b|
-|is_larger|$a > $b|
-|>=|$a >= $b|
-|greater_equal|$a >= $b|
-|is_larger_equal|$a >= $b|
-|<|$a < $b|
-|less|$a < $b|
-|is_smaller|$a < $b|
-|<=|$a <= $b|
-|less_equal|$a <= $b|
-|is_smaller_equal|$a <= $b|
-|contains|(strpos($a, $b) !== false)|
-|doesnt_contain|(strpos($a, $b) === false)|
-|not_contain|(strpos($a, $b) === false)|
-|is_empty_or|if (empty($value1)|
-|not_empty_and|if (!empty($value1) && $value1 != $value2)|
+|=|`$a = $b`|
+|equals|`$a = $b`|
+|!=|`$a != $b`|
+|not|`$a != $b`|
+|>|`$a > $b`|
+|greater|`$a > $b`|
+|is_larger|`$a > $b`|
+|>=|$`a >= $b`|
+|greater_equal|`$a >= $b`|
+|is_larger_equal|`$a >= $b`|
+|<|`$a < $b`|
+|less|`$a < $b`|
+|is_smaller|`$a < $b`|
+|<=|`$a <= $b`|
+|less_equal|`$a <= $b`|
+|is_smaller_equal|`$a <= $b`|
+|contains|`( strpos( $a, $b ) !== false )`|
+|doesnt_contain|`( strpos($a, $b) === false )`|
+|not_contain|`( strpos($a, $b) === false )`|
+|is_empty_or|`if ( empty( $value1 )`|
+|not_empty_and|`if ( !empty( $value1 ) && $value1 != $value2 )`|
 
     
 

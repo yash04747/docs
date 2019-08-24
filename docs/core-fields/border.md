@@ -26,7 +26,7 @@ The Border field is a great way to set the border properties of any HTML object 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.html)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
