@@ -95,15 +95,25 @@ export default class OutputFormatter extends ObjectFormatter {
         if (modelObject['output'] && modelObject['output'].length == 0) {
             return {}
         }
-        let newObject = cloneDeep(modelObject);
-        if (modelObject.output.type === 'text') {
-            newObject['ouput'] = modelObject['output']['text_value'];
-        }
-        if (modelObject.output.type === 'basic') {
 
-        }
-        console.log(newObject);
-        return newObject;
+        let newOutput = {};
+
+        if (modelObject.type === 'text') 
+            return [modelObject['text_value']];
+
+        if (modelObject.type === 'basic' && modelObject.basic_value && modelObject.basic_value.selector)
+            newOutput[modelObject.basic_value.selector] = compact(modelObject.basic_value.values).join(", ");
+        
+
+        if (modelObject.type === 'object' && modelObject.object_selector) 
+            newOutput = modelObject.object_selector.filter(obj => (obj.selector && obj.value))
+                .reduce((obj, item) => {
+                    obj[item.selector] = item.value;
+                    return obj;
+                });
+        
+
+        return newOutput;
     }
 };
 
