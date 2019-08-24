@@ -95,13 +95,13 @@ attached to the field by specifying `warning` or `error` in the return array.
 
 ## Built-in Validations
 
-|Key|Description|
+|<div style="width:160px;">Key</div>|Description|
 |--|--|
 |`color`|Valid HTML hex color. Works with [color_rgba](../../core-fields/color-rgba.md) field (opacity)|
 |`comma_numeric`|Value is numeric separated by commas|
 |`css`|CSS|
 |`date`|Date|
-|`email`}|Valid Email|
+|`email`|Valid Email|
 |`html_custom`|HTML validation - See [html_custom example](validate.md#html_custom-example) |
 |`js`|JavaScript|
 |`no_html`|No HTML is permitted|

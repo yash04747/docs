@@ -54,6 +54,11 @@ module.exports = ctx => ({
     },
     plugins: [
         // ['@vuepress/plugin-i18n-ui', !ctx.isProd],
+        ['sitemap', {
+                filename: 'sitemap.xml',
+                hostname: 'https://docs.redux.io'
+            }
+        ],
         ['@vuepress/back-to-top', true],
         ['@vuepress/pwa', {
             serviceWorker: true,
