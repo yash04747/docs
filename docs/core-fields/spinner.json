@@ -1,0 +1,35 @@
+{
+  "type": "typography",
+  "name": "Typography",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "text",
+      "description": "",
+      "default": null,
+      "order": 30,
+      "required": false
+    }
+  }
+}
