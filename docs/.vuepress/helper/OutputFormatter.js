@@ -10,7 +10,10 @@ export default class OutputFormatter extends ObjectFormatter {
                         "type": "select",
                         "model": "type",
                         "label": "Type",
-                        "values": ["text", "basic", "object"]
+                        "values": OutputFormatter.possibleOutputValues(arguments[0]),
+                        "selectOptions": {
+                            "hideNoneSelectedText": true
+                        }
                     },
                     {
                         "type": "input",
@@ -91,6 +94,15 @@ export default class OutputFormatter extends ObjectFormatter {
         });
     }
 
+    static possibleOutputValues() {
+        let possibleValues = ["text", "basic", "object"];
+        if (arguments[0] !== undefined) {
+            possibleValues = [];
+            possibleValues.push(arguments[0]);
+        }
+        return possibleValues;
+    }
+
     static toPHPObject(modelObject) {
         if (modelObject['output'] && modelObject['output'].length == 0) {
             return {}
@@ -98,7 +110,7 @@ export default class OutputFormatter extends ObjectFormatter {
 
         let newOutput = {};
 
-        if (modelObject.type === 'text') 
+        if (modelObject.type === 'text' && modelObject['text_value'] !== null && modelObject['text_value'] !== undefined) 
             return [modelObject['text_value']];
 
         if (modelObject.type === 'basic' && modelObject.basic_value && modelObject.basic_value.selector)

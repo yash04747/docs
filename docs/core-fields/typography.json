@@ -42,6 +42,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
+      "field-type": "text",
       "type": "object",
       "default": null,
       "order": 20
