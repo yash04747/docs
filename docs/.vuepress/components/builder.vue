@@ -158,7 +158,10 @@
                 else
                     FormatterClass = formatters[fieldObject.type];
 
-                fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type']));
+                if (key == "output")
+                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
+                else
+                    fieldObject = Object.assign(fieldObject, FormatterClass.data());
 
                 fieldObject['default'] = FormatterClass.default(fieldObject['default']);
 

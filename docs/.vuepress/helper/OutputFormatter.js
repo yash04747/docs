@@ -2,7 +2,7 @@ import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep, compact} from 'lodash';
 
 export default class OutputFormatter extends ObjectFormatter {
-    static data() {
+    static data(fieldType, possibleProperties) {
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
@@ -10,7 +10,7 @@ export default class OutputFormatter extends ObjectFormatter {
                         "type": "select",
                         "model": "type",
                         "label": "Type",
-                        "values": OutputFormatter.possibleOutputValues(arguments[0]),
+                        "values": OutputFormatter.possibleOutputValues(fieldType),
                         "selectOptions": {
                             "hideNoneSelectedText": true
                         }
@@ -71,10 +71,13 @@ export default class OutputFormatter extends ObjectFormatter {
                             "schema": {
                                 "fields": [
                                     {
-                                        "type": "input",
-                                        "inputType": "text",
+                                        "type": "select",
+                                        "model": "selector",
                                         "label": "Selector",
-                                        "model": "selector"
+                                        "values": possibleProperties,
+                                        "selectOptions": {
+                                            "hideNoneSelectedText": true
+                                        }
                                     },
                                     {
                                         "type": "input",
@@ -116,14 +119,10 @@ export default class OutputFormatter extends ObjectFormatter {
         if (modelObject.type === 'basic' && modelObject.basic_value && modelObject.basic_value.selector)
             newOutput[modelObject.basic_value.selector] = compact(modelObject.basic_value.values).join(", ");
         
-
         if (modelObject.type === 'object' && modelObject.object_selector) 
-            newOutput = modelObject.object_selector.filter(obj => (obj.selector && obj.value))
-                .reduce((obj, item) => {
-                    obj[item.selector] = item.value;
-                    return obj;
-                });
-        
+            modelObject.object_selector.forEach((obj) => {
+                if (obj.selector && obj.value) newOutput[obj.selector] = obj.value; 
+            });
 
         return newOutput;
     }
