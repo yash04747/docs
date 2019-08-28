@@ -209,10 +209,13 @@
 
                 if (model.required) prep_model.required = RequiredFormatter.toPHPObject(model.required);
                 if (model.attributes) prep_model.attributes = KeyValueFormatter.toPHPObject(prep_model.attributes);
-                if (model.output) prep_model.output = OutputFormatter.toPHPObject(model.output);
                 if (model.data) prep_model = Object.assign(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
                 
+                if (model.output) {
+                    prep_model.output = OutputFormatter.toPHPObject(model.output);
+                    if (JSON.stringify(prep_model.output) === JSON.stringify({})) delete prep_model.output;
+                }
 
                 return prep_model;
             },
