@@ -1,6 +1,6 @@
 {
-  "type": "typography",
-  "name": "Typography",
+  "type": "spinner",
+  "name": "Spinner",
   "description": null,
   "icon": null,
   "fields": {

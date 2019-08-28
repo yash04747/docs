@@ -46,6 +46,28 @@ The asterisk at the beginning of these values is a wildcard value to be replaced
 When specifying your own units array, it will override the `units-extended` argument.
 :::
 
+
+## Example Declaration
+<script>
+import builder from './spacing.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

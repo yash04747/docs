@@ -36,6 +36,18 @@ export class SelectFormatter{
     }
 };
 
+
+export class MultiSelectFormatter{
+    static data() {
+        return {
+            "type": "vueMultiSelect"
+        };
+    }
+    static default(defaultObj) {
+        return defaultObj === null ? "" : defaultObj;
+    }
+};
+
 export class ArrayFormatter{
     static data() {
         return {
