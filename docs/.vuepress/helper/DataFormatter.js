@@ -48,7 +48,7 @@ export default class DataFormatter extends ObjectFormatter {
                             return string;
                         },
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [
@@ -156,7 +156,7 @@ export default class DataFormatter extends ObjectFormatter {
                         // "itemContainerClasses": "input-group attributes",
                         "newElementButtonLabel": "+ Add Array Element",
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [

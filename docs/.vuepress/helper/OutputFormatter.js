@@ -1,7 +1,9 @@
+import VueFormGenerator from 'vue-form-generator';
 import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep, compact} from 'lodash';
 
 export default class OutputFormatter extends ObjectFormatter {
+    static selectedSelectors = [];
     static data(fieldType, possibleProperties) {
         return Object.assign(super.data(), {
             "schema": {
@@ -25,7 +27,7 @@ export default class OutputFormatter extends ObjectFormatter {
                         "model": "text_value"
                     },
                     {
-                        "type": "object",
+                        "type": "custom-object",
                         "model": "basic_value",
                         "default": {},
                         "schema": {
@@ -66,7 +68,7 @@ export default class OutputFormatter extends ObjectFormatter {
                             return "Undefined"
                         },
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [
@@ -75,6 +77,7 @@ export default class OutputFormatter extends ObjectFormatter {
                                         "model": "selector",
                                         "label": "Selector",
                                         "values": possibleProperties,
+                                        "validator": OutputFormatter.duplicateValidator,
                                         "selectOptions": {
                                             "hideNoneSelectedText": true
                                         }
@@ -95,6 +98,15 @@ export default class OutputFormatter extends ObjectFormatter {
                 ]
             }
         });
+    }
+
+    static duplicateValidator(model, value) {
+        if (model!==null && OutputFormatter.selectedSelectors.indexOf(model) !== -1) {
+            return ["Duplicate Entry"];
+        } else {
+            OutputFormatter.selectedSelectors.push(model);
+            return [];
+        }
     }
 
     static possibleOutputValues() {

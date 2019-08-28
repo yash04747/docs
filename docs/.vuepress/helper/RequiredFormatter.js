@@ -27,7 +27,7 @@ export default class RequiredFormatter extends ArrayFormatter {
             "showRemoveButton": false,
             "required": false,
             "items": {
-                "type": "object",
+                "type": "custom-object",
                 "default": {},
                 "schema": {
                     "fields": [

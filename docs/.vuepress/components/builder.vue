@@ -31,9 +31,9 @@
     import BootstrapVue from 'bootstrap-vue';
     import vueMultiselect from "vue-multiselect";
     import {FieldArray} from 'vfg-field-array';
-    import {FieldObject} from 'vfg-field-object';
     import FieldArrayBootstrapAccordionItem from './builder/fields/bootstrap-accordion-container';
     import {fieldDatalist} from './builder/fields/fieldDatalist';
+    import {fieldCustomObject} from './builder/fields/fieldCustomObject';
     import {TextFormatter, BoolFormatter, SelectFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
     import RequiredFormatter from '../helper/RequiredFormatter.js';
     import DataFormatter from '../helper/DataFormatter.js';
@@ -53,8 +53,8 @@
             BootstrapVue,
             vueMultiselect,
             FieldArray,
-            FieldObject,
             FieldArrayBootstrapAccordionItem,
+            fieldCustomObject,
             fieldDatalist
         },
         props: ['field'],

@@ -84,11 +84,12 @@ export default class ValidateFormatter extends ObjectFormatter {
                         "newElementButtonLabelClasses": "btn btn-outline-dark",
                         "removeElementButtonClasses": "btn btn-danger input-group-append",
                         "newElementButtonLabel": "+ Add Allowed HTML",
+                        
                         "itemContainerHeader": function (model, schema, index) {
                             return (model && model.tag) ? model.tag : "Undefined";
                         },
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [

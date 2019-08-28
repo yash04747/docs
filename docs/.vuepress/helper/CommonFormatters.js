@@ -53,7 +53,7 @@ export class ArrayFormatter{
 export class ObjectFormatter{
     static data() {
         return {
-            "type": "object"
+            "type": "custom-object"
         };
     }
     static default(defaultObj) {

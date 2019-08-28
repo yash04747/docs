@@ -27,7 +27,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                         // "itemContainerClasses": "input-group attributes",
                         "newElementButtonLabel": "+ Add Attribute",
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [
