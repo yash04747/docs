@@ -7,7 +7,8 @@
     "id": {
       "name": "id",
       "title": "ID",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 0,
@@ -16,7 +17,8 @@
     "title": {
       "name": "title",
       "title": "Title",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 5,
@@ -25,7 +27,8 @@
     "subtitle": {
       "name": "subtitle",
       "title": "Subtitle",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 30,
@@ -34,14 +37,16 @@
     "desc": {
       "name": "desc",
       "title": "Desc",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 30,
       "required": false
     },
     "permissions": {
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
       "default": null,
@@ -67,28 +72,31 @@
     "min": {
       "name": "min",
       "title": "Min",
-      "type": "text",
-      "inputType": "nubmer",
+      "type": "input",
+      "inputType": "number",
       "default": 0,
       "order": 75,
+      "validator": "integer",
       "required": false
     },
     "max": {
       "name": "max",
       "title": "Max",
-      "type": "text",
-      "inputType": "nubmer",
+      "type": "input",
+      "inputType": "number",
       "default": 1,
       "order": 80,
+      "validator": "integer",
       "required": false
     },
     "step": {
       "name": "step",
       "title": "Step",
-      "type": "text",
-      "inputType": "nubmer",
+      "type": "input",
+      "inputType": "number",
       "default": 1,
       "order": 85,
+      "validator": "integer",
       "required": false
     }
   }

@@ -7,7 +7,8 @@
     "id": {
       "name": "id",
       "title": "ID",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 0,
@@ -16,7 +17,8 @@
     "title": {
       "name": "title",
       "title": "Title",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 5,
@@ -25,7 +27,8 @@
     "subtitle": {
       "name": "subtitle",
       "title": "Subtitle",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 10,
@@ -34,7 +37,8 @@
     "desc": {
       "name": "desc",
       "title": "Description",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 15,
@@ -43,7 +47,8 @@
     "class": {
       "name": "class",
       "title": "Class",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
       "default": null,
       "order": 20,
@@ -66,7 +71,8 @@
     "rows": {
       "name": "rows",
       "title": "Rows",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "default": 6,
       "order": 35
     },
@@ -85,7 +91,8 @@
       "order": 45
     },
     "permissions": {
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
       "default": null,

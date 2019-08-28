@@ -77,6 +77,7 @@
                     redux: redux_field
                 },
                 formOptions: {
+                    validateAfterLoad: true,
                     validateAfterChanged: true
                 },
                 showSection: false
