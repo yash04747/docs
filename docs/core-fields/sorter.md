@@ -34,6 +34,29 @@ The first parameter of the value pair must be a string type representing a uniqu
 The key pair of `'placebo' => 'placebo'` IS NO LONGER REQUIRED.
 :::
 
+
+## Example Declaration
+<script>
+import builder from './sorter.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 ## Example Declaration
 
 ```php

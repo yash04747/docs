@@ -1,6 +1,6 @@
 {
-  "type": "text",
-  "name": "Text",
+  "type": "sorter",
+  "name": "Sorter",
   "description": null,
   "icon": null,
   "fields": {
@@ -36,7 +36,7 @@
     },
     "desc": {
       "name": "desc",
-      "title": "Description",
+      "title": "Desc",
       "type": "input",
       "inputType": "text",
       "description": "",
@@ -44,54 +44,33 @@
       "order": 15,
       "required": false
     },
-    "class": {
-      "name": "class",
-      "title": "Class",
+    "permissions": {
       "type": "input",
       "inputType": "text",
-      "description": "",
+      "name": "permissions",
+      "title": "Permissions",
       "default": null,
-      "order": 20,
-      "required": false
+      "order": 25
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 25,
+      "order": 30,
       "required": false
     },
-    "attributes": {
-      "name": "attributes",
-      "attribute-model": "attributes",
-      "title": "Attributes",
-      "type": "object",
-      "order": 30
-    },
-    "placeholder": {
-      "name": "placeholder",
-      "title": "Placeholder",
-      "type": "input",
-      "inputType": "text",
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
       "order": 35
     },
-    "autocomplete": {
-      "name": "autocomplete",
-      "title": "Autocomplete",
-      "type": "bool",
-      "default": true,
-      "order": 40
-    },
-    "readonly": {
-      "name": "readonly",
-      "title": "Read-only",
-      "type": "bool",
-      "default": true,
-      "order": 45
-    },
     "data": {
-      "type": "custom-object",
+      "type": "object",
       "name": "data",
       "title": "Data",
       "order": 50
@@ -113,11 +92,27 @@
       "default": null,
       "order": 70
     },
-    "validate": {
-      "name": "validate",
-      "title": "Validate",
-      "type": "custom-object",
-      "order": 80
+    "options": {
+      "type": "object",
+      "label": "Options",
+      "model": "options",
+      "default": {},
+      "schema": {
+        "fields": [
+          {
+            "type": "attributes",
+            "attribute-model": "enabled",
+            "label": "Enabled",
+            "model": "enabled"
+          },
+          {
+            "type": "attributes",
+            "attribute-model": "disabled",
+            "label": "Disabled",
+            "model": "disabled"
+          }
+        ]
+      }
     }
   }
 }

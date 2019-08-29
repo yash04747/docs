@@ -40,7 +40,7 @@ export default class DataFormatter extends ObjectFormatter {
                                         if (model.valueText)
                                             string += " => " + model.valueText;
                                     } else {
-                                        if (model.valueArray.length)
+                                        if (model.valueArray && model.valueArray.length)
                                             string += " => array(" + model.valueArray.length + ")";
                                     }
                                 }

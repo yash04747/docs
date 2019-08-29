@@ -1,13 +1,13 @@
 import {ObjectFormatter} from './CommonFormatters.js';
 
 export default class KeyValueFormatter extends ObjectFormatter {
-    static data() {
+    static data(modelName) {
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
                     {
                         "type": "array",
-                        "model": "attributes",
+                        "model": modelName,
                         "showModeElementUpButton": false,
                         "showModeElementDownButton": false,
                         "itemFieldClasses": "form-control",
@@ -24,7 +24,6 @@ export default class KeyValueFormatter extends ObjectFormatter {
                             }
                             return string;
                         },
-                        // "itemContainerClasses": "input-group attributes",
                         "newElementButtonLabel": "+ Add Attribute",
                         "items": {
                             "type": "custom-object",

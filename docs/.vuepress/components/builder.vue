@@ -146,6 +146,7 @@
                     'select': SelectFormatter,
                     'array': ArrayFormatter,
                     'object': ObjectFormatter,
+                    'custom-object': ObjectFormatter,
                     'required': RequiredFormatter,
                     'data': DataFormatter,
                     'attributes': KeyValueFormatter,
@@ -162,6 +163,8 @@
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
+                else if (key == "attributes")
+                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['attribute-model'], fieldObject['properties']));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
 

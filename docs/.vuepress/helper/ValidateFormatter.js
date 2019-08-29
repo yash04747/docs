@@ -25,7 +25,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                         "model": "validate_callback"
                     },
                     {
-                        "type": "object",
+                        "type": "custom-object",
                         "label": "preg_replace",
                         "model": "preg",
                         "default": {},
@@ -49,7 +49,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                         }
                     },
                     {
-                        "type": "object",
+                        "type": "custom-object",
                         "label": "str_replace",
                         "model": "str",
                         "default": {},
