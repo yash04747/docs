@@ -40,6 +40,7 @@
     import KeyValueFormatter from '../helper/KeyValueFormatter';
     import ValidateFormatter from '../helper/ValidateFormatter';
     import OutputFormatter from '../helper/OutputFormatter';
+    import OptionsFormatter from '../helper/OptionsFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
     import {cloneDeep} from 'lodash';
 
@@ -151,9 +152,10 @@
                     'data': DataFormatter,
                     'attributes': KeyValueFormatter,
                     'validate': ValidateFormatter,
-                    'output': OutputFormatter
+                    'output': OutputFormatter,
+                    'options': OptionsFormatter
                 }
-                const specialFieldsName = ["required", "data", "attributes", "validate", "output"];
+                const specialFieldsName = ["required", "data", "attributes", "validate", "output", "options"];
 
                 let FormatterClass;
                 if (specialFieldsName.indexOf(key) != -1)
@@ -163,8 +165,6 @@
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
-                else if (key == "attributes")
-                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['attribute-model'], fieldObject['properties']));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
 
@@ -214,8 +214,11 @@
 
                 if (model.required) prep_model.required = RequiredFormatter.toPHPObject(model.required);
                 if (model.attributes) prep_model.attributes = KeyValueFormatter.toPHPObject(prep_model.attributes);
+                if (model.options) prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
+                
                 if (model.data) prep_model = Object.assign(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
+
                 
                 if (model.output) {
                     prep_model.output = OutputFormatter.toPHPObject(model.output);

@@ -70,7 +70,7 @@
       "order": 35
     },
     "data": {
-      "type": "object",
+      "type": "custom-object",
       "name": "data",
       "title": "Data",
       "order": 50
@@ -93,26 +93,12 @@
       "order": 70
     },
     "options": {
-      "type": "object",
+      "type": "custom-object",
+      "title": "options",
+      "name": "options",
       "label": "Options",
-      "model": "options",
       "default": {},
-      "schema": {
-        "fields": [
-          {
-            "type": "attributes",
-            "attribute-model": "enabled",
-            "label": "Enabled",
-            "model": "enabled"
-          },
-          {
-            "type": "attributes",
-            "attribute-model": "disabled",
-            "label": "Disabled",
-            "model": "disabled"
-          }
-        ]
-      }
+      "order": 75
     }
   }
 }

@@ -64,7 +64,6 @@
     },
     "attributes": {
       "name": "attributes",
-      "attribute-model": "attributes",
       "title": "Attributes",
       "type": "object",
       "order": 30
