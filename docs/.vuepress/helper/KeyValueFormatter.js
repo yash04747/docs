@@ -1,13 +1,13 @@
 import {ObjectFormatter} from './CommonFormatters.js';
-
+import {cloneDeep} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
-    static data() {
+    static data(modelName) {
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
                     {
                         "type": "array",
-                        "model": "attributes",
+                        "model": modelName,
                         "showModeElementUpButton": false,
                         "showModeElementDownButton": false,
                         "itemFieldClasses": "form-control",
@@ -54,17 +54,13 @@ export default class KeyValueFormatter extends ObjectFormatter {
         return object
     }
 
-    static toPHPObject(modelObject) {
-        let modelObjectCopy = {};
-        let key;
-        for (key in modelObject) {
-            modelObjectCopy[key] = modelObject[key]; // copies each property to the objCopy object
-        }
+    static toPHPObject(modelObject, modelName) {
+        let modelObjectCopy = cloneDeep(modelObject);
         let newObject = {};
 
-        if (modelObject['attributes']) {
-            for (let i = 0; modelObjectCopy['attributes'] && i < modelObjectCopy['attributes'].length; i++) {
-                newObject[modelObjectCopy['attributes'][i]['key']] = modelObjectCopy['attributes'][i]['value'];
+        if (modelObject[modelName]) {
+            for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
+                newObject[modelObjectCopy[modelName][i]['key']] = modelObjectCopy[modelName][i]['value'];
             }
         }
 

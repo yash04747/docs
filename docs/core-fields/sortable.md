@@ -23,6 +23,29 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
+
+## Example Declaration
+<script>
+import builder from './sortable.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 ## Example Declaration
 ```php
 // Checkbox mode

@@ -42,7 +42,7 @@
     import OutputFormatter from '../helper/OutputFormatter';
     import OptionsFormatter from '../helper/OptionsFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {cloneDeep} from 'lodash';
+    import {extend, cloneDeep} from 'lodash';
 
     export default {
 
@@ -162,11 +162,18 @@
                     FormatterClass = formatters[key];
                 else
                     FormatterClass = formatters[fieldObject.type];
+                if (key == "options") FormatterClass = formatters[fieldObject.formatter]; // "options" has different formatter
+
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
                 else
-                    fieldObject = Object.assign(fieldObject, FormatterClass.data());
+                    if (FormatterClass === KeyValueFormatter) // "options" and use keyvalueformatter OR "attributes"
+                        fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['name']));
+                    else
+                        fieldObject = Object.assign(fieldObject, FormatterClass.data());
+
+
 
                 fieldObject['default'] = FormatterClass.default(fieldObject['default']);
 
@@ -183,7 +190,7 @@
                 if (schema && model) {
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
                     model = this.deleteEmptyValues(schema, model);
-                    model = this.transformCustomArgs(model);
+                    model = this.transformCustomArgs(schema, model);
                     model = this.sortModel(schema, model);
                     return this.phpify(model);
                 }
@@ -206,17 +213,24 @@
                 return model;
             },
 
-            transformCustomArgs: function (model) {
+            transformCustomArgs: function (schema, model) {
                 let prep_model = cloneDeep(model);
 
                 delete prep_model.data;
                 delete prep_model.validate;
 
                 if (model.required) prep_model.required = RequiredFormatter.toPHPObject(model.required);
-                if (model.attributes) prep_model.attributes = KeyValueFormatter.toPHPObject(prep_model.attributes);
-                if (model.options) prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
+                if (model.attributes) prep_model.attributes = KeyValueFormatter.toPHPObject(prep_model.attributes, "attributes");
+                if (model.options) {
+                    let optionSchema = _.filter(schema.fields, {model: "options"});
+                    if (optionSchema && optionSchema.length > 0) {
+                        optionSchema = optionSchema[0];
+                        if (optionSchema.formatter == "options") prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
+                        if (optionSchema.formatter == "attributes") prep_model.options = KeyValueFormatter.toPHPObject(prep_model.options, "options");
+                    }
+                }
                 
-                if (model.data) prep_model = Object.assign(prep_model, DataFormatter.toPHPObject(model.data));
+                if (model.data) prep_model = extend(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
 
                 
@@ -233,6 +247,7 @@
                 schema.fields.forEach(obj => {
                     if (model[obj.model]) newModel[obj.model] = model[obj.model]
                 })
+                if (model.args) newModel.args = model.args;
                 return newModel
             },
 

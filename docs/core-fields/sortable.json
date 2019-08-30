@@ -1,6 +1,6 @@
 {
-  "type": "sorter",
-  "name": "Sorter",
+  "type": "sortable",
+  "name": "Sortable",
   "description": null,
   "icon": null,
   "fields": {
@@ -44,21 +44,6 @@
       "order": 15,
       "required": false
     },
-    
-    "compiler": {
-      "name": "compiler",
-      "title": "Compiler",
-      "type": "bool",
-      "default": false,
-      "order": 30,
-      "required": false
-    },
-    "data": {
-      "type": "custom-object",
-      "name": "data",
-      "title": "Data",
-      "order": 50
-    },
     "permissions": {
       "type": "input",
       "inputType": "text",
@@ -66,6 +51,14 @@
       "title": "Permissions",
       "default": null,
       "order": 25
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 30,
+      "required": false
     },
     "required": {
       "name": "required",
@@ -76,14 +69,38 @@
       "default": null,
       "order": 35
     },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
+    },
     "options": {
       "type": "custom-object",
-      "formatter": "options",
+      "formatter": "attributes",
       "title": "options",
       "name": "options",
       "label": "Options",
       "default": {},
-      "order": 40
+      "order": 75
+    },
+    "label": {
+      "name": "label",
+      "title": "Label",
+      "type": "bool",
+      "default": false,
+      "order": 45
     }
   }
 }

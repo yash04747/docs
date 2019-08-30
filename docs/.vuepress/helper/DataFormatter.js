@@ -219,7 +219,6 @@ export default class DataFormatter extends ObjectFormatter {
                     newObject[args_array[i].id] = compact(args_array[i].valueArray);
             }
         }
-
         return newObject;
     }
 
