@@ -34,7 +34,7 @@
     import FieldArrayBootstrapAccordionItem from './builder/fields/bootstrap-accordion-container';
     import {fieldDatalist} from './builder/fields/fieldDatalist';
     import {fieldCustomObject} from './builder/fields/fieldCustomObject';
-    import {TextFormatter, BoolFormatter, SelectFormatter, MultiSelectFormatter, ArrayFormatter, ObjectFormatter} from '../helper/CommonFormatters.js';
+    import {TextFormatter, BoolFormatter, SelectFormatter, MultiSelectFormatter, ArrayFormatter, ObjectFormatter, DatalistFormatter} from '../helper/CommonFormatters.js';
     import RequiredFormatter from '../helper/RequiredFormatter.js';
     import DataFormatter from '../helper/DataFormatter.js';
     import KeyValueFormatter from '../helper/KeyValueFormatter';
@@ -145,6 +145,7 @@
                     'switch': BoolFormatter,
                     'vueMultiselect': MultiSelectFormatter,
                     'select': SelectFormatter,
+                    'datalist': DatalistFormatter,
                     'array': ArrayFormatter,
                     'object': ObjectFormatter,
                     'custom-object': ObjectFormatter,

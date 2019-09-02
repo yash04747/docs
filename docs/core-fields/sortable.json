@@ -89,9 +89,9 @@
     "options": {
       "type": "custom-object",
       "formatter": "attributes",
-      "title": "options",
+      "title": "Options",
       "name": "options",
-      "label": "Options",
+      "label": "options",
       "default": {},
       "order": 75
     },
@@ -101,6 +101,14 @@
       "type": "bool",
       "default": false,
       "order": 45
+    },
+    "mode": {
+      "type": "datalist",
+      "name": "mode",
+      "title": "Mode",
+      "values": ["text", "checkbox"],
+      "listName": "modelist",
+      "required": true
     }
   }
 }

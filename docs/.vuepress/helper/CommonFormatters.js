@@ -36,6 +36,16 @@ export class SelectFormatter{
     }
 };
 
+export class DatalistFormatter{
+    static data() {
+        return {
+            "type": "datalist"
+        };
+    }
+    static default(defaultObj) {
+        return defaultObj === null ? "" : defaultObj;
+    }
+};
 
 export class MultiSelectFormatter{
     static data() {
