@@ -151,7 +151,7 @@
                     'custom-object': ObjectFormatter,
                     'required': RequiredFormatter,
                     'data': DataFormatter,
-                    'attributes': KeyValueFormatter,
+                    'keyvalue': KeyValueFormatter,
                     'validate': ValidateFormatter,
                     'output': OutputFormatter,
                     'options': OptionsFormatter
@@ -163,16 +163,15 @@
                     FormatterClass = formatters[key];
                 else
                     FormatterClass = formatters[fieldObject.type];
-                if (key == "options") FormatterClass = formatters[fieldObject.formatter]; // "options" has different formatter
+                if (fieldObject.formatter) FormatterClass = formatters[fieldObject.formatter];
 
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
+                else if (FormatterClass === KeyValueFormatter)
+                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['name'], fieldObject['newElementButtonLabel']));
                 else
-                    if (FormatterClass === KeyValueFormatter) // "options" and use keyvalueformatter OR "attributes"
-                        fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['name']));
-                    else
-                        fieldObject = Object.assign(fieldObject, FormatterClass.data());
+                    fieldObject = Object.assign(fieldObject, FormatterClass.data());
 
 
 
@@ -219,26 +218,23 @@
 
                 delete prep_model.data;
                 delete prep_model.validate;
-
                 if (model.required) prep_model.required = RequiredFormatter.toPHPObject(model.required);
-                if (model.attributes) prep_model.attributes = KeyValueFormatter.toPHPObject(prep_model.attributes, "attributes");
-                if (model.options) {
-                    let optionSchema = _.filter(schema.fields, {model: "options"});
-                    if (optionSchema && optionSchema.length > 0) {
-                        optionSchema = optionSchema[0];
-                        if (optionSchema.formatter == "options") prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
-                        if (optionSchema.formatter == "attributes") prep_model.options = KeyValueFormatter.toPHPObject(prep_model.options, "options");
-                    }
-                }
+                if (model.options) prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
                 
                 if (model.data) prep_model = extend(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
 
-                
                 if (model.output) {
                     prep_model.output = OutputFormatter.toPHPObject(model.output);
                     if (JSON.stringify(prep_model.output) === JSON.stringify({})) delete prep_model.output;
                 }
+
+                // For simple key value, props, we will deal with it at the last stage and override what the default has done.
+                let keyvalueSchema = _.filter(schema.fields, {formatter: "keyvalue"});
+                keyvalueSchema.forEach((keyvalue) => {
+                    if (model[keyvalue.model]) 
+                        prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model, keyvalue.newElementButtonLabel);
+                });
 
                 return prep_model;
             },

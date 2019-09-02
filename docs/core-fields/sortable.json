@@ -88,10 +88,11 @@
     },
     "options": {
       "type": "custom-object",
-      "formatter": "attributes",
+      "formatter": "keyvalue",
       "title": "Options",
       "name": "options",
       "label": "options",
+      "newElementButtonLabel": "+ Add Option",
       "default": {},
       "order": 75
     },

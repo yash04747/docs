@@ -65,7 +65,8 @@
     "attributes": {
       "name": "attributes",
       "title": "Attributes",
-      "": "attributes",
+      "formatter": "keyvalue",
+      "newElementButtonLabel": "+ Add Attribute",
       "type": "object",
       "order": 30
     },

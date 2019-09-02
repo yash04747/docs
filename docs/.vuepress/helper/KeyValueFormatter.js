@@ -1,7 +1,7 @@
 import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
-    static data(modelName) {
+    static data(modelName, newElementButtonLabel) {
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
@@ -24,7 +24,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                             }
                             return string;
                         },
-                        "newElementButtonLabel": "+ Add Attribute",
+                        "newElementButtonLabel": newElementButtonLabel, 
                         "items": {
                             "type": "custom-object",
                             "default": {},
