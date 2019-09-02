@@ -1,7 +1,8 @@
 import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
-    static data(modelName, newElementButtonLabel) {
+    static data(schemaObject) {
+        let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues} = schemaObject;
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
@@ -16,8 +17,8 @@ export default class KeyValueFormatter extends ObjectFormatter {
                         "itemContainerComponent": "field-array-bootstrap-accordion-item",
                         "itemContainerHeader": function (model, schema, index) {
                             let string = "Undefined";
-                            if (model && model.key) {
-                                string = model.key;
+                            if (model && (model.keyText || model.keySelect)) {
+                                string = model.keyText ? model.keyText : model.keySelect;
                                 if (model.value) {
                                     string += " => " + model.value;
                                 }
@@ -34,7 +35,16 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "type": "input",
                                         "inputType": "text",
                                         "label": "Key",
-                                        "model": "key"
+                                        "model": "keyText",
+                                        "visible": (!selectValues || selectValues.length === 0)
+                                    },
+                                    {
+                                        "type": "datalist",
+                                        "label": "Key",
+                                        "model": "keySelect",
+                                        "listName": "keyslist",
+                                        "values": selectValues,
+                                        "visible": (selectValues && selectValues.length > 0)
                                     },
                                     {
                                         "type": "input",
@@ -60,7 +70,8 @@ export default class KeyValueFormatter extends ObjectFormatter {
 
         if (modelObject[modelName]) {
             for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
-                newObject[modelObjectCopy[modelName][i]['key']] = modelObjectCopy[modelName][i]['value'];
+                let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
+                newObject[key] = modelObjectCopy[modelName][i]['value'];
             }
         }
 

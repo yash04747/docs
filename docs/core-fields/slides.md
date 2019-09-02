@@ -33,6 +33,29 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 |height|string|Placeholder height for the preview image.|
 |width|string|Placeholder width for the preview image.|
 
+
+
+## Example Declaration
+<script>
+import builder from './slides.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 
 ```php

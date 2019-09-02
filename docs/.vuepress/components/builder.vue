@@ -169,7 +169,7 @@
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
                 else if (FormatterClass === KeyValueFormatter)
-                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['name'], fieldObject['newElementButtonLabel']));
+                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
 
@@ -233,7 +233,7 @@
                 let keyvalueSchema = _.filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
                     if (model[keyvalue.model]) 
-                        prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model, keyvalue.newElementButtonLabel);
+                        prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
                 });
 
                 return prep_model;

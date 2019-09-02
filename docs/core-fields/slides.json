@@ -1,6 +1,6 @@
 {
-  "type": "sortable",
-  "name": "Sortable",
+  "type": "slides",
+  "name": "Slides",
   "description": null,
   "icon": null,
   "fields": {
@@ -69,30 +69,32 @@
       "default": null,
       "order": 35
     },
-    "options": {
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
+    },
+    "placeholder": {
       "type": "custom-object",
       "formatter": "keyvalue",
-      "title": "Options",
-      "name": "options",
-      "label": "options",
-      "newElementButtonLabel": "+ Add Option",
+      "title": "Placeholder",
+      "name": "placeholder",
+      "selectValues": ["title", "description", "sort", "url", "image", "thumb", "attachment_id", "height", "width"],
+      "newElementButtonLabel": "+ Add Placeholder Item",
       "default": {},
       "order": 75
-    },
-    "label": {
-      "name": "label",
-      "title": "Label",
-      "type": "bool",
-      "default": false,
-      "order": 45
-    },
-    "mode": {
-      "type": "datalist",
-      "name": "mode",
-      "title": "Mode",
-      "values": ["text", "checkbox"],
-      "listName": "modelist",
-      "required": true
     }
   }
 }

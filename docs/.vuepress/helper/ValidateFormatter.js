@@ -94,12 +94,12 @@ export default class ValidateFormatter extends ObjectFormatter {
                             "schema": {
                                 "fields": [
                                     {
-                                        "type": 'datalist',
+                                        "type": "datalist",
                                         "name": "tag",
                                         "title": "Tag",
                                         "label": "Tag",
                                         "values": ["a", "br", "em", "strong"],
-                                        "model": 'tag',
+                                        "model": "tag",
                                         "listName": "taglist",
                                         "required": true
                                     },
