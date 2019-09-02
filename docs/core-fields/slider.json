@@ -1,0 +1,151 @@
+{
+  "type": "slider",
+  "name": "Slider",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 20,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
+      "type": "object",
+      "default": null,
+      "order": 25
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "min": {
+      "name": "min",
+      "title": "Min",
+      "type": "input",
+      "inputType": "number",
+      "default": 0,
+      "order": 40,
+      "validator": "number",
+      "required": false
+    },
+    "max": {
+      "name": "max",
+      "title": "Max",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "order": 45,
+      "validator": "number",
+      "required": false
+    },
+    "step": {
+      "name": "step",
+      "title": "Step",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "order": 50,
+      "validator": "number",
+      "required": false
+    },
+    "handles": {
+      "name": "handles",
+      "title": "Handles",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "min": 1,
+      "max": 2,
+      "order": 55,
+      "required": false
+    },
+    "display_value": {
+      "name": "display_value",
+      "title": "Display Value",
+      "type": "select",
+      "default": "text",
+      "order": 60,
+      "values": ["none", "label", "text", "select"],
+      "required": false
+    },
+    "resolution": {
+      "name": "resolution",
+      "title": "Resolution",
+      "type": "select",
+      "default": 1,
+      "order": 65,
+      "values": [1, 0.1, 0.01, 0.001, 0.0001, 0.00001],
+      "required": false
+    },
+    "float_mark": {
+      "name": "float_mark",
+      "title": "Float Mark",
+      "type": "select",
+      "default": ",",
+      "order": 60,
+      "values": [",", "."],
+      "required": false
+    }
+  }
+}

@@ -33,6 +33,29 @@ The Redux Slider Field offers a great array features for just about every need.Â
 When setting the `resolution` argument to a floating point value, it will also be necessary to set the `step` argument to a floating point for values after the decimal point to change value. Not doing so will result in the value to the left of the decimal changing value upon slide.
 :::
 
+
+## Example Declaration
+<script>
+import builder from './slider.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 ## Example Declaration(s) 
 
 #### Default
