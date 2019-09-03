@@ -31,6 +31,9 @@ The Select field displays information in a drop-down field in both single and mu
 ## Standard Select
 ![](https://f.cloud.github.com/assets/3412363/1569797/d77655e8-50d4-11e3-8580-cf1eba05ea7e.png)
 
+
+
+
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-select',
@@ -67,6 +70,31 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'default'  => array('2','3')
 ) );
 ```
+
+
+
+
+## Example Declaration
+<script>
+import builder from './select.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 
 ## Example Usage
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>

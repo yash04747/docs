@@ -1,0 +1,143 @@
+{
+  "type": "select",
+  "name": "Select",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 30,
+      "required": false
+    },
+    "data": {
+      "type": "custom-object",
+      "name": "data",
+      "title": "Data",
+      "order": 50
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 25
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "options": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Options",
+      "name": "options",
+      "newElementButtonLabel": "+ Add Option",
+      "default": {},
+      "order": 39
+    },
+    "width": {
+      "name": "width",
+      "title": "Width",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 40,
+      "required": false
+    },
+    "multi": {
+      "name": "multi",
+      "title": "Multi",
+      "type": "bool",
+      "default": false,
+      "order": 45,
+      "required": false
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "title": "Placeholder",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 50,
+      "required": false
+    },
+    "sortable": {
+      "name": "multi",
+      "title": "Multi",
+      "type": "bool",
+      "default": false,
+      "order": 55,
+      "required": false
+    },
+    "ajax": {
+      "name": "ajax",
+      "title": "Ajax",
+      "type": "bool",
+      "default": false,
+      "order": 60,
+      "required": false
+    },
+    "min-input-length": {
+      "name": "min-input-length",
+      "title": "Min Input Length",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "order": 65,
+      "min": 1,
+      "validator": "integer",
+      "required": false
+    }
+  }
+}

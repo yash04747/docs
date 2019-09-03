@@ -3,6 +3,7 @@ import {cloneDeep} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
         let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues} = schemaObject;
+        let isShowingText = (selectValues && selectValues.length > 0) ? false : true;
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
@@ -36,7 +37,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "inputType": "text",
                                         "label": "Key",
                                         "model": "keyText",
-                                        "visible": (!selectValues || selectValues.length === 0)
+                                        "visible": isShowingText
                                     },
                                     {
                                         "type": "datalist",
@@ -44,7 +45,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "model": "keySelect",
                                         "listName": "keyslist",
                                         "values": selectValues,
-                                        "visible": (selectValues && selectValues.length > 0)
+                                        "visible": !isShowingText
                                     },
                                     {
                                         "type": "input",
