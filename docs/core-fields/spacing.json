@@ -81,7 +81,6 @@
       "name": "units",
       "title": "units",
       "type": "vueMultiselect",
-      "model": "units",
       "values": ["px", "em", "%"],
       "order": 40,
       "selectOptions": {

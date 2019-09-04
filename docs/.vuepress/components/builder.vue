@@ -109,6 +109,7 @@
 
                 let schemaFieldObject = that.formatSchemaField(redux_field['fields'][key], key);
                 to_return['schema']['fields'].push(schemaFieldObject);
+
                 to_return['model'][key] = redux_field['fields'][key]['default'];
             });
 
@@ -117,7 +118,8 @@
                 (a['order'] > b['order']) ? 1 : -1
             });
             if (this.$attrs.builder_json.model)
-                to_return['model'] = Object.assign(to_return['model'], this.$attrs.builder_json.model);
+                to_return['model'] = {...this.$attrs.builder_json.model, ...to_return['model']};
+
             return to_return;
         },
         methods: {
@@ -131,7 +133,6 @@
                     type: this.$attrs.builder_json.type
                 };
 
-                // let keys = Object.keys(redux_field['fields']);
                 if (this.$attrs.builder_json.model)
                     this.model = Object.assign(this.model, this.$attrs.builder_json.model);
             },
@@ -172,7 +173,6 @@
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
-
 
 
                 fieldObject['default'] = FormatterClass.default(fieldObject['default']);
