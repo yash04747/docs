@@ -1,6 +1,6 @@
 {
-  "type": "section",
-  "name": "Section",
+  "type": "raw",
+  "name": "Raw",
   "description": null,
   "icon": null,
   "fields": {
@@ -51,14 +51,40 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 35
+      "order": 20
     },
-    "indent": {
-      "name": "indent",
-      "title": "Indent",
+    "full_width": {
+      "name": "full_width",
+      "title": "Full Width",
       "type": "bool",
       "default": true,
-      "order": 40
-    }    
+      "order": 25
+    },
+    "markdown": {
+      "name": "markdown",
+      "title": "Markdown",
+      "type": "bool",
+      "order": 30
+    },
+    "content": {
+      "name": "content",
+      "title": "Content",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "content_path": {
+      "name": "content_path",
+      "title": "Content Path",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    }
   }
 }

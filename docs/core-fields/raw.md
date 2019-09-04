@@ -18,7 +18,7 @@ The Raw field provides the ability to output raw HTML directly into the options 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`raw`|Value identifying the field type.|
-|full_width|`true`||Flag to set denote if the field is full width or sectioned.|
+|full_width|bool|`true`|Flag to set denote if the field is full width or sectioned.|
 |markdown|bool||Flag to set the markdown of standard line-break and tab characters to HTML.|
 |content|string||HTML content to display.  String values or file output may be used.|
 |content_path|string||Full path to file that will be used as the content for this field.|
@@ -27,6 +27,28 @@ The Raw field provides the ability to output raw HTML directly into the options 
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 :::
+
+## Example Declaration
+<script>
+import builder from './raw.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 
 ## Example Declaration
 ```php
