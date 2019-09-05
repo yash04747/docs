@@ -94,8 +94,7 @@
                         model: 'type',
                         readonly: true,
                         featured: false,
-                        disabled: true,
-
+                        disabled: true
                     });
                     if (redux_field['fields'][key]['order'])
                         to_return['schema']['fields']['order'] = redux_field['fields'][key]['order'];
@@ -117,9 +116,11 @@
             to_return['schema']['fields'].sort((a, b) => {
                 (a['order'] > b['order']) ? 1 : -1
             });
-            if (this.$attrs.builder_json.model)
-                to_return['model'] = {...this.$attrs.builder_json.model, ...to_return['model']};
 
+            if (this.$attrs.builder_json.model){
+                let newObj = {...this.$attrs.builder_json.model, ...to_return['model']};
+                to_return['model'] = {...this.$attrs.builder_json.model, ...to_return['model']};
+            }
             return to_return;
         },
         methods: {
@@ -134,7 +135,7 @@
                 };
 
                 if (this.$attrs.builder_json.model)
-                    this.model = Object.assign(this.model, this.$attrs.builder_json.model);
+                    this.model = {...this.$attrs.builder_json.model, ...this.model};
             },
 
             // Helper method used in data()
