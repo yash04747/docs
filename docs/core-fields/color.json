@@ -1,0 +1,99 @@
+{
+  "type": "color",
+  "name": "Color",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["background-color", "color"],
+      "type": "object",
+      "default": null,
+      "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "transparent": {
+      "name": "transparent",
+      "title": "Transparent",
+      "type": "bool",
+      "default": true,
+      "order": 25,
+      "required": false
+    },
+    "validate": {
+      "type": "input",
+      "inputType": "text",
+      "name": "validate",
+      "title": "Validate",
+      "default": null,
+      "order": 60
+    }
+  }
+}

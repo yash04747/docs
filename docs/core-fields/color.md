@@ -28,6 +28,28 @@ To set the transparency checkbox by default, use the string `transparent` in pla
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
+
+## Example Declaration
+<script>
+import builder from './color.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 
 ```php
