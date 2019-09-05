@@ -35,6 +35,28 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 |active|string|Hex string for the default active hyperlink color.|
 |visited|string|Hex string for the default visited hyperlink color.|
 
+
+## Example Declaration
+<script>
+import builder from './link-color.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

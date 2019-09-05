@@ -37,6 +37,30 @@ Select from an array of images as radio buttons.
 |presets|string/array|For use with preset.  Optional array or JSON string of values for specified fields|
 |class|string|Extra class name for the layout image.|
 
+
+## Example Declaration
+<script>
+import builder from './image-select.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
+
 ## Example Declaration
 #### Image Select Layout
 

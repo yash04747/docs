@@ -41,6 +41,27 @@ The Editor field offers WYSIWYG editing capability, using the same editing inter
 :::
 
 ## Example Declaration
+<script>
+import builder from './editor.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'               => 'editor-text',

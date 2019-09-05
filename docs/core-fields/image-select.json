@@ -1,0 +1,126 @@
+{
+  "type": "image-select",
+  "name": "Image Select",
+  "description": null,
+  "icon": null,
+  "model": {
+    "mode": "background-image"
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
+      "type": "object",
+      "default": null,
+      "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "mode": {
+      "name": "mode",
+      "title": "Mode",
+      "type": "input",
+      "inputType": "text",
+      "order": 40,
+      "required": false
+    },
+    "width": {
+      "name": "width",
+      "title": "Width",
+      "type": "input",
+      "inputType": "text",
+      "order": 40,
+      "required": false
+    },
+    "height": {
+      "name": "height",
+      "title": "Height",
+      "type": "input",
+      "inputType": "text",
+      "order": 45,
+      "required": false
+    },
+    "tiles": {
+      "name": "tiles",
+      "title": "Tiles",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "presets": {
+      "name": "presets",
+      "title": "Presets",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    }
+  }
+}

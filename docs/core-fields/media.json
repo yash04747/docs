@@ -1,0 +1,141 @@
+{
+  "type": "media",
+  "name": "Media",
+  "description": null,
+  "icon": null,
+  "model": {
+    "url": false,
+    "preview": true,
+    "placeholder": "No media selected",
+    "readonly": true
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "width": {
+      "name": "width",
+      "title": "Width",
+      "type": "input",
+      "inputType": "text",
+      "order": 40,
+      "required": false
+    },
+    "height": {
+      "name": "height",
+      "title": "Height",
+      "type": "input",
+      "inputType": "text",
+      "order": 45,
+      "required": false
+    },
+    "url": {
+      "name": "url",
+      "title": "URL",
+      "type": "bool",
+      "default": false,
+      "order": 50,
+      "required": false
+    },
+    "preview": {
+      "name": "preview",
+      "title": "Preview",
+      "type": "bool",
+      "default": true,
+      "order": 55,
+      "required": false
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "title": "Placeholder",
+      "type": "input",
+      "inputType": "text",
+      "order": 60,
+      "required": false
+    },
+    "readonly": {
+      "name": "readonly",
+      "title": "Read Only",
+      "type": "bool",
+      "default": true,
+      "order": 65,
+      "required": false
+    },
+    "mode": {
+      "name": "mode",
+      "title": "Mode",
+      "type": "input",
+      "inputType": "text",
+      "order": 70,
+      "required": false
+    },
+    "library_filter": {
+      "name": "library_filter",
+      "title": "Library Filter",
+      "type": "array",
+      "order": 75
+    }
+  }
+}

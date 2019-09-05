@@ -25,6 +25,26 @@ The Info field comes in several varieties to display information as normal, info
 When using the Info field with `required`, the field cannot be hidden by default.  It’s best only to use the `required` argument with this field when the fold is shown by default.
 :::
 
+## Example Declaration
+<script>
+import builder from './info.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
 
 ## Example Declaration
 

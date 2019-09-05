@@ -1,0 +1,103 @@
+{
+  "type": "info",
+  "name": "Info",
+  "description": null,
+  "icon": null,
+  "model": {
+    "style": "normal",
+    "notice": true,
+    "indent": false
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "style": {
+      "type": "datalist",
+      "name": "style",
+      "title": "Style",
+      "values": ["normal", "info", "warning", "success", "critical"],
+      "listName": "stylelist",
+      "order": 40,
+      "required": true
+    },
+    "notice": {
+      "name": "notice",
+      "title": "Notice",
+      "type": "bool",
+      "default": true,
+      "order": 45,
+      "required": false
+    },
+    "color": {
+      "name": "color",
+      "title": "Color",
+      "type": "input",
+      "inputType": "text",
+      "order": 50,
+      "required": false
+    },
+    "icon": {
+      "name": "icon",
+      "title": "Icon",
+      "type": "input",
+      "inputType": "text",
+      "order": 55,
+      "required": false
+    },
+    "indenet": {
+      "name": "indent",
+      "title": "Indent",
+      "type": "bool",
+      "default": false,
+      "order": 60,
+      "required": false
+    }
+  }
+}
