@@ -1,0 +1,146 @@
+{
+  "type": "dimension",
+  "name": "Dimension",
+  "description": null,
+  "icon": null,
+  "model": {
+    "mode": {
+      "width": false,
+      "height": false
+    },
+    "width": true,
+    "height": true,
+    "units": ["px"]
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
+      "type": "object",
+      "default": null,
+      "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "mode": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Mode",
+      "name": "mode",
+      "newElementButtonLabel": "+ Add Option",
+      "order": 39
+    },
+    "default": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Default",
+      "name": "default",
+      "newElementButtonLabel": "+ Add Option",
+      "selectValues": ["width", "height", "units"],
+      "order": 39
+    },
+    "width": {
+      "name": "width",
+      "title": "Width",
+      "type": "bool",
+      "order": 40,
+      "required": false
+    },
+    "height": {
+      "name": "height",
+      "title": "Height",
+      "type": "bool",
+      "order": 45,
+      "required": false
+    },
+    "units": {
+      "name": "units",
+      "title": "Units",
+      "type": "array",
+      "order": 45,
+      "required": false
+    },
+    "units_extended": {
+      "name": "units_extended",
+      "title": "Units Extended",
+      "type": "bool",
+      "default": false,
+      "order": 50,
+      "required": false
+    },
+    "select2": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Select2",
+      "name": "select2",
+      "newElementButtonLabel": "+ Add Option",
+      "order": 39
+    }
+  }
+}
