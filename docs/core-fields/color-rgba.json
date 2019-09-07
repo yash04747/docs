@@ -1,0 +1,106 @@
+{
+  "type": "color_rgba",
+  "name": "Color RGBA",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["background-color", "color"],
+      "type": "object",
+      "default": null,
+      "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "options": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Options",
+      "name": "options",
+      "selectValues": ["input_text", "show_input", "show_initial", "show_alpha", "show_palette", "show_palette_only", "show_selection_palette", "max_palette_size", 
+        "allow_empty", "clickout_fires_change", "choose_text", "cancel_text", "show_buttons", "palette"],
+      "listName": "optionsList",
+      "newElementButtonLabel": "+ Add Option",
+      "default": {},
+      "order": 40
+    },
+    "default": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Default",
+      "name": "default",
+      "selectValues": ["color", "alpha"],
+      "listName": "defaultList",
+      "newElementButtonLabel": "+ Add Item for Default",
+      "default": {},
+      "order": 40
+    }
+  }
+}
