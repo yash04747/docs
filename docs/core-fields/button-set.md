@@ -30,6 +30,30 @@ The value of the default option will depend on whether or not the `multi` argume
 key value from the `options` argument to set as selected.  When `multi` is set to true, the `default` argument accepts 
 an array of values representing the key of the option from `options` to set as selected.
 
+
+## Example Declaration
+<script>
+import builder from './button-set.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
+
 ## Example Declaration
 #### Single select
 

@@ -1,6 +1,6 @@
 {
-  "type": "color_rgba",
-  "name": "Color RGBA",
+  "type": "color_gradient",
+  "name": "Color Gradient",
   "description": null,
   "icon": null,
   "fields": {
@@ -62,14 +62,6 @@
       "default": null,
       "order": 20
     },
-    "permissions": {
-      "type": "input",
-      "inputType": "text",
-      "name": "permissions",
-      "title": "Permissions",
-      "default": null,
-      "order": 60
-    },
     "required": {
       "name": "required",
       "title": "Required",
@@ -79,28 +71,30 @@
       "default": null,
       "order": 35
     },
-    "options": {
-      "type": "custom-object",
-      "formatter": "keyvalue",
-      "title": "Options",
-      "name": "options",
-      "selectValues": ["input_text", "show_input", "show_initial", "show_alpha", "show_palette", "show_palette_only", "show_selection_palette", "max_palette_size", 
-        "allow_empty", "clickout_fires_change", "choose_text", "cancel_text", "show_buttons", "palette"],
-      "listName": "optionsList",
-      "newElementButtonLabel": "+ Add Option",
-      "default": {},
-      "order": 40
-    },
     "default": {
       "type": "custom-object",
       "formatter": "keyvalue",
       "title": "Default",
       "name": "default",
-      "selectValues": ["color", "alpha"],
+      "selectValues": ["from", "to"],
       "listName": "defaultList",
       "newElementButtonLabel": "+ Add Default Item",
       "default": {},
       "order": 40
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "custom-object",
+      "order": 80
+    },
+    "transparent": {
+      "name": "transparent",
+      "title": "Transparent",
+      "type": "bool",
+      "default": true,
+      "order": 25,
+      "required": false
     }
   }
 }

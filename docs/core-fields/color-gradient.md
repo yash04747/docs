@@ -33,6 +33,29 @@ The Color Gradient controls allows for the selection of two separate colors, for
 To set the transparency checkbox by default, use the string `transparent` in place of a string hex value in either the `to` or `from` argument.
 :::
 
+
+## Example Declaration
+<script>
+import builder from './color-gradient.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 ## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

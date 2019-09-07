@@ -27,6 +27,29 @@ The Checkbox field may be used to offer a single check option, or a group of mul
 
 When using a single checkbox, the `default` argument accepts a string/int/bool representing with 0/false or 1/true.  When using multi-checkbox, the `default` argument accepts an array of key pair values.  They key represents the id of the checkbox, the value either a 0/false or 1/true value.
 
+
+## Example Declaration
+<script>
+import builder from './checkbox.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 ## Example Declaration
 #### Single Checkbox
 ```php
