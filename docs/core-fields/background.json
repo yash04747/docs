@@ -1,0 +1,198 @@
+{
+  "type": "background",
+  "name": "Background",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["background-color", "color"],
+      "type": "object",
+      "default": null,
+      "order": 20
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "custom-object",
+      "order": 50
+    },
+    "default": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Default",
+      "name": "default",
+      "newElementButtonLabel": "+ Add Default Item",
+      "selectValues": ["background-color", "background-repeat", "background-attachment", "background-position", "background-image", "background-clip", "background-origin", "background-size", "media"],
+      "default": {},
+      "order": 40
+    },
+    "select2": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Select2",
+      "name": "select2",
+      "newElementButtonLabel": "+ Add Option",
+      "default": {},
+      "order": 45
+    },
+    "background-color": {
+      "name": "background-color",
+      "title": "Background Color",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-repeat": {
+      "name": "background-repeat",
+      "title": "Background Repeat",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-attachment": {
+      "name": "background-attachment",
+      "title": "Background Attachment",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-position": {
+      "name": "background-position",
+      "title": "Background Position",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-image": {
+      "name": "background-image",
+      "title": "Background Image",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-clip": {
+      "name": "background-clip",
+      "title": "Background Clip",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-origin": {
+      "name": "background-origin",
+      "title": "Background Origin",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "background-size": {
+      "name": "background-size",
+      "title": "Background Size",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "preview_media": {
+      "name": "preview_media",
+      "title": "Background Image",
+      "type": "bool",
+      "default": false,
+      "order": 50,
+      "required": false
+    },
+    "preview": {
+      "name": "preview",
+      "title": "Preview",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "preview_height": {
+      "name": "preview_height",
+      "title": "Preview Height",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": "200px",
+      "order": 5,
+      "required": false
+    },
+    "transparent": {
+      "name": "transparent",
+      "title": "Transparent",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    }
+  }
+}

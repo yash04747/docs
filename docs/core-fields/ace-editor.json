@@ -1,0 +1,99 @@
+{
+  "type": "ace_editor",
+  "name": "Ace Editor",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "custom-object",
+      "order": 50
+    },
+    "options": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Options",
+      "name": "options",
+      "newElementButtonLabel": "+ Add Option",
+      "selectValues": ["minLines", "maxLines"],
+      "default": {},
+      "order": 40
+    },
+    "mode": {
+      "type": "select",
+      "name": "mode",
+      "title": "Mode",
+      "values": ["css", "html", "javascript", "json", "less", "markdown", "mysql", "php", "plain_text", "sass", "scss", "text", "xml"],
+      "required": true,
+      "default": "javascript",
+      "order": 80
+    },
+    "theme": {
+      "type": "select",
+      "name": "theme",
+      "title": "Theme",
+      "values": ["chrome", "monokai"],
+      "required": true,
+      "default": "monokai",
+      "order": 80
+    }
+  }
+}

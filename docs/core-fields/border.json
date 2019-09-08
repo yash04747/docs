@@ -1,0 +1,164 @@
+{
+  "type": "border",
+  "name": "Border",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 0,
+      "required": false
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 5,
+      "required": false
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 10,
+      "required": false
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
+      "required": false
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["background-color", "color"],
+      "type": "object",
+      "default": null,
+      "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 35
+    },
+    "default": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Default",
+      "name": "default",
+      "newElementButtonLabel": "+ Add Default Item",
+      "selectValues": ["border-color", "border-style", "border-top", "border-right", "border-bottom", "border-left", "border-width"],
+      "default": {},
+      "order": 40
+    },
+    "select2": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Select2",
+      "name": "select2",
+      "newElementButtonLabel": "+ Add Option",
+      "default": {},
+      "order": 45
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "custom-object",
+      "order": 50
+    },
+    "all": {
+      "name": "all",
+      "title": "All",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "left": {
+      "name": "left",
+      "title": "Left",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "right": {
+      "name": "right",
+      "title": "Right",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "top": {
+      "name": "top",
+      "title": "Top",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "bottom": {
+      "name": "bottom",
+      "title": "Bottom",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "style": {
+      "name": "style",
+      "title": "Style",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    },
+    "color": {
+      "name": "color",
+      "title": "Color",
+      "type": "bool",
+      "default": true,
+      "order": 50,
+      "required": false
+    }
+  }
+}

@@ -25,6 +25,29 @@ Array containing the `content` and optional `title` arguments for the [hint](../
 - [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
+
+## Example Declaration
+<script>
+import builder from './ace-editor.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {
+                'color'       : '#333', 
+                'font-style'  : '700', 
+                'font-family' : 'Abel', 
+                'google'      : true,
+                'font-size'   : '33px', 
+                'line-height' : '40'
+            }
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 ## Example Declaration
 
 ```php
