@@ -56,7 +56,6 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "text",
       "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "type": "object",
       "default": null,

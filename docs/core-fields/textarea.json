@@ -69,6 +69,29 @@
       "type": "object",
       "order": 30
     },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 40
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "object",
+      "order": 80
+    },
     "rows": {
       "name": "rows",
       "title": "Rows",
@@ -90,29 +113,6 @@
       "type": "bool",
       "default": 1,
       "order": 45
-    },
-    "permissions": {
-      "type": "input",
-      "inputType": "text",
-      "name": "permissions",
-      "title": "Permissions",
-      "default": null,
-      "order": 60
-    },
-    "required": {
-      "name": "required",
-      "title": "Required",
-      "fieldClasses": "full-width",
-      "type": "array",
-      "description": "Field visibility requirements.",
-      "default": null,
-      "order": 70
-    },
-    "validate": {
-      "name": "validate",
-      "title": "Validate",
-      "type": "object",
-      "order": 80
     }
   }
 }

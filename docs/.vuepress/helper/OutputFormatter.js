@@ -13,6 +13,7 @@ export default class OutputFormatter extends ObjectFormatter {
                         "model": "type",
                         "label": "Type",
                         "values": OutputFormatter.possibleOutputValues(fieldType),
+                        "hideNoneSelectedText": true,
                         "visible": function (model) {
                             return OutputFormatter.possibleOutputValues(fieldType).length > 1;
                         },
@@ -117,6 +118,7 @@ export default class OutputFormatter extends ObjectFormatter {
         if (arguments[0] !== undefined) {
             possibleValues = [];
             possibleValues.push(arguments[0]);
+
         }
         return possibleValues;
     }
