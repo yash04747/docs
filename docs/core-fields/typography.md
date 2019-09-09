@@ -58,7 +58,7 @@ The Redux Typography field in second-to-none when it comes to framework typograp
 |text-transform|string|Sets the default text transform value.  Accepts:  `none`, `capitalize`, `uppercase`, `lowercase`, `initial`, or `inherit`.|
 
 ## Preview Options
-|Name|Type|Description|
+|Name|Type / Default Value|Description|
 |--- |--- |--- |
 |text|alphanumeric string|Text to display in the font preview area.|
 |font-size|33px|Value to set the font size in the preview area.|

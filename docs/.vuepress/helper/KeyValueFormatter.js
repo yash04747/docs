@@ -43,7 +43,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "type": "datalist",
                                         "label": "Key",
                                         "model": "keySelect",
-                                        "listName": listName ? listName : "keyslist",
+                                        "listName": listName ? listName : "keyslist_" + modelName,
                                         "values": selectValues,
                                         "visible": !isShowingText
                                     },

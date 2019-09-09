@@ -24,31 +24,60 @@
       "order": 5,
       "required": false
     },
-    "google": {
-      "name": "google",
-      "title": "Google",
-      "type": "bool",
-      "default": true,
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
       "order": 10,
       "required": false
     },
-    "font-backup": {
-      "name": "font-backup",
-      "title": "Font Backup",
-      "type": "bool",
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
       "default": null,
       "order": 15,
+      "required": false
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25,
       "required": false
     },
     "output": {
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "object",
+      "field-type": "text",
       "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "type": "object",
       "default": null,
       "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "default": null,
+      "order": 60
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "default": null,
+      "order": 70
     },
     "units": {
       "type": "select",
@@ -59,14 +88,149 @@
       "default": null,
       "order": 25
     },
-    "subtitle": {
-      "name": "subtitle",
-      "title": "Subtitle",
-      "type": "input",
-      "inputType": "text",
-      "description": "",
+    "google": {
+      "name": "google",
+      "title": "Google",
+      "type": "bool",
+      "default": true,
+      "order": 10,
+      "required": false
+    },
+    "fonts": {
+      "name": "fonts",
+      "title": "Fonts",
+      "formatter": "keyvalue",
+      "newElementButtonLabel": "+ Add Font",
+      "type": "object",
+      "order": 30
+    },
+    "font-backup": {
+      "name": "font-backup",
+      "title": "Font Backup",
+      "type": "bool",
       "default": null,
-      "order": 30,
+      "order": 15,
+      "required": false
+    },
+    "font-style": {
+      "name": "font-style",
+      "title": "Font Style",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "font-weight": {
+      "name": "font-weight",
+      "title": "Font Weight",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "font-size": {
+      "name": "font-size",
+      "title": "Font Size",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },    
+    "font-family": {
+      "name": "font-family",
+      "title": "Font Family",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "subsets": {
+      "name": "subsets",
+      "title": "Subsets",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "line-height": {
+      "name": "line-height",
+      "title": "Line Height",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "word-spacing": {
+      "name": "word-spacing",
+      "title": "Word Spacing",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "letter-spacing": {
+      "name": "letter-spacing",
+      "title": "Letter Spacing",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "text-align": {
+      "name": "text-align",
+      "title": "Text Align",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },    
+    "text-transform": {
+      "name": "text-transform",
+      "title": "Text Transform",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "color": {
+      "name": "color",
+      "title": "Color",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "preview": {
+      "name": "preview",
+      "title": "Preview",
+      "formatter": "keyvalue",
+      "selectValues": ["text", "font-size", "always_display"],
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "all_styles": {
+      "name": "all_styles",
+      "title": "All Styles",
+      "type": "bool",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "select2": {
+      "name": "select2",
+      "title": "Select2",
+      "formatter": "keyvalue",
+      "default": null,
+      "order": 15,
+      "required": false
+    },
+    "font_family_clear": {
+      "name": "font_family_clear",
+      "title": "Font Family Clear",
+      "type": "bool",
+      "default": null,
+      "order": 15,
       "required": false
     }
   }
