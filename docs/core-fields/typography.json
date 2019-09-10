@@ -49,7 +49,7 @@
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 25,
+      "order": 20,
       "required": false
     },
     "output": {
@@ -59,7 +59,7 @@
       "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "type": "object",
       "default": null,
-      "order": 20
+      "order": 25
     },
     "permissions": {
       "type": "input",
@@ -67,7 +67,7 @@
       "name": "permissions",
       "title": "Permissions",
       "default": null,
-      "order": 60
+      "order": 30
     },
     "required": {
       "name": "required",
@@ -76,7 +76,7 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 70
+      "order": 35
     },
     "units": {
       "type": "select",
@@ -85,14 +85,14 @@
       "values": ["px", "em", "rem", "%"],
       "required": true,
       "default": null,
-      "order": 25
+      "order": 40
     },
     "google": {
       "name": "google",
       "title": "Google",
       "type": "bool",
       "default": true,
-      "order": 10,
+      "order": 45,
       "required": false
     },
     "fonts": {
@@ -101,14 +101,14 @@
       "formatter": "keyvalue",
       "newElementButtonLabel": "+ Add Font",
       "type": "object",
-      "order": 30
+      "order": 50
     },
     "font-backup": {
       "name": "font-backup",
       "title": "Font Backup",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 55,
       "required": false
     },
     "font-style": {
@@ -116,7 +116,7 @@
       "title": "Font Style",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 60,
       "required": false
     },
     "font-weight": {
@@ -124,7 +124,7 @@
       "title": "Font Weight",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 65,
       "required": false
     },
     "font-size": {
@@ -132,7 +132,7 @@
       "title": "Font Size",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 70,
       "required": false
     },    
     "font-family": {
@@ -140,7 +140,7 @@
       "title": "Font Family",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 75,
       "required": false
     },
     "subsets": {
@@ -148,7 +148,7 @@
       "title": "Subsets",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 80,
       "required": false
     },
     "line-height": {
@@ -156,7 +156,7 @@
       "title": "Line Height",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 85,
       "required": false
     },
     "word-spacing": {
@@ -164,7 +164,7 @@
       "title": "Word Spacing",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 90,
       "required": false
     },
     "letter-spacing": {
@@ -172,7 +172,7 @@
       "title": "Letter Spacing",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 95,
       "required": false
     },
     "text-align": {
@@ -180,7 +180,7 @@
       "title": "Text Align",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 100,
       "required": false
     },    
     "text-transform": {
@@ -188,7 +188,7 @@
       "title": "Text Transform",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 105,
       "required": false
     },
     "color": {
@@ -196,7 +196,7 @@
       "title": "Color",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 110,
       "required": false
     },
     "preview": {
@@ -205,7 +205,7 @@
       "formatter": "keyvalue",
       "selectValues": ["text", "font-size", "always_display"],
       "default": null,
-      "order": 15,
+      "order": 115,
       "required": false
     },
     "all_styles": {
@@ -213,7 +213,7 @@
       "title": "All Styles",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 120,
       "required": false
     },
     "select2": {
@@ -221,7 +221,7 @@
       "title": "Select2",
       "formatter": "keyvalue",
       "default": null,
-      "order": 15,
+      "order": 125,
       "required": false
     },
     "font_family_clear": {
@@ -229,7 +229,7 @@
       "title": "Font Family Clear",
       "type": "bool",
       "default": null,
-      "order": 15,
+      "order": 130,
       "required": false
     }
   }

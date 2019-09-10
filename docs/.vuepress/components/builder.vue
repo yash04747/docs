@@ -42,7 +42,7 @@
     import OutputFormatter from '../helper/OutputFormatter';
     import OptionsFormatter from '../helper/OptionsFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {extend, cloneDeep} from 'lodash';
+    import {extend, cloneDeep, sortBy} from 'lodash';
 
     export default {
 
@@ -85,6 +85,7 @@
             };
 
             let order = 0;
+            console.log(keys);
             keys.forEach(function (key) {
                 if (to_return['schema']['fields'].length === 1) {
                     to_return['schema']['fields'].push({
@@ -113,14 +114,12 @@
             });
 
             if (cachedModel !== null) to_return.model = cachedModel;
-            to_return['schema']['fields'].sort((a, b) => {
-                (a['order'] > b['order']) ? 1 : -1
-            });
-
+            to_return['schema']['fields'] = sortBy(to_return['schema']['fields'], 'order');
             if (this.$attrs.builder_json.model){
                 let newObj = {...this.$attrs.builder_json.model, ...to_return['model']};
                 to_return['model'] = {...this.$attrs.builder_json.model, ...to_return['model']};
             }
+
             return to_return;
         },
         methods: {
