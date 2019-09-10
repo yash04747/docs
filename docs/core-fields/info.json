@@ -49,6 +49,16 @@
       "order": 15,
       "required": false
     },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "default": null,
+      "order": 20,
+      "required": false
+    },
     "required": {
       "name": "required",
       "title": "Required",

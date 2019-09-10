@@ -1,8 +1,11 @@
 {
-  "type": "switch",
-  "name": "Switch",
+  "type": "palette-color",
+  "name": "Palette Color",
   "description": null,
   "icon": null,
+  "model": {
+    "add_text": "Add More"
+  },
   "fields": {
     "id": {
       "name": "id",
@@ -36,7 +39,7 @@
     },
     "desc": {
       "name": "desc",
-      "title": "Description",
+      "title": "Desc",
       "type": "input",
       "inputType": "text",
       "description": "",
@@ -79,20 +82,10 @@
       "default": null,
       "order": 35
     },
-    "on": {
-      "name": "on",
-      "title": "On",
-      "type": "input",
-      "inputType": "text",
-      "default": "On",
-      "order": 40
-    },
-    "off": {
-      "name": "off",
-      "title": "Off",
-      "type": "input",
-      "inputType": "text",
-      "default": "On",
+    "palette": {
+      "name": "palette",
+      "title": "Palette",
+      "type": "array",
       "order": 40
     }
   }
