@@ -44,16 +44,6 @@
       "order": 15,
       "required": false
     },
-    "class": {
-      "name": "class",
-      "title": "Class",
-      "type": "input",
-      "inputType": "text",
-      "description": "",
-      "default": null,
-      "order": 20,
-      "required": false
-    },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
@@ -84,13 +74,13 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 70
+      "order": 45
     },
     "validate": {
       "name": "validate",
       "title": "Validate",
       "type": "object",
-      "order": 80
+      "order": 50
     },
     "rows": {
       "name": "rows",
@@ -98,21 +88,21 @@
       "type": "input",
       "inputType": "text",
       "default": 6,
-      "order": 35
+      "order": 55
     },
     "autocomplete": {
       "name": "autocomplete",
       "title": "Autocomplete",
       "default": true,
       "type": "bool",
-      "order": 40
+      "order": 60
     },
     "readonly": {
       "name": "readonly",
       "title": "Read-only",
       "type": "bool",
       "default": 1,
-      "order": 45
+      "order": 65
     }
   }
 }

@@ -54,48 +54,27 @@
       "order": 20,
       "required": false
     },
-    "compiler": {
-      "name": "compiler",
-      "title": "Compiler",
-      "type": "bool",
-      "default": false,
-      "order": 25,
-      "required": false
-    },
     "attributes": {
       "name": "attributes",
       "title": "Attributes",
       "formatter": "keyvalue",
       "newElementButtonLabel": "+ Add Attribute",
       "type": "object",
-      "order": 30
-    },
-    "placeholder": {
-      "name": "placeholder",
-      "title": "Placeholder",
-      "type": "input",
-      "inputType": "text",
-      "order": 35
-    },
-    "autocomplete": {
-      "name": "autocomplete",
-      "title": "Autocomplete",
-      "type": "bool",
-      "default": true,
-      "order": 40
-    },
-    "readonly": {
-      "name": "readonly",
-      "title": "Read-only",
-      "type": "bool",
-      "default": true,
-      "order": 45
+      "order": 25
     },
     "data": {
       "type": "custom-object",
       "name": "data",
       "title": "Data",
-      "order": 50
+      "order": 30
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 35,
+      "required": false
     },
     "permissions": {
       "type": "input",
@@ -103,7 +82,7 @@
       "name": "permissions",
       "title": "Permissions",
       "default": null,
-      "order": 60
+      "order": 40
     },
     "required": {
       "name": "required",
@@ -112,13 +91,34 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 70
+      "order": 45
     },
     "validate": {
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
-      "order": 80
-    }
+      "order": 50
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "title": "Placeholder",
+      "type": "input",
+      "inputType": "text",
+      "order": 55
+    },
+    "autocomplete": {
+      "name": "autocomplete",
+      "title": "Autocomplete",
+      "type": "bool",
+      "default": true,
+      "order": 60
+    },
+    "readonly": {
+      "name": "readonly",
+      "title": "Read-only",
+      "type": "bool",
+      "default": true,
+      "order": 65
+    }    
   }
 }
