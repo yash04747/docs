@@ -78,6 +78,16 @@
       "default": null,
       "order": 35
     },
+    "default": {
+      "name": "default",
+      "title": "Default",
+      "formatter": "keyvalue",
+      "newElementButtonLabel": "+ Add Default",
+      "selectValues": ["font-backup", "font-style", "font-weight", "font-size", "font-family", "line-height", "word-spacing", "letter-spacing", "google",
+        "color", "text-align", "text-transform"],
+      "type": "object",
+      "order": 50
+    },
     "units": {
       "type": "select",
       "name": "units",

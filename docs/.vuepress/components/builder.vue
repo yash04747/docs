@@ -85,7 +85,7 @@
             };
 
             let order = 0;
-            console.log(keys);
+
             keys.forEach(function (key) {
                 if (to_return['schema']['fields'].length === 1) {
                     to_return['schema']['fields'].push({
@@ -95,6 +95,7 @@
                         model: 'type',
                         readonly: true,
                         featured: false,
+                        order: 1,
                         disabled: true
                     });
                     if (redux_field['fields'][key]['order'])
