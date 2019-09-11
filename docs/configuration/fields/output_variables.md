@@ -75,10 +75,10 @@ To further enhance this feature, we have added a new corresponding argument to t
 do_action( 'redux/options/' . $core->args['opt_name'] . '/compiler', $core->options, $compiler_css, $core->transients['changed_values'], $core->output_variables );
 ```
 
-If you properly use an add_action, you can be passed the output_variables array which will contain key-value pairs that you can then use within a compiler.
+If you properly use an [add_action](https://developer.wordpress.org/reference/functions/add_action/), you can be passed the output_variables array which will contain key-value pairs that you can then use within a compiler.
 
 ```php
-Array(
+array(
     '@opt-typography-body-color' => '#dd9933',
     '@opt-typography-body-font-size' => '30px'
     '@opt-typography-body-font-family' => 'Arial, Helvetica, sans-serif'
