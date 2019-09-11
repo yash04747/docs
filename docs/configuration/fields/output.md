@@ -15,24 +15,27 @@ priority over any other CSS used in your theme.
 [[toc]]
 :::
 
-## Fields Supporting `output`
+::: tip 
+Before adding the output argument to one of the indicated fields, you will need to know which 
+[CSS selectors](http://www.w3schools.com/cssref/css_selectors.asp) in which to apply to the field's value.  These will 
+be selectors from your theme's CSS you wish to change dynamically via values from fields that offer output.  All that 
+now need be done is assign them to the output argument in an array without the chosen field array, as shown below.  
+Multiple selectors are permitted.
+:::
 
-|Field|CSS property output|
-|--- |--- |
-|[background](../../core-fields/background.md)|background-color, background-umage:url, background-repeat, background-size, background-attachment, background-position|
-|[border](../../core-fields/border.md)|border, border-left, border-right, border-top, border-bottom|
-|[color](../../core-fields/color.md)|Default: color.  CSS Property may be manually set.  See [setting color properties](#setting-color-properties) below.|
-|[color_rgba](../../core-fields/color-rgba.md)|Default: color.  CSS Property may be manually set.  See [setting color properties](#setting-color-properties) below.|
-|[dimensions](../../core-fields/dimensions.md)|height, width|
-|[image_select](../../core-fields/image-select.md)|background-image|
-|[link_color](../../core-fields/link-color.md)|color|
-|[spacing](../../core-fields/spacing.md)|top, bottom, left, right in absolute mode.  padding and margin modes append *-top, *-bottom, *-left, *-right.|
-|[typography](../../core-fields/typography.md)|font-family, font-weight, font-style, font-size, line-height, color, text-align, word-spacing, letter-spacing|
+::: tip Supported Field Types
+[background](../../core-fields/background.md) | [border](../../core-fields/border.md) | [color](../../core-fields/color.md) | [color_gradient](../../core-fields/color-gradient.md) | [color_rgba](../../core-fields/color-rgba.md) | [dimensions](../../core-fields/dimensions.md) | [link_color](../../core-fields/link-color.md) | [spacing](../../core-fields/spacing.md) | [typography](../../core-fields/typography.md)
+:::
 
+::: danger
+If you are looking to use CSS variables or to have Redux generate variables to run through a LESS/SCSS compiler, you 
+will want to look at the <u>[output_variables](./output_variables.md)</u> argument instead.
+:::
 
-Before adding the output argument to one of the indicated fields, you will need to know which <a href="http://www.w3schools.com/cssref/css_selectors.asp">CSS selectors</a> in which to apply to the field's value.  These will be selectors from your theme's CSS you wish to change dynamically via values from fields that offer output.  All that now need be done is assign them to the output argument in an array without the chosen field array, as shown below.  Multiple selectors are permitted.
+## Example Declaration
 
-For this example, we'll use the border field, found in the <a href="https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php">sample-config.php</a>. To use CSS variables instead, please look out the [output_variables](output_variables.md) argument.
+For this example, we'll use the border field, found in the 
+[sample-config.php](https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php).
 ```php
 array(
     'id'        => 'opt-header-border',
@@ -65,7 +68,7 @@ Redux will output the CSS in a single line. The example below is expanded for di
 }
 ```
 
-## Setting Color Properties
+### Additional Example: Setting Color Properties
 The color and color_rgba fields can be used exactly as shown above for the default CSS element of color.  If you wish to choose a different element (or mode), it can be specified in the output array value as a key/pair.  For example, let suppose you want to output a color field as background-color, instead of color.  The following output array in key/pair format would accomplish this:
 
 ```php
@@ -107,3 +110,8 @@ array(
     'output'    => array('background-color' => '.site-header, .site-footer')
 ),
 ```
+
+## Using `output` with the [required](./required) Argument
+
+If a field is not "visible" due to an unmet [required](./required) statement, the generated CSS for fields in this state
+will not be appended to the page. By so doing overrides based by other fields do not affect the site. Be mindful when using these two arguments together.
