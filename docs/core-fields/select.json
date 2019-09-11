@@ -59,14 +59,14 @@
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 30,
+      "order": 25,
       "required": false
     },
     "data": {
       "type": "custom-object",
       "name": "data",
       "title": "Data",
-      "order": 50
+      "order": 30
     },
     "permissions": {
       "type": "input",
@@ -74,7 +74,7 @@
       "name": "permissions",
       "title": "Permissions",
       "default": null,
-      "order": 25
+      "order": 35
     },
     "required": {
       "name": "required",
@@ -83,7 +83,7 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 35
+      "order": 40
     },
     "options": {
       "type": "custom-object",
@@ -92,7 +92,7 @@
       "name": "options",
       "newElementButtonLabel": "+ Add Option",
       "default": {},
-      "order": 39
+      "order": 45
     },
     "width": {
       "name": "width",
@@ -101,7 +101,7 @@
       "inputType": "text",
       "description": "",
       "default": null,
-      "order": 40,
+      "order": 50,
       "required": false
     },
     "multi": {
@@ -109,7 +109,7 @@
       "title": "Multi",
       "type": "bool",
       "default": false,
-      "order": 45,
+      "order": 55,
       "required": false
     },
     "placeholder": {
@@ -119,23 +119,33 @@
       "inputType": "text",
       "description": "",
       "default": null,
-      "order": 50,
+      "order": 60,
       "required": false
     },
     "sortable": {
-      "name": "multi",
-      "title": "Multi",
+      "name": "sortable",
+      "title": "Sortable",
       "type": "bool",
       "default": false,
-      "order": 55,
+      "order": 65,
       "required": false
+    },
+    "select2": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Select2",
+      "name": "select2",
+      "label": "select2",
+      "newElementButtonLabel": "+ Add Option",
+      "default": {},
+      "order": 70
     },
     "ajax": {
       "name": "ajax",
       "title": "Ajax",
       "type": "bool",
       "default": false,
-      "order": 60,
+      "order": 75,
       "required": false
     },
     "min-input-length": {
@@ -144,7 +154,7 @@
       "type": "input",
       "inputType": "number",
       "default": 1,
-      "order": 65,
+      "order": 80,
       "min": 1,
       "validator": "integer",
       "required": false

@@ -146,6 +146,15 @@
       "title": "Library Filter",
       "type": "array",
       "order": 75
+    },
+    "default": {
+      "name": "default",
+      "title": "Default",
+      "formatter": "keyvalue",
+      "selectValues": ["id", "url", "width", "height", "thumbnail"],
+      "newElementButtonLabel": "+ Add Option",
+      "type": "object",
+      "order": 90
     }
   }
 }

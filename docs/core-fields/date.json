@@ -68,7 +68,7 @@
       "name": "permissions",
       "title": "Permissions",
       "default": null,
-      "order": 60
+      "order": 30
     },
     "required": {
       "name": "required",

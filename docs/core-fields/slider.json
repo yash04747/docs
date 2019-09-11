@@ -153,9 +153,19 @@
       "title": "Float Mark",
       "type": "select",
       "default": ",",
-      "order": 60,
+      "order": 70,
       "values": [",", "."],
       "required": false
+    },
+    "select2": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Select2",
+      "name": "select2",
+      "label": "select2",
+      "newElementButtonLabel": "+ Add Option",
+      "default": {},
+      "order": 75
     }
   }
 }

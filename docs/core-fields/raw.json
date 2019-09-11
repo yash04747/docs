@@ -83,7 +83,7 @@
       "inputType": "text",
       "description": "",
       "default": null,
-      "order": 0,
+      "order": 35,
       "required": false
     },
     "content_path": {
@@ -93,7 +93,7 @@
       "inputType": "text",
       "description": "",
       "default": null,
-      "order": 5,
+      "order": 40,
       "required": false
     }
   }

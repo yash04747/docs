@@ -59,7 +59,7 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "type": "text",
-      "field-type": "text",
+      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "order": 20
     },
     "permissions": {
@@ -155,6 +155,23 @@
       "required": true,
       "default": "padding",
       "order": 80
+    },
+    "select2": {
+      "name": "select2",
+      "title": "Select2",
+      "formatter": "keyvalue",
+      "newElementButtonLabel": "+ Add Option",
+      "type": "object",
+      "order": 85
+    },
+    "default": {
+      "name": "default",
+      "title": "Default",
+      "formatter": "keyvalue",
+      "selectValues": ["*-top", "*-right", "*-bottom", "*-left", "units"],
+      "newElementButtonLabel": "+ Add Option",
+      "type": "object",
+      "order": 90
     }
   }
 }

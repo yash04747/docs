@@ -89,14 +89,14 @@
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
-      "order": 80
+      "order": 40
     },
     "regular": {
       "name": "regular",
       "title": "Regular",
       "type": "bool",
       "default": true,
-      "order": 50,
+      "order": 45,
       "required": false
     },
     "hover": {
@@ -107,20 +107,20 @@
       "order": 50,
       "required": false
     },
-    "visited": {
-      "name": "visited",
-      "title": "Visited",
-      "type": "bool",
-      "default": true,
-      "order": 50,
-      "required": false
-    },
     "active": {
       "name": "active",
       "title": "Active",
       "type": "bool",
       "default": true,
-      "order": 50,
+      "order": 55,
+      "required": false
+    },
+    "visited": {
+      "name": "visited",
+      "title": "Visited",
+      "type": "bool",
+      "default": true,
+      "order": 60,
       "required": false
     }
   }

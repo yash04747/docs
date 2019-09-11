@@ -82,9 +82,9 @@
       "default": null,
       "order": 35
     },
-    "palette": {
-      "name": "palette",
-      "title": "Palette",
+    "palettes": {
+      "name": "palettes",
+      "title": "Palettes",
       "type": "array",
       "order": 40
     }
