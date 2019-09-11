@@ -28,6 +28,7 @@ field will be added to a root variable.
 |--- |--- |--- |--- |
 |`output_variables`|boolean|`false`|Can be set at the section or field object levels. When set to true, values will be appended to generated CSS.|
 |`ouput_variables_prefix`|string|`--`|Can be set at the global args, section, or field object levels.|
+|`compiler_ouput_variables_prefix`|string|`@`|For use with the compiler hook. An array of output variables is passed to the compiler hook.|
 
 ## Example Use
 
@@ -61,15 +62,32 @@ Redux will output the CSS in a single line. The example below is expanded for di
 
 ```css
 :root {
-    --site-header {
-        border-top    :3px solid #1e73be;
-        border-right  :3px solid #1e73be;
-        border-bottom :3px solid #1e73be;
-        border-left   :3px solid #1e73be;
-    }
     --site-header-border-top: 3px solid #1e73be;
     --site-header-border-right: 3px solid #1e73be;
     --site-header-border-bottom: 3px solid #1e73be;
     --site-header-border-left: 3px solid #1e73be;
 }
+```
+
+## Using with the Compiler Hook
+To further enhance this feature, we have added a new corresponding argument to the compiler hook. As such, the compiler hook has been updated accordingly.
+```php
+do_action( 'redux/options/' . $core->args['opt_name'] . '/compiler', $core->options, $compiler_css, $core->transients['changed_values'], $core->output_variables );
+```
+
+If you properly use an add_action, you can be passed the output_variables array which will contain key-value pairs that you can then use within a compiler.
+
+```php
+Array(
+    '@opt-typography-body-color' => '#dd9933',
+    '@opt-typography-body-font-size' => '30px'
+    '@opt-typography-body-font-family' => 'Arial, Helvetica, sans-serif'
+    '@opt-typography-body-font-weight' => 'Normal'
+)
+```
+
+This enables the use of the variables within your SCSS. In order to output them all within your file, you need only join to a single string and output, joined by semi-colon. 
+
+```php
+$variables = join( ";\n", $output_variables );
 ```
