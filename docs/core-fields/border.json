@@ -70,7 +70,7 @@
       "properties": ["background-color", "color"],
       "type": "object",
       "default": null,
-      "order": 20
+      "order": 30
     },
     "permissions": {
       "type": "input",
@@ -78,7 +78,7 @@
       "name": "permissions",
       "title": "Permissions",
       "default": null,
-      "order": 60
+      "order": 35
     },
     "required": {
       "name": "required",
@@ -87,7 +87,7 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 35
+      "order": 40
     },
     "default": {
       "type": "custom-object",
@@ -97,7 +97,7 @@
       "newElementButtonLabel": "+ Add Default Item",
       "selectValues": ["border-color", "border-style", "border-top", "border-right", "border-bottom", "border-left", "border-width"],
       "default": {},
-      "order": 40
+      "order": 45
     },
     "select2": {
       "type": "custom-object",

@@ -66,11 +66,10 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "object",
       "properties": ["background-color", "color"],
       "type": "object",
       "default": null,
-      "order": 20
+      "order": 30
     },
     "required": {
       "name": "required",
@@ -96,14 +95,14 @@
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
-      "order": 80
+      "order": 45
     },
     "transparent": {
       "name": "transparent",
       "title": "Transparent",
       "type": "bool",
       "default": true,
-      "order": 25,
+      "order": 50,
       "required": false
     }
   }

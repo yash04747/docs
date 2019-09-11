@@ -77,16 +77,6 @@
       "type": "custom-object",
       "order": 50
     },
-    "options": {
-      "type": "custom-object",
-      "formatter": "keyvalue",
-      "title": "Options",
-      "name": "options",
-      "newElementButtonLabel": "+ Add Option",
-      "selectValues": ["minLines", "maxLines"],
-      "default": {},
-      "order": 40
-    },
     "mode": {
       "type": "select",
       "name": "mode",
@@ -104,6 +94,16 @@
       "required": true,
       "default": "monokai",
       "order": 80
+    },
+    "options": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Options",
+      "name": "options",
+      "newElementButtonLabel": "+ Add Option",
+      "selectValues": ["minLines", "maxLines"],
+      "default": {},
+      "order": 40
     }
   }
 }

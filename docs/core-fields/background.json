@@ -70,7 +70,7 @@
       "properties": ["background-color", "color"],
       "type": "object",
       "default": null,
-      "order": 20
+      "order": 30
     },
     "required": {
       "name": "required",
@@ -85,7 +85,7 @@
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
-      "order": 50
+      "order": 40
     },
     "default": {
       "type": "custom-object",
