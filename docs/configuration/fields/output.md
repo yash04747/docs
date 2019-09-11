@@ -32,7 +32,7 @@ priority over any other CSS used in your theme.
 
 Before adding the output argument to one of the indicated fields, you will need to know which <a href="http://www.w3schools.com/cssref/css_selectors.asp">CSS selectors</a> in which to apply to the field's value.  These will be selectors from your theme's CSS you wish to change dynamically via values from fields that offer output.  All that now need be done is assign them to the output argument in an array without the chosen field array, as shown below.  Multiple selectors are permitted.
 
-For this example, we'll use the border field, found in the <a href="https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php">sample-config.php</a>
+For this example, we'll use the border field, found in the <a href="https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php">sample-config.php</a>. To use CSS variables instead, please look out the [output_variables](output_variables.md) argument.
 ```php
 array(
     'id'        => 'opt-header-border',
@@ -52,16 +52,18 @@ array(
 ),
 ```
 
-Redux will then output the following CSS into your WordPress pages (formatted in one single line, the formatting below is for the benefit of display on this page).
+::: tip 
+Redux will output the CSS in a single line. The example below is expanded for display purposes only.
+:::
 
-[css]
-.site-header{
-    border-top    :3px solid #1e73be;
-    border-right  :3px solid #1e73be;
-    border-bottom :3px solid #1e73be;
-    border-left   :3px solid #1e73be;
+```css
+.site-header {
+    border-top: 3px solid #1e73be;
+    border-right: 3px solid #1e73be;
+    border-bottom: 3px solid #1e73be;
+    border-left: 3px solid #1e73be;
 }
-[/css]
+```
 
 ## Setting Color Properties
 The color and color_rgba fields can be used exactly as shown above for the default CSS element of color.  If you wish to choose a different element (or mode), it can be specified in the output array value as a key/pair.  For example, let suppose you want to output a color field as background-color, instead of color.  The following output array in key/pair format would accomplish this:
