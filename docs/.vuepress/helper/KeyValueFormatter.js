@@ -1,9 +1,26 @@
 import {ObjectFormatter} from './CommonFormatters.js';
-import {cloneDeep} from 'lodash';
+import {cloneDeep, map, find} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
-        let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, listName: listName} = schemaObject;
+        let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
+            listName: listName, booleanFields: booleanFields, selectFields: selectFields} = schemaObject;
         let isShowingText = (selectValues && selectValues.length > 0) ? false : true;
+
+        // helper method to detect field type. if key is in known list, "boolean" or "select"
+        function detectFieldType(model) {
+            let key = model.keyText || model.keySelect;
+
+            if (key) {
+                if (booleanFields  && booleanFields.indexOf(key) >= 0) return "boolean";
+
+                if (selectFields && selectFields.length > 0) { 
+                    let selectKeys = map(selectFields, 'key');
+                    if (selectKeys && selectKeys.indexOf(key) >= 0) return "select";
+                }
+            }
+            return "text";
+        }
+
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
@@ -32,6 +49,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                             "default": {},
                             "schema": {
                                 "fields": [
+                                    // KEY part, show "datalist" if we have "selectValues", plain "text" otherwise
                                     {
                                         "type": "input",
                                         "inputType": "text",
@@ -47,11 +65,44 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "values": selectValues,
                                         "visible": !isShowingText
                                     },
+                                    // Value part: supports "text", "boolean", "select", "object" is yet to come
                                     {
                                         "type": "input",
                                         "inputType": "text",
                                         "label": "Value",
-                                        "model": "value"
+                                        "model": "valueText",
+                                        "visible": function(model) {
+                                            return detectFieldType(model) === "text";
+                                        }
+                                    },
+                                    {
+                                        "type": "switch",
+                                        "label": "Value",
+                                        "model": "valueSwitch",
+                                        "visible": function(model) {
+                                            return detectFieldType(model) === "boolean";
+                                        }
+                                    },
+                                    {
+                                        "type": "datalist",
+                                        "label": "Value",
+                                        "model": "valueSelect",
+                                        "listName": function(model) {
+                                            let key = model.keyText || model.keySelect;
+                                            return listName ? listName : "valueslist_" + modelName + key;
+                                        },
+                                        "values": function(model) {
+                                            let key = model.keyText || model.keySelect;
+                                            if (detectFieldType(model) === "select") 
+                                            {
+                                                let obj = find(selectFields, {key: key});
+                                                return obj.values;
+                                            }
+                                            return [];
+                                        },
+                                        "visible": function(model) {
+                                            return detectFieldType(model) === "select";
+                                        }
                                     }]
                             }
                         }
@@ -72,7 +123,8 @@ export default class KeyValueFormatter extends ObjectFormatter {
         if (modelObject[modelName]) {
             for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
                 let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
-                newObject[key] = modelObjectCopy[modelName][i]['value'];
+                let valueKey = modelObjectCopy[modelName][i]['valueSelect'] ? 'valueSelect' : modelObjectCopy[modelName][i]['valueSwitch'] ? 'valueSwitch' : 'valueText';
+                newObject[key] = modelObjectCopy[modelName][i][valueKey];
             }
         }
 

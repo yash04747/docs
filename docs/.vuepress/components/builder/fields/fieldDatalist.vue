@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<input type="text" :name="schema.inputName" :id="getFieldID(schema)" :class="schema.fieldClasses" :list="schema.listName" v-model="value">
-		<datalist :id="schema.listName">
+		<input type="text" :name="schema.inputName" :id="getFieldID(schema)" :class="schema.fieldClasses" :list="listName" v-model="value">
+		<datalist :id="listName">
 			<template v-for="(item, index) in items">
 				<option :value="getItemValue(item)" :key="index"> {{ getItemName(item) }}</option>
 			</template>
@@ -24,6 +24,12 @@ export default {
 			if (typeof values == "function") {
 				return values.apply(this, [this.model, this.schema]);
 			} else return values;
+		},
+		listName() {
+			let listName = this.schema.listName;
+			if (typeof listName == "function") {
+				return listName.apply(this, [this.model, this.schema]);
+			} else return listName;
 		}
 	},
 	methods: {

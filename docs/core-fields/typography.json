@@ -95,6 +95,10 @@
       "newElementButtonLabel": "+ Add Default",
       "selectValues": ["font-backup", "font-style", "font-weight", "font-size", "font-family", "line-height", "word-spacing", "letter-spacing", "google",
         "color", "text-align", "text-transform"],
+      "booleanFields": ["font-backup", "google"],
+      "selectFields": [
+        {"key": "text-align", "values": ["inherit", "left", "right", "center", "justify", "initial"]}, 
+        {"key": "text-transform", "values": ["none", "capitalize", "uppercase", "lowercase", "initial", "inherit"]}],
       "type": "object",
       "order": 50
     },
