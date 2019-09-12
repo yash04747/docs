@@ -105,6 +105,7 @@
       "title": "Placeholder",
       "type": "input",
       "inputType": "text",
+      "default": "No media selected",
       "order": 60
     },
     "readonly": {
@@ -124,14 +125,50 @@
     "library_filter": {
       "name": "library_filter",
       "title": "Library Filter",
-      "type": "array",
+      "type": "datalist",
+      "listName": "libraryFilterList",
+      "values": [
+        "avi",
+        "calendar",
+        "css",
+        "csv",
+        "divx",
+        "gif",
+        "html",
+        "java",
+        "javascript",
+        "jpeg",
+        "midi",
+        "mp4",
+        "mpeg",
+        "ogg",
+        "ogg",
+        "pdf",
+        "png",
+        "quicktime",
+        "rar",
+        "richtext",
+        "rtf",
+        "wav",
+        "webm",
+        "x-ms-asf",
+        "x-ms-wm",
+        "x-ms-wmv",
+        "zip"
+      ],
       "order": 75
     },
     "default": {
       "name": "default",
       "title": "Default",
       "formatter": "keyvalue",
-      "selectValues": ["id", "url", "width", "height", "thumbnail"],
+      "selectValues": [
+        "id",
+        "url",
+        "width",
+        "height",
+        "thumbnail"
+      ],
       "newElementButtonLabel": "+ Add Option",
       "type": "object",
       "order": 90
