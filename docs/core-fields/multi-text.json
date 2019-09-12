@@ -80,6 +80,7 @@
       "title": "Add text",
       "type": "input",
       "inputType": "text",
+      "default": "Add More",
       "order": 45
     },
     "show_empty": {
