@@ -67,7 +67,7 @@
             let that = this;
             let field_type = redux_field.type;
             let keys = Object.keys(redux_field['fields']);
-            let cachedModel = StoreWithExpiration.get(field_type, 'model');
+
             let to_return = {
                 model: {
                     id: "FIELD_ID",
@@ -85,41 +85,29 @@
             };
 
             let order = 0;
-
-            keys.forEach(function (key) {
-                if (to_return['schema']['fields'].length === 1) {
-                    to_return['schema']['fields'].push({
-                        type: "input",
-                        inputType: "text",
-                        label: 'Type',
-                        model: 'type',
-                        readonly: true,
-                        featured: false,
-                        order: 1,
-                        disabled: true
-                    });
-                    if (redux_field['fields'][key]['order'])
-                        to_return['schema']['fields']['order'] = redux_field['fields'][key]['order'];
-                    else {
-                        to_return['schema']['fields']['order'] = order;
-                        order++;
-                    }
-
-                    to_return['model']['type'] = field_type;
-                }
-
-                let schemaFieldObject = that.formatSchemaField(redux_field['fields'][key], key);
-                to_return['schema']['fields'].push(schemaFieldObject);
-
-                to_return['model'][key] = redux_field['fields'][key]['default'];
+            // Push for field_type, example, type:"typography"
+            to_return['schema']['fields'].push({
+                type: "input",
+                inputType: "text",
+                label: 'Type',
+                model: 'type',
+                readonly: true,
+                featured: false,
+                order: 1,
+                disabled: true
             });
 
-            if (cachedModel !== null) to_return.model = cachedModel;
+            keys.forEach(function (key) {
+                let schemaFieldObject = that.formatSchemaField(redux_field['fields'][key], key);
+                to_return['schema']['fields'].push(schemaFieldObject);
+                to_return['model'][key] = redux_field['fields'][key]['default'];
+            });
+            
+            // get the stored version of object
+            let cachedModel = StoreWithExpiration.get(field_type, 'model');
+            if (cachedModel !== null) to_return.model = {...to_return['model'], ...cachedModel};
+
             to_return['schema']['fields'] = sortBy(to_return['schema']['fields'], 'order');
-            if (this.$attrs.builder_json.model){
-                let newObj = {...this.$attrs.builder_json.model, ...to_return['model']};
-                to_return['model'] = {...this.$attrs.builder_json.model, ...to_return['model']};
-            }
 
             return to_return;
         },
