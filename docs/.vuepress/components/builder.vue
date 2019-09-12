@@ -244,7 +244,7 @@
                 let newModel = {};
                 schema.fields.forEach(obj => {
                     if (model[obj.model]) newModel[obj.model] = model[obj.model]
-                })
+                });
                 if (model.args) newModel.args = model.args;
                 return newModel
             },

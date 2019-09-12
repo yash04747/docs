@@ -10,7 +10,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 0,
       "required": false
     },
@@ -20,7 +19,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 5,
       "required": false
     },
@@ -30,7 +28,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 10,
       "required": false
     },
@@ -40,7 +37,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 15,
       "required": false
     },
@@ -50,7 +46,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 20,
       "required": false
     },
@@ -67,7 +62,6 @@
       "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
-      "default": null,
       "order": 30
     },
     "required": {
@@ -76,7 +70,6 @@
       "fieldClasses": "full-width",
       "type": "array",
       "description": "Field visibility requirements.",
-      "default": null,
       "order": 35
     },
     "placeholder": {
@@ -84,7 +77,6 @@
       "inputType": "text",
       "name": "placeholder",
       "title": "Placeholder",
-      "default": null,
       "order": 60
     }
   }
