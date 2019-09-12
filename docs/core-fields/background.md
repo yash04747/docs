@@ -9,11 +9,11 @@ The Redux Background field offers unmatched features not found in any other opti
 :::
 
 ## Arguments
-|<div style="width:177px;">Name</div>|Type|Default|Description|
+|<div style="width:177px;">Name</div>|Type|<div style="width:98px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`background`|Controls the field type|
 |default|string||See [Default Argument](#default-argument) below.|
-|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |background-color|bool|`true`|Flag to display the background color picker.|
 |background-repeat|bool|`true`|Flag to display the background repeat select field.|
 |background-attachment|bool|`true`|Flag to display the background attachment select field.|

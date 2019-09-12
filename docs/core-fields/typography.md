@@ -30,7 +30,7 @@ The Redux Typography field in second-to-none when it comes to framework typograp
 |color|bool|`true`|Flag to display the font color input.|
 |preview|array||Array value for preview settings.  See 'Preview Options' below.|
 |all_styles|bool|`false`|Flag to set all available styles for selected Google font in the CSS.|
-|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the  Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |font_family_clear|bool|`true`|Flag to set the clear field button on the font-family selector.|
 
 ::: tip Also See

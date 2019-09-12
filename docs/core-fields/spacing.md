@@ -21,7 +21,7 @@ The Spacing field allows the user to specify either padding or margin units to a
 |right|bool|`true`|Flag to display the right value input.|
 |all|bool|`false`|Flag to display all position value inputs.|
 |mode|string|'padding'|Accepts:  `absolute` `padding` or `margin`.|
-|select2|array||Array of select2 arguments.  For more information see the 'Constructor' section of the Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)

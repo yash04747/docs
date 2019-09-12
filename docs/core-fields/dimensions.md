@@ -18,7 +18,7 @@ The Dimensions field comes in handy when allowing users the ability to set the w
 |height|bool|`true`|Flag to display the height input.|
 |units|string/bool/array|`px`|Specify a string to pass a single unit value.  Specify an array to pass an array of unit values.  Specify `false` to hide the units selector.  Accepts: `px` `em` `%`.|
 |units_extended|bool|`false`|Flag to allow users to select any type of unit.|
-|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
