@@ -148,7 +148,7 @@
       "name": "background-clip",
       "title": "Background Clip",
       "type": "bool",
-      "default": true,
+      "default": false,
       "order": 50,
       "required": false
     },
@@ -156,7 +156,7 @@
       "name": "background-origin",
       "title": "Background Origin",
       "type": "bool",
-      "default": true,
+      "default": false,
       "order": 50,
       "required": false
     },
