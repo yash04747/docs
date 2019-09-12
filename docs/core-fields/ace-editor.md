@@ -18,7 +18,7 @@ Array containing the `content` and optional `title` arguments for the [hint](../
 |type|string|`ace_editor`|Value identifying the field type.|
 |mode|string|`javascript`|Sets the language mode of the editor.  Accepts:  `css` `html` `javascript ` `json` `less` `markdown` `mysql` `php` `plain_text` `sass` `scss` `text` `xml`|
 |theme|string|`monokai`|Sets the theme of the editor.  Accepts: `chrome` or `monokai`|
-|options|array|<pre class="language-php codecopy-enabled"><code>array(<br/>&nbsp;&nbsp;'minLines' => 12, <br/>&nbsp;&nbsp;'maxLines' => 30<br/>)</code></pre>|Pass any option to the Ace Editor object. For more details visit: http://ace.c9.io/ and the Configuring Ace Wiki.|
+|options|array|<pre class="language-php codecopy-enabled"><code><span class="token keyword">array</span>(<br/>&nbsp;&nbsp;<span class="token single-quoted-string string">'minLines'</span> => <span class="token number">12</span>, <br/>&nbsp;&nbsp;<span class="token single-quoted-string string">'maxLines'</span> => <span class="token number">30</span><br/>)</code></pre>|Pass any option to the Ace Editor object. For more details visit: http://ace.c9.io/ and the Configuring Ace Wiki.|
 
 ::: tip Also See
 - [Using Global Field Arguments](../configuration/fields/arguments.md)

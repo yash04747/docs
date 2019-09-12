@@ -12,7 +12,8 @@ The Password field, which can be used as a login with password could be used as 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`password`|Value identifying the field type.|
-|default|string||See [Default Argument](#default-argument) below.|
+|default|array||See [Default Argument](#default-argument) below.|
+|placeholder|string|<pre class="language-php codecopy-enabled"><code><span class="token keyword">array</span><span class="token punctuation">(</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'username'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">__</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Username'</span> <span class="token punctuation">)</span><span class="token punctuation">,</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'password'</span>   <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">\__</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Password'</span> <span class="token punctuation">)</span><br/>)</code></pre>|Default placeholder values.|
 |username|bool|`true`|Enable/Disable the username field along side the password field.|
 
 ::: tip Also See
@@ -27,17 +28,12 @@ The Password field, which can be used as a login with password could be used as 
 |--- |--- |--- |
 |username|string|Default text to appear in the username field.|
 |password|string|Default text to appear in the password field.|
-|placeholder|array|An array of values holding the placeholder text for both fields.|
-
 
 ## Placeholder Options
 |Name|Type|Description|
 |--- |--- |--- |
 |username|string|Placeholder text for the username field.|
 |password|string|Placeholder text for the password field.|
-
-
-
 
 ## Example Declaration
 <script>
@@ -67,10 +63,10 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-password',
     'type'        => 'password',
     'username'    => true,
-    'title'       => 'SMTP Account',
+    'title'       => __( 'SMTP Account', 'redux-framework-demo' ),
     'placeholder' => array(
-        'username'   => 'Enter your Username'
-        'password'   => 'Enter your Password'
+        'username'   => __( 'Enter your Username', 'redux-framework-demo' ),
+        'password'   => __( 'Enter your Password', 'redux-framework-demo' ),
     )
 ) );
 ```
