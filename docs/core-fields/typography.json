@@ -219,7 +219,7 @@
       "name": "color",
       "title": "Color",
       "type": "bool",
-      "default": null,
+      "default": true,
       "order": 110,
       "required": false
     },

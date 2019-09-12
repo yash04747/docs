@@ -85,7 +85,7 @@
             };
 
             let order = 0;
-            // Push for field_type, example, type:"typography"
+            // Push for field_type, example, type:"typography"; field_type is not included in JSON, thus we need manual handling.
             to_return['schema']['fields'].push({
                 type: "input",
                 inputType: "text",
@@ -102,8 +102,8 @@
                 to_return['schema']['fields'].push(schemaFieldObject);
                 to_return['model'][key] = redux_field['fields'][key]['default'];
             });
-            
-            // get the stored version of object
+
+            // get the stored version of last-session model and prepare model from it.
             let cachedModel = StoreWithExpiration.get(field_type, 'model');
             if (cachedModel !== null) to_return.model = {...to_return['model'], ...cachedModel};
 
@@ -117,13 +117,15 @@
             },
 
             reset() {
-                this.model = {
+                let redux_field = _.cloneDeep(this.$attrs.builder_json);
+                let modelObj = {
                     id: "FIELD_ID",
-                    type: this.$attrs.builder_json.type
+                    type: redux_field.type
                 };
-
-                if (this.$attrs.builder_json.model)
-                    this.model = {...this.$attrs.builder_json.model, ...this.model};
+                Object.keys(redux_field['fields']).forEach(function (key) {
+                    modelObj[key] = redux_field['fields'][key]['default'];
+                });
+                this.model = cloneDeep(modelObj); // always a smart idea not to work on model directly
             },
 
             // Helper method used in data()
@@ -175,8 +177,9 @@
                 return fieldObject;
             },
 
-            toPHP: function (schema, model) {
-                if (schema && model) {
+            toPHP: function (schema, modelObj) {
+                if (schema && modelObj) {
+                    let model = cloneDeep(modelObj);
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
                     model = this.deleteEmptyValues(schema, model);
                     model = this.transformCustomArgs(schema, model);
@@ -194,7 +197,7 @@
                     if (propName !== "type" && schema['redux']['fields'].hasOwnProperty(
                         propName) && schema['redux']['fields'][propName].hasOwnProperty(
                         'default')) {
-                        if (schema['redux']['fields'][propName]['default'] === model[propName] && schema['redux']['fields'][propName]['default'] !== true) {
+                        if (schema['redux']['fields'][propName]['default'] === model[propName]) { // && schema['redux']['fields'][propName]['default'] !== true) {
                             delete model[propName];
                         }
                     }
