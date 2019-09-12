@@ -9,11 +9,11 @@ The Border field is a great way to set the border properties of any HTML object 
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`border`|Value identifying the field type.|
 |default|array||Array of default values. See 'Default Options' below.|
-|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |validate|string|`color`|String value `color` to validate the color selection.  It is the only accepted value for this field.|
 |all|bool|`true`|Flag to enable all borders using one value.|
 |left|bool|`true`|Flag to enable the left field border input.|
@@ -27,6 +27,7 @@ The Border field is a great way to set the border properties of any HTML object 
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../configuration/fields/output.html)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
@@ -90,7 +91,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

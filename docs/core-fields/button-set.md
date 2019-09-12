@@ -9,7 +9,7 @@ The button set gives you a button bar to set options. It can be useful when you 
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`button_set`|Value identifying the field type.|
 |options|array||Array of key pairs representing the individual ticks.|
@@ -94,7 +94,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 #### Single
 ```php

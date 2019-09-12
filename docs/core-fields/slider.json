@@ -10,7 +10,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 0,
       "required": false
     },
@@ -20,7 +19,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 5,
       "required": false
     },
@@ -30,7 +28,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 10,
       "required": false
     },
@@ -40,7 +37,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 15,
       "required": false
     },
@@ -50,7 +46,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 20,
       "required": false
     },
@@ -69,15 +64,21 @@
       "field-type": "object",
       "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "type": "object",
-      "default": null,
       "order": 25
+    },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 26
     },
     "permissions": {
       "type": "input",
       "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
-      "default": null,
       "order": 30
     },
     "required": {
@@ -86,7 +87,6 @@
       "fieldClasses": "full-width",
       "type": "array",
       "description": "Field visibility requirements.",
-      "default": null,
       "order": 35
     },
     "min": {

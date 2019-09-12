@@ -3,15 +3,6 @@
   "name": "Dimension",
   "description": null,
   "icon": null,
-  "model": {
-    "mode": {
-      "width": false,
-      "height": false
-    },
-    "width": true,
-    "height": true,
-    "units": ["px"]
-  },
   "fields": {
     "id": {
       "name": "id",
@@ -19,7 +10,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 0,
       "required": false
     },
@@ -29,7 +19,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 5,
       "required": false
     },
@@ -39,7 +28,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 10,
       "required": false
     },
@@ -49,7 +37,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 15,
       "required": false
     },
@@ -59,7 +46,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 20,
       "required": false
     },
@@ -76,17 +62,23 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "field-type": "object",
-      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
+      "properties": [],
       "type": "object",
-      "default": null,
       "order": 20
+    },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 31
     },
     "permissions": {
       "type": "input",
       "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
-      "default": null,
       "order": 30
     },
     "required": {
@@ -95,7 +87,6 @@
       "fieldClasses": "full-width",
       "type": "array",
       "description": "Field visibility requirements.",
-      "default": null,
       "order": 35
     },
     "mode": {
@@ -103,6 +94,10 @@
       "formatter": "keyvalue",
       "title": "Mode",
       "name": "mode",
+      "default": {
+        "width": false,
+        "height": false
+      },
       "newElementButtonLabel": "+ Add Option",
       "order": 39
     },
@@ -120,6 +115,7 @@
       "title": "Width",
       "type": "bool",
       "order": 40,
+      "default": true,
       "required": false
     },
     "height": {
@@ -127,6 +123,7 @@
       "title": "Height",
       "type": "bool",
       "order": 45,
+      "default": true,
       "required": false
     },
     "units": {
@@ -134,6 +131,7 @@
       "title": "Units",
       "type": "array",
       "order": 45,
+      "default": "px",
       "required": false
     },
     "units_extended": {

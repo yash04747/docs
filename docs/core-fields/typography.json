@@ -10,7 +10,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 0,
       "required": false
     },
@@ -20,7 +19,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 5,
       "required": false
     },
@@ -30,7 +28,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 10,
       "required": false
     },
@@ -40,7 +37,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 15,
       "required": false
     },
@@ -50,7 +46,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 20,
       "required": false
     },
@@ -68,15 +63,21 @@
       "fieldClasses": "full-width",
       "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "type": "object",
-      "default": null,
       "order": 25
+    },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 26
     },
     "permissions": {
       "type": "input",
       "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
-      "default": null,
       "order": 30
     },
     "required": {
@@ -85,7 +86,6 @@
       "fieldClasses": "full-width",
       "type": "array",
       "description": "Field visibility requirements.",
-      "default": null,
       "order": 35
     },
     "default": {
@@ -108,7 +108,6 @@
       "title": "Unit",
       "values": ["px", "em", "rem", "%"],
       "required": true,
-      "default": null,
       "order": 40
     },
     "google": {
@@ -131,7 +130,6 @@
       "name": "font-backup",
       "title": "Font Backup",
       "type": "bool",
-      "default": null,
       "order": 55,
       "required": false
     },
@@ -139,7 +137,6 @@
       "name": "font-style",
       "title": "Font Style",
       "type": "bool",
-      "default": null,
       "order": 60,
       "required": false
     },
@@ -147,7 +144,6 @@
       "name": "font-weight",
       "title": "Font Weight",
       "type": "bool",
-      "default": null,
       "order": 65,
       "required": false
     },
@@ -155,7 +151,6 @@
       "name": "font-size",
       "title": "Font Size",
       "type": "bool",
-      "default": null,
       "order": 70,
       "required": false
     },    
@@ -163,7 +158,6 @@
       "name": "font-family",
       "title": "Font Family",
       "type": "bool",
-      "default": null,
       "order": 75,
       "required": false
     },
@@ -171,7 +165,6 @@
       "name": "subsets",
       "title": "Subsets",
       "type": "bool",
-      "default": null,
       "order": 80,
       "required": false
     },
@@ -179,7 +172,6 @@
       "name": "line-height",
       "title": "Line Height",
       "type": "bool",
-      "default": null,
       "order": 85,
       "required": false
     },
@@ -187,7 +179,6 @@
       "name": "word-spacing",
       "title": "Word Spacing",
       "type": "bool",
-      "default": null,
       "order": 90,
       "required": false
     },
@@ -195,7 +186,6 @@
       "name": "letter-spacing",
       "title": "Letter Spacing",
       "type": "bool",
-      "default": null,
       "order": 95,
       "required": false
     },
@@ -203,7 +193,6 @@
       "name": "text-align",
       "title": "Text Align",
       "type": "bool",
-      "default": null,
       "order": 100,
       "required": false
     },    
@@ -211,7 +200,6 @@
       "name": "text-transform",
       "title": "Text Transform",
       "type": "bool",
-      "default": null,
       "order": 105,
       "required": false
     },
@@ -229,7 +217,6 @@
       "formatter": "keyvalue",
       "selectValues": ["text", "font-size", "always_display"],
       "booleanFields": ["always_display"],
-      "default": null,
       "order": 115,
       "required": false
     },
@@ -237,7 +224,6 @@
       "name": "all_styles",
       "title": "All Styles",
       "type": "bool",
-      "default": null,
       "order": 120,
       "required": false
     },
@@ -245,7 +231,6 @@
       "name": "select2",
       "title": "Select2",
       "formatter": "keyvalue",
-      "default": null,
       "order": 125,
       "required": false
     },
@@ -253,7 +238,6 @@
       "name": "font_family_clear",
       "title": "Font Family Clear",
       "type": "bool",
-      "default": null,
       "order": 130,
       "required": false
     }

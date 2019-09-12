@@ -20,6 +20,9 @@ export default class KeyValueFormatter extends ObjectFormatter {
             }
             return "text";
         }
+        // Let's keep things easy to find. SORT!
+        if ( selectValues )
+            selectValues.sort();
 
         return Object.assign(super.data(), {
             "schema": {

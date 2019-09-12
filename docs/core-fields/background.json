@@ -10,7 +10,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 0,
       "required": false
     },
@@ -20,7 +19,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 5,
       "required": false
     },
@@ -30,7 +28,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 10,
       "required": false
     },
@@ -40,7 +37,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 15,
       "required": false
     },
@@ -50,7 +46,6 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "default": null,
       "order": 20,
       "required": false
     },
@@ -67,8 +62,15 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "type": "object",
-      "default": null,
       "order": 30
+    },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 31
     },
     "required": {
       "name": "required",
@@ -76,7 +78,6 @@
       "fieldClasses": "full-width",
       "type": "array",
       "description": "Field visibility requirements.",
-      "default": null,
       "order": 35
     },
     "validate": {
@@ -148,7 +149,7 @@
       "name": "background-clip",
       "title": "Background Clip",
       "type": "bool",
-      "default": true,
+      "default": false,
       "order": 50,
       "required": false
     },
@@ -156,7 +157,7 @@
       "name": "background-origin",
       "title": "Background Origin",
       "type": "bool",
-      "default": true,
+      "default": false,
       "order": 50,
       "required": false
     },

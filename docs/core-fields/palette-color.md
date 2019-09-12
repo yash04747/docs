@@ -50,7 +50,6 @@ export default {
 ```php
 Redux::setSection( 'OPT_NAME', array(
     'title'      => __( 'Palette Colors', 'redux-framework-demo' ),
-    'desc'       => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/palette-color/" target="_blank">docs.reduxframework.com/core/fields/palette-color/</a>',
     'id'         => 'color-palette',
     'subsection' => true,
     'fields'     => array(
@@ -88,7 +87,7 @@ Redux::setSection( 'OPT_NAME', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.  </a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 This field does NOT return the palette array.  It returns the name of the selected palette.  Ideally, the developer will have set the palette colors in their CSS, using the palette key name as the CSS selector.
 

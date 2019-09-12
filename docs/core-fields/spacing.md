@@ -21,13 +21,14 @@ The Spacing field allows the user to specify either padding or margin units to a
 |right|bool|`true`|Flag to display the right value input.|
 |all|bool|`false`|Flag to display all position value inputs.|
 |mode|string|'padding'|Accepts:  `absolute` `padding` or `margin`.|
-|select2|array||Array of select2 arguments.  For more information see the 'Constructor' section of the Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `data` Argument](../configuration/fields/data.md)
 - [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
@@ -91,7 +92,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

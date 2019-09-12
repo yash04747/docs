@@ -24,6 +24,7 @@ To set the transparency checkbox by default, use the string `transparent` in pla
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
@@ -64,7 +65,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

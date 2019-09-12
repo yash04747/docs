@@ -9,7 +9,7 @@ The Checkbox field may be used to offer a single check option, or a group of mul
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`checkbox`|Value identifying the field type.|
 |options|array||Array of key pair values representing the individual check boxes.  They key represents the ID of the checkbox, the value is the text displayed next to the checkbox.|
@@ -90,7 +90,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 #### Single checkbox
 ```php

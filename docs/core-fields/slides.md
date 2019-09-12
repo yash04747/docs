@@ -74,7 +74,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example assumes at least one slide has been filled out and saved, based on the example usage provided above. Individual slide information are stored in a zero-based array. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example assumes at least one slide has been filled out and saved, based on the example usage provided above. Individual slide information are stored in a zero-based array. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ::: warning IMPORTANT NOTE
 Redux does NOT save blank slides to the database.  This means on the initial load of your options panel, the empty slide will not be available.  It will be necessary to use `isset` and `!empty` checks on the slide variable before attempting to use it in your code, as shown below.
