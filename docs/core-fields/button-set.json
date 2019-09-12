@@ -99,7 +99,7 @@
       "order": 45
     },
     "default": {
-      "type": "array",
+      "type": "keyvalue",
       "title": "Default",
       "name": "default",
       "order": 50
