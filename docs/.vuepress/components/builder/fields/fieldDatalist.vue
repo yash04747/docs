@@ -26,10 +26,7 @@ export default {
 			} else return values;
 		},
 		listName() {
-			let listName = this.schema.listName;
-			if (typeof listName == "function") {
-				return listName.apply(this, [this.model, this.schema]);
-			} else return listName;
+			return 'listname_' + Math.random().toString(36).substr(2, 9);
 		}
 	},
 	methods: {

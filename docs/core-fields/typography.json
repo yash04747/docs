@@ -228,6 +228,7 @@
       "title": "Preview",
       "formatter": "keyvalue",
       "selectValues": ["text", "font-size", "always_display"],
+      "booleanFields": ["always_display"],
       "default": null,
       "order": 115,
       "required": false

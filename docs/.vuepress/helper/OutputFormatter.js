@@ -77,7 +77,7 @@ export default class OutputFormatter extends ObjectFormatter {
                             "schema": {
                                 "fields": [
                                     {
-                                        "type": "select",
+                                        "type": "datalist",
                                         "model": "selector",
                                         "label": "Selector",
                                         "values": possibleProperties,
@@ -138,7 +138,8 @@ export default class OutputFormatter extends ObjectFormatter {
         
         if (modelObject.type === 'object' && modelObject.object_selector) 
             modelObject.object_selector.forEach((obj) => {
-                if (obj.selector && obj.value) newOutput[obj.selector] = obj.value; 
+                let selector = obj.selector;//selectorSelect ? obj.selectorSelect : obj.selectorText;
+                if (selector && obj.value) newOutput[selector] = obj.value; 
             });
 
         return newOutput;
