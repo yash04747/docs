@@ -138,7 +138,7 @@ Multiple selectors are also supported. Separate them with commas.
 ```
 
 ## Example Usage
-Using the example above, outputting the the color would go as follows (Please remember to replace `redux_demo` with your own `<a href="/redux-framework/arguments/opt_name" title="opt_name">opt_name</a>` argument):
+Using the example above, outputting the the color would go as follows (Please remember to replace `redux_demo` with your own [opt_name](../configuration/global_arguments.md#opt_name) argument):
 
 ```php
 global $redux_demo;
