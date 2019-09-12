@@ -21,6 +21,7 @@ This field makes use of Brian Grinstead's [Spectrum "No hassle jQuery color pick
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::

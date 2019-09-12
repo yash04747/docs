@@ -29,7 +29,7 @@ Multiple selectors are permitted.
 
 ::: danger
 If you are looking to use CSS variables or to have Redux generate variables to run through a LESS/SCSS compiler, you 
-will want to look at the <u>[output_variables](./output_variables.md)</u> argument instead.
+will want to look at the <u>[output_variables](output-variables.md)</u> argument instead.
 :::
 
 ## Example Declaration

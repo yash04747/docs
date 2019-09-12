@@ -9,7 +9,7 @@ The button set gives you a button bar to set options. It can be useful when you 
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`button_set`|Value identifying the field type.|
 |options|array||Array of key pairs representing the individual ticks.|

@@ -9,7 +9,7 @@ The Checkbox field may be used to offer a single check option, or a group of mul
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`checkbox`|Value identifying the field type.|
 |options|array||Array of key pair values representing the individual check boxes.  They key represents the ID of the checkbox, the value is the text displayed next to the checkbox.|

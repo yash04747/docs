@@ -20,6 +20,7 @@ The Color Gradient controls allows for the selection of two separate colors, for
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 

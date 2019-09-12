@@ -28,6 +28,7 @@ The Spacing field allows the user to specify either padding or margin units to a
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `data` Argument](../configuration/fields/data.md)
 - [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
