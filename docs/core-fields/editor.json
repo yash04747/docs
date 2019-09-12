@@ -72,6 +72,16 @@
       "name": "default",
       "title": "Default",
       "order": 30
+    },
+    "args": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Args",
+      "name": "args",
+      "description": "WP Editor Arguments",
+      "selectValues": ["wpautop", "media_buttons", "textarea_rows", "tabindex", "editor_css", "teeny", "dfw", "tinymce", "quicktags"],
+      "newElementButtonLabel": "+ Add WP Editor Argument",
+      "order": 55
     }
   }
 }

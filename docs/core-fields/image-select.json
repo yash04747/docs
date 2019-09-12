@@ -59,7 +59,7 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "field-type": "object",
-      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
+      "properties": [],
       "type": "object",
       "order": 20
     },

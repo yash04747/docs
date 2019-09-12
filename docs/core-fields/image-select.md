@@ -9,7 +9,7 @@ Select from an array of images as radio buttons.
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:150px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`image_select`|Value identifying the field type.|
 |output|array||Array of CSS selectors to dynamically generate CSS.|

@@ -9,7 +9,6 @@ The Color field redefines simplicity. Point and click to chose any color in the 
 :::
 
 ## Arguments
-
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`color`|Value identifying the field type.|
