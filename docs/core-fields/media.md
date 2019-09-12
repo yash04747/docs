@@ -108,7 +108,14 @@ echo 'Thumbnail value: ' . $redux_demo['opt-media']['thumbnail'];
 
 ## Allowed File Types in WordPress
 WordPress allows you to upload many of the most common image files, audio/video, PDF, Microsoft office and OpenOffice 
-documents. The WordPress codex has a full list of allowed [file types](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) and extensions.
+documents. The WordPress codex has a full list of allowed 
+[file types](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) and 
+extensions.
+
+To find out which mime types are enabled in your instance, you can run the following code:
+```php
+print_r( get_allowed_mime_types() );
+```
 
 ### Adding Additional File Types
 

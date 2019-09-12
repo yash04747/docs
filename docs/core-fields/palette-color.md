@@ -1,6 +1,7 @@
 # Palette Color
 
-The Palette Color field allows you to display a set of color palettes that a theme or plugin might use throughout, giving your users a choice of UI colors.
+The Palette Color field allows you to display a set of color palettes that a theme or plugin might use throughout, 
+giving your users a choice of UI colors.
 
 <span style="display:block;text-align:center">![](./img/palette_color.png)</span>
 
@@ -9,7 +10,7 @@ The Palette Color field allows you to display a set of color palettes that a the
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:80px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`palette`|Value identifying the field type.|
 |palettes|array||An array of individual arrays defining the color palettes.  See "Setting Palettes" below.|
@@ -22,8 +23,9 @@ The Palette Color field allows you to display a set of color palettes that a the
 :::
 
 ## Setting Palettes
-Each palette in the palettes argument is a key/pair array that defines each individual palette.  The key of the array is the palette name.  Assigned to the key is an array of hex colors to be displayed in the palette entry.  See the example below for a complete breakdown.
-
+Each palette in the palettes argument is a key/pair array that defines each individual palette.  The key of the array 
+is the palette name.  Assigned to the key is an array of hex colors to be displayed in the palette entry. 
+ See the example below for a complete breakdown.
 
 ## Example Declaration
 <script>
@@ -87,14 +89,14 @@ Redux::setSection( 'OPT_NAME', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified 
+in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
-This field does NOT return the palette array.  It returns the name of the selected palette.  Ideally, the developer will have set the palette colors in their CSS, using the palette key name as the CSS selector.
+This field does NOT return the palette array.  It returns the name of the selected palette.  Ideally, the developer 
+will have set the palette colors in their CSS, using the palette key name as the CSS selector.
 
 ```php
 global $redux_demo;
 
-echo 'Selected palette: ' . $redux_demo['opt-palette-color'];
-
-// Outputs: Selected palette: red 
+echo __( 'Selected palette: ', 'redux-framework-demo' ) . $redux_demo['opt-palette-color'];
 ```
