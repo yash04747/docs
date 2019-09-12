@@ -13,7 +13,7 @@ Select from an array of images as radio buttons.
 |--- |--- |--- |--- |
 |type|string|`image_select`|Value identifying the field type.|
 |output|array||Array of CSS selectors to dynamically generate CSS.|
-|mode|string|`background-image`|CSS selector in which to assign the returned image value.|
+|mode|string|`background-image`|CSS attribute for dynamically generated CSS to output the value.|
 |options|array||Set of key pair array values representing the layout options.  See 'Layout Options' below.|
 |width|string||Set the width of the images used in `options`.|
 |height|string||Set the height of the images used in `options`.|

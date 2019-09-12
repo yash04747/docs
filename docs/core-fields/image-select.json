@@ -83,6 +83,7 @@
       "title": "Mode",
       "type": "input",
       "inputType": "text",
+      "default": "background-image",
       "order": 40
     },
     "width": {
@@ -103,14 +104,14 @@
       "name": "tiles",
       "title": "Tiles",
       "type": "bool",
-      "default": true,
+      "default": false,
       "order": 50
     },
     "presets": {
       "name": "presets",
       "title": "Presets",
       "type": "bool",
-      "default": true,
+      "default": false,
       "order": 50
     }
   }
