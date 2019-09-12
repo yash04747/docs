@@ -68,13 +68,31 @@
       "order": 25,
       "required": false
     },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "field-type": "object",
+      "properties": ["regular", "hover", "active", "visited"],
+      "type": "object",
+      "default": null,
+      "order": 30
+    },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 31
+    },
     "permissions": {
       "type": "input",
       "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
       "default": null,
-      "order": 30
+      "order": 35
     },
     "required": {
       "name": "required",
@@ -83,20 +101,20 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "default": null,
-      "order": 35
+      "order": 40
     },
     "validate": {
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
-      "order": 40
+      "order": 45
     },
     "regular": {
       "name": "regular",
       "title": "Regular",
       "type": "bool",
       "default": true,
-      "order": 45,
+      "order": 50,
       "required": false
     },
     "hover": {
@@ -104,7 +122,7 @@
       "title": "Hover",
       "type": "bool",
       "default": true,
-      "order": 50,
+      "order": 55,
       "required": false
     },
     "active": {
@@ -112,7 +130,7 @@
       "title": "Active",
       "type": "bool",
       "default": true,
-      "order": 55,
+      "order": 60,
       "required": false
     },
     "visited": {
@@ -120,7 +138,7 @@
       "title": "Visited",
       "type": "bool",
       "default": true,
-      "order": 60,
+      "order": 65,
       "required": false
     }
   }

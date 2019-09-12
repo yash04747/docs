@@ -59,8 +59,16 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "type": "text",
-      "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
+      "properties": [],
       "order": 20
+    },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 21
     },
     "permissions": {
       "type": "input",

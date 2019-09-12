@@ -70,6 +70,14 @@
       "default": null,
       "order": 30
     },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 31
+    },
     "required": {
       "name": "required",
       "title": "Required",

@@ -76,6 +76,14 @@
       "order": 35,
       "required": false
     },
+    "output_variables": {
+      "name": "output_variables",
+      "title": "Output Variables",
+      "fieldClasses": "full-width",
+      "type": "bool",
+      "default": false,
+      "order": 38
+    },
     "permissions": {
       "type": "input",
       "inputType": "text",
