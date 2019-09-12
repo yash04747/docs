@@ -7,10 +7,10 @@ The Info field comes in several varieties to display information as normal, info
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`info`|Value identifying the field type.|
-|style|string|`normal`|Sets the mode of the info box.  Accepts:  `normal` `info` `warning` `success ```critical`` or `custom`|
+|style|string|`normal`|Sets the mode of the info box.  Accepts:  `normal` `info` `warning` `success` `critical` `custom`|
 |notice|bool|`true`|Set the styling to the non-notice styles, instead of the default WordPress 3.8 notice styles.|
 |color|string||Color that becomes the left border if style is set to custom. Will not work with a non-notice styled field.|
 |icon|string||Name of an Elusive Icon font to use in the info box.|

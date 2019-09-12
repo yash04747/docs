@@ -58,11 +58,11 @@
       "order": 35
     },
     "style": {
-      "type": "datalist",
+      "type": "select",
       "name": "style",
       "title": "Style",
       "values": ["normal", "info", "warning", "success", "critical"],
-      "listName": "stylelist",
+      "default": "normal",
       "order": 40,
       "required": true
     },
@@ -87,7 +87,7 @@
       "inputType": "text",
       "order": 55
     },
-    "indenet": {
+    "indent": {
       "name": "indent",
       "title": "Indent",
       "type": "bool",
