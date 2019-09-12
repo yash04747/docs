@@ -63,6 +63,7 @@
       "name": "markdown",
       "title": "Markdown",
       "type": "bool",
+      "default": false,
       "order": 30
     },
     "content": {

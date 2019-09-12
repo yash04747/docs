@@ -55,7 +55,8 @@
       "type": "custom-object",
       "name": "data",
       "title": "Data",
-      "order": 50
+      "order": 50,
+      "required": false
     },
     "permissions": {
       "type": "input",
@@ -71,15 +72,6 @@
       "type": "array",
       "description": "Field visibility requirements.",
       "order": 70
-    },
-    "options": {
-      "type": "custom-object",
-      "formatter": "keyvalue",
-      "title": "Options",
-      "name": "options",
-      "newElementButtonLabel": "+ Add Option",
-      "default": {},
-      "order": 75
     }
   }
 }

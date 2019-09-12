@@ -9,7 +9,7 @@ export default class DataFormatter extends ObjectFormatter {
                     {
                         "model": "type",
                         "inputName": "type",
-                        "required": true,
+                        "required": false,
                         "validator": "string",
 
                         "type": "vueMultiSelect",
