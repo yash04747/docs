@@ -10,8 +10,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 0,
-      "required": false
+      "order": 0
     },
     "title": {
       "name": "title",
@@ -19,8 +18,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "subtitle": {
       "name": "subtitle",
@@ -28,8 +26,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 10,
-      "required": false
+      "order": 10
     },
     "desc": {
       "name": "desc",
@@ -37,8 +34,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 15,
-      "required": false
+      "order": 15
     },
     "class": {
       "name": "class",
@@ -46,16 +42,14 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 25,
-      "required": false
+      "order": 25
     },
     "data": {
       "type": "custom-object",
@@ -93,16 +87,14 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "multi": {
       "name": "multi",
       "title": "Multi",
       "type": "bool",
       "default": false,
-      "order": 55,
-      "required": false
+      "order": 55
     },
     "placeholder": {
       "name": "placeholder",
@@ -110,16 +102,14 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 60,
-      "required": false
+      "order": 60
     },
     "sortable": {
       "name": "sortable",
       "title": "Sortable",
       "type": "bool",
       "default": false,
-      "order": 65,
-      "required": false
+      "order": 65
     },
     "select2": {
       "type": "custom-object",
@@ -136,8 +126,7 @@
       "title": "Ajax",
       "type": "bool",
       "default": false,
-      "order": 75,
-      "required": false
+      "order": 75
     },
     "min-input-length": {
       "name": "min-input-length",
@@ -147,8 +136,7 @@
       "default": 1,
       "order": 80,
       "min": 1,
-      "validator": "integer",
-      "required": false
+      "validator": "integer"
     }
   }
 }

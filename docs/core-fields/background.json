@@ -10,8 +10,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 0,
-      "required": false
+      "order": 0
     },
     "title": {
       "name": "title",
@@ -19,8 +18,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "subtitle": {
       "name": "subtitle",
@@ -28,8 +26,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 10,
-      "required": false
+      "order": 10
     },
     "desc": {
       "name": "desc",
@@ -37,8 +34,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 15,
-      "required": false
+      "order": 15
     },
     "class": {
       "name": "class",
@@ -46,16 +42,14 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 25,
-      "required": false
+      "order": 25
     },
     "output": {
       "name": "output",
@@ -110,80 +104,70 @@
       "title": "Background Color",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-repeat": {
       "name": "background-repeat",
       "title": "Background Repeat",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-attachment": {
       "name": "background-attachment",
       "title": "Background Attachment",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-position": {
       "name": "background-position",
       "title": "Background Position",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-image": {
       "name": "background-image",
       "title": "Background Image",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-clip": {
       "name": "background-clip",
       "title": "Background Clip",
       "type": "bool",
       "default": false,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-origin": {
       "name": "background-origin",
       "title": "Background Origin",
       "type": "bool",
       "default": false,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "background-size": {
       "name": "background-size",
       "title": "Background Size",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "preview_media": {
       "name": "preview_media",
       "title": "Background Image",
       "type": "bool",
       "default": false,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "preview": {
       "name": "preview",
       "title": "Preview",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "preview_height": {
       "name": "preview_height",
@@ -192,16 +176,14 @@
       "inputType": "text",
       "description": "",
       "default": "200px",
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "transparent": {
       "name": "transparent",
       "title": "Transparent",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     }
   }
 }

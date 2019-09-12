@@ -10,8 +10,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 0,
-      "required": false
+      "order": 0
     },
     "title": {
       "name": "title",
@@ -19,8 +18,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "subtitle": {
       "name": "subtitle",
@@ -28,8 +26,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 10,
-      "required": false
+      "order": 10
     },
     "desc": {
       "name": "desc",
@@ -37,8 +34,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 15,
-      "required": false
+      "order": 15
     },
     "class": {
       "name": "class",
@@ -46,16 +42,14 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 25,
-      "required": false
+      "order": 25
     },
     "output": {
       "name": "output",
@@ -118,56 +112,49 @@
       "title": "All",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "left": {
       "name": "left",
       "title": "Left",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "right": {
       "name": "right",
       "title": "Right",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "top": {
       "name": "top",
       "title": "Top",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "bottom": {
       "name": "bottom",
       "title": "Bottom",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "style": {
       "name": "style",
       "title": "Style",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     },
     "color": {
       "name": "color",
       "title": "Color",
       "type": "bool",
       "default": true,
-      "order": 50,
-      "required": false
+      "order": 50
     }
   }
 }

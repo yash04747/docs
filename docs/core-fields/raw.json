@@ -10,8 +10,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 0,
-      "required": false
+      "order": 0
     },
     "title": {
       "name": "title",
@@ -19,8 +18,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "subtitle": {
       "name": "subtitle",
@@ -28,8 +26,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 10,
-      "required": false
+      "order": 10
     },
     "desc": {
       "name": "desc",
@@ -37,8 +34,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 15,
-      "required": false
+      "order": 15
     },
     "class": {
       "name": "class",
@@ -46,8 +42,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "required": {
       "name": "required",
@@ -76,8 +71,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 35,
-      "required": false
+      "order": 35
     },
     "content_path": {
       "name": "content_path",
@@ -85,8 +79,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 40,
-      "required": false
+      "order": 40
     }
   }
 }

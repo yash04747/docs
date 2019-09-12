@@ -10,8 +10,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 0,
-      "required": false
+      "order": 0
     },
     "title": {
       "name": "title",
@@ -19,8 +18,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "subtitle": {
       "name": "subtitle",
@@ -28,8 +26,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 10,
-      "required": false
+      "order": 10
     },
     "desc": {
       "name": "desc",
@@ -37,8 +34,7 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 15,
-      "required": false
+      "order": 15
     },
     "class": {
       "name": "class",
@@ -46,16 +42,14 @@
       "type": "input",
       "inputType": "text",
       "description": "",
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "output": {
       "name": "output",
@@ -115,8 +109,7 @@
       "title": "Google",
       "type": "bool",
       "default": true,
-      "order": 45,
-      "required": false
+      "order": 45
     },
     "fonts": {
       "name": "fonts",
@@ -130,86 +123,74 @@
       "name": "font-backup",
       "title": "Font Backup",
       "type": "bool",
-      "order": 55,
-      "required": false
+      "order": 55
     },
     "font-style": {
       "name": "font-style",
       "title": "Font Style",
       "type": "bool",
-      "order": 60,
-      "required": false
+      "order": 60
     },
     "font-weight": {
       "name": "font-weight",
       "title": "Font Weight",
       "type": "bool",
-      "order": 65,
-      "required": false
+      "order": 65
     },
     "font-size": {
       "name": "font-size",
       "title": "Font Size",
       "type": "bool",
-      "order": 70,
-      "required": false
+      "order": 70
     },    
     "font-family": {
       "name": "font-family",
       "title": "Font Family",
       "type": "bool",
-      "order": 75,
-      "required": false
+      "order": 75
     },
     "subsets": {
       "name": "subsets",
       "title": "Subsets",
       "type": "bool",
-      "order": 80,
-      "required": false
+      "order": 80
     },
     "line-height": {
       "name": "line-height",
       "title": "Line Height",
       "type": "bool",
-      "order": 85,
-      "required": false
+      "order": 85
     },
     "word-spacing": {
       "name": "word-spacing",
       "title": "Word Spacing",
       "type": "bool",
-      "order": 90,
-      "required": false
+      "order": 90
     },
     "letter-spacing": {
       "name": "letter-spacing",
       "title": "Letter Spacing",
       "type": "bool",
-      "order": 95,
-      "required": false
+      "order": 95
     },
     "text-align": {
       "name": "text-align",
       "title": "Text Align",
       "type": "bool",
-      "order": 100,
-      "required": false
+      "order": 100
     },    
     "text-transform": {
       "name": "text-transform",
       "title": "Text Transform",
       "type": "bool",
-      "order": 105,
-      "required": false
+      "order": 105
     },
     "color": {
       "name": "color",
       "title": "Color",
       "type": "bool",
       "default": true,
-      "order": 110,
-      "required": false
+      "order": 110
     },
     "preview": {
       "name": "preview",
@@ -217,29 +198,25 @@
       "formatter": "keyvalue",
       "selectValues": ["text", "font-size", "always_display"],
       "booleanFields": ["always_display"],
-      "order": 115,
-      "required": false
+      "order": 115
     },
     "all_styles": {
       "name": "all_styles",
       "title": "All Styles",
       "type": "bool",
-      "order": 120,
-      "required": false
+      "order": 120
     },
     "select2": {
       "name": "select2",
       "title": "Select2",
       "formatter": "keyvalue",
-      "order": 125,
-      "required": false
+      "order": 125
     },
     "font_family_clear": {
       "name": "font_family_clear",
       "title": "Font Family Clear",
       "type": "bool",
-      "order": 130,
-      "required": false
+      "order": 130
     }
   }
 }
