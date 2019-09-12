@@ -253,12 +253,12 @@
                 var json = JSON.stringify(model, undefined, 4);
                 json = json.replace(/&/g, '&').replace(/</g, '<').replace(/>/g, '>');
 
-                var to_replace = ['title', 'subtitle', 'description', 'note', 'desc'];
+                var to_replace = ['title', 'subtitle', 'description', 'note', 'desc', 'placeholder'];
                 var arrayLength = to_replace.length;
                 for (var i = 0; i < arrayLength; i++) {
                     var key = to_replace[i];
                     var r = new RegExp('"' + key + '": "(.*)"', "g"); // global match and ignore case flag
-                    json = json.replace(r, '"' + key + '": esc_html__( "$1" , "redux_docs_generator" )');
+                    json = json.replace(r, '"' + key + '": __( "$1" , "redux_docs_generator" )');
                 }
 
                 var data = json.replace(
@@ -275,9 +275,8 @@
                         }
                         var operator = '';
                         if (match.endsWith(':')) {
-                            match = match.replace(':', '')
+                            match = match.replace(':', '');
                             operator = "=>";
-
                         }
                         var string = '<span class="token ' + cls + '">' + match + '</span>';
 
