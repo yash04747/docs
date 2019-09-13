@@ -123,8 +123,8 @@ Security is the main reason behind the limitation on file types that users can u
 with a little bit of code. Add this code to your theme or plugin to allow SVG files to be uploaded:
 
 ```php
-function my_myme_types($mime_types){
-    $mime_types['svg'] = 'image/svg+xml'; //Adding svg extension
+function my_myme_types( $mime_types = array() ){
+    $mime_types['svg'] = 'image/svg+xml'; // Adding svg extension
     return $mime_types;
 }
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
@@ -137,9 +137,9 @@ several common file extensions [on this page](http://www.freeformatter.com/mime-
 You can also add multiple file types in one code snippet, like this:
 
 ```php
-function my_myme_types($mime_types){
-    $mime_types['svg'] = 'image/svg+xml'; //Adding svg extension
-    $mime_types['psd'] = 'image/vnd.adobe.photoshop'; //Adding photoshop files
+function my_myme_types( $mime_types = array() ){
+    $mime_types['svg'] = 'image/svg+xml'; // Adding svg extension
+    $mime_types['psd'] = 'image/vnd.adobe.photoshop'; // Adding photoshop files
     return $mime_types;
 }
 add_filter('upload_mimes', 'my_myme_types', 1, 1);
