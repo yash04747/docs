@@ -126,7 +126,7 @@
       "type": "select",
       "default": "text",
       "order": 60,
-      "values": ["none", "label", "text", "select"]
+      "values": ["none", "label", "select", "text"]
     },
     "resolution": {
       "name": "resolution",
