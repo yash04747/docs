@@ -17,8 +17,7 @@ The Text field accepts any form of text and optionally validates the text before
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`text`|Value identifying the field type.|
-|placeholder|string or array||Text to display inside the input when a value is not present.|
-|data|string|| See [`data` Argument below](#data-argument).|
+|placeholder|string/array||Text to display inside the input when a value is not present.|
 |autocomplete|boolean||If set to `false`, the autocomplete attribute will be set to `off`.|
 |readonly|string||If set to `true`, the readonly attribute will be set to `readonly`.|
 

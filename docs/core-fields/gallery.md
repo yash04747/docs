@@ -28,14 +28,7 @@ export default {
     data () {
         return {
             builder: builder,
-            defaults: {
-                'color'       : '#333', 
-                'font-style'  : '700', 
-                'font-family' : 'Abel', 
-                'google'      : true,
-                'font-size'   : '33px', 
-                'line-height' : '40'
-            }
+            defaults: {}
         };
     }
 }

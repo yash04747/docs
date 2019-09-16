@@ -9,7 +9,7 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`sorter`|Value identifying the field type.|
 |options|array||Array specifying the enabled or disables state for the individual blocks.  See 'Options Array' below.|
@@ -30,11 +30,6 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 
 The first parameter of the value pair must be a string type representing a unique ID for the element.  The second parameter must be a string type representing the display name of the element. See the code below for an example.
 
-::: tip IMPORTANT
-The key pair of `'placebo' => 'placebo'` IS NO LONGER REQUIRED.
-:::
-
-
 ## Example Declaration
 <script>
 import builder from './sorter.json';
@@ -42,14 +37,7 @@ export default {
     data () {
         return {
             builder: builder,
-            defaults: {
-                'color'       : '#333', 
-                'font-style'  : '700', 
-                'font-family' : 'Abel', 
-                'google'      : true,
-                'font-size'   : '33px', 
-                'line-height' : '40'
-            }
+            defaults: {}
         };
     }
 }

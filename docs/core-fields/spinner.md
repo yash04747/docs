@@ -12,9 +12,9 @@ The Spinner field returns the value entered in its input box or via clicks on it
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`spinner`|Value identifying the field type.|
-|min|string/int|0|Value to set the minimum spinner value.|
-|max|string/int|1|Value to set the maximum spinner value.|
-|step|string/int|1|Value to set the spinner step value.|
+|min|string/int|`0`|Value to set the minimum spinner value.|
+|max|string/int|`1`|Value to set the maximum spinner value.|
+|step|string/int|`1`|Value to set the spinner step value.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -32,14 +32,7 @@ export default {
     data () {
         return {
             builder: builder,
-            defaults: {
-                'color'       : '#333', 
-                'font-style'  : '700', 
-                'font-family' : 'Abel', 
-                'google'      : true,
-                'font-size'   : '33px', 
-                'line-height' : '40'
-            }
+            defaults: {}
         };
     }
 }

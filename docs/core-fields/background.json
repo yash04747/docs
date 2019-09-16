@@ -95,7 +95,7 @@
       "formatter": "keyvalue",
       "title": "Select2",
       "name": "select2",
-      "newElementButtonLabel": "+ Add Option",
+      "newElementButtonLabel": "+ Add Select2 Option",
       "default": {},
       "order": 45
     },
