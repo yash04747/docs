@@ -1,6 +1,8 @@
 # Typography
 
-The Redux Typography field in second-to-none when it comes to framework typography options.  It's often copied but never duplicated!  Google fonts, font preview, color-picket, letter &amp; word spacing, styles &amp; weight selection, and much, much more!
+The Redux Typography field in second-to-none when it comes to other options out there.  It's often copied in concept,
+but limited in functionality. Google fonts, font preview, color-picket, letter &amp; word spacing, styles &amp; weight 
+selection, and much, much more!
 
 <span style="display:block;text-align:center">![](./img/typography.png)</span>
 
@@ -9,13 +11,13 @@ The Redux Typography field in second-to-none when it comes to framework typograp
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:100px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`typography`|Value identifying the field type.|
 |default|array||See [Default Argument](#default-argument) below.|
-|units|string|px|Sets the default unit value.  Accepts: px em rem %|
-|google|bool|`true`|Flag to set Google fonts. Please make sure the Google API key is defined, or this feature will not work. For information on acquiring an API key, see https://developers.google.com/fonts/docs/developer_api#Auth|
-|fonts|array||An array of fonts in key pair format, (i.e. `'verdana,san-serif,helvatica' => 'Verdana'`).  Specifying a font array will override the default Standard fonts.|
+|units|string|px|Sets the default unit value.  Accepts: `px` `em` `rem` `%`|
+|google|bool|`true`|Flag to set Google fonts. Please make sure the Google API key is defined, or this feature will not work. For information on acquiring an API key, go to [Google Developer](https://developers.google.com/fonts/docs/developer_api#Auth)|
+|fonts|array||An array of fonts in key pair format. Specifying a font array will override the default "standard" fonts.|
 |font-backup|bool|`false`|Flag to display a selector specifying backup non-Google fonts when Google fonts are used.|
 |font-style|bool|`true`|Flag to display the font style selector.|
 |font-weight|bool|`true`|Flag to display the font weight selector.|
