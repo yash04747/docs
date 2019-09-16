@@ -90,7 +90,7 @@
     "autocomplete": {
       "name": "autocomplete",
       "title": "Autocomplete",
-      "default": true,
+      "default": false,
       "type": "bool",
       "order": 60
     },
@@ -98,7 +98,7 @@
       "name": "readonly",
       "title": "Read-only",
       "type": "bool",
-      "default": 1,
+      "default": false,
       "order": 65
     }
   }
