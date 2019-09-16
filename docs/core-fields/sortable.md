@@ -14,7 +14,7 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 |type|string|`sortable`|Value identifying the field type.|
 |options|array||Array of key pair data defining the input objects.  The key represents the object's ID.  The second the display text.  See the example.|
 |label|bool|`false`|Flag to display values before text areas when mode is not checkbox.|
-|mode|string|`text`|Sets the mode of the input objects text or checkbox.|
+|mode|string|`text`|Sets the mode of the input HTML. Options allowed are `text` or `checkbox`.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -31,14 +31,7 @@ export default {
     data () {
         return {
             builder: builder,
-            defaults: {
-                'color'       : '#333', 
-                'font-style'  : '700', 
-                'font-family' : 'Abel', 
-                'google'      : true,
-                'font-size'   : '33px', 
-                'line-height' : '40'
-            }
+            defaults: {}
         };
     }
 }
