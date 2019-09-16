@@ -12,8 +12,8 @@ The Switch field sets a true or false value based on the selection.  Users may 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`switch`|Value identifying the field type.|
-|on|string|`On`|Text display for the true value.|
-|off|string|`Off`|Text display for the false value.|
+|on|string|`On`|Text displayed for the true value.|
+|off|string|`Off`|Text displayed for the false value.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
