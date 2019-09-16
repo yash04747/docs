@@ -12,6 +12,7 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 |--- |--- |--- |--- |
 |type|string|`slides`|Value identifying the field type.|
 |placeholder|array||Array of placeholder values.  See 'Placeholder Values' below.|
+|show|array||Array of elements to show or hide. Options possible: `title`, `description`, `url`. [See details below](#using-the-show-argument). |
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -43,12 +44,6 @@ export default {
         return {
             builder: builder,
             defaults: {
-                'color'       : '#333', 
-                'font-style'  : '700', 
-                'font-family' : 'Abel', 
-                'google'      : true,
-                'font-size'   : '33px', 
-                'line-height' : '40'
             }
         };
     }
@@ -95,3 +90,21 @@ if ( isset( $redux_demo['opt-slides'] ) && !empty( $redux_demo['opt-slides'] ) )
 }
 ```
 
+## Using the `show` Argument
+There are 3 main elements to the slide field, namely the title, description, and URL (media URL). You can easily hide
+any of these elements using the `show` argument and providing a key=>False value for the element you wish to hide.
+
+```php
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id'          => 'opt-slides',
+    'type'        => 'slides',
+    'title'       => __('Slides Options', 'redux-framework-demo'),
+    'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
+    'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo')
+    'placeholder' => array(
+        'title'       => __('This is a title', 'redux-framework-demo'),
+        'url'         => __('Give us a link!', 'redux-framework-demo'),
+    ),
+    'show'        => array( 'description' => false ),
+) );
+```

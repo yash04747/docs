@@ -86,9 +86,37 @@
       "formatter": "keyvalue",
       "title": "Placeholder",
       "name": "placeholder",
-      "selectValues": ["title", "description", "sort", "url", "image", "thumb", "attachment_id", "height", "width"],
+      "selectValues": [
+        "title",
+        "description",
+        "sort",
+        "url",
+        "image",
+        "thumb",
+        "attachment_id",
+        "height",
+        "width"
+      ],
       "newElementButtonLabel": "+ Add Placeholder Item",
       "default": {},
+      "order": 75
+    },
+    "show": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Show",
+      "name": "show",
+      "selectValues": [
+        "title",
+        "description",
+        "url"
+      ],
+      "newElementButtonLabel": "+ Add Show Item",
+      "default": {
+        "title": true,
+        "description": true,
+        "url": true
+      },
       "order": 75
     }
   }
