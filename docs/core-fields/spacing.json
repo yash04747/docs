@@ -86,7 +86,24 @@
       "name": "units",
       "title": "units",
       "type": "vueMultiselect",
-      "values": ["px", "em", "%"],
+      "values": [
+        false,
+        "%",
+        "in",
+        "cm",
+        "mm",
+        "em",
+        "rem",
+        "ex",
+        "pt",
+        "pc",
+        "px",
+        "vh",
+        "vw",
+        "vmin",
+        "vmax",
+        "ch"
+      ],
       "order": 40,
       "selectOptions": {
         "multiple": true,
@@ -146,7 +163,11 @@
       "type": "select",
       "name": "mode",
       "title": "Mode",
-      "values": ["absolute", "padding", "margin"],
+      "values": [
+        "absolute",
+        "padding",
+        "margin"
+      ],
       "required": true,
       "default": "padding",
       "order": 80
@@ -155,7 +176,7 @@
       "name": "select2",
       "title": "Select2",
       "formatter": "keyvalue",
-      "newElementButtonLabel": "+ Add Option",
+      "newElementButtonLabel": "+ Add Select2 Option",
       "type": "object",
       "order": 85
     },
@@ -163,7 +184,13 @@
       "name": "default",
       "title": "Default",
       "formatter": "keyvalue",
-      "selectValues": ["*-top", "*-right", "*-bottom", "*-left", "units"],
+      "selectValues": [
+        "*-top",
+        "*-right",
+        "*-bottom",
+        "*-left",
+        "units"
+      ],
       "newElementButtonLabel": "+ Add Option",
       "type": "object",
       "order": 90

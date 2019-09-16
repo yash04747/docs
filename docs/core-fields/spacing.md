@@ -9,10 +9,10 @@ The Spacing field allows the user to specify either padding or margin units to a
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`spacing`|Value identifying the field type.|
-|units|array/string||String of a single unit or array of units.  Accepts: `px` `em` `%`.|
+|units|array/string||String of a single unit or array of units.  Accepts: `false`, `%`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `pt`, `pc`, `px`, `vh`, `vw`, `vmin`, `vmax`, `ch`.|
 |units_extended|bool|`false`|Flag to allow users to select any type of unit.|
 |display_units|bool|`true`|Flag to set the display of the units field when units are specified.|
 |top|bool|`true`|Flag to display the top value input.|
@@ -20,7 +20,7 @@ The Spacing field allows the user to specify either padding or margin units to a
 |left|bool|`true`|Flag to display the left value input.|
 |right|bool|`true`|Flag to display the right value input.|
 |all|bool|`false`|Flag to display all position value inputs.|
-|mode|string|'padding'|Accepts:  `absolute` `padding` or `margin`.|
+|mode|string|`padding`|Accepts:  `absolute` `padding` or `margin`.|
 |select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 
 ::: tip Also See
