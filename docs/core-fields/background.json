@@ -87,6 +87,15 @@
       "name": "default",
       "newElementButtonLabel": "+ Add Default Item",
       "selectValues": ["background-color", "background-repeat", "background-attachment", "background-position", "background-image", "background-clip", "background-origin", "background-size", "media"],
+      "selectFields": [
+        {"key": "background-repeat", "values": ["no-repeat", "repeat", "repeat-x", "repeat-y", "inherit"]}, 
+        {"key": "background-attachment", "values": ["fixed", "scroll", "inherit"]}, 
+        {"key": "background-position", "values": ["left", "top", "left center", "left bottom", "center top", "center center", "center bottom", 
+          "right top", "right center", "right bottom"]},
+        {"key": "background-clip", "values": ["inherit", "border-box", "content-box", "padding-box"]}, 
+        {"key": "background-origin", "values": ["inherit", "border-box", "content-box", "padding-box"]}, 
+        {"key": "background-size", "values": ["inherit", "cover", "contain"]}
+      ],
       "default": {},
       "order": 40
     },

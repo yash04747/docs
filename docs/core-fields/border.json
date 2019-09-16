@@ -89,6 +89,8 @@
       "name": "default",
       "newElementButtonLabel": "+ Add Default Item",
       "selectValues": ["border-color", "border-style", "border-top", "border-right", "border-bottom", "border-left", "border-width"],
+      "selectFields": [
+        {"key": "border-style", "values": ["solid", "dotted", "dashed", "none"]}],
       "default": {},
       "order": 45
     },
