@@ -84,12 +84,13 @@
       "order": 45
     },
     "mode": {
-      "type": "datalist",
+      "type": "select",
       "name": "mode",
       "title": "Mode",
       "values": ["text", "checkbox"],
       "listName": "modelist",
       "required": true,
+      "default": "text",
       "order": 50
     }
   }
