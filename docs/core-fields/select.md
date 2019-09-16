@@ -59,20 +59,17 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-multi-select',
     'type'     => 'select',
     'multi'    => true,
-    'title'    => __('Multi Select Option', 'redux-framework-demo'), 
-    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => __( 'Multi Select Option', 'redux-framework-demo' ), 
+    'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
+    'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
     //Must provide key => value pairs for radio options
     'options'  => array(
         '1' => 'Opt 1',
         '2' => 'Opt 2',
         '3' => 'Opt 3'),
-    'default'  => array('2','3')
+    'default'  => array( '2', '3' )
 ) );
 ```
-
-
-
 
 ## Example Declaration
 <script>
@@ -107,3 +104,21 @@ echo 'Multi Select value: '  . $redux_demo['opt-multi-select'][0];
 echo 'Multi Select value: '  . $redux_demo['opt-multi-select'][1];
 ```
 
+## Disabling "Clear" Icon
+Sometimes you don't want the user to have a null value. The "clear" icon is easily removed by passing a value to the 
+`select2` argument. Be sure to define a default value or the field will start in a null state.
+
+```php
+Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+    'id'       => 'opt-multi-select',
+    'type'     => 'select',
+    'title'    => __('Disable Select2 Clear Button', 'redux-framework-demo'), 
+    'options'  => array(
+        '1' => 'Opt 1',
+        '2' => 'Opt 2',
+        '3' => 'Opt 3'),
+    'default'  => array( '2' ),
+    'select2'  => array(
+        array( 'select2' => array( 'allowClear' => False ) ) )
+) );
+```
