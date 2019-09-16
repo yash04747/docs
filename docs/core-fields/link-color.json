@@ -61,8 +61,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "object",
-      "properties": ["regular", "hover", "active", "visited"],
+      "properties": ["color"],
       "type": "object",
       "order": 30
     },

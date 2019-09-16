@@ -58,10 +58,9 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "object",
-      "properties": [],
+      "properties": ["background-image"],
       "type": "object",
-      "order": 20
+      "order": 25
     },
     "permissions": {
       "type": "input",

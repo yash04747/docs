@@ -55,7 +55,6 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "object",
       "properties": ["background-color", "color"],
       "type": "object",
       "order": 30

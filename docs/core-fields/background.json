@@ -56,6 +56,7 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "type": "object",
+      "properties": ["background-color", "background-umage:url", "background-repeat", "background-size", "background-attachment", "background-position"],
       "order": 30
     },
     "output_variables": {
