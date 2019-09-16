@@ -90,6 +90,8 @@
       "name": "options",
       "selectValues": ["input_text", "show_input", "show_initial", "show_alpha", "show_palette", "show_palette_only", "show_selection_palette", "max_palette_size", 
         "allow_empty", "clickout_fires_change", "choose_text", "cancel_text", "show_buttons", "palette"],
+      "booleanFields": ["show_input", "show_initial", "show_alpha", "show_palette", "show_palette_only", "show_selection_palette", "allow_empty", 
+        "clickout_fires_change", "show_buttons"],
       "listName": "optionsList",
       "newElementButtonLabel": "+ Add Option",
       "default": {},

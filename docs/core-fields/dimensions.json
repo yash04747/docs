@@ -55,8 +55,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
-      "field-type": "object",
-      "properties": [],
+      "properties": ["width", "height"],
       "type": "object",
       "order": 20
     },
@@ -89,6 +88,7 @@
       "title": "Mode",
       "name": "mode",
       "newElementButtonLabel": "+ Add Mode",
+      "selectValues": ["width", "height"],
       "order": 39,
       "default": {
         "width": false,
