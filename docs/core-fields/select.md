@@ -7,18 +7,17 @@ The Select field displays information in a drop-down field in both single and mu
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|<div style="width:125px;">Name</div>|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`select`|Value identifying the field type.|
 |options|array||Array of options in key pair format.  The key represents the ID of the option.  The value represents the text to appear in the selector.|
-|width|string|40%|Value to set the width of the selector.|
+|width|string|`40%`|Value to set the width of the selector.|
 |multi|bool|`false`|Flag to set the multi-select variation of the field.|
 |placeholder|string||Text to display in the selector when no value is present.|
 |sortable|bool|`false`|Flag to enable data sorting.|
-|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
+|select2|array||Array of arguments sent to the select2 javascript declaration. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |ajax|bool|`false`|Set to true to use ajax to fetch options when the [data](../configuration/fields/data.md) argument is used. **Requires Redux 4.x**|
-|min-input-length|integer|`1`|For use when the `ajax` flag is set to true. This controls how many charactrs must be typed before an ajax request is performed. **Requires Redux 4.x**|
-
+|min-input-length|integer|`1`|For use when the `ajax` flag is set to true. This controls how many characters must be typed before an ajax request is performed. **Requires Redux 4.x**|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -94,7 +93,8 @@ export default {
 
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified 
+in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;
