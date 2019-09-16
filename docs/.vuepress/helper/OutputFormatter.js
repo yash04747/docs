@@ -105,7 +105,7 @@ export default class OutputFormatter extends ObjectFormatter {
     }
 
     static duplicateValidator(model, value) {
-        if (model!==null && OutputFormatter.selectedSelectors.indexOf(model) !== -1) {
+        if (model!==null && model.length > 0 && OutputFormatter.selectedSelectors.indexOf(model) !== -1) {
             return ["Duplicate Entry"];
         } else {
             OutputFormatter.selectedSelectors.push(model);

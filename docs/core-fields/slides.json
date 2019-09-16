@@ -111,6 +111,7 @@
         "description",
         "url"
       ],
+      "booleanFields": ["title", "description", "url"],
       "newElementButtonLabel": "+ Add Show Item",
       "default": {
         "title": true,

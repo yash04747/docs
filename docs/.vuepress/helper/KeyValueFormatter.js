@@ -3,7 +3,7 @@ import {cloneDeep, map, find} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
         let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
-            listName: listName, booleanFields: booleanFields, selectFields: selectFields} = schemaObject;
+            listName: listName, booleanFields: booleanFields, selectFields: selectFields, defaultObj: defaultObj} = schemaObject;
         let isShowingText = (selectValues && selectValues.length > 0) ? false : true;
 
         // helper method to detect field type. if key is in known list, "boolean" or "select"
@@ -84,6 +84,10 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "model": "valueSwitch",
                                         "visible": function(model) {
                                             return detectFieldType(model) === "boolean";
+                                        },
+                                        "default": function(model) {
+                                            let key = model.keyText || model.keySelect;
+                                            return defaultObj.hasOwnProperty(key) ? defaultObj[key] : null;
                                         }
                                     },
                                     {
@@ -106,7 +110,8 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "visible": function(model) {
                                             return detectFieldType(model) === "select";
                                         }
-                                    }]
+                                    }
+                                ]
                             }
                         }
                     }

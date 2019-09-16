@@ -90,7 +90,10 @@
       "name": "options",
       "newElementButtonLabel": "+ Add Option",
       "selectValues": ["minLines", "maxLines"],
-      "default": {},
+      "defaultObj": {
+        "minLines": 12,
+        "maxLines": 30
+      },
       "order": 40
     }
   }

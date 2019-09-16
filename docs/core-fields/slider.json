@@ -51,23 +51,6 @@
       "default": false,
       "order": 20
     },
-    "output": {
-      "name": "output",
-      "title": "Output",
-      "fieldClasses": "full-width",
-      "field-type": "object",
-      "properties": [],
-      "type": "object",
-      "order": 25
-    },
-    "output_variables": {
-      "name": "output_variables",
-      "title": "Output Variables",
-      "fieldClasses": "full-width",
-      "type": "bool",
-      "default": false,
-      "order": 26
-    },
     "permissions": {
       "type": "input",
       "inputType": "text",
