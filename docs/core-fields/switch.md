@@ -12,8 +12,8 @@ The Switch field sets a true or false value based on the selection.  Users may 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`switch`|Value identifying the field type.|
-|on|string|`On`|Text display for the true value.|
-|off|string|`Off`|Text display for the false value.|
+|on|string|`On`|Text displayed for the true value.|
+|off|string|`Off`|Text displayed for the false value.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -47,7 +47,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

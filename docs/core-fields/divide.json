@@ -1,0 +1,32 @@
+{
+  "type": "divide",
+  "name": "Divide",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 35
+    }
+  }
+}

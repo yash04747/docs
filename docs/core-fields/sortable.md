@@ -9,12 +9,12 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`sortable`|Value identifying the field type.|
 |options|array||Array of key pair data defining the input objects.  The key represents the object's ID.  The second the display text.  See the example.|
 |label|bool|`false`|Flag to display values before text areas when mode is not checkbox.|
-|mode|string|`text`|Sets the mode of the input objects text or checkbox.|
+|mode|string|`text`|Sets the mode of the input HTML. Options allowed are `text` or `checkbox`.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -22,6 +22,22 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
+
+
+## Example Declaration
+<script>
+import builder from './sortable.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 
 ## Example Declaration
 ```php
@@ -65,7 +81,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change $redux_demo to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">opt_name argument.</a>
+This example in based on the example usage provided above. Be sure to change $redux_demo to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

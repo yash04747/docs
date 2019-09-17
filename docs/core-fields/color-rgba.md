@@ -11,7 +11,7 @@ This field makes use of Brian Grinstead's [Spectrum "No hassle jQuery color pick
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:100px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`color_rgba`|Value identifying the field type.|
 |options|array||Array of options that sets the behavior of the color picker. See 'Color Picker Options' below.|
@@ -20,13 +20,14 @@ This field makes use of Brian Grinstead's [Spectrum "No hassle jQuery color pick
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
 ## Color Picker Options
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:115px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |input_text|string|`Select Color`|String specifying the button caption.|
 |show_input|bool|`true`|Flag to allow free form typing input.|
@@ -35,7 +36,7 @@ This field makes use of Brian Grinstead's [Spectrum "No hassle jQuery color pick
 |show_palette|bool|`true`|Flag to set the display of the color picker's color palette.|
 |show_palette_only|bool|`false`|Flag to display the color palette only, and nothing else.|
 |show_selection_palette|bool|`true`|Flag to display a palette of previously selected colors.|
-|max_palette_size|int|10|Integer value setting the number of colors to display horizontally in the color palette.|
+|max_palette_size|int|`10`|Integer value setting the number of colors to display horizontally in the color palette.|
 |allow_empty|bool|`true`|Flag to set the display of of 'clear' button, removing the color value.|
 |clickout_fires_change|bool|`false`|Flag that determines if clicking outside the color picker forces a color change.|
 |choose_text|string|`Choose`|String to display for the color picker Choose button.|
@@ -52,6 +53,20 @@ The default argument requires an array with two key/pair values: `color` and `al
 |color|string||Hex string of the default color value.|
 |alpha|float/int|1|Integer or float value of the default alpha level.|
 
+
+## Example Declaration
+<script>
+import builder from './color-rgba.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
 
 ## Example Declaration
 
@@ -97,7 +112,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ::: tip
 Different elements (or modes) may be specified in the output and compiler arguments as key/pair values. For example, suppose you want to output a color as a background-color, instead of color. The following output array in key/pair format would accomplish this:
 ```php
-'output' => array('background-color' => '.site-header')
+'output' => array(
+    'background-color' => '.site-header'
+)
 ```
 :::
 
@@ -113,23 +130,20 @@ Alternatively, multiple elements could be specified for different selectors.
 Multiple selectors are also supported. Separate them with commas.
 
 ```php
-'output' => array('background-color' => '.site-header, .site-footer')
+'output' => array(
+    'background-color' => '.site-header, .site-footer'
+)
 ```
 
 ## Example Usage
-Using the example above, outputting the the color would go as follows (Please remember to replace `redux_demo` with your own `<a href="/redux-framework/arguments/opt_name" title="opt_name">opt_name</a>` argument):
+Using the example above, outputting the the color would go as follows (Please remember to replace `redux_demo` with your own [opt_name](../configuration/global_arguments.md#opt_name) argument):
 
 ```php
 global $redux_demo;
 
-echo 'color: ' . $redux_demo['opt-color-rgba']['color'];
-echo 'alpha: ' . $redux_demo['opt-color-rgba']['alpha'];
-echo 'rgba: '  . $redux_demo['opt-color-rgba']['rgba'];
-
-// Outputs:
-// color: #fdfdfd
-// alpha: 1
-// rgba: rgba(253, 253, 253, 1)
+echo 'color: ' . $redux_demo['opt-color-rgba']['color']; // #fdfdfd
+echo 'alpha: ' . $redux_demo['opt-color-rgba']['alpha']; // 1
+echo 'rgba: '  . $redux_demo['opt-color-rgba']['rgba'];  // rgba(253, 253, 253, 1)
 ```
 
 ## Color Palettes
@@ -150,7 +164,7 @@ Creating a custom palette for use within with color picker popup (container) req
 
 Here are some other example palettes to experiment with:
 
-#### GMail style
+### GMail style
 
 ```php
 'palette' => array(
@@ -165,7 +179,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Snag-It Style
+### Snag-It Style
 
 ```php
 'palette' => array(
@@ -178,7 +192,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Newton Style
+### Newton Style
 
 ```php
 'palette' => array(
@@ -186,7 +200,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### AOL Style
+### AOL Style
 
 ```php
 'palette' => array(
@@ -200,7 +214,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Old GMail Style
+### Old GMail Style
 
 ```php
 'palette' => array(
@@ -217,7 +231,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Hotmail Style
+### Hotmail Style
 
 ```php
 'palette' => array(
@@ -231,7 +245,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Yahoo Style
+### Yahoo Style
 
 ```php
 'palette' => array(
@@ -250,7 +264,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Sixteen Style
+### Sixteen Style
 
 ```php
 'palette' => array(
@@ -262,7 +276,7 @@ Here are some other example palettes to experiment with:
 );
 ```
 
-#### Websafe Style
+### Websafe Style
 
 ```php
 'palette' => array(

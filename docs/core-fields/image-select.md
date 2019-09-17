@@ -9,11 +9,11 @@ Select from an array of images as radio buttons.
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:150px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`image_select`|Value identifying the field type.|
 |output|array||Array of CSS selectors to dynamically generate CSS.|
-|mode|string|`background-image`|CSS selector in which to assign the returned image value.|
+|mode|string|`background-image`|CSS attribute for dynamically generated CSS to output the value.|
 |options|array||Set of key pair array values representing the layout options.  See 'Layout Options' below.|
 |width|string||Set the width of the images used in `options`.|
 |height|string||Set the height of the images used in `options`.|
@@ -23,7 +23,7 @@ Select from an array of images as radio buttons.
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
@@ -36,6 +36,23 @@ Select from an array of images as radio buttons.
 |img|string|URL of the image.|
 |presets|string/array|For use with preset.  Optional array or JSON string of values for specified fields|
 |class|string|Extra class name for the layout image.|
+
+
+## Example Declaration
+<script>
+import builder from './image-select.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 
 ## Example Declaration
 #### Image Select Layout
@@ -109,7 +126,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

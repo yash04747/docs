@@ -9,7 +9,7 @@ The button set gives you a button bar to set options. It can be useful when you 
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`button_set`|Value identifying the field type.|
 |options|array||Array of key pairs representing the individual ticks.|
@@ -19,7 +19,7 @@ The button set gives you a button bar to set options. It can be useful when you 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
@@ -29,6 +29,23 @@ The value of the default option will depend on whether or not the `multi` argume
 `multi` argument is set to false.  In this case, the `default` argument accepts a string or int value representing the 
 key value from the `options` argument to set as selected.  When `multi` is set to true, the `default` argument accepts 
 an array of values representing the key of the option from `options` to set as selected.
+
+
+## Example Declaration
+<script>
+import builder from './button-set.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
 
 ## Example Declaration
 #### Single select
@@ -70,7 +87,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 #### Single
 ```php

@@ -9,7 +9,7 @@ export default class DataFormatter extends ObjectFormatter {
                     {
                         "model": "type",
                         "inputName": "type",
-                        "required": true,
+                        "required": false,
                         "validator": "string",
 
                         "type": "vueMultiSelect",
@@ -40,7 +40,7 @@ export default class DataFormatter extends ObjectFormatter {
                                         if (model.valueText)
                                             string += " => " + model.valueText;
                                     } else {
-                                        if (model.valueArray.length)
+                                        if (model.valueArray && model.valueArray.length)
                                             string += " => array(" + model.valueArray.length + ")";
                                     }
                                 }
@@ -48,7 +48,7 @@ export default class DataFormatter extends ObjectFormatter {
                             return string;
                         },
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [
@@ -156,7 +156,7 @@ export default class DataFormatter extends ObjectFormatter {
                         // "itemContainerClasses": "input-group attributes",
                         "newElementButtonLabel": "+ Add Array Element",
                         "items": {
-                            "type": "object",
+                            "type": "custom-object",
                             "default": {},
                             "schema": {
                                 "fields": [
@@ -219,7 +219,6 @@ export default class DataFormatter extends ObjectFormatter {
                     newObject[args_array[i].id] = compact(args_array[i].valueArray);
             }
         }
-
         return newObject;
     }
 

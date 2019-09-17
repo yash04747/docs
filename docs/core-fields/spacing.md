@@ -9,10 +9,10 @@ The Spacing field allows the user to specify either padding or margin units to a
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`spacing`|Value identifying the field type.|
-|units|array/string||String of a single unit or array of units.  Accepts: `px` `em` `%`.|
+|units|array/string||String of a single unit or array of units.  Accepts: `false`, `%`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `pt`, `pc`, `px`, `vh`, `vw`, `vmin`, `vmax`, `ch`.|
 |units_extended|bool|`false`|Flag to allow users to select any type of unit.|
 |display_units|bool|`true`|Flag to set the display of the units field when units are specified.|
 |top|bool|`true`|Flag to display the top value input.|
@@ -20,14 +20,15 @@ The Spacing field allows the user to specify either padding or margin units to a
 |left|bool|`true`|Flag to display the left value input.|
 |right|bool|`true`|Flag to display the right value input.|
 |all|bool|`false`|Flag to display all position value inputs.|
-|mode|string|'padding'|Accepts:  `absolute` `padding` or `margin`.|
-|select2|array||Array of select2 arguments.  For more information see the 'Constructor' section of the Select2 docs.|
+|mode|string|`padding`|Accepts:  `absolute` `padding` or `margin`.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `data` Argument](../configuration/fields/data.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
@@ -45,6 +46,21 @@ The Spacing field allows the user to specify either padding or margin units to a
 The asterisk at the beginning of these values is a wildcard value to be replaced with the `mode` name. For example, if the chosen `mode` is `margin`, the default names would be specified as `margin-top`, `margin-left`, etc. If the chosen `mode` is `padding`, the default names would be specified as `padding-top`, `padding-left`, etc.
 When specifying your own units array, it will override the `units-extended` argument.
 :::
+
+
+## Example Declaration
+<script>
+import builder from './spacing.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
 
 ## Example Declaration
 ```php
@@ -69,7 +85,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

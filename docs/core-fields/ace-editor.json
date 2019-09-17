@@ -1,0 +1,100 @@
+{
+  "type": "ace_editor",
+  "name": "Ace Editor",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 5
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 10
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 15
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 35
+    },
+    "validate": {
+      "name": "validate",
+      "title": "Validate",
+      "type": "custom-object",
+      "order": 50
+    },
+    "mode": {
+      "type": "select",
+      "name": "mode",
+      "title": "Mode",
+      "values": ["css", "html", "javascript", "json", "less", "markdown", "mysql", "php", "plain_text", "sass", "scss", "text", "xml"],
+      "required": true,
+      "default": "javascript",
+      "order": 80
+    },
+    "theme": {
+      "type": "select",
+      "name": "theme",
+      "title": "Theme",
+      "values": ["chrome", "monokai"],
+      "required": true,
+      "default": "monokai",
+      "order": 80
+    },
+    "options": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Options",
+      "name": "options",
+      "newElementButtonLabel": "+ Add Option",
+      "selectValues": ["minLines", "maxLines"],
+      "defaultObj": {
+        "minLines": 12,
+        "maxLines": 30
+      },
+      "order": 40
+    }
+  }
+}

@@ -13,7 +13,7 @@ The media field is an adaption for a core WordPress feature.
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/kEZYIWSk1Tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:160px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`media`|Value identifying the field type.|
 |width|string||Sets the width of the image.|
@@ -22,7 +22,7 @@ The media field is an adaption for a core WordPress feature.
 |preview|bool|`true`|Flag to display a preview of the image.|
 |placeholder|string|`No media selected`|Sets the text that appears in the URL input box when no value is present.|
 |readonly|bool|`true`|Flag to set the readonly attribute of the media text field.|
-|mode|string||String specifying either the file type or mime type of files to accept from the media library.|
+|mode|string||String specifying either the file type or mime type of files to accept from the media library. IE, the file selector will not let you add any other types.|
 |library_filter|array||Accepts an array of strings which correspond to the second part of a [mime type](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) (i.e. video/mp4 would be “mp4”). Only files that match one of the items in the array will appear in the media library.|
 
 ::: tip Also See
@@ -41,6 +41,22 @@ The media field is an adaption for a core WordPress feature.
 |width|string|Sets the width of the media.|
 |height|string|Sets the height of the media.|
 |thumbnail|string|URL to the media thumbnail, if any.|
+
+
+
+## Example Declaration
+<script>
+import builder from './media.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
 
 ## Example Declaration
 ```php
@@ -72,7 +88,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;
@@ -83,4 +99,41 @@ echo 'Width value: '     . $redux_demo['opt-media']['width'];
 echo 'Thumbnail value: ' . $redux_demo['opt-media']['thumbnail'];
 ```
 
+## Allowed File Types in WordPress
+WordPress allows you to upload many of the most common image files, audio/video, PDF, Microsoft office and OpenOffice 
+documents. The WordPress codex has a full list of allowed 
+[file types](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) and 
+extensions.
 
+To find out which mime types are enabled in your instance, you can run the following code:
+```php
+print_r( get_allowed_mime_types() );
+```
+
+### Adding Additional File Types
+
+Security is the main reason behind the limitation on file types that users can upload. You can, however, get around this
+with a little bit of code. Add this code to your theme or plugin to allow SVG files to be uploaded:
+
+```php
+function my_myme_types( $mime_types = array() ){
+    $mime_types['svg'] = 'image/svg+xml'; // Adding svg extension
+    return $mime_types;
+}
+add_filter('upload_mimes', 'my_myme_types', 1, 1);
+```
+
+Notice that the file extension goes as the key in `$mime_types` associated array and the mime type goes as its value. In 
+this example, svg file extension represents files with the mime type image/svg+xml. You can find out mime types of 
+several common file extensions [on this page](http://www.freeformatter.com/mime-types-list.html).
+
+You can also add multiple file types in one code snippet, like this:
+
+```php
+function my_myme_types( $mime_types = array() ){
+    $mime_types['svg'] = 'image/svg+xml'; // Adding svg extension
+    $mime_types['psd'] = 'image/vnd.adobe.photoshop'; // Adding photoshop files
+    return $mime_types;
+}
+add_filter('upload_mimes', 'my_myme_types', 1, 1);
+```

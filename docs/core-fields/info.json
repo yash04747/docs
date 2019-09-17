@@ -1,0 +1,98 @@
+{
+  "type": "info",
+  "name": "Info",
+  "description": null,
+  "icon": null,
+  "model": {
+    "style": "normal",
+    "notice": true,
+    "indent": false
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 5
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 10
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 15
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 35
+    },
+    "style": {
+      "type": "select",
+      "name": "style",
+      "title": "Style",
+      "values": ["normal", "info", "warning", "success", "critical"],
+      "default": "normal",
+      "order": 40,
+      "required": true
+    },
+    "notice": {
+      "name": "notice",
+      "title": "Notice",
+      "type": "bool",
+      "default": true,
+      "order": 45
+    },
+    "color": {
+      "name": "color",
+      "title": "Color",
+      "type": "input",
+      "inputType": "text",
+      "order": 50
+    },
+    "icon": {
+      "name": "icon",
+      "title": "Icon",
+      "type": "input",
+      "inputType": "text",
+      "order": 55
+    },
+    "indent": {
+      "name": "indent",
+      "title": "Indent",
+      "type": "bool",
+      "default": false,
+      "order": 60
+    }
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "type": "sorter",
+  "name": "Sorter",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 5
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 10
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 15
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 30
+    },
+    "data": {
+      "type": "custom-object",
+      "name": "data",
+      "title": "Data",
+      "order": 35
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "order": 40
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 45
+    },
+    "options": {
+      "type": "custom-object",
+      "formatter": "options",
+      "title": "Options",
+      "name": "options",
+      "label": "Options",
+      "default": {},
+      "order": 50
+    }
+  }
+}

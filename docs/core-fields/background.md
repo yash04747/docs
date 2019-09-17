@@ -9,11 +9,11 @@ The Redux Background field offers unmatched features not found in any other opti
 :::
 
 ## Arguments
-|<div style="width:177px;">Name</div>|Type|Default|Description|
+|<div style="width:177px;">Name</div>|Type|<div style="width:98px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`background`|Controls the field type|
 |default|string||See [Default Argument](#default-argument) below.|
-|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.|
+|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |background-color|bool|`true`|Flag to display the background color picker.|
 |background-repeat|bool|`true`|Flag to display the background repeat select field.|
 |background-attachment|bool|`true`|Flag to display the background attachment select field.|
@@ -31,6 +31,7 @@ The Redux Background field offers unmatched features not found in any other opti
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
 - [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 - [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
@@ -58,6 +59,22 @@ The Redux Background field offers unmatched features not found in any other opti
 |height|string|String value setting the height of the image.|
 |thumbnail|string|URL string value to the image thumbnail.|
 
+
+
+## Example Declaration
+<script>
+import builder from './background.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(         
@@ -73,7 +90,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ### Example Usage
-This example in based on the example usage provided above.  Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above.  Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

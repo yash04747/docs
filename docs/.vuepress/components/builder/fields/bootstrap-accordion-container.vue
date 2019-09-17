@@ -50,7 +50,7 @@ export default {
                 );
                 return false;
             }
-            return this.$children[0].validate(calledParent);
+            // return this.$children[0].validate(calledParent);
         },
         validated(isValid, errors) {
             this.hasError = !isValid;

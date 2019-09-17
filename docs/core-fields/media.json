@@ -1,0 +1,177 @@
+{
+  "type": "media",
+  "name": "Media",
+  "description": null,
+  "icon": null,
+  "model": {
+    "url": false,
+    "preview": true,
+    "placeholder": "No media selected",
+    "readonly": true
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 5
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 10
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 15
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 35
+    },
+    "width": {
+      "name": "width",
+      "title": "Width",
+      "type": "input",
+      "inputType": "text",
+      "order": 40
+    },
+    "height": {
+      "name": "height",
+      "title": "Height",
+      "type": "input",
+      "inputType": "text",
+      "order": 45
+    },
+    "url": {
+      "name": "url",
+      "title": "URL",
+      "type": "bool",
+      "default": false,
+      "order": 50
+    },
+    "preview": {
+      "name": "preview",
+      "title": "Preview",
+      "type": "bool",
+      "default": true,
+      "order": 55
+    },
+    "placeholder": {
+      "name": "placeholder",
+      "title": "Placeholder",
+      "type": "input",
+      "inputType": "text",
+      "default": "No media selected",
+      "order": 60
+    },
+    "readonly": {
+      "name": "readonly",
+      "title": "Read Only",
+      "type": "bool",
+      "default": true,
+      "order": 65
+    },
+    "mode": {
+      "name": "mode",
+      "title": "Mode",
+      "type": "input",
+      "inputType": "text",
+      "order": 70
+    },
+    "library_filter": {
+      "name": "library_filter",
+      "title": "Library Filter",
+      "type": "datalist",
+      "listName": "libraryFilterList",
+      "values": [
+        "avi",
+        "calendar",
+        "css",
+        "csv",
+        "divx",
+        "gif",
+        "html",
+        "java",
+        "javascript",
+        "jpeg",
+        "midi",
+        "mp4",
+        "mpeg",
+        "ogg",
+        "ogg",
+        "pdf",
+        "png",
+        "quicktime",
+        "rar",
+        "richtext",
+        "rtf",
+        "wav",
+        "webm",
+        "x-ms-asf",
+        "x-ms-wm",
+        "x-ms-wmv",
+        "zip"
+      ],
+      "order": 75
+    },
+    "default": {
+      "name": "default",
+      "title": "Default",
+      "formatter": "keyvalue",
+      "selectValues": [
+        "id",
+        "url",
+        "width",
+        "height",
+        "thumbnail"
+      ],
+      "newElementButtonLabel": "+ Add Option",
+      "type": "object",
+      "order": 90
+    }
+  }
+}

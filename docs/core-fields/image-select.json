@@ -1,0 +1,117 @@
+{
+  "type": "image-select",
+  "name": "Image Select",
+  "description": null,
+  "icon": null,
+  "model": {
+    "mode": "background-image"
+  },
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 5
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 10
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 15
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 25
+    },
+    "output": {
+      "name": "output",
+      "title": "Output",
+      "fieldClasses": "full-width",
+      "properties": ["background-image"],
+      "type": "object",
+      "order": 25
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 35
+    },
+    "mode": {
+      "name": "mode",
+      "title": "Mode",
+      "type": "input",
+      "inputType": "text",
+      "default": "background-image",
+      "order": 40
+    },
+    "width": {
+      "name": "width",
+      "title": "Width",
+      "type": "input",
+      "inputType": "text",
+      "order": 40
+    },
+    "height": {
+      "name": "height",
+      "title": "Height",
+      "type": "input",
+      "inputType": "text",
+      "order": 45
+    },
+    "tiles": {
+      "name": "tiles",
+      "title": "Tiles",
+      "type": "bool",
+      "default": false,
+      "order": 50
+    },
+    "presets": {
+      "name": "presets",
+      "title": "Presets",
+      "type": "bool",
+      "default": false,
+      "order": 50
+    }
+  }
+}

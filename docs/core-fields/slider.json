@@ -1,0 +1,141 @@
+{
+  "type": "slider",
+  "name": "Slider",
+  "description": null,
+  "icon": null,
+  "fields": {
+    "id": {
+      "name": "id",
+      "title": "ID",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 0
+    },
+    "title": {
+      "name": "title",
+      "title": "Title",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 5
+    },
+    "subtitle": {
+      "name": "subtitle",
+      "title": "Subtitle",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 10
+    },
+    "desc": {
+      "name": "desc",
+      "title": "Desc",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 15
+    },
+    "class": {
+      "name": "class",
+      "title": "Class",
+      "type": "input",
+      "inputType": "text",
+      "description": "",
+      "order": 20
+    },
+    "compiler": {
+      "name": "compiler",
+      "title": "Compiler",
+      "type": "bool",
+      "default": false,
+      "order": 20
+    },
+    "permissions": {
+      "type": "input",
+      "inputType": "text",
+      "name": "permissions",
+      "title": "Permissions",
+      "order": 30
+    },
+    "required": {
+      "name": "required",
+      "title": "Required",
+      "fieldClasses": "full-width",
+      "type": "array",
+      "description": "Field visibility requirements.",
+      "order": 35
+    },
+    "min": {
+      "name": "min",
+      "title": "Min",
+      "type": "input",
+      "inputType": "number",
+      "default": 0,
+      "order": 40,
+      "validator": "number"
+    },
+    "max": {
+      "name": "max",
+      "title": "Max",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "order": 45,
+      "validator": "number"
+    },
+    "step": {
+      "name": "step",
+      "title": "Step",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "order": 50,
+      "validator": "number"
+    },
+    "handles": {
+      "name": "handles",
+      "title": "Handles",
+      "type": "input",
+      "inputType": "number",
+      "default": 1,
+      "min": 1,
+      "max": 2,
+      "order": 55
+    },
+    "display_value": {
+      "name": "display_value",
+      "title": "Display Value",
+      "type": "select",
+      "default": "text",
+      "order": 60,
+      "values": ["none", "label", "select", "text"]
+    },
+    "resolution": {
+      "name": "resolution",
+      "title": "Resolution",
+      "type": "select",
+      "default": 1,
+      "order": 65,
+      "values": [1, 0.1, 0.01, 0.001, 0.0001, 0.00001]
+    },
+    "float_mark": {
+      "name": "float_mark",
+      "title": "Float Mark",
+      "type": "select",
+      "default": ",",
+      "order": 70,
+      "values": [",", "."]
+    },
+    "select2": {
+      "type": "custom-object",
+      "formatter": "keyvalue",
+      "title": "Select2",
+      "name": "select2",
+      "label": "select2",
+      "newElementButtonLabel": "+ Add Select2 Option",
+      "default": {},
+      "order": 75
+    }
+  }
+}

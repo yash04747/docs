@@ -9,7 +9,7 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`sorter`|Value identifying the field type.|
 |options|array||Array specifying the enabled or disables state for the individual blocks.  See 'Options Array' below.|
@@ -30,9 +30,20 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 
 The first parameter of the value pair must be a string type representing a unique ID for the element.  The second parameter must be a string type representing the display name of the element. See the code below for an example.
 
-::: tip IMPORTANT
-The key pair of `'placebo' => 'placebo'` IS NO LONGER REQUIRED.
-:::
+## Example Declaration
+<script>
+import builder from './sorter.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 
 ## Example Declaration
 
@@ -56,7 +67,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 ```php
 global $redux_demo;
 

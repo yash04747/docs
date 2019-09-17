@@ -9,12 +9,12 @@ The Textarea field accepts any form of multi-line string input, including custom
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`textarea`|Value identifying the field type.|
-|rows|int|6|Numbers of text rows to display.|
-|autocomplete|boolean||If set to `false`, the autocomplete attribute will be set to `off`.|
-|readonly|string||If set to `true`, the readonly attribute will be set to `readonly`.|
+|rows|integer|`6`|Numbers of text rows to display.|
+|autocomplete|boolean|`false`|If set to `true`, the autocomplete attribute will be set to the value provided.|
+|readonly|string|`false`|If set to `true`, the readonly attribute will be set to `readonly`.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)

@@ -20,6 +20,21 @@ With the Gallery field, create a new gallery of images by selecting existing ima
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
+
+## Example Declaration
+<script>
+import builder from './gallery.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
@@ -31,7 +46,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 The gallery field returns a comma separated value of the attachment IDs of the selected images.
 ```php

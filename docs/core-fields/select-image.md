@@ -9,11 +9,11 @@ The Select Image field offers the ability to populate a drop-down field with an 
 :::
 
 ## Arguments
-|Name|Type|Default|Description|
+|Name|Type|<div style="width:135px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`select_image`|Value identifying the field type.|
-|options|array||Any array of options in key pair format. For example `'img_name' => 'img_path'`.|
-|default|string||Full url to the default image.|
+|options|array||Array of arrays in the following format:<br /><pre class="language-php codecopy-enabled"><code><span class="token keyword">array</span><span class="token punctuation">(</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'alt'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">__</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Image One'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'redux-framework-demo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'img'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'http://yoursite.com/image.png'</span> </span><br/>)</code></pre>|
+|default|string||Full URL of the default image.|
 |placeholder|string|`Select an item`|Text to display in the selector when no value is present.|
 
 ::: tip Also See
@@ -23,6 +23,23 @@ The Select Image field offers the ability to populate a drop-down field with an 
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
+
+
+
+## Example Declaration
+<script>
+import builder from './select-image.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
 ## Example Declaration
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
@@ -31,22 +48,22 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'title'    => __('Select Image', 'redux-framework-demo'),
     'subtitle' => __('A preview of the selected image will appear underneath the select box.', 'redux-framework-demo'),
     'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-    'options'  => Array(
-        Array (
+    'options'  => array(
+        array (
              'alt'  => 'Image Name 1',
-             'img'  => path_to_img_1,
+             'img'  => $url_to_img_1,
         ),
-        Array (
+        array (
              'alt'  => 'Image Name 2',
-             'img'  => path_to_img_2,
+             'img'  => $url_to_img_2,
         )
     ),
-    'default'  => path_to_img_1,
+    'default'  => $url_to_img_1,
 ) );
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

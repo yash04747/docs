@@ -4,7 +4,8 @@ title: Global Arguments
 
 # Global Arguments Reference
 
-Redux has a large amount of arguments. The framework instance itself has arguments, each field has its own arguments.
+Redux has arguments at a variety of levels, but those at the instance level are referred to as global arguments. A list
+of the core global arguments are had below.
 
 ::: tip
 For an example of how to set global arguments, see the [Redux API Redux::setArgs()](api.md#Redux::setArgs()) documentation.

@@ -20,7 +20,8 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
 - [Using the `compiler` Argument](../configuration/fields/compiler.md)
-- [Using the `output` Argument](../guide/the-output-argument.md)
+- [Using the `output` Argument](../configuration/fields/output.md)
+- [Using the `output_variables` Argument](../configuration/fields/output-variables.md)
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 - [Using the `required` Argument](../configuration/fields/required.md)
 - [Using the `validate` Argument](../configuration/fields/validate.md)
@@ -34,6 +35,21 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 |hover|string|Hex string for the default hover hyperlink color.|
 |active|string|Hex string for the default active hyperlink color.|
 |visited|string|Hex string for the default visited hyperlink color.|
+
+
+## Example Declaration
+<script>
+import builder from './link-color.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
 
 ## Example Declaration
 ```php
@@ -53,7 +69,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your <a title="opt_name" href="/redux-framework/arguments/opt_name/">`opt_name` argument.</a>
+This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

@@ -2,26 +2,22 @@
 
 The Raw field provides the ability to output raw HTML directly into the options panel both full width and sectioned.
 
+<span style="display:block;text-align:center">![](./img/raw_full_width.png)</span>
+
 ::: warning Table of Contents
 [[toc]]
 :::
 
-### Full Width
-<span style="display:block;text-align:center">![](./img/raw_full_width.png)</span>
 
-### Sectioned 
-`'full_width' => false )`
-
-<span style="display:block;text-align:center">![](./img/raw_sectioned.png)</span>
 
 ## Arguments
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`raw`|Value identifying the field type.|
-|full_width|`true`||Flag to set denote if the field is full width or sectioned.|
-|markdown|bool||Flag to set the markdown of standard line-break and tab characters to HTML.|
-|content|string||HTML content to display.  String values or file output may be used.|
-|content_path|string||Full path to file that will be used as the content for this field.|
+|full_width|bool|`true`|Flag to set denote if the field is full width or sectioned.|
+|markdown|bool|`false`|Flag to set the markdown of standard line-break and tab characters to HTML.|
+|content|string||String/HTML content to display. String values or file output may be used.|
+|content_path|string||Full path to a file that will have the content parsed for output.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -29,14 +25,29 @@ The Raw field provides the ability to output raw HTML directly into the options 
 :::
 
 ## Example Declaration
+<script>
+import builder from './raw.json';
+export default {
+    data () {
+        return {
+            builder: builder,
+            defaults: {}
+        };
+    }
+}
+</script>
+<builder :builder_json="builder" :builder_defaults="defaults" />
+
+
+## Example Declaration with Relative File
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
-    'id'       => 'opt-raw',
-    'type'     => 'raw',
-    'title'    => __('Raw output', 'redux-framework-demo'),
-    'subtitle' => __('Subtitle text goes here.', 'redux-framework-demo'),
-    'desc'     => __('This is the description field for additional info.', 'redux-framework-demo'),
-    'content'  => file_get_contents(dirname(__FILE__) . '/myfile.txt')
+    'id'           => 'opt-raw',
+    'type'         => 'raw',
+    'title'        => __('Raw output', 'redux-framework-demo'),
+    'subtitle'     => __('Subtitle text goes here.', 'redux-framework-demo'),
+    'desc'         => __('This is the description field for additional info.', 'redux-framework-demo'),
+    'content_path' => file_get_contents( dirname( __FILE__ ) . '/myfile.txt' )
 ) );
 ```
 
@@ -66,3 +77,21 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'content'  => $output // Now let's set that in the raw field.
 ) );
 ```
+
+
+## Display Options
+
+These are two modes for the raw field. Full width and "sectioned." Below you will see an example of each.
+
+### Full Width => True
+```php 
+'full_width' => true`
+```
+<span style="display:block;text-align:center">![](./img/raw_full_width.png)</span>
+
+### Full Width => False 
+```php 
+'full_width' => false`
+```
+<span style="display:block;text-align:center">![](./img/raw_sectioned.png)</span>
+

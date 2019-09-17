@@ -7,76 +7,56 @@
     "id": {
       "name": "id",
       "title": "ID",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
-      "default": null,
-      "order": 0,
-      "required": false
+      "order": 0
     },
     "title": {
       "name": "title",
       "title": "Title",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
-      "default": null,
-      "order": 5,
-      "required": false
+      "order": 5
     },
     "subtitle": {
       "name": "subtitle",
       "title": "Subtitle",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
-      "default": null,
-      "order": 10,
-      "required": false
+      "order": 10
     },
     "desc": {
       "name": "desc",
       "title": "Description",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
-      "default": null,
-      "order": 15,
-      "required": false
+      "order": 15
     },
     "class": {
       "name": "class",
       "title": "Class",
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "description": "",
-      "default": null,
-      "order": 20,
-      "required": false
+      "order": 20
     },
     "compiler": {
       "name": "compiler",
       "title": "Compiler",
       "type": "bool",
       "default": false,
-      "order": 25,
-      "required": false
-    },
-    "rows": {
-      "name": "on",
-      "title": "On",
-      "type": "text",
-      "default": "On",
-      "order": 35
-    },
-    "autocomplete": {
-      "name": "off",
-      "title": "Off",
-      "default": "Off",
-      "type": "text",
-      "order": 40
+      "order": 25
     },
     "permissions": {
-      "type": "text",
+      "type": "input",
+      "inputType": "text",
       "name": "permissions",
       "title": "Permissions",
-      "default": null,
-      "order": 60
+      "order": 30
     },
     "required": {
       "name": "required",
@@ -84,14 +64,23 @@
       "fieldClasses": "full-width",
       "type": "array",
       "description": "Field visibility requirements.",
-      "default": null,
-      "order": 70
+      "order": 35
     },
-    "validate": {
-      "name": "validate",
-      "title": "Validate",
-      "type": "object",
-      "order": 80
+    "on": {
+      "name": "on",
+      "title": "On",
+      "type": "input",
+      "inputType": "text",
+      "default": "On",
+      "order": 40
+    },
+    "off": {
+      "name": "off",
+      "title": "Off",
+      "type": "input",
+      "inputType": "text",
+      "default": "On",
+      "order": 40
     }
   }
 }
