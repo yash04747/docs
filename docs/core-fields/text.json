@@ -105,15 +105,18 @@
       "name": "autocomplete",
       "title": "Autocomplete",
       "type": "bool",
-      "default": true,
+      "customTextOff": "off",
+      "customTextOn": "autocomplete",
+      "default": false,
       "order": 60
     },
     "readonly": {
       "name": "readonly",
       "title": "Read-only",
       "type": "bool",
-      "default": true,
+      "customTextOn": "readonly",
+      "customTextOff": "",
       "order": 65
-    }    
+    }
   }
 }

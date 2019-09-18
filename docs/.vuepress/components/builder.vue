@@ -221,11 +221,18 @@
                     if (JSON.stringify(prep_model.output) === JSON.stringify({})) delete prep_model.output;
                 }
 
-                // For simple key value, props, we will deal with it at the last stage and override what the default has done.
+                // For simple key=>value props, we will deal with it at the last stage and override what the default has done.
                 let keyvalueSchema = _.filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
                     if (model[keyvalue.model]) 
                         prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
+                });
+
+                // For switch/bool fields with custom On/Off text
+                let booleanSchema = _.filter(schema.fields, {"type": "switch"});
+                booleanSchema.forEach((booleanObj) => {
+                    if (prep_model[booleanObj.model] === true && booleanObj.customTextOn)  prep_model[booleanObj.model] = booleanObj.customTextOn;
+                    if (prep_model[booleanObj.model] === false && booleanObj.customTextOff)  prep_model[booleanObj.model] = booleanObj.customTextOff;
                 });
 
                 return prep_model;
