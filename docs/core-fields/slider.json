@@ -96,12 +96,10 @@
     "handles": {
       "name": "handles",
       "title": "Handles",
-      "type": "input",
-      "inputType": "number",
+      "type": "select",
       "default": 1,
-      "min": 1,
-      "max": 2,
-      "order": 55
+      "order": 55,
+      "values": [1, 2]
     },
     "display_value": {
       "name": "display_value",

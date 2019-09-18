@@ -84,7 +84,7 @@
     },
     "units": {
       "name": "units",
-      "title": "units",
+      "title": "Units",
       "type": "vueMultiselect",
       "values": [
         false,
