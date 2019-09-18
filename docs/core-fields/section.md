@@ -12,8 +12,7 @@ The Section field provides the ability to set any field below it with an indent.
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|'section'|Value identifying the field type.|
-|indent|bool|`true`|Flag to set the indentation for all fields that follow. ALWAYS use this. `true` for a starting 
-section field, `false` for a closing section field.|
+|indent|bool|`true`|Flag to set the indentation for all fields that follow. ALWAYS use this. `true` for a starting section field, `false` for a closing section field.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)

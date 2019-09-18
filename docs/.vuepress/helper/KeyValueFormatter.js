@@ -118,6 +118,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "type": "array",
                                         "label": "Value",
                                         "model": "valueArray",
+                                        "itemContainerClasses": "input-group pb-2 collapse-container",
                                         "visible": function(model) {
                                             return detectFieldType(model) == "array";
                                         }
