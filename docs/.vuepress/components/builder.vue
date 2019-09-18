@@ -231,8 +231,8 @@
                 // For switch/bool fields with custom On/Off text
                 let booleanSchema = _.filter(schema.fields, {"type": "switch"});
                 booleanSchema.forEach((booleanObj) => {
-                    if (prep_model[booleanObj.model] === true && booleanObj.customTextOn)  prep_model[booleanObj.model] = booleanObj.customTextOn;
-                    if (prep_model[booleanObj.model] === false && booleanObj.customTextOff)  prep_model[booleanObj.model] = booleanObj.customTextOff;
+                    if (prep_model[booleanObj.model] === true && booleanObj.textOn)  prep_model[booleanObj.model] = booleanObj.textOn;
+                    if (prep_model[booleanObj.model] === false && booleanObj.textOff)  prep_model[booleanObj.model] = booleanObj.textOff;
                 });
 
                 return prep_model;

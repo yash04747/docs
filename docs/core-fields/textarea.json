@@ -90,14 +90,17 @@
     "autocomplete": {
       "name": "autocomplete",
       "title": "Autocomplete",
-      "default": false,
       "type": "bool",
+      "textOff": "off",
+      "textOn": "autocomplete",
       "order": 60
     },
     "readonly": {
       "name": "readonly",
       "title": "Read-only",
       "type": "bool",
+      "textOn": "readonly",
+      "textOff": "",
       "default": false,
       "order": 65
     }
