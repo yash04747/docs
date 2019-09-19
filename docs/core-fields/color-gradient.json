@@ -90,6 +90,7 @@
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
+      "acceptedTypes": ["color"],
       "order": 45
     },
     "transparent": {

@@ -2,14 +2,16 @@ import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep, compact} from 'lodash';
 
 export default class ValidateFormatter extends ObjectFormatter {
-    static data() {
+    static data(schemaObject) {
+
+        let {acceptedTypes: acceptedTypes} = schemaObject;
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
                     {
                         "type": "vueMultiSelect",
                         "model": "validate",
-                        "values": ["color", "comma_numeric", "css", "date", "email", "html_custom", "js", "no_html", "no_special_chars", "not_empty", "numeric", "preg_replace", "str_replace", "unique_slug", "url", "custom"],
+                        "values": acceptedTypes ? acceptedTypes : ["color", "comma_numeric", "css", "date", "email", "html_custom", "js", "no_html", "no_special_chars", "not_empty", "numeric", "preg_replace", "str_replace", "unique_slug", "url", "custom"],
                         "selectOptions": {
                             "multiple": true,
                             "showLabels": false

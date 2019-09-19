@@ -94,6 +94,7 @@
       "inputType": "text",
       "name": "validate",
       "title": "Validate",
+      "acceptedTypes": ["color"],
       "order": 50
     }
   }

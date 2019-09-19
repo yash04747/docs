@@ -160,7 +160,7 @@
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
-                else if (FormatterClass === KeyValueFormatter)
+                else if (FormatterClass === KeyValueFormatter || FormatterClass == ValidateFormatter )
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
