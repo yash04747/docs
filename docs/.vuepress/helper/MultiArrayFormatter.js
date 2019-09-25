@@ -13,7 +13,7 @@ export default class MultiArrayFormatter extends ArrayFormatter {
             "itemContainerComponent": "field-array-bootstrap-accordion-item",
             "showRemoveButton": false,
             "itemContainerHeader": function (model, schema, index) {
-                let string = "Undefined";
+                let string = "Unnamed Category";
                 if (model && model.CategoryKey) {
                     string = "Category(" + model.CategoryKey + ")";
                 }
@@ -98,8 +98,9 @@ export default class MultiArrayFormatter extends ArrayFormatter {
     static toPHPObject(modelObject, schemaObject) {
         if (JSON.stringify(modelObject) !== JSON.stringify({})) {
             let modelObjectCopy = cloneDeep(modelObject);
-            let newObject = {};
+            
             let {arrayType: arrayType, valueType: valueType} = schemaObject;
+            let newObject = arrayType == "unordered" ? [] : {};
 
             // helper method
             // convert leaf array to object. it is necessary for valueType is not "plain"
@@ -120,7 +121,7 @@ export default class MultiArrayFormatter extends ArrayFormatter {
 
             // check if the category object is valid to be inserted
             function isValidCategoryObject(categoryObject, categoryValueKey) {
-                return categoryObject && (categoryObject['CategoryKey'] && arrayType == 'key') && categoryObject[categoryValueKey] && categoryObject[categoryValueKey].length >= 0;
+                return categoryObject && (categoryObject['CategoryKey'] || arrayType !== 'key') && categoryObject[categoryValueKey] && categoryObject[categoryValueKey].length >= 0;
             }
 
 
