@@ -56,7 +56,8 @@
       "name": "data",
       "title": "Data",
       "order": 50,
-      "required": false
+      "required": false,
+      "possibleValues": ["ordered-array", "custom"]
     },
     "permissions": {
       "type": "input",

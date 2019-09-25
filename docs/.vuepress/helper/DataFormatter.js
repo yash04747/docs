@@ -2,22 +2,27 @@ import {ObjectFormatter} from './CommonFormatters';
 import {compact} from 'lodash';
 
 export default class DataFormatter extends ObjectFormatter {
-    static data() {
+    static data(schemaObject) {
+        let {possibleValues: possibleValues, execludeValues: excludeValues, required: required} = schemaObject;
         return {
             "schema": {
                 "fields": [
                     {
                         "model": "type",
                         "inputName": "type",
-                        "required": false,
+                        "required": required,
                         "validator": "string",
-
                         "type": "vueMultiSelect",
                         "selectOptions": {
                             "multiple": false,
                             "showLabels": false
                         },
-                        "values": ["categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "users", "array", "multi_dimensional", "callback", "custom"],
+                        "values": function() {
+                            let defaultValues = ["categories", "menus", "pages", "terms", "taxonomies", "posts", "post_types", "tags", "image_sizes", "menu_locations", "elusive_icons", "roles", "sidebars", "capabilities", "users", "array", "ordered-array", "multi_dimensional", "callback", "custom"];
+                            if (excludeValues && excludeValues.length > 0) return defaultValues.filter(x => !excludeValues.includes(x));
+                            if (possibleValues && possibleValues.length > 0) return possibleValues;
+                            return defaultValues;
+                        },
                     },
                     {
                         "type": "array",
@@ -57,21 +62,20 @@ export default class DataFormatter extends ObjectFormatter {
                                         "inputType": 'text',
                                         "label": 'ID',
                                         "model": 'id',
-                                        "required": true
+                                        "required": required
                                     },
                                     {
                                         "type": 'select',
                                         "label": 'Type',
                                         "model": 'type',
                                         "values": ["string", "array"],
-                                        "required": true
+                                        "required": required
                                     },
                                     {
                                         "type": 'input',
                                         "inputType": 'text',
                                         "label": 'Value',
                                         "model": 'valueText',
-                                        "required": true,
                                         "visible": function (model) {
                                             return model && model.type && model.type === "string";
                                         }
@@ -82,7 +86,6 @@ export default class DataFormatter extends ObjectFormatter {
                                         "label": 'Value',
 										"itemContainerClasses": "field-array-group",
                                         "model": 'valueArray',
-                                        "required": true,
                                         "showRemoveButton": true,
                                         "newElementButtonLabel": "+ Add Value",
                                         "visible": function (model) {
@@ -97,6 +100,7 @@ export default class DataFormatter extends ObjectFormatter {
                                 'custom',
                                 'callback',
                                 'array',
+                                'ordered-array',
                                 'multi_dimensional'
                             ];
                             return model && model.type && !invalid.includes(model.type);
@@ -124,8 +128,9 @@ export default class DataFormatter extends ObjectFormatter {
                         "model": "array",
                         "showRemoveButton": true,
                         "newElementButtonLabel": "+ Add Array Value",
+                        "itemContainerClasses": "input-group pb-2",
                         "visible": function (model) {
-                            return model && model.type === "array";
+                            return model && (model.type === "array" || model.type === "ordered-array");
                         }
                     },
                     {
@@ -186,7 +191,7 @@ export default class DataFormatter extends ObjectFormatter {
         let newObject = this.generateNewObject(modelObject);
 
         if (JSON.stringify(newObject) !== JSON.stringify({})) {
-            if (modelObject.type === "custom" || modelObject.type === "array" || modelObject.type === "multi_dimensional")
+            if (modelObject.type === "custom" || modelObject.type === "array" || modelObject.type === "ordered-array"  || modelObject.type === "multi_dimensional")
                 return {data: newObject};
             else {
                 return {data: modelObject.type, args: newObject};
@@ -200,6 +205,11 @@ export default class DataFormatter extends ObjectFormatter {
             newObject = modelObject.dataText;
         else if (modelObject && modelObject.type && modelObject.type === "array")
             newObject = compact(modelObject.array);
+        else if (modelObject && modelObject.type && modelObject.type === "ordered-array") {
+            for (let i = 0; modelObject.array && i < modelObject.array.length; i++) {
+                newObject[(i + 1).toString()] = modelObject.array[i];
+            }
+        }
         else if (modelObject && modelObject.type && modelObject.type === "multi_dimensional") {
             for (let i = 0; modelObject.multi_dimensional && i < modelObject.multi_dimensional.length; i++) {
                 newObject[modelObject.multi_dimensional[i]['key']] = modelObject.multi_dimensional[i]['value'];

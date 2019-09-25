@@ -2,7 +2,7 @@ import {ArrayFormatter} from './CommonFormatters.js';
 import {cloneDeep} from 'lodash';
 export default class MultiArrayFormatter extends ArrayFormatter {
     static data(schemaObject) {
-        let {name: modelName, arrayType: arrayType, valueType: valueType} = schemaObject;
+        let {name: modelName, arrayType: arrayType, valueType: valueType, categoryValues: categoryValues} = schemaObject;
         return Object.assign(super.data(), {
             "showModeElementUpButton": false,
             "showModeElementDownButton": false,
@@ -26,10 +26,11 @@ export default class MultiArrayFormatter extends ArrayFormatter {
                     "fields": [
                         // KEY part, only show when array type is "key"
                         {
-                            "type": "input",
+                            "type": "datalist",
                             "inputType": "text",
                             "label": "Category",
                             "model": "CategoryKey",
+                            "values": categoryValues,
                             "visible": (arrayType === "key")
                         },
                         // VALUE part

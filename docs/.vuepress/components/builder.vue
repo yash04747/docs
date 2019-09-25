@@ -162,7 +162,7 @@
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
-                else if (FormatterClass === KeyValueFormatter || FormatterClass == ValidateFormatter || FormatterClass == MultiArrayFormatter )
+                else if (FormatterClass === KeyValueFormatter || FormatterClass == ValidateFormatter || FormatterClass == MultiArrayFormatter || FormatterClass == DataFormatter)
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
