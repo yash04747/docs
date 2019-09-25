@@ -85,6 +85,16 @@
       "default": "background-image",
       "order": 40
     },
+    "options": {
+      "type": "array",
+      "formatter": "multiarray",
+      "arrayType": "ordered",
+      "title": "Options",
+      "name": "options",
+      "label": "Options",
+      "default": {},
+      "order": 40
+    },
     "width": {
       "name": "width",
       "title": "Width",

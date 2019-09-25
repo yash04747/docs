@@ -115,7 +115,7 @@ export default class MultiArrayFormatter extends ArrayFormatter {
 
             // "ordered" => index(1, 2, 3), "key" => key
             function generateCategoryKey(key, i) {
-                if (arrayType == 'ordered') return i;
+                if (arrayType == 'ordered') return (i  +1).toString();
                 if (arrayType == 'key') return key;
             }
 
