@@ -75,6 +75,8 @@
     "options": {
       "type": "array",
       "formatter": "multiarray",
+      "categoryValues": ["enabled", "disabled"],
+      "itemValues": ["slider", "highlights", "services", "staticpage"],
       "arrayType": "key",
       "title": "Options",
       "name": "options",

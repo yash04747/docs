@@ -92,6 +92,7 @@
       "title": "Options",
       "name": "options",
       "label": "Options",
+      "itemValues": ["alt", "img", "title", "presets", "class"],
       "default": {},
       "order": 40
     },
