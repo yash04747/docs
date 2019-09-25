@@ -76,9 +76,6 @@ export default class DataFormatter extends ObjectFormatter {
                                             return model && model.type && model.type === "string";
                                         }
                                     },
-
-
-
                                     {
                                         "type": 'array',
                                         "inputName": 'values',

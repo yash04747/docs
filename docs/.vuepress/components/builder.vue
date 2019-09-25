@@ -125,6 +125,8 @@
                 Object.keys(redux_field['fields']).forEach(function (key) {
                     modelObj[key] = redux_field['fields'][key]['default'];
                 });
+                if (Object.keys(redux_field['fields']).indexOf('data') != -1 && !redux_field['fields']['data']['default'])
+                    modelObj['data'] = {};
                 this.model = cloneDeep(modelObj); // always a smart idea not to work on model directly
             },
 
