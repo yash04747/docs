@@ -40,7 +40,7 @@
     import KeyValueFormatter from '../helper/KeyValueFormatter';
     import ValidateFormatter from '../helper/ValidateFormatter';
     import OutputFormatter from '../helper/OutputFormatter';
-    import OptionsFormatter from '../helper/OptionsFormatter';
+    import MultiArrayFormatter from '../helper/MultiArrayFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
     import {extend, cloneDeep, sortBy} from 'lodash';
 
@@ -146,9 +146,9 @@
                     'keyvalue': KeyValueFormatter,
                     'validate': ValidateFormatter,
                     'output': OutputFormatter,
-                    'options': OptionsFormatter
+                    'multiarray': MultiArrayFormatter
                 }
-                const specialFieldsName = ["required", "data", "attributes", "validate", "output", "options"];
+                const specialFieldsName = ["required", "data", "attributes", "validate", "output"];
 
                 let FormatterClass;
                 if (specialFieldsName.indexOf(key) != -1)
@@ -160,7 +160,7 @@
 
                 if (key == "output")
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
-                else if (FormatterClass === KeyValueFormatter || FormatterClass == ValidateFormatter )
+                else if (FormatterClass === KeyValueFormatter || FormatterClass == ValidateFormatter || FormatterClass == MultiArrayFormatter )
                     fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
                 else
                     fieldObject = Object.assign(fieldObject, FormatterClass.data());
@@ -211,7 +211,6 @@
                 delete prep_model.data;
                 delete prep_model.validate;
                 if (model.required) prep_model.required = RequiredFormatter.toPHPObject(model.required);
-                if (model.options) prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
                 
                 if (model.data) prep_model = extend(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
@@ -226,6 +225,13 @@
                 keyvalueSchema.forEach((keyvalue) => {
                     if (model[keyvalue.model]) 
                         prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
+                });
+
+                // For multi array props: 'disable' => array ("", "", "", "", "'")
+                let multiSchema = _.filter(schema.fields, {formatter: "multiarray"});
+                multiSchema.forEach((multi) => {
+                    if (model[multi.model] && model[multi.model].length > 0) 
+                        prep_model[multi.model] = MultiArrayFormatter.toPHPObject(prep_model[multi.model], multi);
                 });
 
                 // For switch/bool fields with custom On/Off text

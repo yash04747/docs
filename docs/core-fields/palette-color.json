@@ -73,7 +73,11 @@
       "name": "palettes",
       "title": "Palettes",
       "type": "array",
-      "order": 40
+      "formatter": "multiarray",
+      "arrayType": "key",
+      "valueType": "plain",
+      "default": {},
+      "order": 50
     }
   }
 }

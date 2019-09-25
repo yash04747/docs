@@ -73,8 +73,9 @@
       "order": 45
     },
     "options": {
-      "type": "custom-object",
-      "formatter": "options",
+      "type": "array",
+      "formatter": "multiarray",
+      "arrayType": "key",
       "title": "Options",
       "name": "options",
       "label": "Options",
