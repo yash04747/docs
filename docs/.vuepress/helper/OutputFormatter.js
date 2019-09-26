@@ -81,7 +81,7 @@ export default class OutputFormatter extends ObjectFormatter {
                                         "model": "selector",
                                         "label": "Selector",
                                         "values": possibleProperties,
-                                        "validator": OutputFormatter.duplicateValidator,
+                                        // "validator": OutputFormatter.duplicateValidator,
                                         "selectOptions": {
                                             "hideNoneSelectedText": true
                                         }
@@ -103,7 +103,7 @@ export default class OutputFormatter extends ObjectFormatter {
             }
         });
     }
-
+/*
     static duplicateValidator(model, value) {
         if (model!==null && model.length > 0 && OutputFormatter.selectedSelectors.indexOf(model) !== -1) {
             return ["Duplicate Entry"];
@@ -112,7 +112,7 @@ export default class OutputFormatter extends ObjectFormatter {
             return [];
         }
     }
-
+*/
     static possibleOutputValues() {
         let possibleValues = ["text", "basic", "object"];
         if (arguments[0] !== undefined) {
@@ -124,9 +124,9 @@ export default class OutputFormatter extends ObjectFormatter {
     }
 
     static toPHPObject(modelObject) {
-        if (modelObject['output'] && modelObject['output'].length == 0) {
+        /* if (modelObject['output'] && modelObject['output'].length == 0) {
             return {}
-        }
+        }*/
 
         let newOutput = {};
 
