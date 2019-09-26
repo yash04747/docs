@@ -54,6 +54,7 @@
     "output": {
       "name": "output",
       "title": "Output",
+      "formatter" : "dynamic-type",
       "fieldClasses": "full-width",
       "type": "object",
       "properties": ["background-color", "background-umage:url", "background-repeat", "background-size", "background-attachment", "background-position"],

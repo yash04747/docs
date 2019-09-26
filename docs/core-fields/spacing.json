@@ -49,6 +49,7 @@
       "title": "Output",
       "fieldClasses": "full-width",
       "type": "text",
+      "formatter" : "dynamic-type",
       "properties": [],
       "order": 20
     },

@@ -2,9 +2,10 @@ import VueFormGenerator from 'vue-form-generator';
 import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep, compact} from 'lodash';
 
-export default class OutputFormatter extends ObjectFormatter {
+export default class DynamicTypeFormatter extends ObjectFormatter {
     static selectedSelectors = [];
-    static data(fieldType, possibleProperties) {
+    static data(schemaObject) {
+        let {possibleProperties: possibleProperties, possibleTypes: possibleTypes} = schemaObject;
         return Object.assign(super.data(), {
             "schema": {
                 "fields": [
@@ -12,11 +13,10 @@ export default class OutputFormatter extends ObjectFormatter {
                         "type": "select",
                         "model": "type",
                         "label": "Type",
-                        "values": OutputFormatter.possibleOutputValues(fieldType),
-                        "hideNoneSelectedText": true,
-                        "visible": function (model) {
-                            return OutputFormatter.possibleOutputValues(fieldType).length > 1;
+                        "values": function() {
+                            return (possibleTypes && possibleTypes.length > 0) ? possibleTypes : ["text", "basic", "object"];
                         },
+                        "hideNoneSelectedText": true,
                         "selectOptions": {
                             "hideNoneSelectedText": true
                         }
@@ -81,7 +81,6 @@ export default class OutputFormatter extends ObjectFormatter {
                                         "model": "selector",
                                         "label": "Selector",
                                         "values": possibleProperties,
-                                        // "validator": OutputFormatter.duplicateValidator,
                                         "selectOptions": {
                                             "hideNoneSelectedText": true
                                         }
@@ -103,42 +102,24 @@ export default class OutputFormatter extends ObjectFormatter {
             }
         });
     }
-/*
-    static duplicateValidator(model, value) {
-        if (model!==null && model.length > 0 && OutputFormatter.selectedSelectors.indexOf(model) !== -1) {
-            return ["Duplicate Entry"];
-        } else {
-            OutputFormatter.selectedSelectors.push(model);
-            return [];
-        }
-    }
-*/
-    static possibleOutputValues() {
-        let possibleValues = ["text", "basic", "object"];
-        if (arguments[0] !== undefined) {
-            possibleValues = [];
-            possibleValues.push(arguments[0]);
 
-        }
-        return possibleValues;
-    }
 
-    static toPHPObject(modelObject) {
-        /* if (modelObject['output'] && modelObject['output'].length == 0) {
-            return {}
-        }*/
+    static toPHPObject(modelObject, schemaObject) {
 
         let newOutput = {};
 
+        // example: 'color' => '.header'
         if (modelObject.type === 'text' && modelObject['text_value'] !== null && modelObject['text_value'] !== undefined) 
             return [modelObject['text_value']];
 
+        // example: 'color' => '.header, .footer'
         if (modelObject.type === 'basic' && modelObject.basic_value && modelObject.basic_value.selector)
             newOutput[modelObject.basic_value.selector] = compact(modelObject.basic_value.values).join(", ");
         
+        // example: 'color' => '.header', 'background-color' => '.footer'
         if (modelObject.type === 'object' && modelObject.object_selector) 
             modelObject.object_selector.forEach((obj) => {
-                let selector = obj.selector;//selectorSelect ? obj.selectorSelect : obj.selectorText;
+                let selector = obj.selector;
                 if (selector && obj.value) newOutput[selector] = obj.value; 
             });
 

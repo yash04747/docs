@@ -61,6 +61,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
+      "formatter" : "dynamic-type",
       "properties": ["color"],
       "type": "object",
       "order": 30

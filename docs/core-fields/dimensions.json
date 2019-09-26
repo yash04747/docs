@@ -54,7 +54,9 @@
     "output": {
       "name": "output",
       "title": "Output",
+      "formatter" : "dynamic-type",
       "fieldClasses": "full-width",
+      "formatter" : "dynamic-type",
       "properties": ["width", "height"],
       "type": "object",
       "order": 20

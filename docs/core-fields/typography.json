@@ -55,6 +55,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
+      "formatter" : "dynamic-type",
       "properties": ["font-family", "font-weight", "font-style", "font-size", "line-height", "color", "text-align", "word-spacing", "letter-spacing"],
       "type": "object",
       "order": 25

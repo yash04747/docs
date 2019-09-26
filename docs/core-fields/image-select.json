@@ -58,6 +58,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
+      "formatter" : "dynamic-type",
       "properties": ["background-image"],
       "type": "object",
       "order": 25
