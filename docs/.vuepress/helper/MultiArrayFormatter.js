@@ -2,7 +2,7 @@ import {ArrayFormatter} from './CommonFormatters.js';
 import {cloneDeep} from 'lodash';
 export default class MultiArrayFormatter extends ArrayFormatter {
     static data(schemaObject) {
-        let {name: modelName, arrayType: arrayType, valueType: valueType, categoryValues: categoryValues, itemValues: itemValues} = schemaObject;
+        let {name: modelName, arrayType: arrayType, valueType: valueType, categoryValues: categoryValues, itemValues: itemValues, visible: visible} = schemaObject;
         return Object.assign(super.data(), {
             "showModeElementUpButton": false,
             "showModeElementDownButton": false,
@@ -12,6 +12,7 @@ export default class MultiArrayFormatter extends ArrayFormatter {
             "newElementButtonLabelClasses": "",
             "itemContainerComponent": "field-array-bootstrap-accordion-item",
             "showRemoveButton": false,
+            "visible": visible ? visible : true,
             "itemContainerHeader": function (model, schema, index) {
                 let string = "Unnamed Category";
                 if (model && model.CategoryKey) {
