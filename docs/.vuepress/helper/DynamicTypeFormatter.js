@@ -3,7 +3,6 @@ import {ObjectFormatter} from './CommonFormatters.js';
 import {cloneDeep, compact} from 'lodash';
 
 export default class DynamicTypeFormatter extends ObjectFormatter {
-    static selectedSelectors = [];
     static data(schemaObject) {
         let {possibleProperties: possibleProperties, possibleTypes: possibleTypes} = schemaObject;
         return Object.assign(super.data(), {
@@ -29,6 +28,13 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
                             return model && model.type === "text";
                         },
                         "model": "text_value"
+                    },
+                    {
+                        "type": "switch",
+                        "model": "bool_value",
+                        "visible": function(model) {
+                            return model && model.type === "boolean";
+                        }
                     },
                     {
                         "type": "custom-object",
@@ -97,6 +103,21 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
                         "visible": function (model) {
                             return model && model.type && model.type === "object";
                         }
+                    },
+
+                    {
+                        "model": "array_value",
+                        "inputName": "array_value",
+                        "label": "Array Values",
+                        "type": "vueMultiSelect",
+                        "selectOptions": {
+                            "multiple": true,
+                            "showLabels": false
+                        },
+                        "values": possibleProperties,
+                        "visible": function(model) {
+                            return model && model.type === "array";
+                        }
                     }
                 ]
             }
@@ -110,7 +131,7 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
 
         // example: 'color' => '.header'
         if (modelObject.type === 'text' && modelObject['text_value'] !== null && modelObject['text_value'] !== undefined) 
-            return [modelObject['text_value']];
+            return modelObject['text_value'];
 
         // example: 'color' => '.header, .footer'
         if (modelObject.type === 'basic' && modelObject.basic_value && modelObject.basic_value.selector)
@@ -122,6 +143,12 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
                 let selector = obj.selector;
                 if (selector && obj.value) newOutput[selector] = obj.value; 
             });
+
+        if (modelObject.type === 'boolean')
+            return modelObject['bool_value'] === true;
+
+        if (modelObject.type === 'array')
+            return modelObject['array_value'];
 
         return newOutput;
     }
