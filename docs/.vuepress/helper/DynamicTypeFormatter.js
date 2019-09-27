@@ -9,12 +9,13 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
             "schema": {
                 "fields": [
                     {
-                        "type": "select",
+                        "type": "radios",
                         "model": "type",
                         "label": "Type",
                         "values": function() {
                             return (possibleTypes && possibleTypes.length > 0) ? possibleTypes : ["text", "basic", "object"];
                         },
+                        "default": "text",
                         "hideNoneSelectedText": true,
                         "selectOptions": {
                             "hideNoneSelectedText": true
