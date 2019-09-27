@@ -54,7 +54,9 @@
     "output": {
       "name": "output",
       "title": "Output",
+      "formatter" : "dynamic-type",
       "fieldClasses": "full-width",
+      "formatter" : "dynamic-type",
       "properties": ["width", "height"],
       "type": "object",
       "order": 20
@@ -121,9 +123,11 @@
     "units": {
       "name": "units",
       "title": "Units",
-      "type": "array",
-      "order": 45,
-      "default": "px"
+      "type": "object",
+      "formatter": "dynamic-type",
+      "possibleTypes": ["text", "boolean", "array"],
+      "possibleProperties": ["px", "em", "%"],
+      "order": 45
     },
     "units_extended": {
       "name": "units_extended",

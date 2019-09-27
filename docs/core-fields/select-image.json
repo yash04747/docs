@@ -70,14 +70,17 @@
       "order": 35
     },
     "options": {
-      "type": "custom-object",
-      "formatter": "keyvalue",
+      "type": "array",
+      "formatter": "multiarray",
+      "arrayType": "unordered",
       "title": "Options",
       "name": "options",
-      "newElementButtonLabel": "+ Add Option",
+      "label": "Options",
       "default": {},
-      "order": 40
+      "itemValues": ["alt", "img"],
+      "order": 50
     },
+
     "default": {
       "name": "default",
       "title": "Default",

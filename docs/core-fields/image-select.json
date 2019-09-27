@@ -58,6 +58,7 @@
       "name": "output",
       "title": "Output",
       "fieldClasses": "full-width",
+      "formatter" : "dynamic-type",
       "properties": ["background-image"],
       "type": "object",
       "order": 25
@@ -83,6 +84,17 @@
       "type": "input",
       "inputType": "text",
       "default": "background-image",
+      "order": 40
+    },
+    "options": {
+      "type": "array",
+      "formatter": "multiarray",
+      "arrayType": "ordered",
+      "title": "Options",
+      "name": "options",
+      "label": "Options",
+      "itemValues": ["alt", "img", "title", "presets", "class"],
+      "default": {},
       "order": 40
     },
     "width": {

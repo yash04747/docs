@@ -39,10 +39,10 @@
     import DataFormatter from '../helper/DataFormatter.js';
     import KeyValueFormatter from '../helper/KeyValueFormatter';
     import ValidateFormatter from '../helper/ValidateFormatter';
-    import OutputFormatter from '../helper/OutputFormatter';
-    import OptionsFormatter from '../helper/OptionsFormatter';
+    import DynamicTypeFormatter from '../helper/DynamicTypeFormatter';
+    import MultiArrayFormatter from '../helper/MultiArrayFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {extend, cloneDeep, sortBy} from 'lodash';
+    import {extend, cloneDeep, sortBy, filter, findIndex} from 'lodash';
 
     export default {
 
@@ -102,12 +102,11 @@
                 to_return['schema']['fields'].push(schemaFieldObject);
                 to_return['model'][key] = redux_field['fields'][key]['default'];
             });
+            to_return['schema']['fields'] = sortBy(to_return['schema']['fields'], 'order');
 
             // get the stored version of last-session model and prepare model from it.
             let cachedModel = StoreWithExpiration.get(field_type, 'model');
             if (cachedModel !== null) to_return.model = {...to_return['model'], ...cachedModel};
-
-            to_return['schema']['fields'] = sortBy(to_return['schema']['fields'], 'order');
 
             return to_return;
         },
@@ -125,7 +124,12 @@
                 Object.keys(redux_field['fields']).forEach(function (key) {
                     modelObj[key] = redux_field['fields'][key]['default'];
                 });
-                this.model = cloneDeep(modelObj); // always a smart idea not to work on model directly
+                ['data', 'output'].forEach(function(key) {
+                    if (Object.keys(redux_field['fields']).indexOf(key) != -1 && !redux_field['fields'][key]['default'])
+                        modelObj[key] = {};
+                });
+                this.model = cloneDeep(modelObj);
+
             },
 
             // Helper method used in data()
@@ -145,10 +149,10 @@
                     'data': DataFormatter,
                     'keyvalue': KeyValueFormatter,
                     'validate': ValidateFormatter,
-                    'output': OutputFormatter,
-                    'options': OptionsFormatter
+                    'dynamic-type': DynamicTypeFormatter,
+                    'multiarray': MultiArrayFormatter
                 }
-                const specialFieldsName = ["required", "data", "attributes", "validate", "output", "options"];
+                const specialFieldsName = ["required", "data", "attributes", "validate"];
 
                 let FormatterClass;
                 if (specialFieldsName.indexOf(key) != -1)
@@ -158,13 +162,8 @@
                 if (fieldObject.formatter) FormatterClass = formatters[fieldObject.formatter];
 
 
-                if (key == "output")
-                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject['field-type'], fieldObject['properties']));
-                else if (FormatterClass === KeyValueFormatter)
-                    fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
-                else
-                    fieldObject = Object.assign(fieldObject, FormatterClass.data());
-
+                // main code-line to get the scheme json based on selected FormatterClass
+                fieldObject = Object.assign(fieldObject, FormatterClass.data(fieldObject));
 
                 fieldObject['default'] = FormatterClass.default(fieldObject['default']);
 
@@ -205,28 +204,73 @@
                 return model;
             },
 
+            // convert raw model object to comprehensive model object, mainly based on Formatter
             transformCustomArgs: function (schema, model) {
                 let prep_model = cloneDeep(model);
 
                 delete prep_model.data;
                 delete prep_model.validate;
+
+                // special fields handling first
                 if (model.required) prep_model.required = RequiredFormatter.toPHPObject(model.required);
-                if (model.options) prep_model.options = OptionsFormatter.toPHPObject(prep_model.options);
-                
                 if (model.data) prep_model = extend(prep_model, DataFormatter.toPHPObject(model.data));
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
 
-                if (model.output) {
-                    prep_model.output = OutputFormatter.toPHPObject(model.output);
-                    if (JSON.stringify(prep_model.output) === JSON.stringify({})) delete prep_model.output;
-                }
 
-                // For simple key value, props, we will deal with it at the last stage and override what the default has done.
-                let keyvalueSchema = _.filter(schema.fields, {formatter: "keyvalue"});
+                // For simple key=>value props, we will deal with it at the last stage and override what the default has done.
+                let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
                     if (model[keyvalue.model]) 
                         prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
                 });
+
+                // For multi array props: 'disable' => array ("", "", "", "", "'")
+                let multiSchema = filter(schema.fields, {formatter: "multiarray"});
+                multiSchema.forEach((multi) => {
+                    if (model[multi.model] && model[multi.model].length > 0) 
+                        prep_model[multi.model] = MultiArrayFormatter.toPHPObject(prep_model[multi.model], multi);
+                });
+
+                // For Dynamic-type props(main example: "output"): type in ['text', 'boolean', 'basic', 'array']
+                let dynamictypeSchema = filter(schema.fields, {formatter: "dynamic-type"});
+                dynamictypeSchema.forEach((dynamicType) => {
+                    if (model[dynamicType.model]) {
+                        prep_model[dynamicType.model] = DynamicTypeFormatter.toPHPObject(prep_model[dynamicType.model], dynamicType);
+                    }
+                });
+
+                // For switch/bool fields with custom On/Off text
+                let booleanSchema = filter(schema.fields, {"type": "switch"});
+                booleanSchema.forEach((booleanObj) => {
+                    if (prep_model[booleanObj.model] === true && booleanObj.textOn)  prep_model[booleanObj.model] = booleanObj.textOn;
+                    if (prep_model[booleanObj.model] === false && booleanObj.textOff)  prep_model[booleanObj.model] = booleanObj.textOff;
+                });
+
+                // Clean up after conversion
+                Object.keys(prep_model).forEach((key) => {
+                    if (!prep_model[key]) delete prep_model[key];
+                    if (JSON.stringify(prep_model[key]) === JSON.stringify({})) delete prep_model[key];
+                    if (JSON.stringify(prep_model[key]) === JSON.stringify([])) delete prep_model[key];
+                });
+
+
+                // Very dirty watch: data takes priority over options
+                let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
+                if (optionsSchemaIndex != -1) {
+                    let optionsSchema = cloneDeep(schema.fields[optionsSchemaIndex]);
+                    if (optionsSchema.visible !== (Object.keys(prep_model).indexOf('data') === -1)) {
+                        optionsSchema.visible  = (Object.keys(prep_model).indexOf('data') === -1);
+                        schema.fields.splice(optionsSchemaIndex, 1, optionsSchema);
+                        this.schema = cloneDeep(schema);
+                    }
+                }
+
+                let shouldDeleteOptions = findIndex(schema.fields, {model: "options", visible: false}) != -1;
+                if (shouldDeleteOptions) {
+                    delete prep_model['options'];
+                }
+
+
 
                 return prep_model;
             },

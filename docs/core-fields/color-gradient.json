@@ -54,6 +54,7 @@
     "output": {
       "name": "output",
       "title": "Output",
+      "formatter" : "dynamic-type",
       "fieldClasses": "full-width",
       "properties": ["background-color", "color"],
       "type": "object",
@@ -90,6 +91,7 @@
       "name": "validate",
       "title": "Validate",
       "type": "custom-object",
+      "acceptedTypes": ["color"],
       "order": 45
     },
     "transparent": {

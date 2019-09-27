@@ -81,6 +81,7 @@
       "description": "WP Editor Arguments",
       "selectValues": ["wpautop", "media_buttons", "textarea_rows", "tabindex", "editor_css", "teeny", "dfw", "tinymce", "quicktags"],
       "booleanFields": ["wpautop", "media_buttons", "teeny", "dfw"],
+      "arrayFields": ["tinymce", "quicktags"],
       "newElementButtonLabel": "+ Add WP Editor Argument",
       "order": 55
     }

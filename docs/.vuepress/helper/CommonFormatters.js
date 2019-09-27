@@ -3,9 +3,7 @@ export class BoolFormatter{
     static data() {
         return {
             "type": "switch",
-            "multi": true,
-            "textOn": "Enabled",
-            "textOff": "Disabled"
+            "multi": true
         };
     }
     static default(defaultObj) {

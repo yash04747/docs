@@ -73,8 +73,11 @@
       "order": 45
     },
     "options": {
-      "type": "custom-object",
-      "formatter": "options",
+      "type": "array",
+      "formatter": "multiarray",
+      "categoryValues": ["enabled", "disabled"],
+      "itemValues": ["slider", "highlights", "services", "staticpage"],
+      "arrayType": "key",
       "title": "Options",
       "name": "options",
       "label": "Options",

@@ -3,10 +3,11 @@ import {cloneDeep, map, find} from 'lodash';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
         let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
-            listName: listName, booleanFields: booleanFields, selectFields: selectFields, defaultObj: defaultObj} = schemaObject;
+            listName: listName, booleanFields: booleanFields, selectFields: selectFields, arrayFields: arrayFields,
+            defaultObj: defaultObj} = schemaObject;
         let isShowingText = (selectValues && selectValues.length > 0) ? false : true;
 
-        // helper method to detect field type. if key is in known list, "boolean" or "select"
+        // helper method to detect field type. if key is in known list, "boolean" or "select", "array"
         function detectFieldType(model) {
             let key = model.keyText || model.keySelect;
 
@@ -17,6 +18,8 @@ export default class KeyValueFormatter extends ObjectFormatter {
                     let selectKeys = map(selectFields, 'key');
                     if (selectKeys && selectKeys.indexOf(key) >= 0) return "select";
                 }
+
+                if (arrayFields  && arrayFields.indexOf(key) >= 0) return "array";
             }
             return "text";
         }
@@ -110,6 +113,15 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "visible": function(model) {
                                             return detectFieldType(model) === "select";
                                         }
+                                    },
+                                    {
+                                        "type": "array",
+                                        "label": "Value",
+                                        "model": "valueArray",
+                                        "itemContainerClasses": "input-group pb-2 collapse-container",
+                                        "visible": function(model) {
+                                            return detectFieldType(model) == "array";
+                                        }
                                     }
                                 ]
                             }
@@ -131,8 +143,8 @@ export default class KeyValueFormatter extends ObjectFormatter {
         if (modelObject[modelName]) {
             for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
                 let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
-                let valueKey = modelObjectCopy[modelName][i]['valueSelect'] ? 'valueSelect' : modelObjectCopy[modelName][i]['valueSwitch'] ? 'valueSwitch' : 'valueText';
-                newObject[key] = modelObjectCopy[modelName][i][valueKey];
+                let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
+                if (valueKey) newObject[key] = modelObjectCopy[modelName][i][valueKey];
             }
         }
 
