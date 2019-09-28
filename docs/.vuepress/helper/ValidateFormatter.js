@@ -83,7 +83,7 @@ export default class ValidateFormatter extends ObjectFormatter {
                         "itemFieldClasses": "form-control",
                         "itemContainerClasses": "input-group pb-2",
                         "itemContainerComponent": "field-array-bootstrap-accordion-item",
-                        "newElementButtonLabelClasses": "btn btn-outline-dark",
+                        "newElementButtonLabelClasses": "btn btn-sm btn-secondary",
                         "removeElementButtonClasses": "btn btn-danger input-group-append",
                         "newElementButtonLabel": "+ Add Allowed HTML",
                         

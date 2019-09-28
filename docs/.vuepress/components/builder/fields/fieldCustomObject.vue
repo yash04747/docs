@@ -29,7 +29,7 @@
                 <option value="boolean">Boolean</option>
             </select>
             <input type="text" v-model="newKeyName"/>
-            <input type="button" value="Add key" @click="addKey"/>
+            <input type="button" value="Add key" @click="addKey" class="btn btn-sm btn-secondary"/>
         </div>
     </div>
 </template>

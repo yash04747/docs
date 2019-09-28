@@ -42,7 +42,7 @@ export default class MultiArrayFormatter extends ArrayFormatter {
                             "showModeElementDownButton": false,
                             "itemFieldClasses": "form-control",
                             "itemContainerClasses": "input-group pb-2",
-                            "newElementButtonLabelClasses": "",
+                            "newElementButtonLabelClasses": "btn btn-sm btn-secondary",
                             "itemContainerComponent": "field-array-bootstrap-accordion-item",
                             "visible": (valueType !== "plain"),
                             "itemContainerHeader": function (model, schema, index) {

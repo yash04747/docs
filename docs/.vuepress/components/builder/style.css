@@ -2,13 +2,17 @@
     box-sizing: border-box
 }
 
+.vue-form-generator input[type="text"] {
+    width:100%;
+}
+
 .vue-form-generator .form-control {
     display: block;
     padding: 6px 12px;
     font-size: 14px;
     line-height: 1.42857143;
     color: #555;
-    background-color: #fff;
+
     background-image: none;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -255,7 +259,8 @@
 }
 
 .vue-form-generator .field-radios .radio-list label {
-    display: block
+    /*display: block*/
+    margin-right: 5px;
 }
 
 .vue-form-generator .field-radios .radio-list label input[type=radio] {
@@ -438,9 +443,16 @@ fieldset {
     width: 100%;
 }
 
-.field-custom-object fieldset {
+.field-custom-object fieldset, #required {
     border: 1px solid #eee;
-    padding: .5rem 1rem;
+    padding: .5rem .5rem 0rem .5rem;
+}
+#required {
+    padding: .5rem;
+}
+
+.field-array #select2 .input-group span {
+    width: 100%;
 }
 
 .field-custom-object fieldset fieldset {
@@ -452,7 +464,7 @@ fieldset {
     width: 100%;
     display: block;
 }
-.field-wrap div {
+.field-wrap div:first-child {
     width: 100%;
 }
 
@@ -465,29 +477,33 @@ fieldset {
 
 
 .vue-form-generator .field-radios .radio-list label input[type=radio] {
-    display: none;
-}
-
-.field-custom-object .field-radios .radio-list label {
-    background: #eee;
-    margin: 0 .5em 0 0;
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-    line-height: 1.5;
-    border-radius: 0.2rem;
+    /*display: none;*/
+    margin-right: .5rem;
     cursor: pointer;
 }
-
-.field-custom-object .field-radios .radio-list label:hover {
-    background: #ccc;
+.field-custom-object .field-radios .radio-list label {
+    cursor: pointer;
 }
+/*.field-custom-object .field-radios .radio-list label {*/
+/*    background: #eee;*/
+/*    margin: 0 .5em 0 0;*/
+/*    display: inline-block;*/
+/*    padding: 0.25rem 0.5rem;*/
+/*    font-size: 0.875rem;*/
+/*    line-height: 1.5;*/
+/*    border-radius: 0.2rem;*/
+/*    cursor: pointer;*/
+/*}*/
 
-.field-custom-object .field-radios .radio-list .is-checked, .field-custom-object .field-radios .radio-list label.is-checked:hover {
-    color: #fff;
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-}
+/*.field-custom-object .field-radios .radio-list label:hover {*/
+/*    background: #ccc;*/
+/*}*/
+
+/*.field-custom-object .field-radios .radio-list .is-checked, .field-custom-object .field-radios .radio-list label.is-checked:hover {*/
+/*    color: #fff;*/
+/*    background-color: #17a2b8;*/
+/*    border-color: #17a2b8;*/
+/*}*/
 
 
 
@@ -606,4 +622,37 @@ fieldset {
 
 .vue-form-generator .field-switch .handle, .vue-form-generator .field-switch .label {
     transition: all .3s ease
+}
+
+/*.field-wrap div:first-child*/
+
+/*.multiselect__tags {*/
+/*    width: auto !important;*/
+/*}*/
+/*.multiselect__tags-wrap {*/
+/*    width: auto !important;*/
+/*}*/
+
+
+.field-array-group {
+    white-space: nowrap;
+    width:100%;
+}
+.field-array-group input[type=text] {
+    width: 100% !important;
+    /* default input size isn't wide enough */
+    /* keeps input from overflowing its container */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.field-array-group input[type=button] {
+    height: 29px;
+    /* removes the box from DOM */
+    float: right;
+    /* alternative to negative margin-top,
+    which seems to hide my button behind the input */
+    position: relative;
+    top: 0px;
+    margin-top: -33.5px;
 }

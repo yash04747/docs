@@ -37,7 +37,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                         "showModeElementDownButton": false,
                         "itemFieldClasses": "form-control",
                         "itemContainerClasses": "input-group pb-2",
-                        "newElementButtonLabelClasses": "",
+                        "newElementButtonLabelClasses": "btn btn-sm btn-secondary",
                         "itemContainerComponent": "field-array-bootstrap-accordion-item",
                         "itemContainerHeader": function (model, schema, index) {
                             let string = "Undefined";

@@ -16,6 +16,9 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
                             return (possibleTypes && possibleTypes.length > 0) ? possibleTypes : ["text", "basic", "object"];
                         },
                         "default": "text",
+                        "attributes": {
+                            "label": { "class": "btn btn-sm btn-secondary" }
+                        },
                         "hideNoneSelectedText": true,
                         "selectOptions": {
                             "hideNoneSelectedText": true
@@ -53,6 +56,7 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
                                     "type": "array",
                                     "showRemoveButton": true,
                                     "itemContainerClasses": "field-array-group",
+                                    "newElementButtonLabelClasses": "btn btn-sm btn-secondary",
                                     "label": "Values",
                                     "model": "values"
                                 }]
@@ -70,7 +74,7 @@ export default class DynamicTypeFormatter extends ObjectFormatter {
                         "itemFieldClasses": "form-control",
                         "itemContainerClasses": "input-group pb-2",
                         "itemContainerComponent": "field-array-bootstrap-accordion-item",
-                        "newElementButtonLabelClasses": "btn btn-outline-dark",
+                        "newElementButtonLabelClasses": "btn btn-sm btn-secondary",
                         "removeElementButtonClasses": "btn btn-danger input-group-append",
                         "newElementButtonLabel": "+ Add Output Item",
                         "itemContainerHeader": function (model, schema, index) {
