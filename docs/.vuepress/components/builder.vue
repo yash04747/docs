@@ -220,14 +220,14 @@
                 // For simple key=>value props, we will deal with it at the last stage and override what the default has done.
                 let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
-                    if (model[keyvalue.model]) 
+                    if (model[keyvalue.model])
                         prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
                 });
 
                 // For multi array props: 'disable' => array ("", "", "", "", "'")
                 let multiSchema = filter(schema.fields, {formatter: "multiarray"});
                 multiSchema.forEach((multi) => {
-                    if (model[multi.model] && model[multi.model].length > 0) 
+                    if (model[multi.model] && model[multi.model].length > 0)
                         prep_model[multi.model] = MultiArrayFormatter.toPHPObject(prep_model[multi.model], multi);
                 });
 
