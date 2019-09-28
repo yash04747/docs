@@ -1,4 +1,3 @@
-<style src="./builder/style.css"></style>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <template>
     <div class="redux-builder">
