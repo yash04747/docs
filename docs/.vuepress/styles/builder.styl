@@ -468,7 +468,7 @@ fieldset {
   display: block;
 }
 
-.field-wrap div:first-child {
+.field-wrap>div {
   width: 100%;
 }
 
@@ -615,16 +615,6 @@ fieldset {
   transition: all .3s ease
 }
 
-/*.field-wrap div:first-child*/
-
-/*.multiselect__tags {*/
-/*    width: auto !important;*/
-/*}*/
-/*.multiselect__tags-wrap {*/
-/*    width: auto !important;*/
-/*}*/
-
-
 .field-array-group {
   white-space: nowrap;
   width: 100%;
@@ -637,6 +627,7 @@ fieldset {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  padding-right: 25px;
 }
 
 .field-array-group input[type=button] {
