@@ -85,10 +85,16 @@
       "order": 45
     },
     "default": {
-      "type": "keyvalue",
+      "type": "custom-object",
+      "formatter": "keyvalue",
       "title": "Default",
       "name": "default",
-      "order": 50
+      "order": 50,
+      "dependent": true,
+      "dependency": {
+        "field": "display_value",
+        "activatedOn": "select"
+      }
     },
     "multiple": {
       "name": "multi",

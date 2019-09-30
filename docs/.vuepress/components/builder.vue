@@ -226,7 +226,27 @@
                         that.schema = cloneDeep(schema);
                     }
                 });
-
+                // TODO: remove it, test purpose code
+                let childSchemaIndex = findIndex(schema.fields, {model: "default"});
+                let defaultSchema = schema.fields[childSchemaIndex];
+                if (model.multi) {
+                    if (typeof prep_model.default == "string") this.model.default = {};
+                    if (defaultSchema.type != "custom-object") {
+                        defaultSchema.type = "custom-object";
+                        defaultSchema.formatter = "keyvalue";
+                        schema.fields.splice(childSchemaIndex, 1, defaultSchema);
+                        this.schema = cloneDeep(schema);
+                    }
+                } else {
+                    if (typeof prep_model.default != "string") this.model.default = "";
+                    if (defaultSchema.type != "input") {
+                        delete defaultSchema.formatter;
+                        defaultSchema.type = "input";
+                        defaultSchema.inputType = "text";
+                        schema.fields.splice(childSchemaIndex, 1, defaultSchema);
+                        this.schema = cloneDeep(schema);
+                    }
+                }
                 // Very dirty watch: data takes priority over options
                 // This is specially handled as it is known dependency
                 let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
