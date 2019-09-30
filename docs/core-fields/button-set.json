@@ -91,9 +91,26 @@
       "name": "default",
       "order": 50,
       "dependent": true,
+      "dependencyType": "type",
       "dependency": {
-        "field": "display_value",
-        "activatedOn": "select"
+        "parent": "multi",
+        "status": [
+          {
+            "parentValue": true,
+            "type": "custom-object",
+            "formatter": "keyvalue",
+            "typeof": "object",
+            "default": {}
+          },
+          {
+            "parentValue": false,
+            "type": "input",
+            "inputType": "text",
+            "formatter": "",
+            "typeof": "string",
+            "default": ""
+          }
+        ]
       }
     },
     "multiple": {

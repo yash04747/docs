@@ -139,8 +139,9 @@
       "min": 1,
       "validator": "integer",
       "dependent": true,
+      "dependencyType": "visible",
       "dependency": {
-        "field": "ajax",
+        "parent": "ajax",
         "activatedOn": true
       }
     }

@@ -210,14 +210,15 @@
             // for example min_input_length of select is going to be used only when ajax is true
             // From above example, as a convention, dependentChild: min_input_length, dependentParent: ajax
             dependencyHook: function(schema, model) {
-                let prep_model = cloneDeep(model);
+                let prep_model = cloneDeep(this.model);
                 let that = this;
 
                 let dependentFields = filter(schema.fields, "dependent");
-                // for convention, dependentChlid: 
-                dependentFields.forEach((dependentChild) => {
+                // for convention, dependentChild: 
+                let visibleDependentFields = filter(dependentFields, {"dependencyType": "visible"});
+                visibleDependentFields.forEach((dependentChild) => {
                     let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
-                    let dependencyCondition = (prep_model[dependentChild.dependency.field] == dependentChild.dependency.activatedOn);
+                    let dependencyCondition = (prep_model[dependentChild.dependency.parent] == dependentChild.dependency.activatedOn);
                     if (dependentChild.visible !== dependencyCondition) {
                         // update dependent child schema if condition changed
                         dependentChild.visible  = dependencyCondition;
@@ -225,27 +226,31 @@
                         that.schema = cloneDeep(schema);
                     }
                 });
-                // TODO: remove it, test purpose code
-                let childSchemaIndex = findIndex(schema.fields, {model: "default"});
-                let defaultSchema = schema.fields[childSchemaIndex];
-                if (model.multi) {
-                    if (typeof prep_model.default == "string") this.model.default = {};
-                    if (defaultSchema.type != "custom-object") {
-                        defaultSchema.type = "custom-object";
-                        defaultSchema.formatter = "keyvalue";
-                        schema.fields.splice(childSchemaIndex, 1, defaultSchema);
-                        this.schema = cloneDeep(schema);
-                    }
-                } else {
-                    if (typeof prep_model.default != "string") this.model.default = "";
-                    if (defaultSchema.type != "input") {
-                        delete defaultSchema.formatter;
-                        defaultSchema.type = "input";
-                        defaultSchema.inputType = "text";
-                        schema.fields.splice(childSchemaIndex, 1, defaultSchema);
-                        this.schema = cloneDeep(schema);
-                    }
-                }
+
+                // type dependency handling
+                let typeDependentFields = filter(dependentFields, {"dependencyType": "type"});
+                typeDependentFields.forEach((dependentChild) => {
+                    let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
+                    let childSchema = schema.fields[childSchemaIndex];
+
+                    // loop through the statuses, to allow it switching from one to another
+                    let statuses = childSchema.dependency.status;
+                    let dependentParent = childSchema.dependency.parent;
+                    statuses.forEach((status) => {
+                        if (prep_model[dependentParent] == status.parentValue) {
+                            if (typeof prep_model[dependentChild.model] != status.typeof) that.model[dependentChild.model] = status.default;
+                            if (childSchema.type != status.type) {
+                                childSchema.type = status.type;
+                                childSchema.formatter = status.formatter;
+                                childSchema.inputType = status.inputType;
+                                schema.fields.splice(childSchemaIndex, 1, childSchema);
+                                that.schema = cloneDeep(schema);
+                            }
+                        }
+                    });
+
+                });
+
                 // Very dirty watch: data takes priority over options
                 // This is specially handled as it is known dependency
                 let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});

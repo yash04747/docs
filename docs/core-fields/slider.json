@@ -135,8 +135,9 @@
       "default": {},
       "order": 75,
       "dependent": true,
+      "dependencyType": "visible",
       "dependency": {
-        "field": "display_value",
+        "parent": "display_value",
         "activatedOn": "select"
       }
     }
