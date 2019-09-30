@@ -91,8 +91,35 @@
       "title": "Default",
       "name": "default",
       "newElementButtonLabel": "+ Add Default Item",
-      "default": {},
-      "order": 50
+      "order": 50,
+      "dependent": true,
+      "dependencyType": "type",
+      "dependency": {
+        "parent": "multi",
+        "status": [
+          {
+            "parentValue": true,
+            "type": "custom-object",
+            "formatter": "keyvalue",
+            "typeof": "object",
+            "default": {}
+          },
+          {
+            "parentValue": false,
+            "type": "input",
+            "inputType": "text",
+            "formatter": "",
+            "typeof": "string",
+            "default": ""
+          }
+        ]
+      }
+    },
+    "multiple": {
+      "name": "multi",
+      "title": "Multi (Multi-Select)",
+      "type": "bool",
+      "order": 55
     }
   }
 }

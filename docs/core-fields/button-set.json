@@ -117,7 +117,6 @@
       "name": "multi",
       "title": "Multi (Multi-Select)",
       "type": "bool",
-      "default": false,
       "order": 55
     }
   }
