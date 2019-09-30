@@ -137,7 +137,12 @@
       "default": 1,
       "order": 80,
       "min": 1,
-      "validator": "integer"
+      "validator": "integer",
+      "dependent": true,
+      "dependency": {
+        "field": "ajax",
+        "activatedOn": true
+      }
     }
   }
 }

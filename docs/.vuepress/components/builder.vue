@@ -42,7 +42,7 @@
     import DynamicTypeFormatter from '../helper/DynamicTypeFormatter';
     import MultiArrayFormatter from '../helper/MultiArrayFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {extend, cloneDeep, sortBy, filter, findIndex} from 'lodash';
+    import {extend, cloneDeep, sortBy, filter, find, findIndex} from 'lodash';
 
     export default {
 
@@ -124,6 +124,8 @@
                 Object.keys(redux_field['fields']).forEach(function (key) {
                     modelObj[key] = redux_field['fields'][key]['default'];
                 });
+
+                // kind of dirty fix: object reset needs special attention
                 ['data', 'output'].forEach(function(key) {
                     if (Object.keys(redux_field['fields']).indexOf(key) != -1 && !redux_field['fields'][key]['default'])
                         modelObj[key] = {};
@@ -181,6 +183,7 @@
                     let model = cloneDeep(modelObj);
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
                     model = this.deleteEmptyValues(schema, model);
+                    this.dependencyHook(schema, model);
                     model = this.transformCustomArgs(schema, model);
                     model = this.sortModel(schema, model);
                     return this.phpify(model);
@@ -196,12 +199,44 @@
                     if (propName !== "type" && schema['redux']['fields'].hasOwnProperty(
                         propName) && schema['redux']['fields'][propName].hasOwnProperty(
                         'default')) {
-                        if (schema['redux']['fields'][propName]['default'] === model[propName]) { // && schema['redux']['fields'][propName]['default'] !== true) {
+                        if (schema['redux']['fields'][propName]['default'] === model[propName]) {
                             delete model[propName];
                         }
                     }
                 }
                 return model;
+            },
+
+            // check the dependency between fields
+            // for example min_input_length of select is going to be used only when ajax is true
+            // From above example, as a convention, dependentChild: min_input_length, dependentParent: ajax
+            dependencyHook: function(schema, model) {
+                let prep_model = cloneDeep(model);
+                let that = this;
+
+                let dependentFields = filter(schema.fields, "dependent");
+                // for convention, dependentChlid: 
+                dependentFields.forEach((dependentChild) => {
+                    let childSchemaIndex = findIndex(schema.fields, dependentChild.name);
+                    let dependencyCondition = (prep_model[dependentChild.dependency.field] == dependentChild.dependency.activatedOn);
+                    if (dependentChild.visible !== dependencyCondition) {
+                        dependentChild.visible  = dependencyCondition;
+                        schema.fields.splice(childSchemaIndex, 1, dependentChild);
+                        that.schema = cloneDeep(schema);
+                    }
+                });
+
+                // Very dirty watch: data takes priority over options
+                // This is specially handled as it is known dependency
+                let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
+                if (optionsSchemaIndex != -1) {
+                    let optionsSchema = cloneDeep(schema.fields[optionsSchemaIndex]);
+                    if (optionsSchema.visible !== (Object.keys(prep_model).indexOf('data') === -1)) {
+                        optionsSchema.visible  = (Object.keys(prep_model).indexOf('data') === -1);
+                        schema.fields.splice(optionsSchemaIndex, 1, optionsSchema);
+                        this.schema = cloneDeep(schema);
+                    }
+                }
             },
 
             // convert raw model object to comprehensive model object, mainly based on Formatter
@@ -252,25 +287,13 @@
                     if (JSON.stringify(prep_model[key]) === JSON.stringify({})) delete prep_model[key];
                     if (JSON.stringify(prep_model[key]) === JSON.stringify([])) delete prep_model[key];
                 });
+               
 
-
-                // Very dirty watch: data takes priority over options
-                let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
-                if (optionsSchemaIndex != -1) {
-                    let optionsSchema = cloneDeep(schema.fields[optionsSchemaIndex]);
-                    if (optionsSchema.visible !== (Object.keys(prep_model).indexOf('data') === -1)) {
-                        optionsSchema.visible  = (Object.keys(prep_model).indexOf('data') === -1);
-                        schema.fields.splice(optionsSchemaIndex, 1, optionsSchema);
-                        this.schema = cloneDeep(schema);
-                    }
-                }
-
+                // remove options from model when visible is false
                 let shouldDeleteOptions = findIndex(schema.fields, {model: "options", visible: false}) != -1;
                 if (shouldDeleteOptions) {
                     delete prep_model['options'];
                 }
-
-
 
                 return prep_model;
             },
