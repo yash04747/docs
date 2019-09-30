@@ -1,4 +1,3 @@
-<style src="./builder/style.css"></style>
 <style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
 <template>
     <div class="redux-builder">
@@ -283,7 +282,7 @@
                 // For multi array props: 'disable' => array ("", "", "", "", "'")
                 let multiSchema = filter(schema.fields, {formatter: "multiarray"});
                 multiSchema.forEach((multi) => {
-                    if (model[multi.model] && model[multi.model].length > 0) 
+                    if (model[multi.model] && model[multi.model].length > 0)
                         prep_model[multi.model] = MultiArrayFormatter.toPHPObject(prep_model[multi.model], multi);
                 });
 
