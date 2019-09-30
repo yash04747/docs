@@ -248,7 +248,6 @@
                             }
                         }
                     });
-
                 });
 
                 // Very dirty watch: data takes priority over options

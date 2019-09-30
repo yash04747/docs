@@ -81,7 +81,13 @@
       "title": "Label",
       "type": "bool",
       "default": false,
-      "order": 45
+      "order": 45,
+      "dependent": true,
+      "dependencyType": "visible",
+      "dependency": {
+        "parent": "mode",
+        "activatedOn": "text"
+      }
     },
     "mode": {
       "type": "select",
