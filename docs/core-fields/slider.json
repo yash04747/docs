@@ -133,7 +133,12 @@
       "label": "select2",
       "newElementButtonLabel": "+ Add Select2 Option",
       "default": {},
-      "order": 75
+      "order": 75,
+      "dependent": true,
+      "dependency": {
+        "field": "display_value",
+        "activatedOn": "select"
+      }
     }
   }
 }

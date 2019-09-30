@@ -217,9 +217,10 @@
                 let dependentFields = filter(schema.fields, "dependent");
                 // for convention, dependentChlid: 
                 dependentFields.forEach((dependentChild) => {
-                    let childSchemaIndex = findIndex(schema.fields, dependentChild.name);
+                    let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
                     let dependencyCondition = (prep_model[dependentChild.dependency.field] == dependentChild.dependency.activatedOn);
                     if (dependentChild.visible !== dependencyCondition) {
+                        // update dependent child schema if condition changed
                         dependentChild.visible  = dependencyCondition;
                         schema.fields.splice(childSchemaIndex, 1, dependentChild);
                         that.schema = cloneDeep(schema);
@@ -255,7 +256,7 @@
                 // For simple key=>value props, we will deal with it at the last stage and override what the default has done.
                 let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
-                    if (model[keyvalue.model]) 
+                    if (model[keyvalue.model] && prep_model[keyvalue.model]) 
                         prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
                 });
 
@@ -290,10 +291,10 @@
                
 
                 // remove options from model when visible is false
-                let shouldDeleteOptions = findIndex(schema.fields, {model: "options", visible: false}) != -1;
-                if (shouldDeleteOptions) {
-                    delete prep_model['options'];
-                }
+                let noVisibleSchema = filter(schema.fields, {visible: false});
+                noVisibleSchema.forEach((noVisibleObj) => {
+                    delete prep_model[noVisibleObj.model];
+                });
 
                 return prep_model;
             },
