@@ -185,7 +185,13 @@
       "name": "default",
       "title": "Default",
       "formatter": "keyvalue",
-      "selectValues": [],
+      "selectValues": [
+        "*-top",
+        "*-right",
+        "*-bottom",
+        "*-left",
+        "units"
+      ],
       "selectValuesTemplate": {
         "array": ["top", "right", "bottom", "left"],
         "unaffected": ["units"]
