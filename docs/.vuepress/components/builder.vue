@@ -77,7 +77,7 @@
                     redux: redux_field
                 },
                 formOptions: {
-                    validateAfterLoad: true,
+                    validateAfterLoad: false,
                     validateAfterChanged: true
                 },
                 showSection: false
@@ -109,11 +109,16 @@
 
             return to_return;
         },
+        computed: {
+            
+        },
         methods: {
             toggle() {
                 this.showSection = !this.showSection
             },
-
+            fieldType: function () {
+                return this.$attrs.builder_json.type
+            },
             reset() {
                 let redux_field = _.cloneDeep(this.$attrs.builder_json);
                 let modelObj = {
@@ -152,8 +157,10 @@
                     'validate': ValidateFormatter,
                     'dynamic-type': DynamicTypeFormatter,
                     'multiarray': MultiArrayFormatter
-                }
+                };
                 const specialFieldsName = ["required", "data", "attributes", "validate"];
+
+                fieldObject['fieldType'] = this.fieldType();
 
                 let FormatterClass;
                 if (specialFieldsName.indexOf(key) != -1)
@@ -300,6 +307,7 @@
             // convert raw model object to comprehensive model object, mainly based on Formatter
             transformCustomArgs: function (schema, model) {
                 let prep_model = cloneDeep(model);
+                let that = this;
 
                 delete prep_model.data;
                 delete prep_model.validate;
@@ -314,7 +322,7 @@
                 let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
                     if (model[keyvalue.model] && prep_model[keyvalue.model]) 
-                        prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model);
+                        prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model, that.fieldType());
                 });
 
                 // For multi array props: 'disable' => array ("", "", "", "", "'")

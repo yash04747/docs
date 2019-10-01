@@ -1,8 +1,9 @@
 import {ObjectFormatter} from './CommonFormatters.js';
-import {cloneDeep, map, find} from 'lodash';
+import {cloneDeep, map, find, without} from 'lodash';
+import StoreWithExpiration from '../helper/StoreWithExpiration';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
-        let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
+        let {fieldType: fieldType, name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
             listName: listName, booleanFields: booleanFields, selectFields: selectFields, arrayFields: arrayFields,
             defaultObj: defaultObj} = schemaObject;
         let isShowingText = (selectValues && selectValues.length > 0) ? false : true;
@@ -61,7 +62,14 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "inputType": "text",
                                         "label": "Key",
                                         "model": "keyText",
-                                        "visible": isShowingText
+                                        "visible": isShowingText,
+                                        "validator": function(model, value) {
+                                            let cachedModel = StoreWithExpiration.get(fieldType, modelName);
+                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1) {
+                                                return ["Duplicate Entry"];
+                                            }
+                                            return [];
+                                        }
                                     },
                                     {
                                         "type": "datalist",
@@ -69,7 +77,14 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "model": "keySelect",
                                         "listName": listName ? listName : "keyslist_" + modelName,
                                         "values": selectValues,
-                                        "visible": !isShowingText
+                                        "visible": !isShowingText,
+                                        "validator": function(model, value) {
+                                            let cachedModel = StoreWithExpiration.get(fieldType, modelName);
+                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1) {
+                                                return ["Duplicate Entry"];
+                                            }
+                                            return [];
+                                        }
                                     },
                                     // Value part: supports "text", "boolean", "select", "object" is yet to come
                                     {
@@ -136,17 +151,20 @@ export default class KeyValueFormatter extends ObjectFormatter {
         return object
     }
 
-    static toPHPObject(modelObject, modelName) {
+    static toPHPObject(modelObject, modelName, typeName) {
         let modelObjectCopy = cloneDeep(modelObject);
-        let newObject = {};
+        let newObject = {}, modelKeys = [];
 
         if (modelObject[modelName]) {
             for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
                 let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
                 let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
+                modelKeys.push(key);
                 if (valueKey) newObject[key] = modelObjectCopy[modelName][i][valueKey];
             }
         }
+
+        StoreWithExpiration.set(typeName, modelName, without(modelKeys, undefined, null), 1000 * 60 * 30);
 
         if (JSON.stringify(newObject) !== JSON.stringify({})) {
             return newObject;
