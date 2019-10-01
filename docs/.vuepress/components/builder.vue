@@ -41,7 +41,7 @@
     import DynamicTypeFormatter from '../helper/DynamicTypeFormatter';
     import MultiArrayFormatter from '../helper/MultiArrayFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {extend, cloneDeep, sortBy, filter, find, findIndex} from 'lodash';
+    import {extend, cloneDeep, sortBy, filter, find, findIndex, map, concat} from 'lodash';
 
     export default {
 
@@ -214,7 +214,8 @@
                 let that = this;
 
                 let dependentFields = filter(schema.fields, "dependent");
-                // for convention, dependentChild: 
+                
+                // visibility dependency handling, ex: min_input_length is only visible when ajax is true
                 let visibleDependentFields = filter(dependentFields, {"dependencyType": "visible"});
                 visibleDependentFields.forEach((dependentChild) => {
                     let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
@@ -227,7 +228,7 @@
                     }
                 });
 
-                // type dependency handling
+                // type dependency handling, for example, multi=true -> default: object type, multi=false -> default: text
                 let typeDependentFields = filter(dependentFields, {"dependencyType": "type"});
                 typeDependentFields.forEach((dependentChild) => {
                     let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
@@ -249,7 +250,40 @@
                         }
                     });
                 });
+/*
+                // property dependency handling
+                let propertyDependentFields = filter(dependentFields, {"dependencyType": "property"});
+                propertyDependentFields.forEach((dependentChild) => {
+                    let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
+                    let childSchema = schema.fields[childSchemaIndex];
 
+                    let dependentParent = childSchema.dependency.parent;
+                    let dependentParentValue = prep_model[dependentParent];
+                    // eraseField and found "-" means we should go there to remove "-"
+                    if (dependentParentValue == childSchema.dependency.eraseField) {
+                        if (childSchema.selectValues.length == 0 || searchStringInArray("-", childSchema.selectValues) != -1) {
+                            childSchema.selectValues = concat(childSchema.selectValuesTemplate.array, childSchema.selectValuesTemplate.unaffected);
+                            schema.fields.splice(childSchemaIndex, 1, childSchema);
+                            that.schema = cloneDeep(schema);
+                        }
+                    } else {
+                        if (childSchema.selectValues.length == 0 || searchStringInArray(dependentParentValue, childSchema.selectValues) == -1) {
+                            let selectValuesArray = map(childSchema.selectValuesTemplate.array, (atom) => dependentParentValue+ "-" + atom);
+                            childSchema.selectValues = concat(selectValuesArray, childSchema.selectValuesTemplate.unaffected);
+                            schema.fields.splice(childSchemaIndex, 1, childSchema);
+                            that.schema = cloneDeep(schema);
+                        }
+                    }
+                });
+
+
+                function searchStringInArray (str, strArray) {
+                    for (var j=0; j<strArray.length; j++) {
+                        if (strArray[j].match(str)) return j;
+                    }
+                    return -1;
+                }
+*/
                 // Very dirty watch: data takes priority over options
                 // This is specially handled as it is known dependency
                 let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});

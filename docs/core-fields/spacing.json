@@ -185,16 +185,21 @@
       "name": "default",
       "title": "Default",
       "formatter": "keyvalue",
-      "selectValues": [
-        "*-top",
-        "*-right",
-        "*-bottom",
-        "*-left",
-        "units"
-      ],
+      "selectValues": [],
+      "selectValuesTemplate": {
+        "array": ["top", "right", "bottom", "left"],
+        "unaffected": ["units"]
+      },
       "newElementButtonLabel": "+ Add Option",
       "type": "object",
-      "order": 90
+      "order": 90,
+      "dependent": true,
+      "dependencyType": "property",
+      "dependency": {
+        "parent": "mode",
+        "propertyGroup": "selectValues",
+        "eraseField": "absolute"
+      }
     }
   }
 }
