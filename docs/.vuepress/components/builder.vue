@@ -189,17 +189,10 @@
                     // Store it to localstorage
                     let model = cloneDeep(modelObj);
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
-/*
-                    let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
-                    keyvalueSchema.forEach((keyvalue) => {
-                        console.log(keyvalue.model, model[keyvalue.model]);
-                    });
-*/
 
                     model = this.deleteEmptyValues(schema, model);
                     this.dependencyHook(schema, model);
                     model = this.transformCustomArgs(schema, model);
-                    // console.log("model preview", model.preview);
                     model = this.sortModel(schema, model);
                     return this.phpify(model);
                 }
@@ -267,40 +260,7 @@
                         }
                     });
                 });
-/*
-                // property dependency handling
-                let propertyDependentFields = filter(dependentFields, {"dependencyType": "property"});
-                propertyDependentFields.forEach((dependentChild) => {
-                    let childSchemaIndex = findIndex(schema.fields, {model: dependentChild.model});
-                    let childSchema = schema.fields[childSchemaIndex];
 
-                    let dependentParent = childSchema.dependency.parent;
-                    let dependentParentValue = prep_model[dependentParent];
-                    // eraseField and found "-" means we should go there to remove "-"
-                    if (dependentParentValue == childSchema.dependency.eraseField) {
-                        if (childSchema.selectValues.length == 0 || searchStringInArray("-", childSchema.selectValues) != -1) {
-                            childSchema.selectValues = concat(childSchema.selectValuesTemplate.array, childSchema.selectValuesTemplate.unaffected);
-                            schema.fields.splice(childSchemaIndex, 1, childSchema);
-                            that.schema = cloneDeep(schema);
-                        }
-                    } else {
-                        if (childSchema.selectValues.length == 0 || searchStringInArray(dependentParentValue, childSchema.selectValues) == -1) {
-                            let selectValuesArray = map(childSchema.selectValuesTemplate.array, (atom) => dependentParentValue+ "-" + atom);
-                            childSchema.selectValues = concat(selectValuesArray, childSchema.selectValuesTemplate.unaffected);
-                            schema.fields.splice(childSchemaIndex, 1, childSchema);
-                            that.schema = cloneDeep(schema);
-                        }
-                    }
-                });
-
-
-                function searchStringInArray (str, strArray) {
-                    for (var j=0; j<strArray.length; j++) {
-                        if (strArray[j].match(str)) return j;
-                    }
-                    return -1;
-                }
-*/
                 // Very dirty watch: data takes priority over options
                 // This is specially handled as it is known dependency
                 let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
@@ -329,16 +289,7 @@
 
 
                 // For simple key=>value props
-
                 let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
-                /* console.log("this.model.preview", prep_model.preview);
-                if (prep_model['update'] != true) {
-                    
-                    this.model.preview  = {...this.model.preview, ...{"preview": [{keySelect: "font-size", valueText: "33px"}]}};
-                    this.model['update'] = true;
-                }
-                */
-
                 keyvalueSchema.forEach((keyvalue) => {
                     let modelKey = keyvalue.model;
                     if (model[modelKey] && prep_model[modelKey]) {

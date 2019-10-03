@@ -65,7 +65,6 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "visible": isShowingText,
                                         "validator": function(model, value) {
                                             let cachedModel = StoreWithExpiration.get(fieldType, modelName);
-                                            // console.log("CACHED", cachedModel);
                                             if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1) {
                                                 return ["Duplicate Entry"];
                                             }
@@ -81,8 +80,6 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "visible": !isShowingText,
                                         "validator": function(model, value) {
                                             let cachedModel = StoreWithExpiration.get(fieldType, modelName);
-                                            // console.log("validator", model);
-                                            // console.log("CACHED", cachedModel);
                                             if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1) {
                                                 return ["Duplicate Entry"];
                                             }
@@ -191,7 +188,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
                     if (booleanFields && booleanFields.indexOf(key) !== -1) valueFieldName = "valueSwitch";
                     if (selectFields && selectFields.indexOf(key) !== -1) valueFieldName = "valueSelect";
                     if (arrayFields && arrayFields.indexOf(key) !== -1) valueFieldName = "valueArray";
-                    // just 
+                    // replace that empty value record with default value set one.
                     let newObject = cloneDeep(modelObjectCopy[modelName][i]) || {};
                     newObject[valueFieldName] = defaultObj[key];
                     modelObjectCopy[modelName].splice(i, 1, newObject);
