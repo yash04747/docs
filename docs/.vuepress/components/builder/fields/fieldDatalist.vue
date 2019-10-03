@@ -15,6 +15,10 @@ import { isObject } from "lodash";
 export default {
 	name: 'fieldDataList',
 	mixins: [VueFormGenerator.abstractField],
+	formOptions: {
+        validateAfterLoad: true,
+        validateAfterChanged: true
+    },
 	computed: {
 		fieldId() {
 			return this.getFieldID(this.schema);

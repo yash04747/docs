@@ -189,17 +189,17 @@
                     // Store it to localstorage
                     let model = cloneDeep(modelObj);
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
-
+/*
                     let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
                     keyvalueSchema.forEach((keyvalue) => {
                         console.log(keyvalue.model, model[keyvalue.model]);
                     });
-
+*/
 
                     model = this.deleteEmptyValues(schema, model);
                     this.dependencyHook(schema, model);
                     model = this.transformCustomArgs(schema, model);
-                    console.log("model preview", model.preview);
+                    // console.log("model preview", model.preview);
                     model = this.sortModel(schema, model);
                     return this.phpify(model);
                 }
@@ -345,7 +345,6 @@
                         // Only for keyvalue formatter, to set default object value when a new key is added
                         let schemaObject = find(schema.fields, {model: modelKey});
                         let generatedModel = KeyValueFormatter.generateModel(prep_model[modelKey], modelKey, schemaObject);
-                        console.log("generatedModel", generatedModel);
                         if (isEqual(generatedModel, prep_model[modelKey]) === false) 
                             that.model[modelKey] = {...that.model.modelKey, ...generatedModel};
 
