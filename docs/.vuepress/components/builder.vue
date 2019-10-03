@@ -41,7 +41,7 @@
     import DynamicTypeFormatter from '../helper/DynamicTypeFormatter';
     import MultiArrayFormatter from '../helper/MultiArrayFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {extend, cloneDeep, sortBy, filter, find, findIndex, map, concat} from 'lodash';
+    import {extend, cloneDeep, sortBy, filter, find, findIndex, map, concat, isEqual} from 'lodash';
 
     export default {
 
@@ -186,22 +186,32 @@
 
             toPHP: function (schema, modelObj) {
                 if (schema && modelObj) {
+                    // Store it to localstorage
                     let model = cloneDeep(modelObj);
                     StoreWithExpiration.set(model.type, 'model', model, 1000 * 60 * 30);
+
+                    let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
+                    keyvalueSchema.forEach((keyvalue) => {
+                        console.log(keyvalue.model, model[keyvalue.model]);
+                    });
+
+
                     model = this.deleteEmptyValues(schema, model);
                     this.dependencyHook(schema, model);
                     model = this.transformCustomArgs(schema, model);
+                    console.log("model preview", model.preview);
                     model = this.sortModel(schema, model);
                     return this.phpify(model);
                 }
             },
 
             deleteEmptyValues: function (schema, model) {
-                // Delete empty values
                 for (var propName in model) {
+                    // Delete empty values
                     if (model[propName] === null || model[propName] === undefined || model[propName] === '') {
                         delete model[propName];
                     }
+                    // Delete if the selected value is equal to default
                     if (propName !== "type" && schema['redux']['fields'].hasOwnProperty(
                         propName) && schema['redux']['fields'][propName].hasOwnProperty(
                         'default')) {
@@ -318,11 +328,30 @@
                 if (model.validate) prep_model = Object.assign(prep_model, ValidateFormatter.toPHPObject(model.validate));
 
 
-                // For simple key=>value props, we will deal with it at the last stage and override what the default has done.
+                // For simple key=>value props
+
                 let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
+                /* console.log("this.model.preview", prep_model.preview);
+                if (prep_model['update'] != true) {
+                    
+                    this.model.preview  = {...this.model.preview, ...{"preview": [{keySelect: "font-size", valueText: "33px"}]}};
+                    this.model['update'] = true;
+                }
+                */
+
                 keyvalueSchema.forEach((keyvalue) => {
-                    if (model[keyvalue.model] && prep_model[keyvalue.model]) 
-                        prep_model[keyvalue.model] = KeyValueFormatter.toPHPObject(prep_model[keyvalue.model], keyvalue.model, that.fieldType());
+                    let modelKey = keyvalue.model;
+                    if (model[modelKey] && prep_model[modelKey]) {
+                        // Only for keyvalue formatter, to set default object value when a new key is added
+                        let schemaObject = find(schema.fields, {model: modelKey});
+                        let generatedModel = KeyValueFormatter.generateModel(prep_model[modelKey], modelKey, schemaObject);
+                        // debugger;
+                        if (isEqual(generatedModel, prep_model[modelKey]) === false) 
+                            that.model[modelKey] = {...that.model.modelKey, ...generatedModel};
+
+                        // to PHP Object as the others
+                        prep_model[modelKey] = KeyValueFormatter.toPHPObject(prep_model[modelKey], modelKey, that.fieldType());
+                    }
                 });
 
                 // For multi array props: 'disable' => array ("", "", "", "", "'")

@@ -199,6 +199,9 @@
       "formatter": "keyvalue",
       "selectValues": ["text", "font-size", "always_display"],
       "booleanFields": ["always_display"],
+      "default" : {
+        "font-size": "33px"
+      },
       "order": 115
     },
     "all_styles": {

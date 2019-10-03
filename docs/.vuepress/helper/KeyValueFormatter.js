@@ -160,15 +160,42 @@ export default class KeyValueFormatter extends ObjectFormatter {
                 let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
                 let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
                 modelKeys.push(key);
-                if (valueKey) newObject[key] = modelObjectCopy[modelName][i][valueKey];
+                if (valueKey) {
+                    newObject[key] = modelObjectCopy[modelName][i][valueKey];
+                }
             }
         }
-
+        // save the keys array to check duplicate entry
         StoreWithExpiration.set(typeName, modelName, without(modelKeys, undefined, null), 1000 * 60 * 30);
 
         if (JSON.stringify(newObject) !== JSON.stringify({})) {
             return newObject;
         }
+    }
+
+    // generate model with default value 
+    static generateModel(modelObject, modelName, schemaObject) {
+        let modelObjectCopy = cloneDeep(modelObject);
+        let {booleanFields: booleanFields, selectFields: selectFields, arrayFields: arrayFields, default: defaultObj} = schemaObject;
+        
+        if (modelObject[modelName]) {
+            for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
+                let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
+                let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
+                let valueFieldName = "valueText";
+                if (!valueKey) {
+                    if (booleanFields && booleanFields.indexOf(key) !== -1) valueFieldName = "valueSwitch";
+                    if (selectFields && selectFields.indexOf(key) !== -1) valueFieldName = "valueSelect";
+                    if (arrayFields && arrayFields.indexOf(key) !== -1) valueFieldName = "valueArray";
+
+                    let newObject = cloneDeep(modelObjectCopy[modelName][i]) || {};
+                    newObject[valueFieldName] = defaultObj[key];
+                    modelObjectCopy[modelName].splice(i, 1, newObject);
+                }
+            }
+        }
+        console.log("inside", modelObjectCopy);
+        return modelObjectCopy;
     }
 };
 
