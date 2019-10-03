@@ -181,7 +181,7 @@ export default class KeyValueFormatter extends ObjectFormatter {
         let modelObjectCopy = cloneDeep(modelObject);
         let {booleanFields: booleanFields, selectFields: selectFields, arrayFields: arrayFields, default: defaultObj} = schemaObject;
         
-        if (modelObject[modelName]) {
+        if (modelObject[modelName] && defaultObj) {
             for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
                 let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
                 let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
