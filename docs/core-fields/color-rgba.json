@@ -106,7 +106,9 @@
       "selectValues": ["color", "alpha"],
       "listName": "defaultList",
       "newElementButtonLabel": "+ Add Default Item",
-      "default": {},
+      "default": {
+        "alpha": 1
+      },
       "order": 40
     }
   }

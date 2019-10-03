@@ -345,7 +345,7 @@
                         // Only for keyvalue formatter, to set default object value when a new key is added
                         let schemaObject = find(schema.fields, {model: modelKey});
                         let generatedModel = KeyValueFormatter.generateModel(prep_model[modelKey], modelKey, schemaObject);
-                        // debugger;
+                        console.log("generatedModel", generatedModel);
                         if (isEqual(generatedModel, prep_model[modelKey]) === false) 
                             that.model[modelKey] = {...that.model.modelKey, ...generatedModel};
 
