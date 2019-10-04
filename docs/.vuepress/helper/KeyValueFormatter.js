@@ -1,5 +1,5 @@
 import {ObjectFormatter} from './CommonFormatters.js';
-import {cloneDeep, map, find, without} from 'lodash';
+import {cloneDeep, map, find, without, filter} from 'lodash';
 import StoreWithExpiration from '../helper/StoreWithExpiration';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
@@ -63,10 +63,13 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "label": "Key",
                                         "model": "keyText",
                                         "visible": isShowingText,
+                                        "fieldClasses": "error",
+                                        "validateDebounceTime" : 1000,
                                         "validator": function(model, value) {
                                             let cachedModel = StoreWithExpiration.get(fieldType, modelName);
-                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1) {
-                                                return ["Duplicate Entry"];
+                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1 ) {
+                                                let filteredModel =  filter(cachedModel, (c) => c == model);
+                                                if (filteredModel.length > 1) return ["Duplicate Entry"];
                                             }
                                             return [];
                                         }
@@ -78,10 +81,14 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "listName": listName ? listName : "keyslist_" + modelName,
                                         "values": selectValues,
                                         "visible": !isShowingText,
+                                        "fieldClasses": "error",
+                                        "featured": true,
+                                        "validateDebounceTime" : 1000,
                                         "validator": function(model, value) {
                                             let cachedModel = StoreWithExpiration.get(fieldType, modelName);
-                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1) {
-                                                return ["Duplicate Entry"];
+                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1 ) {
+                                                let filteredModel =  filter(cachedModel, (c) => c == model);
+                                                if (filteredModel.length > 1) return ["Duplicate Entry"];
                                             }
                                             return [];
                                         }

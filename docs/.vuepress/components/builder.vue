@@ -77,7 +77,7 @@
                     redux: redux_field
                 },
                 formOptions: {
-                    validateAfterLoad: false,
+                    validateAfterLoad: true,
                     validateAfterChanged: true
                 },
                 showSection: false
@@ -292,13 +292,13 @@
                 let keyvalueSchema = filter(schema.fields, {formatter: "keyvalue"});
                 keyvalueSchema.forEach((keyvalue) => {
                     let modelKey = keyvalue.model;
-                    if (model[modelKey] && prep_model[modelKey]) {
+                    if (prep_model[modelKey]) {
                         // Only for keyvalue formatter, to set default object value when a new key is added
                         let schemaObject = find(schema.fields, {model: modelKey});
                         let generatedModel = KeyValueFormatter.generateModel(prep_model[modelKey], modelKey, schemaObject);
-                        if (isEqual(generatedModel, prep_model[modelKey]) === false) 
+                        if (isEqual(generatedModel, prep_model[modelKey]) === false) {
                             that.model[modelKey] = {...that.model.modelKey, ...generatedModel};
-
+                        }
                         // to PHP Object as the others
                         prep_model[modelKey] = KeyValueFormatter.toPHPObject(prep_model[modelKey], modelKey, that.fieldType());
                     }
