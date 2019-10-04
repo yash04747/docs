@@ -265,8 +265,10 @@
                 // This is specially handled as it is known dependency
                 let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
                 if (optionsSchemaIndex != -1) {
+                    console.log("options schema");
                     let optionsSchema = cloneDeep(schema.fields[optionsSchemaIndex]);
-                    if (optionsSchema.visible !== (Object.keys(prep_model).indexOf('data') === -1)) {
+                    if (!!prep_model.data && JSON.stringify(prep_model.data) !== JSON.stringify({}) && 
+                        optionsSchema.visible !== (Object.keys(prep_model).indexOf('data') === -1)) {
                         optionsSchema.visible  = (Object.keys(prep_model).indexOf('data') === -1);
                         schema.fields.splice(optionsSchemaIndex, 1, optionsSchema);
                         this.schema = cloneDeep(schema);
