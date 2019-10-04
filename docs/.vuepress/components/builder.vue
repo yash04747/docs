@@ -265,7 +265,6 @@
                 // This is specially handled as it is known dependency
                 let optionsSchemaIndex = findIndex(schema.fields, {model: "options"});
                 if (optionsSchemaIndex != -1) {
-                    console.log("options schema");
                     let optionsSchema = cloneDeep(schema.fields[optionsSchemaIndex]);
                     if (!!prep_model.data && JSON.stringify(prep_model.data) !== JSON.stringify({}) && 
                         optionsSchema.visible !== (Object.keys(prep_model).indexOf('data') === -1)) {
@@ -310,7 +309,7 @@
                 let multiSchema = filter(schema.fields, {formatter: "multiarray"});
                 multiSchema.forEach((multi) => {
                     if (model[multi.model] && model[multi.model].length > 0)
-                        prep_model[multi.model] = MultiArrayFormatter.toPHPObject(prep_model[multi.model], multi);
+                        prep_model[multi.model] = MultiArrayFormatter.toPHPObject(prep_model[multi.model], multi, that.fieldType());
                 });
 
                 // For Dynamic-type props(main example: "output"): type in ['text', 'boolean', 'basic', 'array']

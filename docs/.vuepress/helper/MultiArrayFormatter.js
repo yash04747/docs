@@ -1,8 +1,12 @@
 import {ArrayFormatter} from './CommonFormatters.js';
-import {cloneDeep} from 'lodash';
+import {filter, without, cloneDeep} from 'lodash';
+import StoreWithExpiration from '../helper/StoreWithExpiration';
+
+
 export default class MultiArrayFormatter extends ArrayFormatter {
     static data(schemaObject) {
-        let {name: modelName, arrayType: arrayType, valueType: valueType, categoryValues: categoryValues, itemValues: itemValues, visible: visible} = schemaObject;
+        let {name: modelName, fieldType: fieldType, arrayType: arrayType, 
+            valueType: valueType, categoryValues: categoryValues, itemValues: itemValues, visible: visible} = schemaObject;
         return Object.assign(super.data(), {
             "showModeElementUpButton": false,
             "showModeElementDownButton": false,
@@ -31,7 +35,18 @@ export default class MultiArrayFormatter extends ArrayFormatter {
                             "label": "Category",
                             "model": "CategoryKey",
                             "values": categoryValues,
-                            "visible": (arrayType === "key")
+                            "visible": (arrayType === "key"),
+                            "validateDebounceTime" : 1000,
+                            "validator": function(model, value) {
+                                if (arrayType === "key") {
+                                    let cachedModel = StoreWithExpiration.get(fieldType, modelName);
+                                    if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1 ) {
+                                        let filteredModel =  filter(cachedModel, (c) => c == model);
+                                        if (filteredModel.length > 1) return ["Duplicate Entry"];
+                                    }
+                                }
+                                return [];
+                            }
                         },
                         // VALUE part
                         {
@@ -66,7 +81,20 @@ export default class MultiArrayFormatter extends ArrayFormatter {
                                             "inputType": "text",
                                             "label": "Key",
                                             "model": "key",
-                                            "values": itemValues
+                                            "values": itemValues,
+                                            "validateDebounceTime" : 1000,
+                                            "validator": function(model, value) {
+                                                console.log(model);
+                                                if (arrayType === "key") {
+                                                    let cachedModel = StoreWithExpiration.get(fieldType, modelName);
+                                                    if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1 ) {
+                                                        let filteredModel =  filter(cachedModel, (c) => c == model);
+                                                        if (filteredModel.length > 1) return ["Duplicate Entry"];
+                                                    }
+                                                }
+                                                return [];
+                                            }
+
                                         },
                                         {
                                             "type": "input",
@@ -97,12 +125,13 @@ export default class MultiArrayFormatter extends ArrayFormatter {
         return object
     }
 
-    static toPHPObject(modelObject, schemaObject) {
+    static toPHPObject(modelObject, schemaObject, typeName) {
         if (JSON.stringify(modelObject) !== JSON.stringify({})) {
             let modelObjectCopy = cloneDeep(modelObject);
             
-            let {arrayType: arrayType, valueType: valueType} = schemaObject;
+            let {arrayType: arrayType, valueType: valueType, model: modelName} = schemaObject;
             let newObject = arrayType == "unordered" ? [] : {};
+            let modelKeys = [];
 
             // helper method
             // convert leaf array to object. it is necessary for valueType is not "plain"
@@ -131,6 +160,7 @@ export default class MultiArrayFormatter extends ArrayFormatter {
             // generate output object
             modelObject.forEach((categoryObject, i) => {
                 let categoryKey = generateCategoryKey(categoryObject['CategoryKey'], i);
+                modelKeys.push(categoryKey);
                 let categoryValueKey = valueType == 'plain' ? "CategoryPlainArray" : "CategoryKeyValueArray"
                 if (isValidCategoryObject(categoryObject, categoryValueKey)) {
                     if (arrayType == 'unordered')
@@ -139,7 +169,11 @@ export default class MultiArrayFormatter extends ArrayFormatter {
                         newObject[categoryKey] = itemArrayToObject(categoryObject[categoryValueKey]);
                 }
         
-            })
+            });
+
+            // save the keys array to check duplicate entry
+            StoreWithExpiration.set(typeName, modelName, without(modelKeys, undefined, null), 1000 * 60 * 30);
+
             if (JSON.stringify(newObject) !== JSON.stringify([])) {
                 return newObject;
             }
