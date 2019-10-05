@@ -25,3 +25,5 @@ yarn docs:dev
 ```bash
 yarn docs:build
 ```
+
+Works best with a unix-based OS.
