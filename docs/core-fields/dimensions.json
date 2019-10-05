@@ -104,7 +104,10 @@
       "name": "default",
       "newElementButtonLabel": "+ Add Default",
       "selectValues": ["width", "height", "units"],
-      "order": 39
+      "order": 39,
+      "default": {
+        "units": "px"
+      }
     },
     "width": {
       "name": "width",

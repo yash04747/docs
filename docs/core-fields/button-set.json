@@ -85,16 +85,38 @@
       "order": 45
     },
     "default": {
-      "type": "keyvalue",
+      "type": "custom-object",
+      "formatter": "keyvalue",
       "title": "Default",
       "name": "default",
-      "order": 50
+      "order": 50,
+      "dependent": true,
+      "dependencyType": "type",
+      "dependency": {
+        "parent": "multi",
+        "status": [
+          {
+            "parentValue": true,
+            "type": "custom-object",
+            "formatter": "keyvalue",
+            "typeof": "object",
+            "default": {}
+          },
+          {
+            "parentValue": false,
+            "type": "input",
+            "inputType": "text",
+            "formatter": "",
+            "typeof": "string",
+            "default": ""
+          }
+        ]
+      }
     },
     "multiple": {
       "name": "multi",
       "title": "Multi (Multi-Select)",
       "type": "bool",
-      "default": false,
       "order": 55
     }
   }

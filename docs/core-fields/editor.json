@@ -83,7 +83,14 @@
       "booleanFields": ["wpautop", "media_buttons", "teeny", "dfw"],
       "arrayFields": ["tinymce", "quicktags"],
       "newElementButtonLabel": "+ Add WP Editor Argument",
-      "order": 55
+      "order": 55,
+      "default": {
+        "wpautop": true,
+        "media_buttons": true,
+        "textarea_rows": 10,
+        "teeny": true,
+        "dfw": false
+      }
     }
   }
 }

@@ -51,6 +51,17 @@
       "default": false,
       "order": 25
     },
+    "options": {
+      "type": "array",
+      "formatter": "multiarray",
+      "arrayType": "ordered",
+      "title": "Options",
+      "name": "options",
+      "label": "Options",
+      "itemValues": ["alt", "img", "title", "presets", "class"],
+      "default": {},
+      "order": 40
+    },
     "data": {
       "type": "custom-object",
       "name": "data",
@@ -74,5 +85,7 @@
       "description": "Field visibility requirements.",
       "order": 70
     }
+    
+
   }
 }

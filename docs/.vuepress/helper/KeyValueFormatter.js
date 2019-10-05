@@ -1,8 +1,9 @@
 import {ObjectFormatter} from './CommonFormatters.js';
-import {cloneDeep, map, find} from 'lodash';
+import {cloneDeep, map, find, without, filter} from 'lodash';
+import StoreWithExpiration from '../helper/StoreWithExpiration';
 export default class KeyValueFormatter extends ObjectFormatter {
     static data(schemaObject) {
-        let {name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
+        let {fieldType: fieldType, name: modelName, newElementButtonLabel: newElementButtonLabel, selectValues: selectValues, 
             listName: listName, booleanFields: booleanFields, selectFields: selectFields, arrayFields: arrayFields,
             defaultObj: defaultObj} = schemaObject;
         let isShowingText = (selectValues && selectValues.length > 0) ? false : true;
@@ -61,7 +62,17 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "inputType": "text",
                                         "label": "Key",
                                         "model": "keyText",
-                                        "visible": isShowingText
+                                        "visible": isShowingText,
+                                        "fieldClasses": "error",
+                                        "validateDebounceTime" : 1000,
+                                        "validator": function(model, value) {
+                                            let cachedModel = StoreWithExpiration.get(fieldType, modelName);
+                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1 ) {
+                                                let filteredModel =  filter(cachedModel, (c) => c == model);
+                                                if (filteredModel.length > 1) return ["Duplicate Entry"];
+                                            }
+                                            return [];
+                                        }
                                     },
                                     {
                                         "type": "datalist",
@@ -69,7 +80,18 @@ export default class KeyValueFormatter extends ObjectFormatter {
                                         "model": "keySelect",
                                         "listName": listName ? listName : "keyslist_" + modelName,
                                         "values": selectValues,
-                                        "visible": !isShowingText
+                                        "visible": !isShowingText,
+                                        "fieldClasses": "error",
+                                        "featured": true,
+                                        "validateDebounceTime" : 1000,
+                                        "validator": function(model, value) {
+                                            let cachedModel = StoreWithExpiration.get(fieldType, modelName);
+                                            if (!!model && !!cachedModel && cachedModel.indexOf(model) !== -1 ) {
+                                                let filteredModel =  filter(cachedModel, (c) => c == model);
+                                                if (filteredModel.length > 1) return ["Duplicate Entry"];
+                                            }
+                                            return [];
+                                        }
                                     },
                                     // Value part: supports "text", "boolean", "select", "object" is yet to come
                                     {
@@ -136,21 +158,51 @@ export default class KeyValueFormatter extends ObjectFormatter {
         return object
     }
 
-    static toPHPObject(modelObject, modelName) {
+    static toPHPObject(modelObject, modelName, typeName) {
         let modelObjectCopy = cloneDeep(modelObject);
-        let newObject = {};
+        let newObject = {}, modelKeys = [];
 
         if (modelObject[modelName]) {
             for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
                 let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
                 let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
-                if (valueKey) newObject[key] = modelObjectCopy[modelName][i][valueKey];
+                modelKeys.push(key);
+                if (valueKey) {
+                    newObject[key] = modelObjectCopy[modelName][i][valueKey];
+                }
             }
         }
+        // save the keys array to check duplicate entry
+        StoreWithExpiration.set(typeName, modelName, without(modelKeys, undefined, null), 1000 * 60 * 30);
 
         if (JSON.stringify(newObject) !== JSON.stringify({})) {
             return newObject;
         }
+    }
+
+    // generate model with default value 
+    static generateModel(modelObject, modelName, schemaObject) {
+        let modelObjectCopy = cloneDeep(modelObject);
+        let {booleanFields: booleanFields, selectFields: selectFields, arrayFields: arrayFields, default: defaultObj} = schemaObject;
+        
+        if (modelObject[modelName] && defaultObj) {
+            for (let i = 0; modelObjectCopy[modelName] && i < modelObjectCopy[modelName].length; i++) {
+                let key = modelObjectCopy[modelName][i]['keyText'] ? modelObjectCopy[modelName][i]['keyText'] : modelObjectCopy[modelName][i]['keySelect'];
+                let valueKey = find(['valueText', 'valueSelect', 'valueSwitch', 'valueArray'], (key) => !!modelObjectCopy[modelName][i][key] );
+                let valueFieldName = "valueText";
+                if (!valueKey) { // default value is only valid to think only when there is no user input
+                    // based on field type, select the value type to look for
+                    if (booleanFields && booleanFields.indexOf(key) !== -1) valueFieldName = "valueSwitch";
+                    if (selectFields && selectFields.indexOf(key) !== -1) valueFieldName = "valueSelect";
+                    if (arrayFields && arrayFields.indexOf(key) !== -1) valueFieldName = "valueArray";
+                    // replace that empty value record with default value set one.
+                    let newObject = cloneDeep(modelObjectCopy[modelName][i]) || {};
+                    newObject[valueFieldName] = defaultObj[key];
+                    modelObjectCopy[modelName].splice(i, 1, newObject);
+                }
+            }
+        }
+        return modelObjectCopy;
     }
 };
 

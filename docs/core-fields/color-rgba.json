@@ -95,7 +95,21 @@
         "clickout_fires_change", "show_buttons"],
       "listName": "optionsList",
       "newElementButtonLabel": "+ Add Option",
-      "default": {},
+      "default": {
+        "input_text": "Select Color",
+        "show_input": true,
+        "show_initial": true,
+        "show_alpha": true,
+        "show_palette": true,
+        "show_palette_only": false,
+        "show_selection_palette": true,
+        "max_palette_size": 10,
+        "allow_empty": true,
+        "clickout_fires_change": false,
+        "choose_text": "Choose",
+        "cancel_text": "Cancel",
+        "show_buttons": true
+      },
       "order": 40
     },
     "default": {
@@ -106,7 +120,9 @@
       "selectValues": ["color", "alpha"],
       "listName": "defaultList",
       "newElementButtonLabel": "+ Add Default Item",
-      "default": {},
+      "default": {
+        "alpha": 1
+      },
       "order": 40
     }
   }
