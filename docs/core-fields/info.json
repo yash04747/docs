@@ -3,10 +3,9 @@
   "name": "Info",
   "description": null,
   "icon": null,
-  "model": {
-    "style": "normal",
-    "notice": true,
-    "indent": false
+  "groups": {
+    "Global": ["id", "type", "title", "desc", "subtitle", "class"],
+    "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]
   },
   "fields": {
     "id": {

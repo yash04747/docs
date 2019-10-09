@@ -3,8 +3,9 @@
   "name": "Select",
   "description": null,
   "icon": null,
-  "model": {
-    "placeholder": "Select an Item"
+  "groups": {
+    "Global": ["id", "type", "title", "desc", "subtitle", "class"],
+    "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]
   },
   "fields": {
     "id": {
@@ -93,7 +94,8 @@
       "title": "Placeholder",
       "type": "input",
       "inputType": "text",
-      "order": 50
+      "order": 50,
+      "default": "Select an Item"
     }
   }
 }

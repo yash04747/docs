@@ -3,8 +3,9 @@
   "name": "Multi Text",
   "description": null,
   "icon": null,
-  "model": {
-    "add_text": "Add More"
+  "groups": {
+    "Global": ["id", "type", "title", "desc", "subtitle", "class"],
+    "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]
   },
   "fields": {
     "id": {

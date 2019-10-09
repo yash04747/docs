@@ -3,11 +3,9 @@
   "name": "Link Color",
   "description": null,
   "icon": null,
-  "model": {
-    "regular": true,
-    "hover": true,
-    "visited": true,
-    "active": true
+  "groups": {
+    "Global": ["id", "type", "title", "desc", "subtitle", "class"],
+    "Advanced": ["attributes", "data", "compiler", "output", "output_variables", "permissions", "required", "default", "validate"]
   },
   "fields": {
     "id": {
