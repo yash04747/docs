@@ -5,14 +5,17 @@
             <div class="panel-heading" v-on:click="toggle">
                 Customize →
             </div>
-            <div class="panel-body" v-show="showSection">
+            <div class="panel-body" v-show="showSection" v-if="!hasGroup">
                 <small>Any changes you make in these fields will be reflected in the example declaration.</small>
 
                 <vue-form-generator :schema="schema" :model="model" :options="formOptions"></vue-form-generator>
                 <input type="button" class="btn btn-sm btn-info float-right" value="Reset" v-on:click="reset"/>
                 <br style="clear: both;">
-
-                <b-card no-body v-if="groups && groups.length > 0">
+               
+            </div>
+            <div class="panel-body" v-show="showSection" v-if="hasGroup">
+                <small>Any changes you make in these fields will be reflected in the example declaration.</small>
+                <b-card no-body class="no-margin">
                     <b-tabs card>
                         <b-tab v-for="group in groups" :title="group.title">
                             <vue-form-generator :schema="group" :model="model" :options="formOptions"></vue-form-generator>
@@ -50,7 +53,7 @@
     import DynamicTypeFormatter from '../helper/DynamicTypeFormatter';
     import MultiArrayFormatter from '../helper/MultiArrayFormatter';
     import StoreWithExpiration from '../helper/StoreWithExpiration';
-    import {extend, cloneDeep, sortBy, filter, find, findIndex, map, concat, isEqual} from 'lodash';
+    import {extend, cloneDeep, sortBy, filter, find, findIndex, map, concat, isEqual, difference} from 'lodash';
 
     export default {
 
@@ -74,8 +77,6 @@
             let redux_field = _.cloneDeep(this.$attrs.builder_json);
             let that = this;
             let field_type = redux_field.type;
-            let groups = redux_field.groups;
-            let groupedFields = [];
             let keys = Object.keys(redux_field['fields']);
 
             let to_return = {
@@ -118,26 +119,46 @@
             let cachedModel = StoreWithExpiration.get(field_type, 'model');
             if (cachedModel !== null) to_return.model = {...to_return['model'], ...cachedModel};
 
+
+
+
             // At the final stage, we will consider about grouping
+            let groups = redux_field.groups;
             if (groups && Object.keys(groups).length > 0) {
+                let groupedFields = [];
+                let coveredKeys = [];
                 Object.keys(groups).forEach(function (title) {
                     let newGroup = {
                         title: title
                     }
                     newGroup['fields'] = map(groups[title], (key) => {
+                        coveredKeys.push(key);
                         return find(to_return['schema']['fields'], {model: key});
                     });
+                    newGroup['fields'] = filter(newGroup['fields'], (field) => !!field ); // filter out null or undefined
                     groupedFields.push(newGroup);
                 });
+
+                // make sure to include any missing fields
+                let newGroup = {
+                    title: 'Extra'
+                }
+                newGroup['fields'] = map(difference(keys, coveredKeys), (key) => find(to_return['schema']['fields'], {model: key}))
+                newGroup['fields'] = filter(newGroup['fields'], (field) => !!field ); // filter out null or undefined
+                groupedFields.push(newGroup);
+
                 to_return['groups'] = groupedFields;
             }
-            console.log(groupedFields);
-            console.log(to_return);
+
+
+            
 
             return to_return;
         },
         computed: {
-            
+            hasGroup: function() {
+                return (this.groups && this.groups.length > 0);
+            }
         },
         methods: {
             toggle() {
