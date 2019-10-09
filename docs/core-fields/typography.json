@@ -3,6 +3,10 @@
   "name": "Typography",
   "description": null,
   "icon": null,
+  "groups": {
+    "Global": ["id", "type", "title", "desc", "subtitle", "class"],
+    "Advanced": ["compiler", "output", "output_variables", "permissions", "required", "default"]
+  },
   "fields": {
     "id": {
       "name": "id",
