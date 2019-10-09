@@ -140,18 +140,20 @@
                 });
 
                 // make sure to include any missing fields
-                let newGroup = {
-                    title: 'Extra'
+                if (difference(keys, coveredKeys).length > 0) {
+                    let newGroup = {
+                        title: 'Extra'
+                    }
+                    newGroup['fields'] = map(difference(keys, coveredKeys), (key) => find(to_return['schema']['fields'], {model: key}))
+                    newGroup['fields'] = filter(newGroup['fields'], (field) => !!field ); // filter out null or undefined
+                    groupedFields.push(newGroup);
                 }
-                newGroup['fields'] = map(difference(keys, coveredKeys), (key) => find(to_return['schema']['fields'], {model: key}))
-                newGroup['fields'] = filter(newGroup['fields'], (field) => !!field ); // filter out null or undefined
-                groupedFields.push(newGroup);
 
                 to_return['groups'] = groupedFields;
             }
 
 
-            
+
 
             return to_return;
         },
