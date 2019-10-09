@@ -12,32 +12,10 @@
                 <input type="button" class="btn btn-sm btn-info float-right" value="Reset" v-on:click="reset"/>
                 <br style="clear: both;">
 
-                <b-card no-body>
+                <b-card no-body v-if="groups && groups.length > 0">
                     <b-tabs card>
-                        <b-tab no-body title="Picture 1">
-                            <b-card-img bottom src="https://picsum.photos/600/200/?image=21"></b-card-img>
-                            <b-card-footer>Picture 1 footer</b-card-footer>
-                        </b-tab>
-
-                        <b-tab no-body title="Picture 2">
-                            <b-card-img bottom src="https://picsum.photos/600/200/?image=25"></b-card-img>
-                            <b-card-footer>Picture 2 footer</b-card-footer>
-                        </b-tab>
-
-                        <b-tab no-body title="Picture 3">
-                            <b-card-img bottom src="https://picsum.photos/600/200/?image=26"></b-card-img>
-                            <b-card-footer>Picture 3 footer</b-card-footer>
-                        </b-tab>
-
-                        <b-tab title="Text">
-                            <b-card-title>This tab does not have the <code>no-body</code> prop set</b-card-title>
-                            <b-card-text>
-                                Quis magna Lorem anim amet ipsum do mollit sit cillum voluptate ex nulla tempor. Laborum
-                                consequat non elit enim exercitation cillum aliqua consequat id aliqua. Esse ex
-                                consectetur mollit voluptate est in duis laboris ad sit ipsum anim Lorem. Incididunt
-                                veniam velit elit elit veniam Lorem aliqua quis ullamco deserunt sit enim elit aliqua
-                                esse irure.
-                            </b-card-text>
+                        <b-tab v-for="group in groups" :title="group.title">
+                            <vue-form-generator :schema="group" :model="model" :options="formOptions"></vue-form-generator>
                         </b-tab>
                     </b-tabs>
                 </b-card>
@@ -96,6 +74,8 @@
             let redux_field = _.cloneDeep(this.$attrs.builder_json);
             let that = this;
             let field_type = redux_field.type;
+            let groups = redux_field.groups;
+            let groupedFields = [];
             let keys = Object.keys(redux_field['fields']);
 
             let to_return = {
@@ -137,6 +117,22 @@
             // get the stored version of last-session model and prepare model from it.
             let cachedModel = StoreWithExpiration.get(field_type, 'model');
             if (cachedModel !== null) to_return.model = {...to_return['model'], ...cachedModel};
+
+            // At the final stage, we will consider about grouping
+            if (groups && Object.keys(groups).length > 0) {
+                Object.keys(groups).forEach(function (title) {
+                    let newGroup = {
+                        title: title
+                    }
+                    newGroup['fields'] = map(groups[title], (key) => {
+                        return find(to_return['schema']['fields'], {model: key});
+                    });
+                    groupedFields.push(newGroup);
+                });
+                to_return['groups'] = groupedFields;
+            }
+            console.log(groupedFields);
+            console.log(to_return);
 
             return to_return;
         },

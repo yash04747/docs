@@ -3,6 +3,12 @@
   "name": "Typography",
   "description": null,
   "icon": null,
+  "groups": {
+    "global": ["id", "type", "title", "desc", "subtitle", "class"],
+    "advanced": ["compiler", "output", "output_variables", "permissions", "required", "default"],
+    "extra": ["units", "google", "fonts", "font-backup", "font-style", "font-weight", "font-size", "font-family", "subsets", "line-height", 
+      "word-spacing", "letter-spacing", "text-align", "text-transform", "color", "preview", "all_styles", "select2", "font_family_clear"]
+  },
   "fields": {
     "id": {
       "name": "id",
