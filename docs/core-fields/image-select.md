@@ -38,7 +38,7 @@ Select from an array of images as radio buttons.
 |class|string|Extra class name for the layout image.|
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './image-select.json';
 export default {

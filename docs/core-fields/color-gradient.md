@@ -35,7 +35,7 @@ To set the transparency checkbox by default, use the string `transparent` in pla
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './color-gradient.json';
 export default {

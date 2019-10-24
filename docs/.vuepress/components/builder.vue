@@ -3,7 +3,7 @@
     <div class="redux-builder">
         <div class="panel thirty">
             <div class="panel-heading" v-on:click="toggle">
-                Customize →
+                Build →
             </div>
             <div class="panel-body" v-show="showSection" v-if="!hasGroup">
                 <small>Any changes you make in these fields will be reflected in the example declaration.</small>
@@ -92,7 +92,7 @@
                     validateAfterLoad: true,
                     validateAfterChanged: true
                 },
-                showSection: false
+                showSection: true
             };
 
             let order = 0;

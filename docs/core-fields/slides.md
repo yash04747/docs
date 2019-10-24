@@ -36,7 +36,7 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './slides.json';
 export default {

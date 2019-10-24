@@ -35,7 +35,7 @@ The Password field, which can be used as a login with password could be used as 
 |username|string|Placeholder text for the username field.|
 |password|string|Placeholder text for the password field.|
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './password.json';
 export default {

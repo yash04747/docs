@@ -35,7 +35,7 @@ When setting the `resolution` argument to a floating point value, it will also b
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './slider.json';
 export default {

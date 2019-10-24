@@ -43,11 +43,11 @@ The Border field is a great way to set the border properties of any HTML object 
 |border-left|string|Sets the default value of the left border.|
 |border-width|string|Sets the default value of the border's width.|
 
+::: tip 
+It is only necessary to set the `border-width` default when the `all` argument is set to true.
+::: 
 
-Note:  It is only necessary to set the `border-width` default when the `all` argument is set to true.
-
-
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './border.json';
 export default {

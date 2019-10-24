@@ -23,7 +23,7 @@ When using the Divide field with `required`, the divider cannot be hidden by def
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './divide.json';
 export default {

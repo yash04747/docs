@@ -40,7 +40,7 @@ The Editor field offers WYSIWYG editing capability, using the same editing inter
  While the `textarea_name` value is available for the WP Editor options, Redux automatically sets this value for you. There is no real need to set it manually. The `editor_class` value, also part of the WP Editor settings does not need to be set via the `args` array. It can be set via the `class` type.
 :::
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './editor.json';
 export default {

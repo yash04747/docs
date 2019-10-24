@@ -54,7 +54,7 @@ The default argument requires an array with two key/pair values: `color` and `al
 |alpha|float/int|1|Integer or float value of the default alpha level.|
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './color-rgba.json';
 export default {

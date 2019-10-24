@@ -25,7 +25,7 @@ The Spinner field returns the value entered in its input box or via clicks on it
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './spinner.json';
 export default {

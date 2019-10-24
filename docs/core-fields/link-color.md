@@ -37,7 +37,7 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 |visited|string|Hex string for the default visited hyperlink color.|
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './link-color.json';
 export default {

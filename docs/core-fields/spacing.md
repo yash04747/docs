@@ -48,7 +48,7 @@ When specifying your own units array, it will override the `units-extended` argu
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './spacing.json';
 export default {

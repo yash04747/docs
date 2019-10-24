@@ -25,7 +25,7 @@ Multi-Text field supports as many fields as one might need.  Adding and removin
 
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './multi-text.json';
 export default {

@@ -21,7 +21,7 @@ With the Gallery field, create a new gallery of images by selecting existing ima
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './gallery.json';
 export default {

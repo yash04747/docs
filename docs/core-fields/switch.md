@@ -22,7 +22,7 @@ The Switch field sets a true or false value based on the selection.  Users may 
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './switch.json';
 export default {

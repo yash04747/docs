@@ -26,7 +26,7 @@ hidden by default. It’s best only to use the [required argument](../configura
 when the fold is shown by default.
 :::
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './section.json';
 export default {

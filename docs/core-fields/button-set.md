@@ -31,7 +31,7 @@ key value from the `options` argument to set as selected.  When `multi` is set 
 an array of values representing the key of the option from `options` to set as selected.
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './button-set.json';
 export default {

@@ -68,7 +68,7 @@ selection, and much, much more!
 |always_display|`false`|Flag that sets whether or not the font preview will display, even when no changes are made.|
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './typography.json';
 export default {

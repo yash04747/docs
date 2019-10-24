@@ -44,7 +44,7 @@ The media field is an adaption for a core WordPress feature.
 
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './media.json';
 export default {

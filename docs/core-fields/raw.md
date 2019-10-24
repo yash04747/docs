@@ -24,7 +24,7 @@ The Raw field provides the ability to output raw HTML directly into the options 
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 :::
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './raw.json';
 export default {

@@ -27,8 +27,7 @@ Array containing the `content` and optional `title` arguments for the [hint](../
 - [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
-
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './ace-editor.json';
 export default {
@@ -41,7 +40,6 @@ export default {
 }
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
-
 
 ## Example Declaration
 
@@ -67,3 +65,5 @@ global $redux_demo;
 
 echo 'ACE Editor output: ' . $redux_demo['css-editor'];
 ```
+
+

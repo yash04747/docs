@@ -42,7 +42,7 @@ The `name` properties also serve as the input placeholder text when no value is 
 
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './dimensions.json';
 export default {

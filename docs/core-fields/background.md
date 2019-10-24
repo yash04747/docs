@@ -59,9 +59,7 @@ The Redux Background field offers unmatched features not found in any other opti
 |height|string|String value setting the height of the image.|
 |thumbnail|string|URL string value to the image thumbnail.|
 
-
-
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './background.json';
 export default {

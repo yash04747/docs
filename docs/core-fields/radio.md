@@ -24,7 +24,7 @@ The Radio field is an excellent way to present a set of choices for users to sel
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './radio.json';
 export default {

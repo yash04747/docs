@@ -26,7 +26,7 @@ The Select Image field offers the ability to populate a drop-down field with an 
 
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './select-image.json';
 export default {

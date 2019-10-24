@@ -22,7 +22,7 @@ The Date field displays the popup jQuery datebox when clicking on the text input
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './date.json';
 export default {

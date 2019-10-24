@@ -24,7 +24,7 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 :::
 
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './sortable.json';
 export default {

@@ -30,7 +30,7 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 
 The first parameter of the value pair must be a string type representing a unique ID for the element.  The second parameter must be a string type representing the display name of the element. See the code below for an example.
 
-## Example Declaration
+## Generate a Declaration
 <script>
 import builder from './sorter.json';
 export default {
