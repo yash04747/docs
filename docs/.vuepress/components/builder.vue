@@ -2,11 +2,11 @@
 <template>
     <div class="redux-builder">
         <div class="panel thirty">
-            <div class="panel-heading" v-on:click="toggle">
-                Build →
+            <div class="panel-heading">
+                Build a Custom Configuration →
             </div>
-            <div class="panel-body" v-show="showSection">
-                <small>Any changes you make in these fields will be reflected in the Example Config.</small>
+            <div class="panel-body">
+                <small>Changes you make to this form will be reflected in the generated code.</small>
 
                 <vue-form-generator :schema="schema" :model="model" :options="formOptions" v-if="!hasGroup"></vue-form-generator>
 
@@ -17,8 +17,7 @@
                         </b-tab>
                     </b-tabs>
                 </b-card>
-                
-                <input type="button" class="btn btn-sm btn-info float-right" value="Reset" v-on:click="reset"/>
+                <input type="button" class="btn btn-sm btn-info float-right" value="Reset Form" v-on:click="reset"/>
                 <br style="clear: both;">
             </div>
         </div>
@@ -90,7 +89,6 @@
                     validateAfterLoad: true,
                     validateAfterChanged: true
                 },
-                showSection: true
             };
 
             let order = 0;
@@ -161,9 +159,6 @@
             }
         },
         methods: {
-            toggle() {
-                this.showSection = !this.showSection
-            },
             fieldType: function () {
                 return this.$attrs.builder_json.type
             },
