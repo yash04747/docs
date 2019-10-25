@@ -93,7 +93,7 @@ The radius inputs for value, color and style may also be independently enabled o
 |style_enabled|bool|`true`|Flag to enable or disable the radius style selector.|
 
 
-## Example Declaration
+## Example Config
 
 ```php
 array(

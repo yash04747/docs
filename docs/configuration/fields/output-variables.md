@@ -67,7 +67,7 @@ Redux::setArgs( 'YOUR_OPT_NAME', array( 'compiler_ouput_variables_prefix' => '@'
 ```
 
 
-## Example Declaration
+## Example Config
 
 For this example, we'll use the border field, found in the 
 <a href="https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php">sample-config.php</a>. 
@@ -128,7 +128,7 @@ environments will have issues. It is STRONGLY advised to use CSS variables for g
 :::
 
 Below is a full example of a compiler hook to generate your SCSS/LESS on save. The content of $output_variables will be
-populated with the following provided the above example declaration is used.
+populated with the following provided the above Example Config is used.
 
 ```php
 array(

@@ -35,7 +35,7 @@ To understand how to use extensions, you should read this article on [Using Exte
 To ease the use of Metaboxes, a metaboxes API has been implemented. Nearly all the methods match with the ones had in the
 standard Redux API. However, with metaboxes there is an additional concept of a `box`.
 
-## Example Declaration
+## Example Config
 Since we've kept the structure exactly the same, start by constructing a section array like you normally would. In the 
 included config file for metaboxes, we save these to an array. We've named that array $boxSections for the below examples.
 

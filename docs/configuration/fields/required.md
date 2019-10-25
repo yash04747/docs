@@ -12,7 +12,7 @@ some careful consideration when using.
 [[toc]]
 :::
     
-## Example Declaration
+## Example Config
 
 To link a field's visibility to the value of another:
     

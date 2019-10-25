@@ -35,7 +35,7 @@ When setting the `resolution` argument to a floating point value, it will also b
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './slider.json';
 export default {
@@ -50,7 +50,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration(s) 
+## Example Config(s) 
 
 #### Default
 ```php

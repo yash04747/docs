@@ -25,7 +25,7 @@ The Textarea field accepts any form of multi-line string input, including custom
 - [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './textarea.json';
 export default {

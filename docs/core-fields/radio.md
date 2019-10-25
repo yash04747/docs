@@ -24,7 +24,7 @@ The Radio field is an excellent way to present a set of choices for users to sel
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './radio.json';
 export default {
@@ -40,7 +40,7 @@ export default {
 
 
 
-## Example Declaration using Array
+## Example Config using Array
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-radio',
@@ -56,7 +56,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 
-## Example Declaration using WordPress Data
+## Example Config using WordPress Data
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'      => 'opt-radio',

@@ -37,7 +37,7 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 |visited|string|Hex string for the default visited hyperlink color.|
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './link-color.json';
 export default {
@@ -51,7 +51,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-link-color',

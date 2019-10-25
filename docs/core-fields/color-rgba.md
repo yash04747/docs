@@ -54,7 +54,7 @@ The default argument requires an array with two key/pair values: `color` and `al
 |alpha|float/int|1|Integer or float value of the default alpha level.|
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './color-rgba.json';
 export default {
@@ -68,7 +68,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

@@ -30,7 +30,7 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 
 The first parameter of the value pair must be a string type representing a unique ID for the element.  The second parameter must be a string type representing the display name of the element. See the code below for an example.
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './sorter.json';
 export default {
@@ -45,7 +45,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

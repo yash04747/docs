@@ -70,7 +70,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './select.json';
 export default {

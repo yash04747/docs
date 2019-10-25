@@ -24,7 +24,7 @@ The Raw field provides the ability to output raw HTML directly into the options 
 - [Using the `permissions` Argument](../configuration/fields/permissions.md)
 :::
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './raw.json';
 export default {
@@ -39,7 +39,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration with Relative File
+## Example Config with Relative File
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'           => 'opt-raw',
@@ -51,7 +51,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 
-## Example Declaration with PHP Output
+## Example Config with PHP Output
 
 Sometimes you want to do more than just a flat file with raw, and acutally output the results of some PHP code. You
 can easily do that with this approach.

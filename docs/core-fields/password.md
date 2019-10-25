@@ -35,7 +35,7 @@ The Password field, which can be used as a login with password could be used as 
 |username|string|Placeholder text for the username field.|
 |password|string|Placeholder text for the password field.|
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './password.json';
 export default {
@@ -50,7 +50,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-password',

@@ -6,7 +6,7 @@
                 Build →
             </div>
             <div class="panel-body" v-show="showSection">
-                <small>Any changes you make in these fields will be reflected in the example declaration.</small>
+                <small>Any changes you make in these fields will be reflected in the Example Config.</small>
 
                 <vue-form-generator :schema="schema" :model="model" :options="formOptions" v-if="!hasGroup"></vue-form-generator>
 

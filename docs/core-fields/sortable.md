@@ -24,7 +24,7 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './sortable.json';
 export default {
@@ -39,7 +39,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration
+## Example Config
 ```php
 // Checkbox mode
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

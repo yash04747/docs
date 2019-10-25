@@ -48,7 +48,7 @@ When specifying your own units array, it will override the `units-extended` argu
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './spacing.json';
 export default {
@@ -62,7 +62,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'             => 'opt-spacing',

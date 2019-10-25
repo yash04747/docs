@@ -23,7 +23,7 @@ When using the Divide field with `required`, the divider cannot be hidden by def
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './divide.json';
 export default {
@@ -38,7 +38,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'   =>'divider_1',

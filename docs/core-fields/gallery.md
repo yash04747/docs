@@ -21,7 +21,7 @@ With the Gallery field, create a new gallery of images by selecting existing ima
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './gallery.json';
 export default {
@@ -35,7 +35,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-gallery',

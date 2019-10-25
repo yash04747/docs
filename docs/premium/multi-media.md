@@ -55,7 +55,7 @@ for localization purposes, but for flexibility reasons as well.
 |max_limit|string|Maximum upload limit of %s reached/exceeded.|Message that appears when max_file_limit has been reached.  %s represents the max_file_upload number and should not be modified.|
 
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(

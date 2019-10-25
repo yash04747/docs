@@ -22,7 +22,7 @@ The Switch field sets a true or false value based on the selection.  Users may 
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './switch.json';
 export default {
@@ -35,7 +35,7 @@ export default {
 </script>
 <builder :builder_json="builder" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-switch',

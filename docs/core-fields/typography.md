@@ -68,7 +68,7 @@ selection, and much, much more!
 |always_display|`false`|Flag that sets whether or not the font preview will display, even when no changes are made.|
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './typography.json';
 export default {
@@ -82,7 +82,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 

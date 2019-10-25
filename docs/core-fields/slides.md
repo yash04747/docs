@@ -36,7 +36,7 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './slides.json';
 export default {
@@ -51,7 +51,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

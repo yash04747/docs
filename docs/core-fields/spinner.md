@@ -25,7 +25,7 @@ The Spinner field returns the value entered in its input box or via clicks on it
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './spinner.json';
 export default {
@@ -39,7 +39,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-spinner',

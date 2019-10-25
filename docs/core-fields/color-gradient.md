@@ -35,7 +35,7 @@ To set the transparency checkbox by default, use the string `transparent` in pla
 :::
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './color-gradient.json';
 export default {
@@ -50,7 +50,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-color-gradient',

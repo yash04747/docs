@@ -42,7 +42,7 @@ The `name` properties also serve as the input placeholder text when no value is 
 
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './dimensions.json';
 export default {
@@ -56,7 +56,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_dimensions',

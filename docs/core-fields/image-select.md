@@ -38,7 +38,7 @@ Select from an array of images as radio buttons.
 |class|string|Extra class name for the layout image.|
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './image-select.json';
 export default {
@@ -54,7 +54,7 @@ export default {
 
 
 
-## Example Declaration
+## Example Config
 #### Image Select Layout
 
 ```php

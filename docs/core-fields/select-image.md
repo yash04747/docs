@@ -26,7 +26,7 @@ The Select Image field offers the ability to populate a drop-down field with an 
 
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './select-image.json';
 export default {
@@ -40,7 +40,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-select-image',

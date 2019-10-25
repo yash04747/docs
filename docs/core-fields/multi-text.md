@@ -25,7 +25,7 @@ Multi-Text field supports as many fields as one might need.  Adding and removin
 
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './multi-text.json';
 export default {
@@ -39,7 +39,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

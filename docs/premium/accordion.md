@@ -28,7 +28,7 @@ Arguments
 |title|string||Displays title of the field.|
 |subtitle|string||Subtitle display of the field, situated beneath the title.|
 |class|string||Appends any number of classes to the field's class attribute.|
-|position|string||Either start or end, depending on whether the array begins or ends the accordion block.  See Example Declaration below.|
+|position|string||Either start or end, depending on whether the array begins or ends the accordion block.  See Example Config below.|
 |open|boolean|`false`|If set to true, accordion will be open. If set to false, accordion will be closed by default.|
 |open-icon|string|el-plus|The Elusive Icon to show when the accordion is closed (to be opened).  At this time, only Elusive Icons are supported.|
 |close-icon|string|el-minus|The Elusive Icon to show when the accordion is open (to be closed).  At this time, only Elusive Icons are supported.|
@@ -40,7 +40,7 @@ Arguments
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
-## Example Declaration
+## Example Config
 
 The following example in included with the Accordion extension package.
 

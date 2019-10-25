@@ -44,7 +44,7 @@ The media field is an adaption for a core WordPress feature.
 
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './media.json';
 export default {
@@ -58,7 +58,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-media',
@@ -73,7 +73,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ) );
 ```
 
-### Example Declaration w/ `library_filter`
+### Example Config w/ `library_filter`
 This example will produce a media field that can only find files with the extension denoted. This is useful when you only want specific file types specified for a given field.
 
 ```php

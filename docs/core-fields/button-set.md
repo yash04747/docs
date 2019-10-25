@@ -31,7 +31,7 @@ key value from the `options` argument to set as selected.  When `multi` is set 
 an array of values representing the key of the option from `options` to set as selected.
 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './button-set.json';
 export default {
@@ -47,7 +47,7 @@ export default {
 
 
 
-## Example Declaration
+## Example Config
 #### Single select
 
 ```php

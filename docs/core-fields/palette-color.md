@@ -27,7 +27,7 @@ Each palette in the palettes argument is a key/pair array that defines each indi
 is the palette name.  Assigned to the key is an array of hex colors to be displayed in the palette entry. 
  See the example below for a complete breakdown.
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './palette-color.json';
 export default {
@@ -41,7 +41,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::setSection( 'OPT_NAME', array(
     'title'      => __( 'Palette Colors', 'redux-framework-demo' ),

@@ -32,7 +32,7 @@ If you are looking to use CSS variables or to have Redux generate variables to r
 will want to look at the <u>[output_variables](output-variables.md)</u> argument instead.
 :::
 
-## Example Declaration
+## Example Config
 
 For this example, we'll use the border field, found in the 
 [sample-config.php](https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php).

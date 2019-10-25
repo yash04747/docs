@@ -59,7 +59,7 @@ The Redux Background field offers unmatched features not found in any other opti
 |height|string|String value setting the height of the image.|
 |thumbnail|string|URL string value to the image thumbnail.|
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './background.json';
 export default {
@@ -73,7 +73,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(         
     'id'       => 'opt-background',

@@ -27,7 +27,7 @@ To understand how to use extensions, you should read this article on [Using Exte
 |permissions|array|Just like standard Redux, you can set permission levels for "term" boxes, sections, or fields.|
 |sections|array|Your sections array, the same style as a standard Redux config file.|
 
-## Example Declaration
+## Example Config
 Since we've kept the structure exactly the same, start by constructing a section array like you normally would. We then 
 add a level above called a "term" box, and away we go!
 

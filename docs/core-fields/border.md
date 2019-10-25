@@ -47,7 +47,7 @@ The Border field is a great way to set the border properties of any HTML object 
 It is only necessary to set the `border-width` default when the `all` argument is set to true.
 ::: 
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './border.json';
 export default {
@@ -63,7 +63,7 @@ export default {
 
 
 
-## Example Declaration
+## Example Config
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'header-border',

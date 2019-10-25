@@ -18,7 +18,7 @@ The Import/Export extension offers users the ability to back up and restore thei
 
 
 
-## Example Declaration
+## Example Config
 ```php
 array(
     'id'            => 'opt-import-export',

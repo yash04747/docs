@@ -176,7 +176,7 @@ The `icons` argument may also be used to edit profiles from the default set.  I
 )
 ```
 
-## Example Declaration
+## Example Config
 
 The following sets up the basic social profile field without the additions or alterations specified above.
 

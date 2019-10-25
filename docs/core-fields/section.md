@@ -26,7 +26,7 @@ hidden by default. It’s best only to use the [required argument](../configura
 when the fold is shown by default.
 :::
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './section.json';
 export default {
@@ -41,7 +41,7 @@ export default {
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
 
-## Example Declaration
+## Example Config
 ```php
 // Begin the section
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

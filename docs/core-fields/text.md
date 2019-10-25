@@ -32,7 +32,7 @@ The Text field accepts any form of text and optionally validates the text before
 - [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './text.json';
 export default {

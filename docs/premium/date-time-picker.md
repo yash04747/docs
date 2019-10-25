@@ -94,7 +94,7 @@ select a date specific range at any point in the calender.
 <span style="display:block;text-align:center">![](./img/dtp_split.png)</span>
 <span style="display:block;text-align:center">![](./img/dtp_nosplit.png)</span>
 
-## Example Declaration
+## Example Config
 ```php
 array (
     'id'            => 'opt-date-time',

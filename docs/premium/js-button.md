@@ -71,7 +71,7 @@ The `buttons` argument accepts a single array populated by arrays that accept th
 |function|string|Required.  The name of the function to call inside the script passed via the `scripts` argument.|
 
 
-## Example Declaration
+## Example Config
 For this example (included in the download), assume we've placed our javascript file in the theme's root directory. We 
 can easily obtain it's location using [get_template_directory_uri()](https://developer.wordpress.org/reference/functions/get_template_directory_uri/). 
 Since our example javascript (shown below) uses [jQuery](https://jquery.com/), we must pass the [jQuery](https://jquery.com/) 

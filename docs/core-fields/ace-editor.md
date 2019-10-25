@@ -27,7 +27,7 @@ Array containing the `content` and optional `title` arguments for the [hint](../
 - [Using the `validate` Argument](../configuration/fields/validate.md)
 :::
 
-## Generate a Declaration
+## Build Config
 <script>
 import builder from './ace-editor.json';
 export default {
@@ -41,7 +41,7 @@ export default {
 </script>
 <builder :builder_json="builder" :builder_defaults="defaults" />
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(

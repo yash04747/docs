@@ -45,7 +45,7 @@ Alternatively, you can provide any of the arguments below for a more customized 
 - [Using the `required` Argument](../configuration/fields/required.md)
 :::
 
-## Example Declaration
+## Example Config
 
 ```php
 Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(

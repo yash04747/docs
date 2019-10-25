@@ -69,7 +69,7 @@ The group values allows you to store all values within the repeater id value ins
 #### The `sortable` Argument
 By default each repeater block is sortable and the values will be returned to the developer in the order of which they are saved. However, should a developer like to disable this feature, they may set this to false and sorting will be enabled to the user.
 
-## Example Declaration
+## Example Config
 ```php
 Redux::setSection( 'OPT_NAME',  array(
     'title' => __('Repeater Field', 'redux-framework-demo' ),
