@@ -31,8 +31,7 @@ displayed for a user to input data. It has it's own set of characteristics depen
 At this level, whatever args are set to the [field](../../configuration/objects/field.md) act as an override for all levels above.
 
 ### Section
-A [section](../../configuration/objects/section.md) is a grouping of [fields](../../configuration/objects/field.md). It  
-groups everything together into it's own array. It containes a number of arguments that can be passed down to the [fields](../../configuration/objects/field.md) 
+A [section](../../configuration/objects/section.md) is a grouping of [fields](../../configuration/objects/field.md). It groups everything together into it's own array. It containes a number of arguments that can be passed down to the [fields](../../configuration/objects/field.md) 
 below, provided the [fields](../../configuration/objects/field.md) below do not specify those same arguments on their own declaration. 
 Again, the [fields](../../configuration/objects/field.md) level args override all.
 
