@@ -171,7 +171,7 @@ This argument sets the individual tabs in the help dropdown. HTML is permitted. 
 |--- |--- |--- |
 |id|string|A unique ID representing the individual help tab.|
 |title|string|Text representing the title of the help tab.|
-|content|string|Text to display in the help tab content area. This string should be surrounded by `>p<` paragraph tags. HTML is permitted.|
+|content|string|Text to display in the help tab content area. This string should be surrounded by `<p></p>` paragraph tags. HTML is permitted.|
 
 
 **Example:**
@@ -222,7 +222,7 @@ This variable determines if the 'Expand Options' buttons is visible on the optio
 This variable determines if the 'Reset All and 'Reset Section' buttons are visible on the options panel.
 
 ## hints
-The [hints argument](fields/hints.md) requires settings involving multiple arrays. Thus, an entire article has been devoted to its usage. REad more on [using Hints in fields](fields/hints.md).
+The [hints argument](fields/hints.md) requires settings involving multiple arrays. Thus, an entire article has been devoted to its usage. Read more on [using Hints in fields](fields/hints.md).
 
 ## intro_text
 **Default**: `'intro_text' => '<p>This text is displayed above the options panel. It isn\'t required, but more info is always better! The intro_text field accepts all HTML.</p>'`
@@ -252,12 +252,12 @@ This variable sets the text to display as the admin menu's label, and only when 
 ## network_admin
 **Default**: `'network_admin' => false`
 
-This variable enables the network admin when using the `network` `<a href="/redux-framework/arguments/database" title="database">database</a>` mode.
+This variable enables the network admin when using the `network` [database](/redux-framework/arguments/database) mode.
 
 ## network_sites
 **Default**: `'network_sites' => true`
 
-This variable enables sites as well as admin when using the `network <a href="/redux-framework/arguments/database" title="database">database</a>` mode.
+This variable enables sites as well as admin when using the `network` [database](/redux-framework/arguments/database) mode.
 
 ## open_expanded
 **Default**: `'open_expanded' => false`
