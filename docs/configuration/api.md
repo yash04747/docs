@@ -10,7 +10,7 @@ simplicity in mind.
 ::: danger API Method Names Have Changed
 A number of API methods have changed name in Redux 4.x to match PHP naming conventions. There are still shims for the old 
 names, but they will give you a deprecation notice. For a full list of method changes for the API look below at 
-[Deprecated Methods](#deprecated-methods) or the [Redux 4.x Migration & Compatability](../guides/other/migration-guide.md).
+[Deprecated Methods](#deprecated-methods) or the [Redux 4.x Migration & Compatibility](../guides/other/migration-guide.md).
 :::
 
 ::: warning Table of Contents
@@ -21,8 +21,8 @@ names, but they will give you a deprecation notice. For a full list of method ch
 
 ## History
 
-Working with Redux in the past was much more combersome. Filters, extension loaders, separate arrays, fallback checks.
-None of these were had in the past. In Redux 3.5+ the API was created to rememdy this. It has futher been enhanced in 
+Working with Redux in the past was much more cumbersome. Filters, extension loaders, separate arrays, fallback checks.
+None of these were had in the past. In Redux 3.5+ the API was created to remedy this. It has further been enhanced in 
 Redux 4.x+. It is advised to use the new API methods when possible.
 
 ## Usage and Examples
@@ -40,7 +40,7 @@ if ( ! class_exists( 'Redux' ) ) {
 }
 ```
 
-### Redux::setArgs()
+### Redux::set_args()
 This method allows you set set [global args](global_arguments.md) for your instance of Redux. It's use is required for
 virtually any Redux instance. An example of how to use it is below.
 
@@ -51,11 +51,11 @@ $args = Array(
     'customizer'  => true
 );
 
-Redux::setArgs ( $opt_name, $args );
+Redux::set_args( $opt_name, $args );
 ``` 
 
 
-### Redux::getArgs()
+### Redux::get_args()
 
 This method can take one or two parameters depending on the desired output.
 
@@ -63,7 +63,7 @@ This method can take one or two parameters depending on the desired output.
 
 The return value is an array of all global arguments for the [opt_name](global_arguments.md#opt-name) instance.
 ```php
-$args = Redux::getArgs( $opt_name );
+$args = Redux::get_args( $opt_name );
 ```
 
 #### Fetch a Single Argument
@@ -71,11 +71,11 @@ $args = Redux::getArgs( $opt_name );
 If a key is provided, and that value is set, the single value will be returned, otherwise null is returned.
 
 ```php
-echo Redux::getArg( $opt_name, 'opt_name' );
+echo Redux::get_arg( $opt_name, 'opt_name' );
 ```
 The above value will return a text value that will equal the [opt_name](global_arguments.md#opt-name) string value.
 
-### Redux::setHelpTab()
+### Redux::set_help_tab()
 
 This method requires two parameters, the [opt_name](global_arguments.md#opt-name) string value, followed by an array value of tab data.
 
@@ -93,10 +93,10 @@ $tabs = array(
         'content' => '<br />This is the tab content, HTML is allowed.<br />')
     )
 );
-Redux::setHelpTab( $opt_name, $tabs );
+Redux::set_help_tab( $opt_name, $tabs );
 ```
 
-### Redux::setHelpSidebar()
+### Redux::set_help_sidebar()
 
 This method requires two parameters. First, the [$opt_name](global_arguments.md#opt-name) string value, the second, the 
 `$content` string value.
@@ -104,7 +104,7 @@ This method requires two parameters. First, the [$opt_name](global_arguments.md#
 ```php
 $opt_name = 'YOUR_OPT_NAME';
 $content = '<br />This is the sidebar content, HTML is allowed.<br />');
-Redux::setHelpSidebar( $opt_name, $content );
+Redux::set_help_sidebar( $opt_name, $content );
 ```
 
 ### Setting & Altering Sections
@@ -155,20 +155,20 @@ td:first-child { white-space: nowrap; }
 |Redux::disable_demo()|Method to disables Redux demo mode popup.|
 |Redux::extension_path( $extension, $folder )|Sets a path to an extension.|
 |Redux::get_arg( $opt_name, $key )|Retrieves a single global argument.|
-|Redux::get_args( $opt_name )|Retrives option panel global arguemnt array.|
+|Redux::get_args( $opt_name )|Retrieves option panel global argument array.|
 |Redux::get_extensions( $opt_name, $key )|Gets loaded extensions.|
 |Redux::get_field( $opt_name, $id )|Retrieves an option panel field.|
 |Redux::get_file_version( $file )|Retrieve metadata from a file. Based on WP Core's get_file_data function|
 |Redux::get_instance_extension( $opt_name, $instance )|Gets all loaded extension for the passed ReduxFramework instance.|
 |Redux::get_option( $opt_name, $key, $default )|Retrieves single option from the database.|
 |Redux::get_post_meta( $opt_name, $the_post, $key, $default )|Retrieves meta for a given post page, IE WordPress meta values|
-|Redux::get_priority( $opt_name, $type )|Get next availablt priority for field/section.|
+|Redux::get_priority( $opt_name, $type )|Get next availability priority for field/section.|
 |Redux::get_section( $opt_name, $id )|Retrieve panel section.|
 |Redux::get_sections( $opt_name )|Retrieve all sections from the option panel.|
 |Redux::hide_field( $opt_name, $id, $hide )|Hides an option panel field.|
 |Redux::hide_section( $opt_name, $id, $hide )|Hides an option panel section.|
 |Redux::init( $opt_name )|Init Redux object|
-|Redux::instance( $opt_name )|Retrive ReduxFramework object.|
+|Redux::instance( $opt_name )|Retrieve ReduxFramework object.|
 |Redux::load()|Code to run at creation in instance.|
 |Redux::loadExtensions( $redux_framework )|Load external extensions.|
 |Redux::load_extensions( $redux_framework )|Load external extensions.|
@@ -190,20 +190,20 @@ td:first-child { white-space: nowrap; }
 ### Deprecated Methods
 
 A number of these methods were deprecated with Redux 4.x due to naming standards. Shims still exist for all of them, but
-a deprecation notice will be provided if used and in [dev_mode](global_arguments.md#dev-mode).
+a deprecation notice will be provided if used and in [dev_mode](global_arguments.md#dev_mode).
 
 |Method|Description|
 |--|--|
 |Redux::createRedux()|Deprecated Create Redux instance.|
 |Redux::extensionPath( $extension, $folder )|Deprecated function to set extension path.|
 |Redux::getArg( $opt_name, $key )|Deprecated Retrieves a single global argument.|
-|Redux::getArgs( $opt_name )|Deprecated Retrives option panel global arguemnt array.|
+|Redux::getArgs( $opt_name )|Deprecated Retrieves option panel global argument array.|
 |Redux::getExtensions( $opt_name, $key )|Deprecated Gets loaded extensions.|
 |Redux::getField( $opt_name, $id )|Deprecated Retrieves an option panel field.|
 |Redux::getOption( $opt_name, $key, $default )|Deprecated Retrieves single option from the database.|
 |Redux::getSection( $opt_name, $id )|Deprecated Retrieve panel section.|
 |Redux::getSections( $opt_name )|Deprecated Retrieve all sections from the option panel.|
-|Redux::hideField( $opt_name, $id, $hide )|Deprecated Hides an optio panel field.|
+|Redux::hideField( $opt_name, $id, $hide )|Deprecated Hides an option panel field.|
 |Redux::hideSection( $opt_name, $id, $hide )|Deprecated Hides an option panel section.|
 |Redux::loadRedux( $opt_name )|Deprecated function of Load Redux Framework.|
 |Redux::removeField( $opt_name, $id )|Deprecated Removes an option panel field.|

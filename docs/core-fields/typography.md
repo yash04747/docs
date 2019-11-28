@@ -85,7 +85,7 @@ export default {
 ## Example Config
 
 ```php
-Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
     'id'          => 'opt-typography',
     'type'        => 'typography', 
     'title'       => __('Typography', 'redux-framework-demo'),

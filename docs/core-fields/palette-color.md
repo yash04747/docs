@@ -43,7 +43,7 @@ export default {
 
 ## Example Config
 ```php
-Redux::setSection( 'OPT_NAME', array(
+Redux::set_section( 'OPT_NAME', array(
     'title'      => __( 'Palette Colors', 'redux-framework-demo' ),
     'id'         => 'color-palette',
     'subsection' => true,

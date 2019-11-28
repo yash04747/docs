@@ -8,7 +8,7 @@ Redux has arguments at a variety of levels, but those at the instance level are 
 of the core global arguments are had below.
 
 ::: tip
-For an example of how to set global arguments, see the [Redux API Redux::setArgs()](api.md#Redux::setArgs()) documentation.
+For an example of how to set global arguments, see the [Redux::set_args()](api.md#redux-set-args) documentation.
 :::
 
 ::: warning Global arguments in alphabetical order
@@ -23,7 +23,8 @@ If set to true, the option panel will appear in the admin bar. Making it easy fo
 ## admin_bar_icon
 **Default**: `'admin_bar_icon' => 'dashicons-admin-generic'`
 
-String value indicated which icon to use for the admin bar icon. Please refer to the [Dashicons Cheat Sheet](http://calebserna.com/dashicons-cheatsheet/) for a list of available icons.
+String value indicated which icon to use for the admin bar icon. Please refer to the 
+[Dashicons Cheat Sheet](http://calebserna.com/dashicons-cheatsheet/) for a list of available icons.
 
 ## allow_sub_menu
 **Default**: `'allow_sub_menu' => 'true'`
@@ -33,7 +34,9 @@ This is the variable that determines whether or not section labels are displayed
 ## async_typography
 **Default**: `'async_typography' => false`
 
-This argument determines if Google fonts load on the front-end of a theme asynchronously . This should be considered experimental, as some issues have been known to crop up. Any issues should be reported to the [Redux Framework Github issues board](https://github.com/ReduxFramework/redux-framework/issues).
+This argument determines if Google fonts load on the front-end of a theme asynchronously . This should be considered 
+experimental, as some issues have been known to crop up. Any issues should be reported to the our 
+[GitHub issues](https://github.com/ReduxFramework/redux-framework/issues) board.
 
 ## cdn_check_time
 **Default**: `'cdn_check_time' => 1440`
@@ -48,38 +51,46 @@ This argument may be set to append any number of classes to the main Redux class
 ## customizer
 **Default**: `'customizer' => 'true'`
 
-This argument sets the flag to enable or disabled basic [WordPress customizer](http://en.support.wordpress.com/customizer/) support..
+This argument sets the flag to enable or disabled basic 
+[WordPress customizer](http://en.support.wordpress.com/customizer/) support.
 
 ## customizer_only
 **Default**: `'customizer_only' => 'false'`
 
-This argument determines whether or not to hide the options panel (leaving options accessible only through the customizer). For developing themes specifically for wordpress.org, this argument will need to be set to 
+This argument determines whether or not to hide the options panel (leaving options accessible only through the 
+customizer). For developing themes specifically for wordpress.org, this argument will need to be set to 
 
 ## database
 **Default**: `'database' => ''`
 
-This argument sets the database mode for how Redux options are stored in the database. Currently, the only mode accepted is `network` for multi-site panel support! Otherwise, leave this argument blank for default functionality.
+This argument sets the database mode for how Redux options are stored in the database. Currently, the only mode 
+accepted is `network` for multi-site panel support! Otherwise, leave this argument blank for default functionality.
 
-For normal operation, leave this argument blank, otherwise, choose from one of the following modes. Modes marked as experimental have not been fully tested and may not function properly:
+For normal operation, leave this argument blank, otherwise, choose from one of the following modes. Modes marked as 
+experimental have not been fully tested and may not function properly:
 
 - `network`: For multi-site support
-- `transient`: (experimental) - Sets options as transients, and will expire in the time set via [transient_time](#transient-time) .
+- `transient`: (experimental) - Sets options as transients, and will expire in the time set via 
+[transient_time](#transient-time).
 - `theme_mods`, `theme_mods_expanded` (both experimental) - Saves modifications for the current theme.
 
 ## default_mark
 **Default**: `'default_mark' => ''`
 
-This is the variable specifies the symbol to print by the field's title when the field  is set to the default value. [default_show](#default-mark) must be set to true. The `*` symbol is recommended.
+This is the variable specifies the symbol to print by the field's title when the field  is set to the default value. 
+[default_show](#default-mark) must be set to true. The `*` symbol is recommended.
 
 ## default_show
 **Default**: `'default_show' => 'false'`
 
-This is the variable that enabled or disables whether or not the field's default value is displayed next to the field's title.
+This is the variable that enabled or disables whether or not the field's default value is displayed next to the field's 
+title.
 
 ## dev_mode
 **Default**: `'dev_mode' => 'true'`
 
-This is the variable that enables or disables Redux's developer mode. When developer mode is set to true, the load time is displayed at the bottom of the options panel. Also, Redux loads all field and core JavaScript in non minimzed form.
+This is the variable that enables or disables Redux's developer mode. When developer mode is set to true, the load time 
+is displayed at the bottom of the options panel. Also, Redux loads all field and core JavaScript in non minimized form.
 
 ## disable_google_fonts_link
 **Default**: `'disable_google_fonts_link' => false`
@@ -102,9 +113,11 @@ This argument sets the title that appears at the top of the options panel.
 This argument set the version number that appears after the title at the top of the options panel.
 
 ## footer_text
-**Default**: `'footer_text' => '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>'`
+**Default**: `'footer_text' => '<p>This text is displayed below the options panel. It isn\'t required, but more info is 
+always better! The footer_text field accepts all HTML.</p>'`
 
-This argument set the text to be displayed at the bottom of the options panel, in the footer section. Use of HTML is permitted.
+This argument set the text to be displayed at the bottom of the options panel, in the footer section. Use of HTML is 
+permitted.
 
 ## global_variable
 **Default**: `'global_variable' => ''`
@@ -121,7 +134,6 @@ This argument has been deprecated in Redux 4.x
 :::
 
 **Default**: `'google_api_key' => ''`
-
 This argument holder the key used to request Google WebFonts for the <a title="Typography" href="/redux-framework/fields/typography/">Typography</a> field. <del>Without this key, Google fonts will be omitted</del>. <strong>Now no longer required to make Google Fonts work!</strong>
 
 A Google Developer API must be independently obtained. Redux does not supply this key on your behalf. For more information on obtaining your own key, please visit: <a href="https://developers.google.com/fonts/docs/developer_api">https://developers.google.com/fonts/docs/developer_api</a>
@@ -154,7 +166,7 @@ Alternatively you can set the global arg `help_sidebar` in this manner to produc
 
 ```php
 $content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'redux-framework-demo' );
-Redux::setArgs( $opt_name, array( 'help_sidebar' => $content ) );
+Redux::set_args( $opt_name, array( 'help_sidebar' => $content ) );
 ```
 
 ::: warning Warning Redux 3.x Users
@@ -193,7 +205,7 @@ Redux::setHelpTab( $opt_name, array(
 Alternatively you can set the global arg `help_tabs` in this manner to produce the same result.
 
 ```php
-Redux::setArgs( $opt_name, array( 'help_tabs' => array(
+Redux::set_args( $opt_name, array( 'help_tabs' => array(
   array(
     'id'      => 'redux-help-tab-1',
     'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
@@ -368,7 +380,7 @@ This variable set the amount of time to assign to transient values used within R
 This argument has been deprecated in Redux 4.x
 :::
 
-This variable sets whether or not Redux will display an admin notice when a new build is ready for download via [Github](https://github.com/ReduxFramework/redux-framework). This feature is only available when `dev_mode` is set to `true`.
+This variable sets whether or not Redux will display an admin notice when a new build is ready for download via [GitHub](https://github.com/ReduxFramework/redux-framework). This feature is only available when `dev_mode` is set to `true`.
 
 ## use_cdn
 **Default**: `'use_cdn' => 'true'`
