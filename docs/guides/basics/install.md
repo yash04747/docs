@@ -57,7 +57,7 @@ These releases are often pre-release to WordPress.org. Although they are conside
 ```json
 {
     "require": {
-        "reduxframework/redux-framework": "*"
+        "redux-framework/redux-framework": "*"
     }
 }
 ```
@@ -68,7 +68,7 @@ Go forth young Padawan. Do not underestimate the potential bugs of the master br
 ```json
 {
     "require": {
-        "reduxframework/redux-framework": "dev-master"
+        "redux-framework/redux-framework": "dev-master"
     }
 }
 ```
