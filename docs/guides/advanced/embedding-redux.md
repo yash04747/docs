@@ -5,14 +5,14 @@ title: "Embedding Redux"
 # Embedding Redux into Your Theme or Plugin
 
 ::: danger Never, ever, EVER (say it with me)...
-modify any files in `ReduxCore`. They are hooks, filters, etc to bypass nearly anything.
-Modifying files within `ReduxCore` (including dropping in extensions) will only serve to make your life harder should you
+modify any files in `redux-core` (formerly `ReduxCore`). They are hooks, filters, etc to bypass nearly anything.
+Modifying files within `redux-core` (including dropping in extensions) will only serve to make your life harder should you
 ever choose to update.
 :::
 
 So you have this really cool Theme or Plugin. And of course you love Redux because - let’s face it - who doesn't? You 
 understand how the Redux plug-in works but the concept of a theme or plugin installing another plugin escapes you.. Or perhaps
- you might now care for [TGM](http://tgmpluginactivation.com/) or any of its variations. What are you to do?
+ you might not care for [TGM](http://tgmpluginactivation.com/) or any of its variations. What are you to do?
 
 You've come to the right place. Embedding Redux into your theme or plugin is as easy as 1, 2, 3. You may wonder, 
 what if your client also installs the Redux plugin? Will it conflict? The answer is no. Even better, the Redux plug-in will 
@@ -22,15 +22,16 @@ Redux without any theme update from you. Pretty cool, eh?
 Let's begin, shall we?
 ## Step 1: Get the Source
 There are a variety of methods in which to acquire the Redux Framework source code. Please refer to the 
-[Basics: Installing](../basics/install.md) guide. Once you've acquired the source, only the `ReduxCore` folder matters.
+[Basics: Installing](../basics/install.md) guide. Once you've acquired the source, only the `redux-core` folder matters 
+(Note: in 3.x, this folder was called `ReduxCore`, but has been re-named to conform with WordPress naming standards.)
 You can rename it to anything you prefer. It’s important to choose a name for the folder in which Redux will be contained 
 now, as it will be difficult to change the name later. Redux may be placed into any directory or in any path 
 (such as ~/admin or ~/framework).
 
 
 ```php
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/redux-core/framework.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/ReduxFramework/redux-core/framework.php' );
 }
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/sample/sample-config.php' ) ) {
     require_once( dirname( __FILE__ ) . '/ReduxFramework/sample/sample-config.php' );
