@@ -124,9 +124,12 @@ array(
 The callback function should return an array. The keys will be saved, and the values displayed.
 
 ```php
-array(
-    'to_save' => 'to_display
-)
+function my_callback_function() {
+	return array(
+		'here' => 'Here I am',
+		'rocking' => 'Rocking like a hurricane',
+	);
+}
 ```
 :::
 
