@@ -39,7 +39,7 @@ while the other is plural.
 
 ### Redux::setSection()
 
-Used to declare a single section cotaining [fields](field.md).
+Used to declare a single section containing [fields](field.md).
 
 *Arguments to pass in order of declaration*
 |Name|Type|Description|
@@ -104,7 +104,7 @@ This method allows for multiple sections to be added at once. Keep in mind that 
 seen below, but you should remember to wrap the section in an array.
 
 ```php
-Redux::setSection( 'OPT_NAME', array(
+Redux::setSections( 'OPT_NAME', array(
     array(
        'title'   => 'New Section',
        'icon'    => 'el-icon-cogs',
