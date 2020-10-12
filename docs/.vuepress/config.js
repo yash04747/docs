@@ -9,7 +9,7 @@ module.exports = ctx => ({
         '/': {
             lang: 'en-US',
             title: 'Redux',
-            description: 'The WordPress Interface Framework',
+            description: 'Developer Documentation',
 
         },
     },
