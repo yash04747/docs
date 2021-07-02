@@ -1,11 +1,11 @@
 # Color Schemes <Badge text="field" type="warn"/>
 
-The Redux Color Schemes extension is a new way to take control over the color layout of your theme.  Instead of using 
+The Redux Color Schemes extension is a new way to take control over the color layout of your theme. Instead of using 
 individual color pickers to design the color layout of your theme, set them all up in one simple, easy-to-use field!   
 In addition to choosing any color, this extension also offers a per color alpha channel, the option to select no color, 
-and the ability to save and recall entire user designed color schemes.  This comes in handy should you wish to give your 
+and the ability to save and recall entire user designed color schemes. This comes in handy should you wish to give your 
 users the ability to change theme colors for various holiday or special occasions... or even if they want shake things up 
-every now and then.
+sometimes.
 
 <span style="display:block;text-align:center">![](./img/color_schemes.png)</span>
 
@@ -207,7 +207,7 @@ As you can see, each color selector's `selector` argument is assigned to `body`,
 
 ## Outputting the Color Values
 
-Now it's time to determine how to output the colors your users will choose and save. There are three ways to accomplish this. The first is to use the Redux options array variable followed by the color selector id, just as you might for any other Redux field. Using the example above, outputting the the body color and background color would go as follows (Please remember to replace `redux_demo` with your own `<a href="/redux-framework/arguments/opt_name" title="opt_name">opt_name</a>` argument):
+Now it's time to determine how to output the colors your users will choose and save. There are three ways to accomplish this. The first is to use the Redux options array variable followed by the color selector id, just as you might for any other Redux field. Using the example above, outputting the body color and background color would go as follows (Please remember to replace `redux_demo` with your own `<a href="/redux-framework/arguments/opt_name" title="opt_name">opt_name</a>` argument):
 
 ```php
 global $redux_demo;
@@ -257,20 +257,20 @@ Please feel free to copy (and/or edit) these instructions for inclusion with you
 ### Selecting Schemes
 On first load, the color scheme extension installs the default theme based on the defaults settings set up in the default array of the color scheme field array. The default scheme is permanent and cannot be deleted, although changes can be made to it and saved with different values. Resetting the section or resetting all via the Redux options panel will reset any changes to your default settings.
 
-Once new scheme layouts have been saved, they may be selected via the drop down select box. You must click <i>Save Changes</i> before the newly selected scheme will be available for use within your theme.
+Once new scheme layouts have been saved, they may be selected via the drop-down select box. You must click <i>Save Changes</i> before the newly selected scheme will be available for use within your theme.
 
 ::: warning NOTE
 Should you decide to make changes to your defaults in the color scheme field array, those changes will not be visible until the color scheme field is reset.
 :::
 
 ### Adding Schemes
-The easiest way to create a new scheme layout is to make any desired color changes to the default scheme, provide a new scheme name in the Name text box, then click <i>Add</i>. This will commit the new scheme to the database without affecting the color selection in the default scheme. Please bear in mind, even though the new scheme is selected in the drop down selector, it will not be applied to the theme until <i>Save Changes</i> is clicked.
+The easiest way to create a new scheme layout is to make any desired color changes to the default scheme, provide a new scheme name in the Name text box, then click <i>Add</i>. This will commit the new scheme to the database without affecting the color selection in the default scheme. Please bear in mind, even though the new scheme is selected in the drop-down selector, it will not be applied to the theme until <i>Save Changes</i> is clicked.
 
 ### Deleting Schemes
-To delete a scheme, select the theme to delete in the drop down selector, and click the <i>Delete</i> button. After verifying if you really want to delete the scheme, the extension will remove the scheme from the database and reset the scheme table to the Default scheme. It will also remove the deleted schemes settings from the theme and reset the theme colors to the default scheme.
+To delete a scheme, select the theme to delete in the drop-down selector, and click the <i>Delete</i> button. After verifying if you really want to delete the scheme, the extension will remove the scheme from the database and reset the scheme table to the Default scheme. It will also remove the deleted schemes settings from the theme and reset the theme colors to the default scheme.
 
 ### Exporting Schemes
-Save a collection of schemes is as easy as clicking the <i>Export</i> button. Redux will download a JSON file of all scheme data to your hard drive (location may vary depending on how and where your browser downloads files). The file name will be in the following format: `redux_schemes_<opt_name>_<field-id>_<current-date>.json`.  It is <strong>strongly</strong> recommended that the contents of the export file <strong>not</strong> be edited unless whomever is editing the file is familiar with the <a href="http://www.w3schools.com/json/">JSON format</a>. Doing so could cause failure during import.
+Save a collection of schemes is as easy as clicking the <i>Export</i> button. Redux will download a JSON file of all scheme data to your hard drive (location may vary depending on how and where your browser downloads files). The file name will be in the following format: `redux_schemes_<opt_name>_<field-id>_<current-date>.json`. It is <strong>strongly</strong> recommended that the contents of the export file <strong>not</strong> be edited unless whomever is editing the file is familiar with the <a href="http://www.w3schools.com/json/">JSON format</a>. Doing so could cause failure during import.
 
 ### Importing Schemes
 To import a collection of schemes into the color scheme field, begin by clicking the <i>Import</i> button. An 'Open' dialog will appear on the screen, prompting for the selection of a file with the `.json` extension. Select a previously exported color scheme file from the computer and click <i>Open</i>. Redux will import the saved settings from the export file into the color scheme field. Once complete, the browser will refresh itself so the imported data will be properly displayed.

@@ -38,7 +38,7 @@ We will always ensure your site is the most secure. If you find an issue, please
   <div class="feature">
 
 ## Built for Professionals
-Redux 4.x is just around the corner. We've done all we can to keep it as close to perfect as possible. We've made sure this 
+Redux 4.x is here! We've done all we can to keep it as close to perfect as possible. We've made sure this 
 new version is backward compatable with the previous, although changes to some method names to be fully ready.
 
 [See: Migration Guide](guides/other/migration-guide.md)

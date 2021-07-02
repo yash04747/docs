@@ -1,6 +1,6 @@
 # ACE Editor
 
-The ACE Editor field offers the ability to edit back-end code in an easy to use and easy to read embedded interface.  In 
+The ACE Editor field offers the ability to edit back-end code in an easy to use and easy to read embedded interface.  In 
 addition to matching the features of native code editors such as [Sublime Text](https://www.sublimetext.com/), 
 [Vim](http://www.vim.org) and [TextMate](http://macromates.com), ACE offers real-time checking for code accuracy.
 
@@ -51,7 +51,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'subtitle' => __('Paste your CSS code here.', 'redux-framework-demo'),
     'mode'     => 'css',
     'theme'    => 'monokai',
-    'desc'     => 'Possible modes can be found at http://ace.c9.io/.',
+    'desc'     => 'Possible modes can be found at https://ace.c9.io/.',
     'default'  => "#header{\nmargin: 0 auto;\n}"
 ) );
 ```

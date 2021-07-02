@@ -1,6 +1,6 @@
 # Select Image
 
-The Select Image field offers the ability to populate a drop-down field with an array of images names.  When selected, a preview of the image appears underneath.
+The Select Image field offers the ability to populate a drop-down field with an array of images names.  When selected, a preview of the image appears underneath.
 
 <span style="display:block;text-align:center">![](./img/select_image.png)</span>
 

@@ -1,6 +1,6 @@
 # Info
 
-The Info field comes in several varieties to display information as normal, info warning and success formats.  Choose between the WordPress 3.8 styles, or the non-notice styles.
+The Info field comes in several varieties to display information as normal, info warning and success formats.  Choose between the WordPress 3.8 styles, or the non-notice styles.
 
 ::: warning Table of Contents
 [[toc]]
@@ -10,9 +10,9 @@ The Info field comes in several varieties to display information as normal, info
 |Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`info`|Value identifying the field type.|
-|style|string|`normal`|Sets the mode of the info box.  Accepts:  `normal` `info` `warning` `success` `critical` `custom`|
+|style|string|`normal`|Sets the mode of the info box.  Accepts:  `normal` `info` `warning` `success` `critical` `custom`|
 |notice|bool|`true`|Set the styling to the non-notice styles, instead of the default WordPress 3.8 notice styles.|
-|color|string||Color that becomes the left border if style is set to custom. Will not work with a non-notice styled field.|
+|color|string||Color that becomes the left border if style is set to custom. Will not work with a non-notice styled field.|
 |icon|string||Name of an Elusive Icon font to use in the info box.|
 |indent|bool|`false`|If set, left field indent will be applied.|
 
@@ -22,7 +22,7 @@ The Info field comes in several varieties to display information as normal, info
 :::
 
 ::: warning Tip
-When using the Info field with `required`, the field cannot be hidden by default.  It’s best only to use the `required` argument with this field when the fold is shown by default.
+When using the Info field with `required`, the field cannot be hidden by default.  It’s best only to use the `required` argument with this field when the fold is shown by default.
 :::
 
 ## Build Config

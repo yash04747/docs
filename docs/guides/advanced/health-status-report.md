@@ -23,14 +23,14 @@ This section provides general information about your site, your WordPress instal
 |Redux Version|The version of Redux Framework installed on your site.|3.4.4.5|
 |Redux Data Directory Writable|Whether the Redux data directory is writable, and its location.|/srv/www/wp-content/uploads/redux/|
 |WP Version|The version of WordPress installed on your site.|3.4.1|
-|WP Multisite|Whether or not you have WordPress Multisite enabled.|-|
+|WP Multisite|Whether you have WordPress Multisite enabled.|-|
 |Permalink Structure|The WordPress permalink structure set in Settings->Permalinks.|/%postname%/|
 |Front Page Display|The sitting to display "Latest Posts" or "Static Pages" as set in Settings->Reading.|posts|
 |Front Page|The name of the page used as the "Front Page" of the site.  This information is displayed only when Front Page Display is set to pages.|
 |Posts Page|The name of the page used as the "Post Page" of the site.  This information is displayed only when Front Page Display is set to pages.|
 |WP Memory Limit|The maximum amount of memory (RAM) that your site can use at one time. Learn how to increase this limit here.|64 MB|
 |Database Table Prefix|Displays the length of the WordPress database table prefix, and whether it falls into acceptable parameters.|Length: 3 - Status: Acceptable|
-|WP Debug Mode|Displays whether or not WordPress is in Debug Mode.|-|
+|WP Debug Mode|Displays whether WordPress is in Debug Mode.|-|
 |Language|The current language used by WordPress. Default = English|en_US|
 
 
@@ -64,13 +64,13 @@ This section provides general information about your server.
 |Remote GET|Redux Framework may use this method of communication when checking for updates.|√|
 
 ## Active Plugins
-This section displays all of the active plugins installed on your site. From this area, you can see the current version 
+This section displays all the active plugins installed on your site. From this area, you can see the current version 
 numbers of your plugins.
 
 <span style="display:block;text-align:center">![](../img/active_plugins.png)</span>
 
 ## Redux Instances
-This section displays all of the active instances of Redux Framework on your site. This information may be invaluable in 
+This section displays all the active instances of Redux Framework on your site. This information may be invaluable in 
 detecting collisions with other developers who use Redux in their projects. Multiple instances could be listed, depending 
 on if and how many plugins on your site use Redux Framework.
 
@@ -92,7 +92,7 @@ on if and how many plugins on your site use Redux Framework.
 |Extensions|A list of installed Redux Framework extensions and their versions.  This information is only displayed if extensions are installed.|Widget Areas - 1.0.0<br />Social Profiles - 1.0.2<br />Search - 1.0.0<br />Multi Media - 1.0.0<br />Metaboxes - 1.3.1<br />Js Button - 1.0.1<br />Custom Fonts - 1.0.1<br />Color Scheme - 2.1.6|
 
 ## Theme
-This section displays valuable information about the current theme running on your installation. Typically this could be 
+This section displays valuable information about the current theme running on your installation. Typically, this could be 
 one of the more problematic areas of a site – as there is no standard on what themes should and shouldn’t do.
 
 |Field Name|Description|Example|

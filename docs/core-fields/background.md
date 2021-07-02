@@ -1,6 +1,6 @@
 # Background
 
-The Redux Background field offers unmatched features not found in any other options framework.  Users will be able to present the background designs found in professionally authored pages with a few simple clicks.
+The Redux Background field offers unmatched features not found in any other option framework.  Users will be able to present the background designs found in professionally authored pages with a few simple clicks.
 
 <span style="display:block;text-align:center">![](./img/background.png)</span>
 
@@ -48,7 +48,7 @@ The Redux Background field offers unmatched features not found in any other opti
 |background-clip|string|String representing the default background clip value. Accepts: `inherit` `border-box` `content-box` `padding-box`.|
 |background-origin|string|String representing the default background origin value. Accepts: `inherit` `border-box` `content-box` `padding-box`.|
 |background size|string|String representing the default background size value. Accepts: `inherit` `cover` `contain`.|
-|media|array|Array of default background media information.  See table below.|
+|media|array|Array of default background media information.  See table below.|
 
 
 ## Default Media Array Options
@@ -88,7 +88,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ### Example Usage
-This example in based on the example usage provided above.  Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
+This example in based on the example usage provided above.  Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

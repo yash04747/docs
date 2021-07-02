@@ -30,7 +30,7 @@ Redux 4.x+. It is advised to use the new API methods when possible.
 Redux can have an unlimited number of sessions running at once. Hence, the [opt_name](global_arguments.md#opt-name) 
 is so crucial. It must be unique, and it is the first variable for the methods within the Redux API.
 
-For safety reasons, and to ensure Redux has loaded properly, it is advised to put a if statement before you use the API
+For safety reasons, and to ensure Redux has loaded properly, it is advised to put an if statement before you use the API
 in case Redux has not been loaded yet.
 code. 
 
@@ -41,7 +41,7 @@ if ( ! class_exists( 'Redux' ) ) {
 ```
 
 ### Redux::set_args()
-This method allows you set set [global args](global_arguments.md) for your instance of Redux. It's use is required for
+This method allows you to set [global args](global_arguments.md) for your instance of Redux. Its use is required for
 virtually any Redux instance. An example of how to use it is below.
 
 ```php

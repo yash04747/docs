@@ -13,7 +13,7 @@ through to see what suits your particular needs.
 ## Downloading
   
 ### WordPress.org Plugin
-By using the Redux plugin, you can ensure your users will always be up to date with the most stable release.
+By using the Redux plugin, you can ensure your users will always be up-to-date with the most stable release.
 
 [WordPress.org Plugin](https://wordpress.org/plugins/redux-framework)
 
@@ -34,7 +34,7 @@ You're not a developer, you're a code jedi. You laugh at copy and paste! Why not
 your development time that much easier.
 
 ### WP Packagist
-The most stable of releases reside on WordPress.org. Only those releases that have been tested by the masses. Use this configuration 
+The most stable of releases resides on WordPress.org. Only those releases that have been tested by the masses. Use this configuration 
 for the ultimate in stability.
 
 ```json

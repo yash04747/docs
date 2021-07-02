@@ -50,6 +50,6 @@ td:first-child { word-break: break-word; }
 |redux/field/{opt_name}/_can_output_css|**$field**<br />(array) Field data.||Check if a field meets its requirements before outputting to CSS.|
 |redux/extension/{opt_name}/{folder}|**$file_path**<br />(string) Extension class file path.|**$extension_class**<br />(string) Extension class name.|
 |redux/validate/{opt_name}/defaults|**$defaults**<br />(array) Option default values.||When all options have been reset to defaults.|
-|redux/validate/{opt_name}/defaults_section|**$plugin_options **<br />(array) Option default values.|When a section’s options have been reset to defaults.|
+|redux/validate/{opt_name}/defaults_section|**$plugin_options**<br />(array) Option default values.|When a section’s options have been reset to defaults.|
 |redux/validate/{opt_name}/before_validation|**$plugin_options**<br />(array) The options array before validation.|**$redux_options**<br />(array) Redux Framework options array.|
 |redux/validate/{opt_name}/class/{field.validate}|**$file_path**<br />(string) Validation class file path.|**$class_file**<br />(string) Validation class file path.|

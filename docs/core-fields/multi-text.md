@@ -1,6 +1,6 @@
 # Multi Text
 
-Multi-Text field supports as many fields as one might need.  Adding and removing them is as simple as point and click.
+Multi-Text field supports as many fields as one might need.  Adding and removing them is as simple as point and click.
 
 <span style="display:block;text-align:center">![](./img/multi_text.png)</span>
 

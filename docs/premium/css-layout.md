@@ -1,6 +1,6 @@
 # CSS Layout <Badge text="field" type="warn"/>
 
-The CSS Layout extension is a new way to set margins, padding and borders (including radius) all from one field.  
+The CSS Layout extension is a new way to set margins, padding and borders (including radius) all from one field. 
 
 ::: warning Table of Contents
 [[toc]]
@@ -27,14 +27,14 @@ To understand how to use extensions, you should read this article on [Using Exte
 |compiler|bool/array|`false`|Flag to run the compiler hook or array of CSS selectors to pass dynamic CSS to the compiler hook.  More info|
 |output|array||Array of CSS selectors to dynamically generate CSS.  More info|
 |output-shorthand|bool|`false`|Flag to set whether or not outputted CSS for `margin`, `border`, and `padding` is in shorthand format.|
-|units|array|`%`, `px`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `pt`, `pc`|Array of permissible units to be used in the CSS layout field.  Units not specified in this array will be rejected and replaced with the default.|
+|units|array|`%`, `px`, `in`, `cm`, `mm`, `em`, `rem`, `ex`, `pt`, `pc`|Array of permissible units to be used in the CSS layout field. Units not specified in this array will be rejected and replaced with the default.|
 |margin-unit|string|`px`|Default unit for the margin layout.|
 |border-unit|string|`px`|Default unit for the border layout.|
 |radius-unit|string|`px`|Default unit for the border radius.|
 |padding-unit|string|`px`|Default unit for the padding layout.|
 |required|array||Provide the parent, comparison operator, and value which affects the field`s visibility.  More info|
-|default|array||Array of default values to appear inside the CSS layout field.  See `CSS Layout Defaults` below.|
-|options|array||Array of options defining the CSS Layout field.  See `CSS Layout Options` below.|
+|default|array||Array of default values to appear inside the CSS layout field. See `CSS Layout Defaults` below.|
+|options|array||Array of options defining the CSS Layout field. See `CSS Layout Options` below.|
 |placeholder|string|-|Text to display in the input fields when no value is present.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
@@ -47,39 +47,39 @@ To understand how to use extensions, you should read this article on [Using Exte
 :::
 
 ## CSS Layout Defaults
-Margin, border, and padding values may set be in one of two ways.  Via shorthand properties using the `margin`, `border`, and `padding` arguments, or individually using the `*-top`, `*-right`, `*-bottom` and `*-left` arguments.  While it's possible to set both, it's best to use one or the other, not both.  Individual arguments will override the shorthand arguments.
+Margin, border, and padding values may set be in one of two ways. Via shorthand properties using the `margin`, `border`, and `padding` arguments, or individually using the `*-top`, `*-right`, `*-bottom` and `*-left` arguments. While it's possible to set both, it's best to use one or the other, not both. Individual arguments will override the shorthand arguments.
 
-A shorthand property is expressed using up to four values to set the four value in the following order: <strong>top, right, bottom, left</strong>.  Settings a single value using the shorthand method will fill out all inputs for that level.
+A shorthand property is expressed using up to four values to set the four value in the following order: <strong>top, right, bottom, left</strong>. Settings a single value using the shorthand method will fill out all inputs for that level.
 
-Arguments may be set with or without a unit value.  Values without a unit value will automatically be assigned it's default value, set in the `margin-unit`, `border-unit`, `padding-unit` and `radius-unit` arguments (see above).  Unit values set in the default will override the default unit value.
+Arguments may be set with or without a unit value. Values without a unit value will automatically be assigned its default value, set in the `margin-unit`, `border-unit`, `padding-unit` and `radius-unit` arguments (see above). Unit values set in the default will override the default unit value.
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |margin|string||String of margin shorthand properties setting the margin values.|
-|margin-top|string/int||Margin-top value.  If the unit value is omitted, the margin-unit default will be used.|
-|margin-right|string/int||Margin-right value.  If the unit value is omitted, the margin-unit default will be used.|
-|margin-bottom|string/int||Margin-bottom value.  If the unit value is omitted, the margin-unit default will be used.|
-|margin-left|string/int||Margin-left value.  If the unit value is omitted, the margin-unit default will be used.|
+|margin-top|string/int||Margin-top value. If the unit value is omitted, the margin-unit default will be used.|
+|margin-right|string/int||Margin-right value. If the unit value is omitted, the margin-unit default will be used.|
+|margin-bottom|string/int||Margin-bottom value. If the unit value is omitted, the margin-unit default will be used.|
+|margin-left|string/int||Margin-left value. If the unit value is omitted, the margin-unit default will be used.|
 |border|string||String of border shorthand properties setting the border values.|
-|border-top|string/int||Border-top value.  If the unit value is omitted, the border-unit default will be used.|
-|border-right|string/int||Border-right value.  If the unit value is omitted, the border-unit default will be used.|
-|border-bottom|string/int||Border-bottom value.  If the unit value is omitted, the border-unit default will be used.|
-|border-left|string/int||Border-left value.  If the unit value is omitted, the border-unit default will be used.|
+|border-top|string/int||Border-top value. If the unit value is omitted, the border-unit default will be used.|
+|border-right|string/int||Border-right value. If the unit value is omitted, the border-unit default will be used.|
+|border-bottom|string/int||Border-bottom value. If the unit value is omitted, the border-unit default will be used.|
+|border-left|string/int||Border-left value. If the unit value is omitted, the border-unit default will be used.|
 |padding|string||String of padding shorthand properties setting padding values.|
-|padding-top|string/int||Padding-top value.  If the unit value is omitted, the padding-unit default will be used.|
-|padding-right|string/int||Padding-right value.  If the unit value is omitted, the padding-unit default will be used.|
-|padding-bottom|string/int||Padding-bottom value.  If the unit value is omitted, the padding-unit default will be used.|
-|padding-left|string/int||Padding-left value.  If the unit value is omitted, the padding-unit default will be used.|
-|border-radius|string/int||Border-radius value.  If the unit value is omitted, the radius-unit default will be used.|
+|padding-top|string/int||Padding-top value. If the unit value is omitted, the padding-unit default will be used.|
+|padding-right|string/int||Padding-right value. If the unit value is omitted, the padding-unit default will be used.|
+|padding-bottom|string/int||Padding-bottom value. If the unit value is omitted, the padding-unit default will be used.|
+|padding-left|string/int||Padding-left value. If the unit value is omitted, the padding-unit default will be used.|
+|border-radius|string/int||Border-radius value. If the unit value is omitted, the radius-unit default will be used.|
 |border-color|string|'#ffffff'|Hex string value settings the border color value.|
-|border-style|string|'solid'|Border style.  Accepted values:  `solid`, `dashed`, `dotted`, `double`, `groove`, `ridge`, `inset`, `outset`, `none`.|
+|border-style|string|'solid'|Border style. Accepted values: `solid`, `dashed`, `dotted`, `double`, `groove`, `ridge`, `inset`, `outset`, `none`.|
 
 ::: tip
-The `border-color`, `border-radius` and `border-style` properties CANNOT be set using shorthand via the `border` argument.  They must be set via their own arguments.
+The `border-color`, `border-radius` and `border-style` properties CANNOT be set using shorthand via the `border` argument. They must be set via their own arguments.
 :::
 
 ## CSS Layout Options
-The margin, border, and padding levels of the CSS layout field may be enabled or disabled, depending on your particular needs.  When a level is disabled, default values (if set) will be displayed, although the user will be unable to edit them.
+The margin, border, and padding levels of the CSS layout field may be enabled or disabled, depending on your particular needs. When a level is disabled, default values (if set) will be displayed, although the user will be unable to edit them.
 
 The radius inputs for value, color and style may also be independently enabled or disabled.
 

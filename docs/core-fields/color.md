@@ -1,6 +1,6 @@
 # Color
 
-The Color field redefines simplicity. Point and click to chose any color in the spectrum.
+The Color field redefines simplicity. Point and click to choose any color in the spectrum.
 
 <span style="display:block;text-align:center">![](./img/color.png)</span>
 

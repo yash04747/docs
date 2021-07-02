@@ -110,7 +110,7 @@ array(
 
 ### Using a Custom `callback`
 
-Sometimes you may need to fetch data in a different way than Redux has setup. In that case, you can use a custom callback
+Sometimes you may need to fetch data in a different way than Redux has set up. In that case, you can use a custom callback
 function.
 
 ```php

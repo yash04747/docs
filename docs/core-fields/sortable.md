@@ -12,7 +12,7 @@ The Sortable field allows for an unlimited array of drag-and-drop text box input
 |Name|Type|<div style="width:85px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`sortable`|Value identifying the field type.|
-|options|array||Array of key pair data defining the input objects.  The key represents the object's ID.  The second the display text.  See the example.|
+|options|array||Array of key pair data defining the input objects.  The key represents the object's ID.  The second the display text.  See the example.|
 |label|bool|`false`|Flag to display values before text areas when mode is not checkbox.|
 |mode|string|`text`|Sets the mode of the input HTML. Options allowed are `text` or `checkbox`.|
 

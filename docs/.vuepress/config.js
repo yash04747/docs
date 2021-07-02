@@ -1,5 +1,5 @@
-const path = require('path')
-const container = require('markdown-it-container')
+const path = require('path');
+const container = require('markdown-it-container');
 
 module.exports = ctx => ({
     // dest: '',
@@ -56,7 +56,7 @@ module.exports = ctx => ({
         // ['@vuepress/plugin-i18n-ui', !ctx.isProd],
         ['sitemap', {
                 filename: 'sitemap.xml',
-                hostname: 'https://docs.redux.io'
+                hostname: 'https://devs.redux.io'
             }
         ],
         ['@vuepress/back-to-top', true],
@@ -109,9 +109,9 @@ module.exports = ctx => ({
             render: (tokens, idx) => tokens[idx].nesting === 1
                 ? `<UpgradePath title="${tokens[idx].info.trim().slice('upgrade'.length).trim()}">`
                 : '</UpgradePath>'
-        })
+        });
     },
-})
+});
 
 
 const fs = require('fs');
@@ -128,18 +128,19 @@ function getFilesFromDir(dir, fileTypes, subdir) {
         var files = fs.readdirSync(currentPath);
 
         dirname = currentPath.split(subdir)[1];
-        // if (dirname === "img") {
-        //     return;
-        // }
 
+        // if (dirname === "img") {
+        //     return;''+
+        // }
+// console.log('++'+currentPath)
         var dirname = currentPath.split(subdir)[1];
         // currentPath.split(subdir)[1]
-
+	    // console.log('=='+dirname);
         for (var i in files) {
             var curFile = path.join(currentPath, files[i]);
-            if (fs.statSync(curFile).isFile() && fileTypes.indexOf(path.extname(curFile)) != -1) {
-                // console.log('--'+dirname+'--')
-                if (dirname == null || dirname.length === 0) {
+            if (fs.statSync(curFile).isFile() && fileTypes.indexOf(path.extname(curFile)) !== -1) {
+	            // console.log('--'+dirname+'--')
+                if (dirname == null || dirname.length == 0) {
                     filesToReturn.push(curFile.replace(dir, ''));
                 } else {
                     if (!(dirname in nested)) {
@@ -151,7 +152,7 @@ function getFilesFromDir(dir, fileTypes, subdir) {
                 walkDir(curFile);
             }
         }
-    };
+    }
     walkDir(dir);
     // console.log(filesToReturn);
     return [filesToReturn, nested];
@@ -164,12 +165,12 @@ function toTitleCase(str) {
 }
 
 function getSidebar( title, path, collapsable = false, depth = 0 ) {
-    var the_path = __filename.split( '/.vuepress' )[0]
+    var the_path = __filename.split( '/.vuepress' )[0];
     // This needs to work for both windows AND unix
     if ( the_path.includes( '\.vuepress' ) ) {
-        the_path = __filename.split( '\.vuepress' )[0]
+        the_path = __filename.split( '\.vuepress' )[0];
     }
-
+//console.log(the_path + path)
     var file_types = getFilesFromDir(the_path + path, [".md"], path);
     var the_files = file_types[0];
     var nested = file_types[1];
@@ -178,15 +179,15 @@ function getSidebar( title, path, collapsable = false, depth = 0 ) {
     // if (introduction !== '') {
     // 	to_return.push(['', introduction])
     // }
-    var top = ""
+    var top = "";
     the_files.forEach( file => {
         if ( file.substring( file.length - 3, file.length ) == ".md" ) {
-            file = file.substring( 0, file.length - 3 )
+            file = file.substring( 0, file.length - 3 );
             // to_return.push( file )
-            if ( file.toLowerCase() != "index" && file.toLowerCase() != "readme" ) {
-                to_return.push( file )
+            if ( file.toLowerCase() !== "index" && file.toLowerCase() !== "readme" ) {
+                to_return.push( file );
             } else {
-                top = file
+                top = file;
                 // to_return.push( file )
             }
         }
@@ -209,10 +210,10 @@ function getSidebar( title, path, collapsable = false, depth = 0 ) {
             // console.log(nested[keyname]);
             nested[keyname].forEach(file => {
                 if (file.substring(file.length - 3, file.length) == ".md") {
-                    file = file.substring(0, file.length - 3)
+                    file = file.substring(0, file.length - 3);
                     // to_return.push( file )
                     if (file.toLowerCase() != "index" && file.toLowerCase() != "readme") {
-                        new_to_return.push(file)
+                        new_to_return.push(file);
                     } else {
                         top = file
                         // to_return.push( file )
@@ -256,7 +257,7 @@ function getSidebar2(title, path, collapsable = false, depth = 0) {
                 to_return.push(file)
             } else {
                 top = file;
-                to_return.push(file)// to_return.push( file )
+                to_return.push(file); // to_return.push( file )
             }
         }
     });

@@ -10,7 +10,7 @@ The media field is an adaption for a core WordPress feature.
 
 ## Video Tutorial
 
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/kEZYIWSk1Tk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/kEZYIWSk1Tk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
 ## Arguments
 |Name|Type|<div style="width:160px;">Default</div>|Description|
@@ -68,7 +68,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'desc'     => __('Basic media uploader with disabled URL input field.', 'redux-framework-demo'),
     'subtitle' => __('Upload any media using the WordPress native uploader', 'redux-framework-demo'),
     'default'  => array(
-        'url'=>'http://s.wordpress.org/style/images/codeispoetry.png'
+        'url'=>'https://s.wordpress.org/style/images/codeispoetry.png'
     ),
 ) );
 ```
@@ -100,7 +100,7 @@ echo 'Thumbnail value: ' . $redux_demo['opt-media']['thumbnail'];
 ```
 
 ## Allowed File Types in WordPress
-WordPress allows you to upload many of the most common image files, audio/video, PDF, Microsoft office and OpenOffice 
+WordPress allows you to upload many of the most common image files, audio/video, PDF, Microsoft Office and OpenOffice 
 documents. The WordPress codex has a full list of allowed 
 [file types](https://codex.wordpress.org/Function_Reference/get_allowed_mime_types#Default_allowed_mime_types) and 
 extensions.
@@ -113,7 +113,7 @@ print_r( get_allowed_mime_types() );
 ### Adding Additional File Types
 
 Security is the main reason behind the limitation on file types that users can upload. You can, however, get around this
-with a little bit of code. Add this code to your theme or plugin to allow SVG files to be uploaded:
+with a bit of code. Add this code to your theme or plugin to allow SVG files to be uploaded:
 
 ```php
 function my_myme_types( $mime_types = array() ){
@@ -124,7 +124,7 @@ add_filter('upload_mimes', 'my_myme_types', 1, 1);
 ```
 
 Notice that the file extension goes as the key in `$mime_types` associated array and the mime type goes as its value. In 
-this example, svg file extension represents files with the mime type image/svg+xml. You can find out mime types of 
+this example, SVG file extension represents files with the mime type image/svg+xml. You can find out mime types of 
 several common file extensions [on this page](http://www.freeformatter.com/mime-types-list.html).
 
 You can also add multiple file types in one code snippet, like this:

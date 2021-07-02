@@ -12,7 +12,7 @@ with understanding as we wish to truly convey our intent to help.
 :::
 
 ### Who are we?
-We maintain an open source project entitled Redux Framework. It is used by millions of of users across in all walks of life all across the 
+We maintain an open source project entitled Redux Framework. It is used by millions of users across in all walks of life all across the 
 world. Redux is used primarily by developers. That means if users of our developers 
 approach us for help, it is often difficult and sometimes impossible to provide the requested support.
 
@@ -33,13 +33,13 @@ Solving problems in third party applications that utilize Redux takes us away fr
 making Redux better.
 
 ### Truly, we want to help!
-We truly do want to help!  But at the end of the day we can't offer unlimited support for circumstances beyond our control.
+We truly do want to help! But at the end of the day we can't offer unlimited support for circumstances beyond our control.
 
 ### Best of Luck!
-We genuinely wish you best of luck.  We're not attempting to insult. We will gladly solve problems in our code but we cannot
+We genuinely wish you best of luck.  We're not attempting to insult. We will gladly solve problems in our code, but we cannot
 solve problems in another developers code without compensation.
 
 ### I still want support!
 If you're still interested in support from us, you need to start by [generating a support hash](generating-a-support-hash.md). 
 Please do not be disappointed if we inform you that we require a purchase of [premium support](https://redux.io/extensions/premium-support) 
-for us to further assist you if your problem is outside of the scope of our framework.
+for us to further assist you if your problem is outside the scope of our framework.

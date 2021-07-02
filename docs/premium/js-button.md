@@ -1,6 +1,6 @@
 # JS Button <Badge text="field" type="warn"/>
 
-The Redux JS Button extension is a new way to activate JavaScript functions manually from within the options panel.  Once 
+The Redux JS Button extension is a new way to activate JavaScript functions manually from within the options panel.  Once 
 you've set up the field code with the buttons you'd like to display, you simply assign a JavaScript function name to the 
 button, include that function in a JavaScript file assigned to the field and watch the magic happen!
 
@@ -16,7 +16,7 @@ To understand how to use extensions, you should read this article on [Using Exte
  [Getting Started with PHP](http://www.php.net/manual/en/tutorial.php), 
  [CSS Introduction](http://www.w3schools.com/css/css_intro.asp).
  
- Also, knowledge of JavaScript and/or [jQuery](https://jquery.com/) is required to author your own functions.  This 
+ Also, knowledge of JavaScript and/or [jQuery](https://jquery.com/) is required to author your own functions.  This 
  extension does all the work behind the scenes to trigger your custom functions, but to accomplish anything when the 
  buttons are clicked, you'll need to be able to author your own code.
 :::
@@ -31,8 +31,8 @@ To understand how to use extensions, you should read this article on [Using Exte
 |subtitle|string|Subtitle display of the field, situated beneath the title.|
 |desc|string|Description of the field, appearing beneath the field control.|
 |class|string|Appends any number of classes to the field's class attribute.|
-|script|array|Array of key/pair values defining the JavaScript file containing button functions.  See 'Setting up the Script Argument' below.|
-|buttons|array|Set of arrays defining the buttons to display.  Please see 'Setting up Buttons' below.|
+|script|array|Array of key/pair values defining the JavaScript file containing button functions.  See 'Setting up the Script Argument' below.|
+|buttons|array|Set of arrays defining the buttons to display.  Please see 'Setting up Buttons' below.|
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
@@ -44,21 +44,21 @@ To understand how to use extensions, you should read this article on [Using Exte
 
 ## Settings up the Script Argument
 The script argument sets up the JavaScript file and associated options, so that when a JavaScript button is clicked, it 
-knows where to search for the function associated with it.  These arguments mirror the WordPress [wp_enqueue_script()](http://codex.wordpress.org/Function_Reference/wp_enqueue_script) 
+knows where to search for the function associated with it.  These arguments mirror the WordPress [wp_enqueue_script()](http://codex.wordpress.org/Function_Reference/wp_enqueue_script) 
 function parameters, as the extension uses this WordPress API to enqueue your script.
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
-|url|string|Fully qualified URL to and including the JavaScript file name.  See Notes below.|
+|url|string|Fully qualified URL to and including the JavaScript file name.  See Notes below.|
 |dep|array|Array of the handles of all the registered scripts that this script depends on, that is the scripts that must be loaded before this script. This parameter is only required when the script with the given $handle has not been already registered using wp_register_script(). Default handles are all in lower case.|
 |ver|string|time()|String specifying the script version number, if it has one, which is concatenated to the end of the path as a query string.|
 |in_footer|bool|`true`|Normally, scripts are placed in  of the HTML document. If this parameter is true, the script is placed before the  end tag.|
 
 ::: tip NOTES
 While it doesn't matter where you might choose to store your script, it is important to never hard code the path to the 
-script's location. To get a proper URL to local scripts, use [plugins_url()](http://codex.wordpress.org/Function_Reference/plugins_url) 
+script's location. To get a proper URL to local scripts, use [plugins_url()](http://codex.wordpress.org/Function_Reference/plugins_url) 
 for plugins and [get_template_directory_uri()](http://codex.wordpress.org/Function_Reference/get_template_directory_uri) 
-for themes. 
+for themes. 
 :::
 
 ## Setting Up Buttons
@@ -67,13 +67,13 @@ The `buttons` argument accepts a single array populated by arrays that accept th
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |text|string|Required. The text to appear as the button's caption|
-|class|string|Optional.  Any additional class names to append to the buttons class parameter.|
-|function|string|Required.  The name of the function to call inside the script passed via the `scripts` argument.|
+|class|string|Optional.  Any additional class names to append to the buttons class parameter.|
+|function|string|Required.  The name of the function to call inside the script passed via the `scripts` argument.|
 
 
 ## Example Config
 For this example (included in the download), assume we've placed our javascript file in the theme's root directory. We 
-can easily obtain it's location using [get_template_directory_uri()](https://developer.wordpress.org/reference/functions/get_template_directory_uri/). 
+can easily obtain its location using [get_template_directory_uri()](https://developer.wordpress.org/reference/functions/get_template_directory_uri/). 
 Since our example javascript (shown below) uses [jQuery](https://jquery.com/), we must pass the [jQuery](https://jquery.com/) 
 dependency via the `scripts` `dep` argument.
 

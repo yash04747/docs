@@ -29,16 +29,16 @@ With those items removed, you will get a few more errors yet. We’ll go over ea
 ### INFO: The theme appears to use include or require
 This is harmless and will not affect you. Disregard all of these messages.
 
-### REQUIRED: Themes should use `add_theme_page()` for adding admin pages
-FALSE! This is in regard to `add_submenu_page()`. That's how we add submenus to the panel menu. It will pass inspection. 
+### REQUIRED: Themes should use `add_theme_page()` for adding admin pages
+FALSE! This is in regard to `add_submenu_page()`. That's how we add submenus to the panel menu. It will pass inspection. 
 There's also a `add_dashboard_page()` reference. This also is harmless and will be incorporated at a later date.
 
-### WARNING: Found PHP short tags in file `~/ReduxCore/inc/fields/raw/parsedown.php`
+### WARNING: Found PHP short tags in file`~/redux-core/inc/fields/raw/parsedown.php`
 False again. This is a regular expression. Disregard.
 
-### WARNING: `file_put_contents / file_get_contents / curl_init / curl_exec` was found...
+### WARNING: `file_put_contents / file_get_contents / curl_init / curl_exec` was found...
 These items are primarily fallback for when the `WP_Filesystem` 
 fails. And yes, it does fail on odd hosts.  These warning will not get you rejected. If they do, send the 
-reviewer this page and you will make it through. You're feel to read our blog post about this whole ordeal entitled: 
+reviewer this page, and you will make it through. You're free to read our blog post about this whole ordeal entitled: 
 [Sometimes Standards Don’t Always Work](https://redux.io/2014/07/sometimes-standards-dont-always-work/). It's 
-a real nail biter.  ;)
+a real nail biter. ;)

@@ -4,7 +4,7 @@ title: "Getting Started"
 
 # Getting Started
 
-There are several different methods to quickly begin using Redux, each targeted toward different skill levels and use cases. Read 
+There are several methods to quickly begin using Redux, each targeted toward different skill levels and use cases. Read 
 through to see what suits your particular needs.
 
 ::: warning Table of Contents
@@ -69,4 +69,4 @@ Redux and reach out to our community with these helpful resources.
 - Chat with fellow Redux users on our [slack channel](http://slack.redux.io/).
 - For help using Redux, ask on StackOverflow using the tag [redux-framework](https://stackoverflow.com/search?q=%23redux-framework).
 - Find inspiring examples of people building with Redux at the [Redux Showcase](https://redux.io/showcase/envato-market/).
-- Submit bug issues and pull-requests on our [issue tracker](https://github.com/reduxframework/redux-framework/issues). Be sure to read our [contributing guidelines](https://github.com/reduxframework/redux-framework/blob/master/CONTRIBUTING.md) before posting or we'll point you to that document to get the information we need. :)
+- Submit bug issues and pull-requests on our [issue tracker](https://github.com/reduxframework/redux-framework/issues). Be sure to read our [contributing guidelines](https://github.com/reduxframework/redux-framework/blob/master/CONTRIBUTING.md) before posting, or we'll point you to that document to get the information we need. :)

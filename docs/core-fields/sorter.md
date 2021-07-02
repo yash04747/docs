@@ -12,7 +12,7 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 |Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`sorter`|Value identifying the field type.|
-|options|array||Array specifying the enabled or disables state for the individual blocks.  See 'Options Array' below.|
+|options|array||Array specifying the enabled or disables state for the individual blocks.  See 'Options Array' below.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -28,7 +28,7 @@ The Sorter field enabled the user to specify blocks that can be organized betwee
 |disabled|array|key pair value for the disabled column.|
 |enabled|array|key pair value for the enabled column.|
 
-The first parameter of the value pair must be a string type representing a unique ID for the element.  The second parameter must be a string type representing the display name of the element. See the code below for an example.
+The first parameter of the value pair must be a string type representing a unique ID for the element.  The second parameter must be a string type representing the display name of the element. See the code below for an example.
 
 ## Build Config
 <script>

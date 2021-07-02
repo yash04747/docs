@@ -25,14 +25,14 @@ To understand how to use extensions, you should read this article on [Using Exte
 |desc|string||Description of the field, appearing beneath the field control.|
 |class|string||Appends any number of classes to the field's class attribute.|
 |compiler|bool|`false`|Flag to run the compiler hook.  More info|
-|widget_msg|string|Go to the Widgets page to add the Redux Social Widget to any active widget area.|Message to display at the top of the field to inform the user of the extensions widget option.  Use the %s variable to include a link to the widgets area.|
+|widget_msg|string|Go to the Widgets page to add the Redux Social Widget to any active widget area.|Message to display at the top of the field to inform the user of the extensions widget option.  Use the %s variable to include a link to the widgets area.|
 |show_widget_msg|bool|`true`|Flag to determine if the widget message is to displayed, or not.|
-|include|array||Optional.  Array of default icons to show, instead of the entire default array.  See "The Include Argument" below.|
-|icons|array||Optional.  Array of arrays specifying custom profiles not included in the default set, or to edit existing profiles.  See "Adding/Editing Additional Icons" below.|
+|include|array||Optional.  Array of default icons to show, instead of the entire default array.  See "The Include Argument" below.|
+|icons|array||Optional.  Array of arrays specifying custom profiles not included in the default set, or to edit existing profiles.  See "Adding/Editing Additional Icons" below.|
 |hint|array||Array containing the `content` and optional `title` arguments for the hint tooltip.  More info|
 
-## The Include Argument
-The Social Profile extension includes 82 default social profile icons from [FontAwesome 4x](https://fontawesome.com/v4.7.0/).  The icons and their IDs are as follows.
+## The 'Include' Argument
+The Social Profile extension includes 82 default social profile icons from [FontAwesome 4x](https://fontawesome.com/v4.7.0/).  The icons and their IDs are as follows.
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
 
@@ -123,7 +123,7 @@ The Social Profile extension includes 82 default social profile icons from [Font
 |YouTube (play icon)|<i class="fa fa-2x fa-youtube-play"></i>|youtube-play|
 |YouTube (square icon)|<i class="fa fa-2x fa-youtube-square"></i>|youtube-square|
 
-By default, the extension offers all 82 to the user.  This doesn't mean you must offer each and every one.  Using the `include` argument, you may specify which profile icons you'd prefer to offer by assigning an array of existing icons IDs.  For example, let's say you'd like to offer only Facebook, Twitter, LinkedIn, and Google Plus.  The `include` argument would look as follows:
+By default, the extension offers all 82 to the user.  This doesn't mean you must offer each one.  Using the `include` argument, you may specify which profile icons you'd prefer to offer by assigning an array of existing icons IDs.  For example, let's say you'd like to offer only Facebook, Twitter, LinkedIn, and Google Plus.  The `include` argument would look as follows:
 
 ```php
 array(
@@ -133,17 +133,17 @@ array(
 
 ## Adding/Editing Additional Icons
 
-It's easy to add additional (or edit existing) social profile icons.  Each profile contains the following arguments:
+It's easy to add additional (or edit existing) social profile icons.  Each profile contains the following arguments:
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |id|string||Unique id of the profile.|
-|icon|string||Font Awesome icon class (cheatsheet) of the icon to display.  Icon classes from other sets may be used, provided the icon set is properly installed and enqueued.|
+|icon|string||Font Awesome icon class (cheatsheet) of the icon to display.  Icon classes from other sets may be used, provided the icon set is properly installed and enqueued.|
 |enabled|bool|`false`|Flag to set the default state of the social profile.|
 |name|string||Display name of the social profile|
 |color|string||Hex or RGBA string of the icons color.|
 |background|string||Hex or RGBA string of the icons backcolor.|
-|label|string||Link URL|Optional.  Text to appear over the URL input box.  This is useful should you want to specify a user name instead of a full URL.|
+|label|string||Link URL|Optional.  Text to appear over the URL input box.  This is useful should you want to specify a user name instead of a full URL.|
 |url|string||Optional. URL of the social profile.|
 
 
@@ -163,7 +163,7 @@ The following example would add a PayPal profile to the social profile icon set:
 )
 ```
 
-The `icons` argument may also be used to edit profiles from the default set.  In this instance, you'd need only specify the argument you'd like to alter.  The following example would alter the Apple profile by changing the name (with apologies in advance to Mac fan boys), label, and default state.
+The `icons` argument may also be used to edit profiles from the default set.  In this instance, you'd need only specify the argument you'd like to alter.  The following example would alter the Apple profile by changing the name (with apologies in advance to Mac fanboys), label, and default state.
 
 ```php
 'icons' => array(
@@ -191,12 +191,12 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
 
 ## Example Usage
 ### The Social Profiles Widget
-Using the social profiles widget redefines easy.  In the widget area of WordPress, add the Redux Social Profiles widget 
-to the sidebar of your choice, and set the desired title.  The only icons that will appear in the widget's frontend will 
+Using the social profiles' widget redefines easy.  In the widget area of WordPress, add the Redux Social Profiles widget 
+to the sidebar of your choice, and set the desired title.  The only icons that will appear in the widget's frontend will 
 be the enabled social profiles.
 
 ### Code
-The extension's return value is an array of key/pair values. The key contains the profile's index key, while the value contains the array of the profiles arguments. It will be necessary to use a for/each loop to extract the values (Please remember to replace `redux_demo` with your own `<a href="/redux-framework/arguments/opt_name" title="opt_name">opt_name</a>` argument).  The following code returns only the saved values.  For this example to have any real value, you'll need to write the appropriate HTML, or use one of the helper functions below.
+The extension's return value is an array of key/pair values. The key contains the profile's index key, while the value contains the array of the profiles arguments. It will be necessary to use a for/each loop to extract the values (Please remember to replace `redux_demo` with your own `<a href="/redux-framework/arguments/opt_name" title="opt_name">opt_name</a>` argument).  The following code returns only the saved values.  For this example to have any real value, you'll need to write the appropriate HTML, or use one of the helper functions below.
 
 ```php
 global $redux_demo;
@@ -240,10 +240,10 @@ own rendering purposes.
 |[opt_name](../configuration/global_arguments.md#opt-name)|string||Required. The [opt_name](../configuration/global_arguments.md#opt-name) specified in your arguments|
 |id|string||Required. ID of the social profile field whose information is to be rendered.|
 |echo|bool|`true`|Optional. When set to true, the function automatically echos the rendered HTML. When set to false, the HTML is returned.|
-|a_class|bool||Optional. Sets the passed class name to the a tag of the rendered icon HTML.|
+|a_class|bool||Optional. Sets the passed class name to the <a> tag of the rendered icon HTML.|
 
 ::: tip
-The rendered icon will be it's normal small size.  It's up to you, the developer, to style the 
+The rendered icon will be its normal small size.  It's up to you, the developer, to style the 
 icon via CSS as desired.
 ::: 
 
@@ -258,7 +258,7 @@ $html = redux_render_icon_from_id( 'OPT_NAME', 'facebook', false );
 echo $html;
 
 // Result:
-// <a class="" href="http://www.facebook.com/my_facebook_name">
+// <a class="" href="https://www.facebook.com/my_facebook_name">
 //     <i class="fa fa-2x fa-facebook" style="color: #3b5998; background-color: transparent;" title=""></i>
 // </a>
 ```
@@ -272,7 +272,7 @@ This function returns the specified value data of the specified social profile I
 |--|--|
 |[opt_name](../configuration/global_arguments.md#opt-name)|Required. The [opt_name](../configuration/global_arguments.md#opt-name) specified in your arguments|
 |id|Required. ID of the social profile field whose information is to be rendered.|
-|value|Required. Value of the social profile for which whose data you would like returned.  Value options include `id`, `icon`, `enabled`, `name`, `color`, `background`, `label`, or `url`.|
+|value|Required. Value of the social profile for which whose data you would like returned.  Value options include `id`, `icon`, `enabled`, `name`, `color`, `background`, `label`, or `url`.|
 
 #### Usage
 
@@ -283,6 +283,6 @@ $url = redux_social_profile_value_from_id( 'OPT_NAME', 'facebook', 'url');
 echo 'Facebook URL: ' $url;
 
 // Result:  
-// Facebook URL: http://www.facebook.com/my_facebook_name
+// Facebook URL: https://www.facebook.com/my_facebook_name
 ```
 

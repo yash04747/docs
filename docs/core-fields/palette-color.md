@@ -13,7 +13,7 @@ giving your users a choice of UI colors.
 |Name|Type|<div style="width:80px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`palette`|Value identifying the field type.|
-|palettes|array||An array of individual arrays defining the color palettes.  See "Setting Palettes" below.|
+|palettes|array||An array of individual arrays defining the color palettes.  See "Setting Palettes" below.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -23,8 +23,8 @@ giving your users a choice of UI colors.
 :::
 
 ## Setting Palettes
-Each palette in the palettes argument is a key/pair array that defines each individual palette.  The key of the array 
-is the palette name.  Assigned to the key is an array of hex colors to be displayed in the palette entry. 
+Each palette in the palette argument is a key/pair array that defines each individual palette.  The key of the array 
+is the palette name.  Assigned to the key is an array of hex colors to be displayed in the palette entry. 
  See the example below for a complete breakdown.
 
 ## Build Config
@@ -85,7 +85,7 @@ Redux::set_section( 'OPT_NAME', array(
 This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified 
 in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
-This field does NOT return the palette array.  It returns the name of the selected palette.  Ideally, the developer 
+This field does NOT return the palette array.  It returns the name of the selected palette.  Ideally, the developer 
 will have set the palette colors in their CSS, using the palette key name as the CSS selector.
 
 ```php

@@ -93,7 +93,7 @@ These settings are **global**, which means they will apply to all tool-tips on a
 |at|string|`bottom right`|The area on the tool-tip target in which the tool-tip will appear. See NOTES below.|
 
 ::: tip
-With the exception of the value `center`, the values must be passed with a horizontal value on the left (top, center, or bottom), and a vertical value on the right (left, center, right). Any other incorrect or misspelled combination of values will force Redux to use the default value. See the diagram below:<br />
+Except the value `center`, the values must be passed with a horizontal value on the left (top, center, or bottom), and a vertical value on the right (left, center, right). Any other incorrect or misspelled combination of values will force Redux to use the default value. See the diagram below:<br />
 <span style="display:block;text-align:center">![](../img/hints_alignment.jpg)</span>
 :::
 
@@ -128,7 +128,7 @@ inclusion of the hint argument instructs Redux to automatically generate the hin
 other argument.
 
 ### Using Hints with Text Boxes
-In addition to using hints to add additional information to the [field](../objects/field.md) itself, hints may also be used to popup a tool-tip 
+In addition to using hints to add additional information to the [field](../objects/field.md) itself, hints may also be used to pop up a tool-tip 
 when a user clicks on a text box. Enabling this feature is also as easy as adding a single array based argument to the 
 text field.
 

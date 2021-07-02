@@ -112,11 +112,11 @@ This will return an array with all the meta for that taxonomy, as well as all th
 know the ID of the term you wish to grab the defaults from.
 
 ### Missing Sidebar?!
-For boxes with only one section, the sidebar is omitted when the HTML is output. If you want a side bar, use at least 
+For boxes with only one section, the sidebar is omitted when the HTML is output. If you want a sidebar, use at least 
 two sections within any given "term" box.
 
 ### How are the Redux Taxonomy Values Stored?
-Redux Taxonomy stores each value as it's own key in the taxonomy meta using the new WordPress [update_term_meta()](https://developer.wordpress.org/reference/functions/update_term_meta/) 
+Redux Taxonomy stores each value as its own key in the taxonomy meta using the new WordPress [update_term_meta()](https://developer.wordpress.org/reference/functions/update_term_meta/) 
 and [delete_term_meta()](https://developer.wordpress.org/reference/functions/delete_term_meta/) functions. 
 In this way, you can query against specific taxonomy values. If a value is default, our extension deletes it from the 
 database to reduce on bloat, so be aware of this and use a default if nothing is returned.

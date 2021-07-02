@@ -1,6 +1,6 @@
 # Slider
 
-The Redux Slider Field offers a great array features for just about every need.  We offer dual handles, floating point values, text/label/select output and theme responsiveness!
+The Redux Slider Field offers a great array features for just about every need.  We offer dual handles, floating point values, text/label/select output and theme responsiveness!
 
 <span style="display:block;text-align:center">![](./img/slider.png)</span>
 
@@ -19,7 +19,7 @@ The Redux Slider Field offers a great array features for just about every need.�
 |display_value|string|`text`|Sets output mode for the slider value. Accepted values include `none` for no output, `label` for a printed value, `text` for an editable text box, or `select` for a select box of values. Any other or incorrect values will default to `text`.|
 |resolution|int/float|`1`|Sets the value's decimal significance. Acceptable values are: `1`, `0.1`, `0.01`, `0.001`, `0.0001`, `0.00001`. Any improper value will default to `1`.|
 |float_mark|string|(decimal)|Sets the floating point marker to either `.` (decimal) or `,` (comma). Any other value will default to the decimal value.|
-|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.  Only applies when `display_value` is set to `select`.|
+|select2|array||Array of select2 arguments. For more information see the 'Constructor' section of the Select2 docs.  Only applies when `display_value` is set to `select`.|
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)

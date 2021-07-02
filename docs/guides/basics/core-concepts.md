@@ -3,7 +3,7 @@ title: "Core Concepts"
 ---
 
 # Core Concepts
-Redux is a single API that makes it simple to perform various features within WordPress. We'll go over a our basic concepts 
+Redux is a single API that makes it simple to perform various features within WordPress. We'll go over our basic concepts 
 to properly grasp how Redux works.
 
 ::: warning Table of Contents
@@ -11,7 +11,7 @@ to properly grasp how Redux works.
 :::
 
 ## Never modify core files!
-Redux is extremely extensible, which means you can override nearly anything using filters. You will never find a need to modify a core file unless you're helping us to solve a bug. 	__***NEVER***__ **modify anything inside of ReduxCore**. If you want to change how a field works, build an extension instead.  Need to modify a value when it's saved? Use a filter.
+Redux is extremely extensible, which means you can override nearly anything using filters. You will never find a need to modify a core file unless you're helping us to solve a bug. 	__***NEVER***__ **modify anything inside redux-core**. If you want to change how a field works, build an extension instead.  Need to modify a value when it's saved? Use a filter.
 
 ::: danger Why is modifying ReduxCore files a bad practice when embedded in my own product?
 Redux is built to run with only one version of the framework code. If you modify core files in your version, which you 
@@ -23,17 +23,17 @@ This will most likely cause conflicts and headaches for you and your clients. By
 We need to understand the object structure of Redux in order to understand how it all fits together.
 
 ### Field
-The lowest building block is a [field](../../configuration/objects/field.md). A [field](../../configuration/objects/field.md) is what is displayed for a user to input data. It has it's own set of characteristics depending on the [field type](../../core-fields). At this level, whatever args are set to the [field](../../configuration/objects/field.md) act as an override for all levels above.
+The lowest building block is a [field](../../configuration/objects/field.md). A [field](../../configuration/objects/field.md) is what is displayed for a user to input data. It has its own set of characteristics depending on the [field type](../../core-fields). At this level, whatever args are set to the [field](../../configuration/objects/field.md) act as an override for all levels above.
 
 ### Section
-A [section](../../configuration/objects/section.md) is a grouping of [fields](../../configuration/objects/field.md). It groups everything together into it's own array. It containes a number of arguments that can be passed down to the [fields](../../configuration/objects/field.md) below, provided the [fields](../../configuration/objects/field.md) below do not specify those same arguments on their own declaration. Again, the [fields](../../configuration/objects/field.md) level args override all.
+A [section](../../configuration/objects/section.md) is a grouping of [fields](../../configuration/objects/field.md). It groups everything together into its own array. It containes a number of arguments that can be passed down to the [fields](../../configuration/objects/field.md) below, provided the [fields](../../configuration/objects/field.md) below do not specify those same arguments on their own declaration. Again, the [fields](../../configuration/objects/field.md) level args override all.
 
 ### Box
 In some cases, such as is with [metaboxes](../../core-extensions/metaboxes-lite.md), an extra grouping is required. Hence, a box. A box is simply a container with a bunch of [sections](../../configuration/objects/section.md) within it. The primary purpose of a box is placement on the screen.
 
 ### Instance
 Instance level arguments are known as [global arguments](../../configuration/global_arguments.md). They impact all areas of 
-the instance. Typically these are arguments that affect how Redux performs, but they can set an entire instance to display
+the instance. Typically, these are arguments that affect how Redux performs, but they can set an entire instance to display
 a control panel in the [customizer only](../../configuration/global_arguments.md#customizer-only). If you're not sure what's
 going on, the problem may be in the [global args](../../configuration/global_arguments.md).
 

@@ -10,7 +10,7 @@ The Select field displays information in a drop-down field in both single and mu
 |<div style="width:125px;">Name</div>|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`select`|Value identifying the field type.|
-|options|array||Array of options in key pair format.  The key represents the ID of the option.  The value represents the text to appear in the selector.|
+|options|array||Array of options in key pair format.  The key represents the ID of the option.  The value represents the text to appear in the selector.|
 |width|string|`40%`|Value to set the width of the selector.|
 |multi|bool|`false`|Flag to set the multi-select variation of the field.|
 |placeholder|string||Text to display in the selector when no value is present.|

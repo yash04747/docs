@@ -4,7 +4,7 @@ title: "Overriding Redux CSS"
 
 # Overriding Redux CSS
 We understand customization is important to any developer. That’s why we've provided a few useful hooks to enqueue or 
-dequeue our default CSS files. Interested?  Read on!
+dequeue our default CSS files. Interested? Read on!
 
 ::: danger
 Be sure to prefix all the function names below to avoid conflicts with other developer's code. 

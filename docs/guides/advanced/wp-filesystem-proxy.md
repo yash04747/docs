@@ -26,7 +26,7 @@ $redux->filesystem->execute( 'action', PATH, $args );
 Below is a list of available commands and the arguments associated with each.
 
 ## Chmod / File Permissions
-By default the WP_FileSystem API uses default values for chmod (read/write permissions). These are in the form of the 
+By default, the WP_FileSystem API uses default values for chmod (read/write permissions). These are in the form of the 
 declared FS_CHMOD_DIR for directories or FS_CHMOD_FILE for files. Do not worry about setting these values yourself.
 
 ::: tip
@@ -37,7 +37,7 @@ object and unzip. To do so, pass a string or int: `0644` as this argument value.
 ## Possible Calls & Arguments.
 
 ### `mkdir`
-Creates a directory. It will even make multiple children directories even it if doesn't exist.
+Creates a directory. It will even make multiple children directories even it if it doesn't exist.
 
 ```php
 $redux = Redux::get_instance( 'OPT_NAME' ); // TODO - Use your opt_name
@@ -48,7 +48,7 @@ if ( ! is_dir( $path ) ) {
 ```
 
 ### `copy`
-Copies files from one location to another.
+Copy files from one location to another.
 
 |name|type|required|description|
 |--- |--- |--- |--- |
@@ -93,7 +93,7 @@ $redux->filesystem->execute(
 
 ### `get_contents`
 Retrieves the contents of a file. This command will attempt to use the WordPress filesystem first. 
-However, if the file does not have the standard WordPress read permissions, it will fallback to `file_get_contents`.
+However, if the file does not have the standard WordPress read permissions, it will fall back to `file_get_contents`.
 
 ```php
 $redux = Redux::get_instance('OPT_NAME'); // TODO - Use your opt_name

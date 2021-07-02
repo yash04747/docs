@@ -1,8 +1,8 @@
 # Date-Time Picker <Badge text="field" type="warn"/>
 
-The Redux Date-Time Picker (DTP) extension is a new way to select dates and times for use in text fields.  The DTP 
-contains several modes based no how you would like to display time and date data.   Include all date-time info in one 
-text box?  No problem!  Split the time into its own text box?  No problem!  Have need to set ranges for dates or times?  
+The Redux Date-Time Picker (DTP) extension is a new way to select dates and times for use in text fields.  The DTP 
+contains several modes based no how you would like to display time and date data.  Include all date-time info in one 
+text box?  No problem!  Split the time into its own text box?  No problem!  Have need to set ranges for dates or times?  
 We've got you covered there too!
 
 ::: warning Table of Contents
@@ -27,25 +27,25 @@ To understand how to use extensions, you should read this article on [Using Exte
 |subtitle|string|Subtitle display of the field, situated beneath the title.|
 |desc|string|Description of the field, appearing beneath the field control.|
 |class|string|Appends any number of classes to the field's class attribute.|
-|compiler|bool|`false`|Flag to run the compiler hook.  More info|
-|date-format|str|`mm-dd-yy`|String to assign the format of the date output.  For more info, please see 'Date Formatting' below.|
-|time-format|str|`h:mm TT z`|String to assign the format of the time output.  For more info, please see 'Time Formatting' below.|
+|compiler|bool|`false`|Flag to run the compiler hook.  More info|
+|date-format|str|`mm-dd-yy`|String to assign the format of the date output.  For more info, please see 'Date Formatting' below.|
+|time-format|str|`h:mm TT z`|String to assign the format of the time output.  For more info, please see 'Time Formatting' below.|
 |required|array|Provide the parent, comparison operator, and value which affects the field's visibility.  More info|
 |date-picker|string|`true`|Flag that sets the display or hiding of the date picker portion of the picker window.|
 |time-picker|bool|`true`|Flag that sets the display or hiding of the time picker portion of the picker window.|
-|split|bool|`false`|Flag to set whether the date and time will be separated into their own fields.  See 'Split Mode' below.|
-|separator|string|'  ' (two spaces)|String that appears between the date and time when split more is false.  Blanks or characters may be used.|
-|control-type|string|`slider`|string command determining the interface of the time picker.  Choose between select slider.|
-|placeholder|string/array|Text to display in the input when no value is present.  See 'Placeholder Options' below.|
+|split|bool|`false`|Flag to set whether the date and time will be separated into their own fields.  See 'Split Mode' below.|
+|separator|string|'  ' (two spaces)|String that appears between the date and time when split more is false.  Blanks or characters may be used.|
+|control-type|string|`slider`|string command determining the interface of the time picker.  Choose between select slider.|
+|placeholder|string/array|Text to display in the input when no value is present.  See 'Placeholder Options' below.|
 |num-of-months|int|The number of calendar months to display in the datepicker.|
 |timezone-list|array|An array of timezones values used to populate the timezone select: `array('value' => 'EST', 'label' => 'Eastern')`. The value should be the offset number in minutes. So "-0400" which is the format "-hhmm", would equate to -240 minutes.|
-|timezone|int/string|Default timezone to display in the timezone list.  This is the offset in minutes. If null the browser's local timezone will be used. If your timezone is "-0400" you would use -240. For backwards compatibility you may pass "-0400", however the timezone is stored in minutes and more reliable.|
+|timezone|int/string|Default timezone to display in the timezone list.  This is the offset in minutes. If null the browser's local timezone will be used. If your timezone is "-0400" you would use -240. For backwards compatibility you may pass "-0400", however the timezone is stored in minutes and more reliable.|
 |hour-min|int|The minimum hour allowed for all dates.|
 |hour-max|int|The maximum hour allowed for all dates.|
 |minute-min|int|The minimum minute allowed for all dates.|
 |minute-max|int|The maximum minute allowed for all dates.|
-|date-min|int/array|Array of minimum month, day, year values.  See 'Min/Max Date Options' below.|
-|date-max|int/array|Array of maximum month, day, year values.  See 'Min/Max Date Options' below.|
+|date-min|int/array|Array of minimum month, day, year values.  See 'Min/Max Date Options' below.|
+|date-max|int/array|Array of maximum month, day, year values.  See 'Min/Max Date Options' below.|
 |hint|array|Array containing the `content` and optional `title` arguments for the hint tooltip. More info|
 
 ::: tip Also See
@@ -56,7 +56,7 @@ To understand how to use extensions, you should read this article on [Using Exte
 :::
 
 ## Placeholder Options
-The placeholder argument, if used, must be set in accordance with the split argument.  Consider the following field 
+The placeholder argument, if used, must be set in accordance with the split argument.  Consider the following field 
 arguments.
 
 ### When `split` is set to `true`
@@ -72,14 +72,14 @@ arguments.
 'placeholder' => 'Datetime'
 ```
 ## Min/Max Date Options
-The `date-min` and `date-max` arguments accept either an integer value or the array value shown in the table below.  
+The `date-min` and `date-max` arguments accept either an integer value or the array value shown in the table below.  
 When setting the `date-min` and `date-max` arguments as integers, the `date-min` argument begins the selectable range 
-with the number of days beginning at the current date.  Setting it to `0` begins the selectable range at today's date, 
-setting it to `1` begins on the day after the current date, and so on.  The `date-max` argument as an integer sets the 
-number of days in the actual range.  Setting it to `30` would create a 30 day range.
+with the number of days beginning at the current date.  Setting it to `0` begins the selectable range at today's date, 
+setting it to `1` begins on the day after the current date, and so on.  The `date-max` argument as an integer sets the 
+number of days in the actual range.  Setting it to `30` would create a 30-day range.
 
 Alternatively, setting the `date-min` and `date-max` ranges as an array of month, day, and year values allows you to 
-select a date specific range at any point in the calender.
+select a date specific range at any point in the calendar.
 
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
@@ -186,7 +186,7 @@ Format a date into a string value with a specified format. The format can be com
 - '**…**' – literal text – single quoteanything else – literal text
 
 ### Time Formatting
-Format a time into a string value with a specified format.  The format can be combinations of the following:
+Format a time into a string value with a specified format.  The format can be combinations of the following:
 
 - **H** – Hour with no leading 0 (24 hour)
 - **HH** – Hour with leading 0 (24 hour)

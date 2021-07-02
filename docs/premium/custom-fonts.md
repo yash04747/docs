@@ -18,7 +18,7 @@ To understand how to use extensions, you should read this article on [Using Exte
 :::
 
 ## Placement of the Custom Fonts Field
-By default the custom fonts field is added to a dynamic section at the end of your panel called Font Control. Once you 
+By default, the custom fonts field is added to a dynamic section at the end of your panel called Font Control. Once you 
 load the extension it does all the heavy lifting.
 
 Now with Custom Fonts 1.0.2, you can now move the field to any section you desire. You need only include one field of 

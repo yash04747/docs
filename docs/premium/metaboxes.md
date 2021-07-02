@@ -84,7 +84,7 @@ endif;
 ```
 
 ## Example Usage
-This is one of the things that makes the metaboxes ultra slick. ReduxFramework creates a global variable for you to access all your panel options with. Say your opt_name is `redux_demo`, then you can use the global variable `$redux_demo` to access your values. Now what's cool is the metaboxes code overrides those values! That means you only have to code your functions ONCE. So say you have a layout field in your panel and on your pages. If you change a single post, and have the layout be say 3, while the panel says 2, the code exposed to your data will be 3. Redux metaboxes does it all for you.
+This is one of the things that makes the metaboxes ultra slick. ReduxFramework creates a global variable for you to access all your panel options with. Say your opt_name is `redux_demo`, then you can use the global variable `$redux_demo` to access your values. Now what's cool is the metaboxes code overrides those values! That means you only have to code your functions ONCE. So say you have a layout field in your panel and on your pages. If you change a single post, and have the layout be 3, while the panel says 2, the code exposed to your data will be 3. Redux metaboxes does it all for you.
 
 ### Accessing Data Within Loops
 Within loops, Redux will automatically update your Redux global variable with the appropriate values. If you're trying to do it another way, you will need to use the following function:
@@ -97,7 +97,7 @@ You can use this anywhere to grab a specific value or all values. The `OPT_NAME`
 <span style="text-decoration: line-through;">You are correct. Redux Metaboxes will not ever store a "default" value. Know that when you query for values</span>. As of Metaboxes 1.4.4 you can set the global argument of `metaboxes_save_defaults` to enable default values being saved to the database.
 
 ### Missing Sidebar?!
-For boxes in the `standard` position and with only one section, the sidebar is omitted when the HTML is output. If you want a side bar, use at least two sections within any given standard position metabox.
+For boxes in the `standard` position and with only one section, the sidebar is omitted when the HTML is output. If you want a sidebar, use at least two sections within any given standard position metabox.
 
 ### Binding Metabox Visibility to Page Template &amp; Post Formats
 Yes, metaboxes does that for you too. As denoted above, you need only declare `page_template` or `post_format` on the box array for a given metabox. The visibility will be affected accordingly. You can provide an array for each. Obviously, page_templates won't affect a box that only appears on the post type. ;)
@@ -107,7 +107,7 @@ For a full list of post formats see <a target="_blank">http://codex.wordpress.or
 The value of your page_template will be the actual filename of your given template.
 
 ### How are the Redux Metabox Values Stored?
-Redux Metaboxes (as of <em>1.2.3</em>) stores each value as it's own key in the meta. In this way, you can query against specific meta values. If a value is default, it deletes that value to free up the database.
+Redux Metaboxes (as of <em>1.2.3</em>) stores each value as its own key in the meta. In this way, you can query against specific meta values. If a value is default, it deletes that value to free up the database.
 
 ##### Wait, wasn't the meta all stored in one key value?
 Yes, until recently. Don't worry, if such a key still exists your data will be automatically migrated the moment that post's meta is accessed.

@@ -9,7 +9,7 @@ install Redux as a plugin rather than embedding it in your theme or plugin. Why 
 - The WordPress plugin is kept up to date and addresses any new vulnerabilities.
 - You don't have to worry about updating it.
 - We're rabid about support.
-- It's a whole lot less pain during your code reviews.
+- It's a lot less pain during your code reviews.
 
 Depending on the market (ThemeForest, WordPress.org), the pain of embedding can be quite intense. As such, this
 is the recommended approach by Redux.

@@ -84,7 +84,7 @@ hidden and all CSS output from those children is hidden as well.
 ## CSS Output
 
 CSS output to both the head and compiler is removed from each field if the required value(s) is/are not met. You can, 
-however, override this on a per field basis by setting `'force_output' => true` for each field you want CSS to still be 
+however, override this on a per-field basis by setting `'force_output' => true` for each field you want CSS to still be 
 output with. This way you can nest a field under another, and still have it output to the dynamic CSS.
 
 ::: tip

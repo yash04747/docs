@@ -16,7 +16,7 @@ The Raw field provides the ability to output raw HTML directly into the options 
 |type|string|`raw`|Value identifying the field type.|
 |full_width|bool|`true`|Flag to set denote if the field is full width or sectioned.|
 |markdown|bool|`false`|Flag to set the markdown of standard line-break and tab characters to HTML.|
-|content|string||String/HTML content to display. String values or file output may be used.|
+|content|string||String/HTML content to display. String values or file output may be used.|
 |content_path|string||Full path to a file that will have the content parsed for output.|
 
 ::: tip Also See

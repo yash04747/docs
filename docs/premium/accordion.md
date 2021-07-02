@@ -1,7 +1,7 @@
 # Accordion <Badge text="field" type="warn"/>
 
 The Accordion extension is an improved way to group like items in your options panel, inside a collapsible accordion 
-field.  Such a feature comes in handy when a given options panel has many, many items that don't need to be shown 
+field. Such a feature comes in handy when a given options panel has many, many items that don't need to be shown 
 simultaneously. 
 
 <span style="display:block;text-align:center">![](./img/accordion.png)</span>

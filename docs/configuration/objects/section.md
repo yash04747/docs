@@ -71,7 +71,7 @@ To reduce errors, if a section already exists with that ID, a new one will be ge
 #### Updating an existing section
 
 If you wish, you can change the default behavior and replace an existing section by passing a new section array with a
-same section_id, and then passing true for the replace variable. All data between the two sections will be merged. IE,
+same section_id, and then passing true for the replacement variable. All data between the two sections will be merged. i.e.,
 you can only update values this way. If you wish to remove values, you will need to use remove_section outlined below.
 
 ```php

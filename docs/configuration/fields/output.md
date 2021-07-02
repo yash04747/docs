@@ -7,7 +7,7 @@ title: "Output"
 # Using the `output` Argument
 
 Using the output argument in fields that support it is a great way to generate dynamic CSS for those fields on the 
-front-end of your WordPress site.  Redux will take the values for those fields, generate the appropriate CSS selectors, 
+front-end of your WordPress site.  Redux will take the values for those fields, generate the appropriate CSS selectors, 
 elements, and values and place them at the bottom of the page's `<HEAD>` section. This ensures your CSS will take 
 priority over any other CSS used in your theme.
 
@@ -17,9 +17,9 @@ priority over any other CSS used in your theme.
 
 ::: tip 
 Before adding the output argument to one of the indicated fields, you will need to know which 
-[CSS selectors](http://www.w3schools.com/cssref/css_selectors.asp) in which to apply to the field's value.  These will 
-be selectors from your theme's CSS you wish to change dynamically via values from fields that offer output.  All that 
-now need be done is assign them to the output argument in an array without the chosen field array, as shown below.  
+[CSS selectors](http://www.w3schools.com/cssref/css_selectors.asp) in which to apply to the field's value. These will 
+be selectors from your theme's CSS you wish to change dynamically via values from fields that offer output. All that 
+now need be done is assign them to the output argument in an array without the chosen field array, as shown below. 
 Multiple selectors are permitted.
 :::
 

@@ -1,7 +1,7 @@
 # Icon Select <Badge text="field" type="warn"/>
 
 The entire purpose of the icon_select field is to reduce your effort as a developer. You feed it a web font CSS file via 
-path or URL and it automatically parses the class names. Then you specify a font prefix and it auto-appends that as well. 
+path or URL, and it automatically parses the class names. Then you specify a font prefix and it auto-appends that as well. 
 What you get in the end is a fully functional class that you can use on any field to get the icon you desire. Oh, did we 
 mention it auto-enqueues your font file for you as well?   ;)
 
@@ -22,7 +22,7 @@ To understand how to use extensions, you should read this article on [Using Exte
 
 ## Arguments
 By default, if you do not specify any of the special argument icon_select will auto-parse the elusive-icons font already 
-embedded within Redux. It will also enqueue this font in the front-end so you can begin working with icons instantly. 
+embedded within Redux. It will also enqueue this font in the front-end, so you can begin working with icons instantly. 
 Alternatively, you can provide any of the arguments below for a more customized experience.
 
 |Name|Type|Default|Description|
@@ -58,7 +58,7 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
     //'options' => array(), // key/value pair, value is the title
     //'enqueue' => false, // Disable auto-enqueue of stylesheet if present in the panel
     //'enqueue_frontend' => false, // Disable auto-enqueue of stylesheet on the front-end
-    //'stylesheet' => 'http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', // full path OR url to stylesheet
+    //'stylesheet' => 'https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css', // full path OR url to stylesheet
     //'prefix' => 'fa', // If needed to initialize the icon
     //'selector' => 'fa-', // How each icons begins for this given font
     //'height' => 300 // Change the height of the container. defaults to 300px;

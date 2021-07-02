@@ -1,6 +1,6 @@
 # Typography
 
-The Redux Typography field in second-to-none when it comes to other options out there.  It's often copied in concept,
+The Redux Typography field in second-to-none when it comes to other options out there.  It's often copied in concept,
 but limited in functionality. Google fonts, font preview, color-picket, letter &amp; word spacing, styles &amp; weight 
 selection, and much, much more!
 
@@ -15,7 +15,7 @@ selection, and much, much more!
 |--- |--- |--- |--- |
 |type|string|`typography`|Value identifying the field type.|
 |default|array||See [Default Argument](#default-argument) below.|
-|units|string|px|Sets the default unit value.  Accepts: `px` `em` `rem` `%`|
+|units|string|px|Sets the default unit value.  Accepts: `px` `em` `rem` `%`|
 |google|bool|`true`|Flag to set Google fonts. Please make sure the Google API key is defined, or this feature will not work. For information on acquiring an API key, go to [Google Developer](https://developers.google.com/fonts/docs/developer_api#Auth)|
 |fonts|array||An array of fonts in key pair format. Specifying a font array will override the default "standard" fonts.|
 |font-backup|bool|`false`|Flag to display a selector specifying backup non-Google fonts when Google fonts are used.|
@@ -30,7 +30,7 @@ selection, and much, much more!
 |text-align|bool|`true`|Flag to display the text alignment selector.|
 |text-transform|bool|`false`|Flag to display the text transform selector.|
 |color|bool|`true`|Flag to display the font color input.|
-|preview|array||Array value for preview settings.  See 'Preview Options' below.|
+|preview|array||Array value for preview settings.  See 'Preview Options' below.|
 |all_styles|bool|`false`|Flag to set all available styles for selected Google font in the CSS.|
 |select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |font_family_clear|bool|`true`|Flag to set the clear field button on the font-family selector.|
@@ -57,8 +57,8 @@ selection, and much, much more!
 |letter-spacing|string|Sets the default letter spacing.|
 |google|bool|Flag to set Google fonts.|
 |color|string|Hex string to set the color picker default.|
-|text-align|string|Sets the default text align value.  Accepts:  `inherit`, `left`, `right`, `center`, `justify`, or `initial`.|
-|text-transform|string|Sets the default text transform value.  Accepts:  `none`, `capitalize`, `uppercase`, `lowercase`, `initial`, or `inherit`.|
+|text-align|string|Sets the default text align value.  Accepts:  `inherit`, `left`, `right`, `center`, `justify`, or `initial`.|
+|text-transform|string|Sets the default text transform value.  Accepts:  `none`, `capitalize`, `uppercase`, `lowercase`, `initial`, or `inherit`.|
 
 ## Preview Options
 |Name|Type / Default Value|Description|

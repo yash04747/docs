@@ -3,7 +3,7 @@ title: "Panel Templates"
 ---
 
 # Panel Templates
-As of Redux **3.4.3+**, the Redux templates have been decoupled from the core. That means that ANY 
+As of Redux **3.4.3+**, the Redux templates have been decoupled from the core. That means that ANY 
 developer can take the template files and override them for their own customized Redux panel.
 
 ::: warning Table of Contents
@@ -17,15 +17,15 @@ To do this is simple. First, copy the templates from `~/ReduxCore/templates/pane
 Never, ever, **EVER** modify ReduxCore. Always move things out of the core to make modifications.
 :::
 
-Tell Redux where these new new files are, via the `templates_path` argument. That's it!
+Tell Redux where these new files are, via the `templates_path` argument. That's it!
 
 #### What if you change something?
 Our templates use the same version methods of other products. If your panel is in `dev_mode` a notice will be displayed in the panel
 when a template file has been updated in the core.
 
 ## Won't this Change All Panels?
-We built Redux so each panel may have it's own set of templates. It's all powered by the `opt_name` key.  Your customizations 
-are yours and yours aloneAs long as as keys are  not shared with another panel.
+We built Redux so each panel may have its own set of templates. It's all powered by the `opt_name` key.  Your customizations 
+are yours and yours alone as long as keys are not shared with another panel.
 
 ## Template Files
 

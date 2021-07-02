@@ -11,7 +11,7 @@ With the Slider field, unlimited slides may be created with titles, descriptions
 |Name|Type|Default|Description|
 |--- |--- |--- |--- |
 |type|string|`slides`|Value identifying the field type.|
-|placeholder|array||Array of placeholder values.  See 'Placeholder Values' below.|
+|placeholder|array||Array of placeholder values.  See 'Placeholder Values' below.|
 |show|array||Array of elements to show or hide. Options possible: `title`, `description`, `url`. [See details below](#using-the-show-argument). |
 
 ::: tip Also See

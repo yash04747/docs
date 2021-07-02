@@ -15,9 +15,9 @@ provide dynamic variables in a way that can be used by standard CSS as well as L
 
 All generated variables will use the following naming strategy:
 - If field produces an array: `{prefix}{field_id}-{key}`
-- If field produces an string: `{prefix}{field_id}`
+- If field produces a string: `{prefix}{field_id}`
 
-The `{prefix}` will vary depending on the method you are using `output_variables` as. Namely as [CSS variables](#using-with-css-variables) or [using 
+The `{prefix}` will vary depending on the method you are using `output_variables` as. Namely, as [CSS variables](#using-with-css-variables) or [using 
 the compiler hook](#using-with-the-compiler-hook) with a SCSS/LESS compiler.
 
 To enable, add this code `'output_variables' => true` to the [section](../objects/section.md) or 
@@ -58,7 +58,7 @@ enable this option, the Redux compiler hook will return an array of prepared var
 to match your compiler of choice.
 
 ### Changing the Compiler Variables Prefix
-By default the global argument `compiler_ouput_variables_prefix` is set to `$` which works for SCSS. If you are using 
+By default, the global argument `compiler_ouput_variables_prefix` is set to `$` which works for SCSS. If you are using 
 LESS, you will need to run the following to properly generate your variables in a way that can be used by your compiler.
 By so doing, your variables will be properly prefixed with the `@` symbol which is what LESS requires.
 

@@ -3,13 +3,13 @@ title: "WPML Integration"
 ---
 
 # WPML Integration
-So you've embedded Redux into your theme or plugin and you want to translate it with WPML.
+So you've embedded Redux into your theme or plugin, and you want to translate it with WPML.
 
 What happens with the option fields used with Redux?
 
 Can they also be translated with WPML?
 
-The answer is yes and we'll explain everything in simple steps.
+The answer is yes, and we'll explain everything in simple steps.
 
 ::: warning Table of Contents
 [[toc]]
@@ -33,7 +33,7 @@ Redux::setArgs( $opt_name, array(
 ```
         
 ## Step 2: Select the options you want to translate
-Lets say we want to translate three fields. To make it more interesting we'll demonstrate three different types of options.
+Let's say we want to translate three fields. To make it more interesting we'll demonstrate three different types of options.
 
 **A text field**
 ```php

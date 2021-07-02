@@ -55,19 +55,19 @@ repeater.
 ## Extended Argument Details
 
 #### The `static` Argument
-By default repeater is a dynamic field, however it can act with a predefined  number of static repeater blocks. This allows developers to specifically set the number of repeater blocks they desire to use.
+By default, repeater is a dynamic field, however it can act with a predefined  number of static repeater blocks. This allows developers to specifically set the number of repeater blocks they desire to use.
 
 #### The `bind_title` Argument
-By default the first field passed within a repeater is bound as the title. As the values selected or modified change, the title for that given repeater block will update. Developers may set this to false to disable all titles, or set it to an ID had within the repeater field and the title will update accordingly for each repeater block.
+By default, the first field passed within a repeater is bound as the title. As the values selected or modified change, the title for that given repeater block will update. Developers may set this to false as to disable all titles, or set it to an ID had within the repeater field and the title will update accordingly for each repeater block.
 
 #### The `limit` Argument
-Provided the `static` argument is not used, this will limit the number of dynamic repeater blocks that users can create. By default this is set to 10.
+Provided the `static` argument is not used, this will limit the number of dynamic repeater blocks that users can create. By default, this is set to 10.
 
 #### The `group_values` Argument
-The group values allows you to store all values within the repeater id value inside your global variable. For example, say you had a repeater as denoted below and you set this to true. To access all the field values within the repeater field, you would need to follow the Example Usage - Grouped Values example denoted below. This, by default, is turned off.
+The group values allows you to store all values within the repeater id value inside your global variable. For example, say you had a repeater as denoted below, and you set this to true. To access all the field values within the repeater field, you would need to follow the Example Usage - Grouped Values example denoted below. This, by default, is turned off.
 
 #### The `sortable` Argument
-By default each repeater block is sortable and the values will be returned to the developer in the order of which they are saved. However, should a developer like to disable this feature, they may set this to false and sorting will be enabled to the user.
+By default, each repeater block is sortable and the values will be returned to the developer in the order of which they are saved. However, should a developer like to disable this feature, they may set this to false and sorting will be enabled to the user.
 
 ## Example Config
 ```php

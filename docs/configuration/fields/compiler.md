@@ -35,7 +35,7 @@ Note the `'compiler' => true` argument. This sets the compiler flag. Now we need
 
 ## Setting up the Compiler Function
 Next, the compiler function itself needs to be set up. It requires two parts. The add_filter statement, and the actual 
-function. Ideally, these codes would be placed within your config php file, however, it can be used anywhere in your 
+function. Ideally, these codes would be placed within your config PHP file, however, it can be used anywhere in your 
 code provided the `opt_name` portion of the add_filter line is replaced with the value specified in your 
 [opt_name](../global_arguments.md#opt_name)  argument. For this example, we'll be using the example found in the 
 [sample-config.php](https://github.com/ReduxFramework/redux-framework/blob/master/sample/sample-config.php).
@@ -65,6 +65,6 @@ If all has been set up correctly, you will see the compiler hook message and the
 
 
 ::: tip
-If the [`output_tag`](../global_arguments.md#output_tag) argument is set to to false, Redux will not auto-echo a tag into the page header.
+If the [`output_tag`](../global_arguments.md#output_tag) argument is set to false, Redux will not auto-echo a tag into the page header.
 :::
  

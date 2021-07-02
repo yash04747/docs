@@ -1,6 +1,6 @@
 # Switch
 
-The Switch field sets a true or false value based on the selection.  Users may also change the labels of the switch.
+The Switch field sets a true or false value based on the selection.  Users may also change the labels of the switch.
 
 <span style="display:block;text-align:center">![](./img/switch.png)</span>
 
