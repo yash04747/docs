@@ -15,5 +15,5 @@ jobs:
         ACCESS_TOKEN: ${{ secrets.GH_TOKEN_SECRET }}
         TARGET_REPO: reduxframework/docs
         TARGET_BRANCH: gh-pages
-        BUILD_SCRIPT: yarn install && yarn docs:build
+        BUILD_SCRIPT: yarn add -D vuepress && yarn docs:build
         BUILD_DIR: docs/.vuepress/dist/
