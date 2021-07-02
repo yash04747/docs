@@ -3,10 +3,11 @@ title: "Redux Documentation"
 ---
 
 # Redux.io Documentation
+[![Build and Deploy](https://github.com/reduxframework/docs/actions/workflows/vuepress-deploy.yml/badge.svg)](https://github.com/reduxframework/docs/actions/workflows/vuepress-deploy.yml)
 
 Documentation for Redux.io, the world's most powerful and widely use WordPress input framework.
 
-These docs are based off of [VuePress](https://vuepress.vuejs.org/) and automatically built by [Travis-CI](https://travis-ci.org).
+These docs are based off of [VuePress](https://vuepress.vuejs.org/) and automatically built by GitHub Actions.
 
 Feel free to send pull requests and improvements. We'd love your help if you find anything we've missed.
 
@@ -26,4 +27,4 @@ yarn docs:dev
 yarn docs:build
 ```
 
-Works best with a unix-based OS.
+Works best with a Unix-based OS.
