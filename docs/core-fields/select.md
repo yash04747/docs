@@ -111,7 +111,6 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
         '2' => 'Opt 2',
         '3' => 'Opt 3'),
     'default'  => array( '2' ),
-    'select2'  => array(
-        array( 'select2' => array( 'allowClear' => False ) ) )
-) );
+    'select2'  => array('select2' => array( 'allowClear' => False ) )
+    ) );
 ```
