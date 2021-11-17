@@ -14,10 +14,10 @@ selection, and much, much more!
 |Name|Type|<div style="width:100px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`typography`|Value identifying the field type.|
-|default|array||See [Default Argument](#default-argument) below.|
-|units|string|px|Sets the default unit value.  Accepts: `px` `em` `rem` `%`|
-|google|bool|`true`|Flag to set Google fonts. Please make sure the Google API key is defined, or this feature will not work. For information on acquiring an API key, go to [Google Developer](https://developers.google.com/fonts/docs/developer_api#Auth)|
-|fonts|array||An array of fonts in key pair format. Specifying a font array will override the default "standard" fonts.|
+|default|array| |See [Default Argument](#default-argument) below.|
+|units|string|`px`|Sets the default unit value.  Accepts: `px` `em` `rem` `%`|
+|google|bool|`true`|Flag to set Google fonts.|
+|fonts|array| |An array of fonts in key pair format. Specifying a font array will override the default "standard" fonts.|
 |font-backup|bool|`false`|Flag to display a selector specifying backup non-Google fonts when Google fonts are used.|
 |font-style|bool|`true`|Flag to display the font style selector.|
 |font-weight|bool|`true`|Flag to display the font weight selector.|
@@ -30,10 +30,15 @@ selection, and much, much more!
 |text-align|bool|`true`|Flag to display the text alignment selector.|
 |text-transform|bool|`false`|Flag to display the text transform selector.|
 |color|bool|`true`|Flag to display the font color input.|
-|preview|array||Array value for preview settings.  See 'Preview Options' below.|
+|preview|array| |Array value for preview settings.  See [Preview Options](#preview-options) below.|
 |all_styles|bool|`false`|Flag to set all available styles for selected Google font in the CSS.|
-|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
+|select2|array| |Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |font_family_clear|bool|`true`|Flag to set the clear field button on the font-family selector.|
+|margin-top|bool|`false`|Flag to set the top margin field.|
+|margin-bottom|bool|`false`|Flag to set the bottom margin field.|
+|text-shadow|bool|`false`|Flag to set the text shadow slider.|
+|allow_empty_line_height|bool|`false`|Flag to allow an empty valud for the line height field.|
+|color_alpha|array| |Enabled alpha color options.  See [Color Alpha](#color-alpha-options) options below.
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -61,12 +66,17 @@ selection, and much, much more!
 |text-transform|string|Sets the default text transform value.  Accepts:  `none`, `capitalize`, `uppercase`, `lowercase`, `initial`, or `inherit`.|
 
 ## Preview Options
-|Name|Type / Default Value|Description|
-|--- |--- |--- |
-|text|alphanumeric string|Text to display in the font preview area.|
-|font-size|33px|Value to set the font size in the preview area.|
-|always_display|`false`|Flag that sets whether or not the font preview will display, even when no changes are made.|
+|Name|Type|Default|Description|
+|--- |--- |--- |--- |
+|text|alphanumeric string| |Text to display in the font preview area.|
+|font-size|string|`33px`|Value to set the font size in the preview area.|
+|always_display|bool|`false`|Flag that sets whether or not the font preview will display, even when no changes are made.|
 
+## Color Alpha Options
+|Name|Type|Default|Description|
+|--- |--- |--- |--- |
+|color|bool|`false`|Toggle font color picker.|
+|shadow-color|bool|`false`|Toggle the shadow color picker.|
 
 ## Build Config
 <script>
