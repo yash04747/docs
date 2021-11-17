@@ -44,11 +44,11 @@ export default {
 ## Example Config
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'css_editor',
     'type'     => 'ace_editor',
-    'title'    => __('CSS Code', 'redux-framework-demo'),
-    'subtitle' => __('Paste your CSS code here.', 'redux-framework-demo'),
+    'title'    => esc_html__('CSS Code', 'your-project-name'),
+    'subtitle' => esc_html__('Paste your CSS code here.', 'your-project-name'),
     'mode'     => 'css',
     'theme'    => 'monokai',
     'desc'     => 'Possible modes can be found at https://ace.c9.io/.',
@@ -57,7 +57,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified 
+This example in based on the code above. Be sure to change `$redux_demo` to the value you specified 
 in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php

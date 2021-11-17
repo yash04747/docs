@@ -4,8 +4,10 @@ title: "Embedding Redux"
 
 # Embedding Redux into Your Theme or Plugin
 
-::: danger Never, ever, EVER (say it with me)...
-modify any files in `redux-core` (formerly `ReduxCore`). They are hooks, filters, etc. to bypass nearly anything.
+::: danger Due to security concerns, we strongly discourage this method of using Redux without your projects.  We update our software monthly which may include pathes to plug security holes.  Unless you plan on updating Redux within your project regularly, the Redux plugin installed via [TGM](http://tgmpluginactivation.com/) is the preferred method.
+:::
+
+::: danger Never, ever, EVER modify any files in `redux-core` (formerly `ReduxCore`). There are hooks, filters, etc. to bypass nearly anything.
 Modifying files within `redux-core` (including dropping in extensions) will only serve to make your life harder should you
 ever choose to update.
 :::

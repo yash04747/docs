@@ -51,12 +51,12 @@ export default {
 #### Single select
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'button-set-single',
     'type'     => 'button_set',
-    'title'    => __('Button Set, Single', 'redux-framework-demo'),
-    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Button Set, Single', 'your-project-name'),
+    'subtitle' => esc_html__('No validation can be done on this field type', 'your-project-name'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-project-name'),
     //Must provide key => value pairs for options
     'options' => array(
         '1' => 'Opt 1', 
@@ -69,12 +69,12 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 #### Multi select
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'button-set-multi',
     'type'     => 'button_set',
-    'title'    => __('Button Set, Single', 'redux-framework-demo'),
-    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Button Set, Single', 'your-project-name'),
+    'subtitle' => esc_html__('No validation can be done on this field type', 'your-project-name'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-project-name'),
     'multi'    => true,
     //Must provide key => value pairs for options
     'options' => array(
@@ -87,7 +87,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
+This example in based on the code above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 #### Single
 ```php

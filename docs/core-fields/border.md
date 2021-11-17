@@ -65,13 +65,13 @@ export default {
 
 ## Example Config
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'header-border',
     'type'     => 'border',
-    'title'    => __('Header Border Option', 'redux-framework-demo'),
-    'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
+    'title'    => esc_html__('Header Border Option', 'your-project-name'),
+    'subtitle' => esc_html__('Only color validation can be done on this field type', 'your-project-name'),
     'output'   => array('.site-header'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-project-name'),
     'default'  => array(
         'border-color'  => '#1e73be', 
         'border-style'  => 'solid', 
@@ -84,7 +84,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ## Example Usage
-This example in based on the example usage provided above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
+This example in based on the code above. Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

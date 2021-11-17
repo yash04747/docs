@@ -1,8 +1,8 @@
 # Import/Export
 
-The Import/Export extension offers users the ability to back up and restore their Redux options data in one of three ways: raw data, file and URL.
+The Import/Export extension offers users the ability to back up and restore their Redux options data two ways: raw data or file.
 
-<span style="display:block;text-align:center">![](./img/imex.png)</span>
+<span style="display:block;text-align:center">![](./img/io.png)</span>
 
 ## Arguments
 |Name|Type|Default|Description|

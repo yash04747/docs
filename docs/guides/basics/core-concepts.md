@@ -13,7 +13,7 @@ to properly grasp how Redux works.
 ## Never modify core files!
 Redux is extremely extensible, which means you can override nearly anything using filters. You will never find a need to modify a core file unless you're helping us to solve a bug. 	__***NEVER***__ **modify anything inside redux-core**. If you want to change how a field works, build an extension instead.  Need to modify a value when it's saved? Use a filter.
 
-::: danger Why is modifying ReduxCore files a bad practice when embedded in my own product?
+::: danger Why is modifying `redux-core` files a bad practice when embedded in my own product?
 Redux is built to run with only one version of the framework code. If you modify core files in your version, which you 
 embed in a product, there's no guarantee your version will be the version loaded should another product be using Redux. 
 This will most likely cause conflicts and headaches for you and your clients. By using filters and extensions, you ensure that your code will always be loaded despite the "core" that is instantiated first.

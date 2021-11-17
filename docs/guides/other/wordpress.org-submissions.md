@@ -10,4 +10,4 @@ There is a new argument titled `disable_tracking`. When set to true, the `Redux_
 |Redux Version|Path|
 |--|--|
 |<= 3.7|`~/ReduxCore/inc/classes/tracking.php`|
-|>= 4|`~/ReduxCore/inc/classes/class-redux-statistics.php`|
+|>= 4|`~/redux-core/inc/classes/class-redux-statistics.php`|

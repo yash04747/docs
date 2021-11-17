@@ -1,6 +1,6 @@
 # Background
 
-The Redux Background field offers unmatched features not found in any other option framework.  Users will be able to present the background designs found in professionally authored pages with a few simple clicks.
+The Background field offers unmatched features not found in any other option framework.  Users will be able to present the background designs found in professionally authored pages with a few simple clicks.
 
 <span style="display:block;text-align:center">![](./img/background.png)</span>
 
@@ -75,12 +75,12 @@ export default {
 
 ## Example Config
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(         
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(         
     'id'       => 'opt-background',
     'type'     => 'background',
-    'title'    => __('Body Background', 'redux-framework-demo'),
-    'subtitle' => __('Body background with image, color, etc.', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Body Background', 'your-project-name'),
+    'subtitle' => esc_html__('Body background with image, color, etc.', 'your-project-name'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-project-name'),
     'default'  => array(
         'background-color' => '#1e73be',
     )
@@ -88,7 +88,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ```
 
 ### Example Usage
-This example in based on the example usage provided above.  Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
+This example in based on the code above.  Be sure to change `$redux_demo` to the value you specified in your [opt_name](../configuration/global_arguments.md#opt_name) argument.
 
 ```php
 global $redux_demo;

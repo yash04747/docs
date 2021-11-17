@@ -26,6 +26,11 @@ If set to true, the option panel will appear in the admin bar. Making it easy fo
 String value indicated which icon to use for the admin bar icon. Please refer to the 
 [Dashicons Cheat Sheet](http://calebserna.com/dashicons-cheatsheet/) for a list of available icons.
 
+## admin_theme
+**Default**: `'admin_theme' => 'wp'`
+
+Set the theme for the option panel.  Accepts `wp|classic`.  `wp` will load the currently seleected admin theme, while `classic` loads the Redux v3 styling.
+
 ## allow_sub_menu
 **Default**: `'allow_sub_menu' => 'true'`
 
@@ -33,6 +38,10 @@ This is the variable that determines whether section labels are displayed below 
 
 ## async_typography
 **Default**: `'async_typography' => false`
+
+::: warning DEPRECATED
+This argument has been deprecated in Redux 4.x.  Please use the `font_display` argument instead.
+:::
 
 This argument determines if Google fonts load on the front-end of a theme asynchronously . This should be considered 
 experimental, as some issues have been known to crop up. Any issues should be reported to the 
@@ -100,7 +109,7 @@ If set to true, the Google fonts link output for typography will be enabled.
 ## disable_save_warn
 **Default**: `'disable_save_warn' => false`
 
-This argument determines if the 'save changes' notice appears at the top of the options panel when any changes are made.
+This argument determines if the 'save changes' notice appears at the top of the option panel when any changes are made.
 
 ## display_name
 **Default**: `'display_name' => $theme->get('Name')`
@@ -111,6 +120,21 @@ This argument sets the title that appears at the top of the options panel.
 **Default**: `'display_version' => $theme->get('Version')`
 
 This argument set the version number that appears after the title at the top of the options panel.
+
+## elusive_frontend
+**Default**: `'elusive_frontend' => false`
+
+Set this argument to `true` if you require the elusive fonts loaded on the front end.
+
+## flyout_submenus
+**Default** `'flyout_submenus' => true`
+
+Enabled or disables the flyout submenus for submenus on the option panel.
+
+## font_display
+**Default**: `'font_display' => 'swap'`
+
+Determines how a font face is displayed based on whether and when it is downloaded and ready to use.  Accepts `auto|block|swap|fallback|optional`.  See [https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) for more information.
 
 ## footer_text
 **Default**: `'footer_text' => '<p>This text is displayed below the options panel. It isn\'t required, but more info is 
@@ -188,16 +212,16 @@ This argument sets the individual tabs in the help dropdown. HTML is permitted. 
 
 **Example:**
 ```php
-Redux::setHelpTab( $opt_name, array(
+Redux::set_help_tab( $opt_name, array(
   array(
     'id'      => 'redux-help-tab-1',
-    'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+    'title'   => __( 'Theme Information 1', 'your-project-name' ),
+    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'your-project-name' )
   ),
   array(
     'id'      => 'redux-help-tab-2',
     'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'your-project-name' )
   )
 ) );
 ```
@@ -205,18 +229,21 @@ Redux::setHelpTab( $opt_name, array(
 Alternatively you can set the global arg `help_tabs` in this manner to produce the same result.
 
 ```php
-Redux::set_args( $opt_name, array( 'help_tabs' => array(
-  array(
-    'id'      => 'redux-help-tab-1',
-    'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
-    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
-  ),
-  array(
-    'id'      => 'redux-help-tab-2',
-    'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
-    'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
-  )
-) );
+Redux::set_args( 
+    $opt_name, 
+    array( 'help_tabs' => array(
+        array(
+            'id'      => 'redux-help-tab-1',
+            'title'   => __( 'Theme Information 1', 'redux-framework-demo' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+        ),
+        array(
+            'id'      => 'redux-help-tab-2',
+            'title'   => __( 'Theme Information 2', 'redux-framework-demo' ),
+            'content' => __( '<p>This is the tab content, HTML is allowed.</p>', 'redux-framework-demo' )
+        )
+    ) 
+);
 ```
 
 ::: warning Redux 3.x Users
@@ -244,7 +271,12 @@ This variable sets the text that appears at the top of the options panel, but be
 ## last_tab
 **Default**: `'last_tab' => ''`
 
-This variable sets forces the options panel to open at the specified tab number.
+This variable sets forces the option panel to open at the specified tab number.
+
+## load_on_cron
+**Default**: `'load_on_cron' => false`
+
+Redux, by design, will not run when cron jobs are triggered.  If you require the global varaiable to be set with you theme options during a cron job, set this argument to `true`.
 
 ## menu_icon
 **Default**: `'menu_icon' => ''`
@@ -274,7 +306,7 @@ This variable enables sites as well as admin when using the `network` [database]
 ## open_expanded
 **Default**: `'open_expanded' => false`
 
-This variable determines if the options panel sidebar is to be displayed. This may be useful for an options panel with only one section.
+This variable determines if the option panel sidebar is to be displayed. This may be useful for an option panel with only one section.
 
 ## opt_name
 **Default**: `'opt_name' => 'redux_demo'`

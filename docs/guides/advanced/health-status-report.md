@@ -16,6 +16,7 @@ sure to add your settings and check to see if you can troubleshoot an issue with
 
 ## WordPress Environment
 This section provides general information about your site, your WordPress installation, and the features you have enabled.
+
 |Field Name|Description|Example|
 |--- |--- |--- |
 |Home URL|The URL of your site's homepage.|http://example.com|
@@ -36,6 +37,7 @@ This section provides general information about your site, your WordPress instal
 
 ## Browser
 This entry provides general information about your web browser.
+
 |Field Name|Description|Example|
 |--- |--- |--- |
 |Browser Info|The complete User Agent string of the browser viewing the System Status report.|Platform: Windows Browser Name: Chrome Browser Version: 41.0.2272.101 User Agent String: Mozilla/5.0 (Windows NT 5.2; WOW 64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36|
@@ -43,6 +45,7 @@ This entry provides general information about your web browser.
 
 ## Server Environment
 This section provides general information about your server.
+
 |Field Name|Description|Example|
 |--- |--- |--- |
 |Server Info|Information about the web server that is currently hosting your site.|Apache/2.4.7 (Win32) OpenSSL/1.0.1e PHP/5.5.9|

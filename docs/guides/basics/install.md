@@ -75,7 +75,7 @@ Go forth young Padawan. Do not underestimate the potential bugs of the master br
 
 ## File Structure
 Redux comes in two forms. The first is a plugin form.  The second is the full repo of which you only need a subset 
-to run Redux. In both of these packages, `ReduxCore` is the only folder that matters.  The rest of the files add 
+to run Redux. In both of these packages, `redux-core` is the only folder that matters.  The rest of the files add 
 additional features.
 
 ### Plugin Structure
@@ -85,7 +85,7 @@ see something similar to this:
 ```text
 redux-framework/
 ├── code-styles/
-├── ReduxCore/
+├── redux-core/
 ├── sample/
     ├── sample-config.php
     ├── barebones-config.php
@@ -102,7 +102,7 @@ redux-framework/
 ├── .tx/
 ├── bin/
 ├── code-styles/
-├── ReduxCore/
+├── redux-core/
 ├── sample/
     ├── sample-config.php
     ├── barebones-config.php
