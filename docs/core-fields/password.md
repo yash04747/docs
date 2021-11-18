@@ -52,7 +52,7 @@ export default {
 
 ## Example Config
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-password',
     'type'        => 'password',
     'username'    => true,

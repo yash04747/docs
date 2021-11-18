@@ -37,7 +37,7 @@ Let's say we want to translate three fields. To make it more interesting we'll d
 
 **A text field**
 ```php
-Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       => 'my-sample-textfield',
     'type'     => 'text',
     'title'    => esc_html__( 'Sample Text Field', 'my-text-domain' ),
@@ -49,7 +49,7 @@ Redux::setField( 'OPT_NAME', 'SECTION_ID', array(
 
 **A textarea with editor**
 ```php
-Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       => 'my-sample-textarea',
     'type'     => 'editor',
     'title'    => esc_html__( 'Sample Text Area', 'my-text-domain' ),
@@ -60,7 +60,7 @@ Redux::setField( 'OPT_NAME', 'SECTION_ID', array(
 
 **A sortable text field array**
 ```php
-Redux::setField( 'OPT_NAME', 'SECTION_ID', array( 
+Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       => 'my-sample-sortable-textfield',
     'type'     => 'sortable',
     'title'    => esc_html__( 'Sample Sortable Text Option', 'my-text-domain' ),

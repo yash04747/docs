@@ -56,7 +56,7 @@ export default {
 
 ## Example Config
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'               => 'editor-text',
     'type'             => 'editor',
     'title'            => esc_html__('Editor Text', 'your-textdomain-here'), 

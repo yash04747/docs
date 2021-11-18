@@ -46,7 +46,7 @@ export default {
 ## Example Config
 #### Single Checkbox
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_checkbox',
     'type'     => 'checkbox',
     'title'    => esc_html__('Checkbox Option', 'your-textdomain-here'), 
@@ -58,7 +58,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 #### Multi Checkbox
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_multi_checkbox',
     'type'     => 'checkbox',
     'title'    => esc_html__('Multi Checkbox Option', 'your-textdomain-here'), 

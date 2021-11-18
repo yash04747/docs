@@ -44,7 +44,7 @@ export default {
 ## Example Config
 ```php
 // Begin the section
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
    'id' => 'section-start',
    'type' => 'section',
    'title' => esc_html__('Indented Options', 'your-textdomain-here'),
@@ -53,14 +53,14 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 );
 
 // Other field arrays go between the start and end fields.
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'     => 'text-field-in-section-id',
     'type'   => 'text',
     'title'  => esc_html__( 'Indented text field', 'your-textdomain-here' )
 ) );
 
 // End the section
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'     => 'section-end',
     'type'   => 'section',
     'indent' => false,

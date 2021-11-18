@@ -54,7 +54,7 @@ export default {
 
 #### Default
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'        => 'opt-slider-label',
     'type'      => 'slider',
     'title'     => esc_html__('Slider Example 1', 'your-textdomain-here'),
@@ -70,7 +70,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 #### Steps
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id' => 'opt-slider-text',
     'type' => 'slider',
     'title' => esc_html__('Slider Example 2 with Steps (5)', 'your-textdomain-here'),
@@ -86,7 +86,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 #### Optional Display Text
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id' => 'opt-slider-text',
     'type' => 'slider',
     'title' => esc_html__('Slider Example 2 with Steps (5)', 'your-textdomain-here'),
@@ -102,7 +102,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 ##### Two Sliders
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id' => 'opt-slider-select',
     'type' => 'slider',
     'title' => esc_html__('Slider Example 3 with two sliders', 'your-textdomain-here'),

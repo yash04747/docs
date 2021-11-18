@@ -34,7 +34,7 @@ The Select field displays information in a drop-down field in both single and mu
 
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-select',
     'type'     => 'select',
     'title'    => esc_html__('Select Option', 'your-textdomain-here'), 
@@ -54,7 +54,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 ![](https://f.cloud.github.com/assets/3412363/1569753/520e4200-50d2-11e3-85e4-7807855811a0.png)
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-multi-select',
     'type'     => 'select',
     'multi'    => true,
@@ -102,7 +102,7 @@ Sometimes you don't want the user to have a null value. The "clear" icon is easi
 `select2` argument. Be sure to define a default value or the field will start in a null state.
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-multi-select',
     'type'     => 'select',
     'title'    => esc_html__('Disable Select2 Clear Button', 'your-textdomain-here'), 

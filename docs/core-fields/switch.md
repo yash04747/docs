@@ -37,7 +37,7 @@ export default {
 
 ## Example Config
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-switch',
     'type'     => 'switch', 
     'title'    => esc_html__('Switch On', 'your-textdomain-here'),

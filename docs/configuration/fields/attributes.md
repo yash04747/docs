@@ -12,7 +12,7 @@ You can change a text field into a password field, or even add a custom attribut
 ## Example Usage
 
 ```php
-Redux::setField( 'redux_demo', 'SECTION_ID', array(
+Redux::set_field( 'redux_demo', 'SECTION_ID', array(
     'id'   => 'field_id',
     'type' => 'text',
     'attributes'       => array(

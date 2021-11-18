@@ -48,7 +48,7 @@ export default {
 ## Example Config
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'      => 'homepage-blocks',
     'type'    => 'sorter',
     'title'   => 'Homepage Layout Manager',

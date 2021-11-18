@@ -42,7 +42,7 @@ export default {
 ## Example Config
 ```php
 // Checkbox mode
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'text-sortable',
     'type'     => 'sortable',
     'title'    => esc_html__('Sortable Text Option', 'your-textdomain-here'),
@@ -66,7 +66,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 #### Text mode
 ```php
 
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'text-sortable',
     'type'     => 'sortable',
     'title'    => esc_html__('Sortable Text Option', 'your-textdomain-here'),

@@ -42,7 +42,7 @@ export default {
 
 ## Example Config using Array
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-radio',
     'type'     => 'radio',
     'title'    => esc_html__('Radio Option', 'your-textdomain-here'), 
@@ -58,7 +58,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 
 ## Example Config using WordPress Data
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'      => 'opt-radio',
     'type'    => 'radio',
     'title'   => esc_html__('Radio Option', 'your-textdomain-here'), 

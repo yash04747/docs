@@ -54,7 +54,7 @@ export default {
 ## Example Config
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-slides',
     'type'        => 'slides',
     'title'       => esc_html__('Slides Options', 'your-textdomain-here'),
@@ -95,7 +95,7 @@ There are 3 main elements to the slide field, namely the title, description, and
 any of these elements using the `show` argument and providing a key=>False value for the element you wish to hide.
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-slides',
     'type'        => 'slides',
     'title'       => esc_html__('Slides Options', 'your-textdomain-here'),

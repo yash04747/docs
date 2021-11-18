@@ -42,7 +42,7 @@ export default {
 ## Example Config
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'=>'multi-text',
     'type' => 'multi_text',
     'title' => esc_html__('Multi Text Option - Color Validated', 'your-textdomain-here'),

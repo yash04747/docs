@@ -45,7 +45,7 @@ export default {
 <span style="display:block;text-align:center">![](./img/info_normal.png)</span>
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'   => 'info_normal',
     'type' => 'info',
     'desc' => esc_html__('This is the info field, if you want to break sections up.', 'your-textdomain-here')
@@ -57,7 +57,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 <span style="display:block;text-align:center">![](./img/info_warning.png)</span>
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'info_warning',
     'type'  => 'info',
     'title' => esc_html__('Danger, Will Robinson!', 'your-textdomain-here'),
@@ -71,7 +71,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 <span style="display:block;text-align:center">![](./img/info_success.png)</span>
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'info_success',
     'type'  => 'info',
     'style' => 'success',
@@ -85,7 +85,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 <span style="display:block;text-align:center">![](./img/info_critical.png)</span>
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id' => 'info_critical',
     'type' => 'info',
     'style' => 'critical',
