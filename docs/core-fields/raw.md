@@ -44,9 +44,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'           => 'opt-raw',
     'type'         => 'raw',
-    'title'        => __('Raw output', 'redux-framework-demo'),
-    'subtitle'     => __('Subtitle text goes here.', 'redux-framework-demo'),
-    'desc'         => __('This is the description field for additional info.', 'redux-framework-demo'),
+    'title'        => esc_html__('Raw output', 'your-textdomain-here'),
+    'subtitle'     => esc_html__('Subtitle text goes here.', 'your-textdomain-here'),
+    'desc'         => esc_html__('This is the description field for additional info.', 'your-textdomain-here'),
     'content_path' => file_get_contents( dirname( __FILE__ ) . '/myfile.txt' )
 ) );
 ```
@@ -71,9 +71,9 @@ $output = ob_get_clean(); // Now everything is in our variable.
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array( 
     'id'       => 'opt-raw',
     'type'     => 'raw',
-    'title'    => __('Raw output', 'redux-framework-demo'),
-    'subtitle' => __('Subtitle text goes here.', 'redux-framework-demo'),
-    'desc'     => __('This is the description field for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Raw output', 'your-textdomain-here'),
+    'subtitle' => esc_html__('Subtitle text goes here.', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field for additional info.', 'your-textdomain-here'),
     'content'  => $output // Now let's set that in the raw field.
 ) );
 ```

@@ -59,8 +59,8 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'               => 'editor-text',
     'type'             => 'editor',
-    'title'            => __('Editor Text', 'redux-framework-demo'), 
-    'subtitle'         => __('Subtitle text would go here.', 'redux-framework-demo'),
+    'title'            => esc_html__('Editor Text', 'your-textdomain-here'), 
+    'subtitle'         => esc_html__('Subtitle text would go here.', 'your-textdomain-here'),
     'default'          => 'Powered by Redux.',
     'args'   => array(
         'teeny'            => true,

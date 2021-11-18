@@ -45,10 +45,10 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'=>'multi-text',
     'type' => 'multi_text',
-    'title' => __('Multi Text Option - Color Validated', 'redux-framework-demo'),
+    'title' => esc_html__('Multi Text Option - Color Validated', 'your-textdomain-here'),
     'validate' => 'color',
-    'subtitle' => __('If you enter an invalid color it will be removed. Try using the text "blue" as a color.  ;)', 'redux-framework-demo'),
-    'desc' => __('This is the description field, again good for additional info.', 'redux-framework-demo')
+    'subtitle' => esc_html__('If you enter an invalid color it will be removed. Try using the text "blue" as a color.  ;)', 'your-textdomain-here'),
+    'desc' => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here')
     ),
 ) );
 ```

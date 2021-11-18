@@ -44,16 +44,16 @@ export default {
 ## Example Config
 ```php
 Redux::set_section( 'OPT_NAME', array(
-    'title'      => __( 'Palette Colors', 'redux-framework-demo' ),
+    'title'      => esc_html__( 'Palette Colors', 'your-textdomain-here' ),
     'id'         => 'color-palette',
     'subsection' => true,
     'fields'     => array(
         array(
             'id'       => 'opt-palette-color',
             'type'     => 'palette',
-            'title'    => __( 'Palette Color Option', 'redux-framework-demo' ),
-            'subtitle' => __( 'Only color validation can be done on this field type', 'redux-framework-demo' ),
-            'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+            'title'    => esc_html__( 'Palette Color Option', 'your-textdomain-here' ),
+            'subtitle' => esc_html__( 'Only color validation can be done on this field type', 'your-textdomain-here' ),
+            'desc'     => esc_html__( 'This is the description field, again good for additional info.', 'your-textdomain-here' ),
             'default'  => 'red',
             'palettes' => array(
                 'red'  => array(
@@ -91,5 +91,5 @@ will have set the palette colors in their CSS, using the palette key name as the
 ```php
 global $redux_demo;
 
-echo __( 'Selected palette: ', 'redux-framework-demo' ) . $redux_demo['opt-palette-color'];
+echo esc_html__( 'Selected palette: ', 'your-textdomain-here' ) . $redux_demo['opt-palette-color'];
 ```

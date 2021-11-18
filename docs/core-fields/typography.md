@@ -98,12 +98,12 @@ export default {
 Redux::set_field( 'OPT_NAME', 'SECTION_ID', array( 
     'id'          => 'opt-typography',
     'type'        => 'typography', 
-    'title'       => __('Typography', 'redux-framework-demo'),
+    'title'       => esc_html__('Typography', 'your-textdomain-here'),
     'google'      => true, 
     'font-backup' => true,
     'output'      => array('h2.site-description'),
     'units'       =>'px',
-    'subtitle'    => __('Typography option with each property can be called individually.', 'redux-framework-demo'),
+    'subtitle'    => esc_html__('Typography option with each property can be called individually.', 'your-textdomain-here'),
     'default'     => array(
         'color'       => '#333', 
         'font-style'  => '700', 

@@ -57,13 +57,13 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-slides',
     'type'        => 'slides',
-    'title'       => __('Slides Options', 'redux-framework-demo'),
-    'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-    'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo')
+    'title'       => esc_html__('Slides Options', 'your-textdomain-here'),
+    'subtitle'    => esc_html__('Unlimited slides with drag and drop sortings.', 'your-textdomain-here'),
+    'desc'        => esc_html__('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'your-textdomain-here')
     'placeholder' => array(
-        'title'       => __('This is a title', 'redux-framework-demo'),
-        'description' => __('Description Here', 'redux-framework-demo'),
-        'url'         => __('Give us a link!', 'redux-framework-demo'),
+        'title'       => esc_html__('This is a title', 'your-textdomain-here'),
+        'description' => esc_html__('Description Here', 'your-textdomain-here'),
+        'url'         => esc_html__('Give us a link!', 'your-textdomain-here'),
     ),
 ) );
 ```
@@ -98,12 +98,12 @@ any of these elements using the `show` argument and providing a key=>False value
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-slides',
     'type'        => 'slides',
-    'title'       => __('Slides Options', 'redux-framework-demo'),
-    'subtitle'    => __('Unlimited slides with drag and drop sortings.', 'redux-framework-demo'),
-    'desc'        => __('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'redux-framework-demo')
+    'title'       => esc_html__('Slides Options', 'your-textdomain-here'),
+    'subtitle'    => esc_html__('Unlimited slides with drag and drop sortings.', 'your-textdomain-here'),
+    'desc'        => esc_html__('This field will store all slides values into a multidimensional array to use into a foreach loop.', 'your-textdomain-here')
     'placeholder' => array(
-        'title'       => __('This is a title', 'redux-framework-demo'),
-        'url'         => __('Give us a link!', 'redux-framework-demo'),
+        'title'       => esc_html__('This is a title', 'your-textdomain-here'),
+        'url'         => esc_html__('Give us a link!', 'your-textdomain-here'),
     ),
     'show'        => array( 'description' => false ),
 ) );

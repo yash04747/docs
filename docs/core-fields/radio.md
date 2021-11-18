@@ -45,7 +45,7 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-radio',
     'type'     => 'radio',
-    'title'    => __('Radio Option', 'redux-framework-demo'), 
+    'title'    => esc_html__('Radio Option', 'your-textdomain-here'), 
     //Must provide key => value pairs for radio options
     'data'  => array(
         '1' => 'Opt 1', 
@@ -61,7 +61,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'      => 'opt-radio',
     'type'    => 'radio',
-    'title'   => __('Radio Option', 'redux-framework-demo'), 
+    'title'   => esc_html__('Radio Option', 'your-textdomain-here'), 
     'data'    => 'pages',
     'default' => '2'
 ) );

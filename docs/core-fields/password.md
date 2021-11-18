@@ -56,10 +56,10 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-password',
     'type'        => 'password',
     'username'    => true,
-    'title'       => __( 'SMTP Account', 'redux-framework-demo' ),
+    'title'       => esc_html__( 'SMTP Account', 'your-textdomain-here' ),
     'placeholder' => array(
-        'username'   => __( 'Enter your Username', 'redux-framework-demo' ),
-        'password'   => __( 'Enter your Password', 'redux-framework-demo' ),
+        'username'   => esc_html__( 'Enter your Username', 'your-textdomain-here' ),
+        'password'   => esc_html__( 'Enter your Password', 'your-textdomain-here' ),
     )
 ) );
 ```

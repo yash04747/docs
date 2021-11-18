@@ -40,8 +40,8 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-switch',
     'type'     => 'switch', 
-    'title'    => __('Switch On', 'redux-framework-demo'),
-    'subtitle' => __('Look, it\'s on!', 'redux-framework-demo'),
+    'title'    => esc_html__('Switch On', 'your-textdomain-here'),
+    'subtitle' => esc_html__('Look, it\'s on!', 'your-textdomain-here'),
     'default'  => true,
 ) );
 ```

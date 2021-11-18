@@ -31,9 +31,9 @@ Now to use the added icons, you can do the following for a [section](../../confi
 ```php
 Redux::addSection( 'OPT_NAME', array( 
     'id'     => 'icon_section',
-    'title'  => esc_html__('Home Settings', 'redux-framework-demo'),
-    'header' => esc_html__('Welcome to the Redux Framework Demo', 'redux-framework-demo'),
-    'desc'   => esc_html__('Description goes here.', 'redux-framework-demo'),
+    'title'  => esc_html__('Home Settings', 'your-textdomain-here'),
+    'header' => esc_html__('Welcome to the Redux Framework Demo', 'your-textdomain-here'),
+    'desc'   => esc_html__('Description goes here.', 'your-textdomain-here'),
     'icon'   => 'fa fa-bell-o',
     'fields' => array()
 ) );

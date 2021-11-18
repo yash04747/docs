@@ -49,9 +49,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_checkbox',
     'type'     => 'checkbox',
-    'title'    => __('Checkbox Option', 'redux-framework-demo'), 
-    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Checkbox Option', 'your-textdomain-here'), 
+    'subtitle' => esc_html__('No validation can be done on this field type', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
     'default'  => '1'// 1 = on | 0 = off
 ) );
 ```
@@ -61,9 +61,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_multi_checkbox',
     'type'     => 'checkbox',
-    'title'    => __('Multi Checkbox Option', 'redux-framework-demo'), 
-    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Multi Checkbox Option', 'your-textdomain-here'), 
+    'subtitle' => esc_html__('No validation can be done on this field type', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
 
     //Must provide key => value pairs for multi checkbox options
     'options'  => array(

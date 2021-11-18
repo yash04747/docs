@@ -12,7 +12,7 @@ The Select Image field offers the ability to populate a drop-down field with an 
 |Name|Type|<div style="width:135px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`select_image`|Value identifying the field type.|
-|options|array||Array of arrays in the following format:<br /><pre class="language-php codecopy-enabled"><code><span class="token keyword">array</span><span class="token punctuation">(</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'alt'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">__</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Image One'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'redux-framework-demo'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'img'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'http://yoursite.com/image.png'</span> </span><br/>)</code></pre>|
+|options|array||Array of arrays in the following format:<br /><pre class="language-php codecopy-enabled"><code><span class="token keyword">array</span><span class="token punctuation">(</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'alt'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token function">__</span><span class="token punctuation">(</span> <span class="token single-quoted-string string">'Image One'</span><span class="token punctuation">,</span> <span class="token single-quoted-string string">'your-textdomain-here'</span><span class="token punctuation">)</span><span class="token punctuation">,</span><br />&nbsp;&nbsp;<span class="token single-quoted-string string">'img'</span> <span class="token operator">=</span><span class="token operator">&gt;</span> <span class="token single-quoted-string string">'http://yoursite.com/image.png'</span> </span><br/>)</code></pre>|
 |default|string||Full URL of the default image.|
 |placeholder|string|`Select an item`|Text to display in the selector when no value is present.|
 
@@ -45,9 +45,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-select-image',
     'type'     => 'select_image',
-    'title'    => __('Select Image', 'redux-framework-demo'),
-    'subtitle' => __('A preview of the selected image will appear underneath the select box.', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Select Image', 'your-textdomain-here'),
+    'subtitle' => esc_html__('A preview of the selected image will appear underneath the select box.', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
     'options'  => array(
         array (
              'alt'  => 'Image Name 1',

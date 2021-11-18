@@ -41,9 +41,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'          => 'opt-date',
     'type'        => 'date',
-    'title'       => __('Date Option', 'redux-framework-demo'), 
-    'subtitle'    => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'        => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'       => esc_html__('Date Option', 'your-textdomain-here'), 
+    'subtitle'    => esc_html__('No validation can be done on this field type', 'your-textdomain-here'),
+    'desc'        => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
     'placeholder' => 'Click to enter a date'
 ) );
 ```

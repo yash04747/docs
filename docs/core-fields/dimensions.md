@@ -62,9 +62,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt_dimensions',
     'type'     => 'dimensions',
     'units'    => array('em','px','%'),
-    'title'    => __('Dimensions (Width/Height) Option', 'redux-framework-demo'),
-    'subtitle' => __('Allow your users to choose width, height, and/or unit.', 'redux-framework-demo'),
-    'desc'     => __('Enable or disable any piece of this field. Width, Height, or Units.', 'redux-framework-demo'),
+    'title'    => esc_html__('Dimensions (Width/Height) Option', 'your-textdomain-here'),
+    'subtitle' => esc_html__('Allow your users to choose width, height, and/or unit.', 'your-textdomain-here'),
+    'desc'     => esc_html__('Enable or disable any piece of this field. Width, Height, or Units.', 'your-textdomain-here'),
     'default'  => array(
         'Width'   => '200', 
         'Height'  => '100'

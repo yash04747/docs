@@ -71,9 +71,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'mode'           => 'margin',
     'units'          => array('em', 'px'),
     'units_extended' => 'false',
-    'title'          => __('Padding/Margin Option', 'redux-framework-demo'),
-    'subtitle'       => __('Allow your users to choose the spacing or margin they want.', 'redux-framework-demo'),
-    'desc'           => __('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'redux-framework-demo'),
+    'title'          => esc_html__('Padding/Margin Option', 'your-textdomain-here'),
+    'subtitle'       => esc_html__('Allow your users to choose the spacing or margin they want.', 'your-textdomain-here'),
+    'desc'           => esc_html__('You can enable or disable any piece of this field. Top, Right, Bottom, Left, or Units.', 'your-textdomain-here'),
     'default'            => array(
         'margin-top'     => '1px', 
         'margin-right'   => '2px', 

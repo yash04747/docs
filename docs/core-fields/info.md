@@ -48,7 +48,7 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'   => 'info_normal',
     'type' => 'info',
-    'desc' => __('This is the info field, if you want to break sections up.', 'redux-framework-demo')
+    'desc' => esc_html__('This is the info field, if you want to break sections up.', 'your-textdomain-here')
 ) );
 ```
 
@@ -60,9 +60,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'info_warning',
     'type'  => 'info',
-    'title' => __('Danger, Will Robinson!', 'redux-framework-demo'),
+    'title' => esc_html__('Danger, Will Robinson!', 'your-textdomain-here'),
     'style' => 'warning',
-    'desc'  => __('This is an info field with the warning style applied and a header.', 'redux-framework-demo')
+    'desc'  => esc_html__('This is an info field with the warning style applied and a header.', 'your-textdomain-here')
 ) );
 ```
 
@@ -75,9 +75,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'    => 'info_success',
     'type'  => 'info',
     'style' => 'success',
-    'title' => __('Success!', 'redux-framework-demo'),
+    'title' => esc_html__('Success!', 'your-textdomain-here'),
     'icon'  => 'el-icon-info-sign',
-    'desc'  => __( 'This is an info field with the success style applied, a header and an icon.', 'redux-framework-demo')
+    'desc'  => esc_html__( 'This is an info field with the success style applied, a header and an icon.', 'your-textdomain-here')
 ) );
 ```
 
@@ -90,8 +90,8 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'type' => 'info',
     'style' => 'critical',
     'icon' => 'el-icon-info-sign',
-    'title' => __('This is a title.', 'redux-framework-demo'),
-    'desc' => __('This is an info field with the critical style applied, a header and an icon.', 'redux-framework-demo')
+    'title' => esc_html__('This is a title.', 'your-textdomain-here'),
+    'desc' => esc_html__('This is an info field with the critical style applied, a header and an icon.', 'your-textdomain-here')
 ) );
 ```
 

@@ -12,8 +12,8 @@ The Border field is a great way to set the border properties of any HTML object 
 |Name|Type|<div style="width:70px;">Default</div>|Description|
 |--- |--- |--- |--- |
 |type|string|`border`|Value identifying the field type.|
-|default|array||Array of default values. See 'Default Options' below.|
-|select2|array||Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
+|default|array| |Array of default values. See 'Default Options' below.|
+|select2|array| |Array of select2 arguments. [Select2 Documentation](https://select2.org/configuration/options-api).|
 |validate|string|`color`|String value `color` to validate the color selection.  It is the only accepted value for this field.|
 |all|bool|`true`|Flag to enable all borders using one value.|
 |left|bool|`true`|Flag to enable the left field border input.|
@@ -22,6 +22,8 @@ The Border field is a great way to set the border properties of any HTML object 
 |bottom|bool|`true`|Flag to enable the bottom field border input.|
 |style|bool|`true`|Flag to enable the style selector.|
 |color|bool|`true`|Flag to enable the color picker.|
+|color_alpha|bool|`false`|Flag to set the color picker to accept an alpha value.
+
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)

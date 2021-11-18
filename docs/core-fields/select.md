@@ -37,9 +37,9 @@ The Select field displays information in a drop-down field in both single and mu
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-select',
     'type'     => 'select',
-    'title'    => __('Select Option', 'redux-framework-demo'), 
-    'subtitle' => __('No validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Select Option', 'your-textdomain-here'), 
+    'subtitle' => esc_html__('No validation can be done on this field type', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
     // Must provide key => value pairs for select options
     'options'  => array(
         '1' => 'Opt 1',
@@ -58,9 +58,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-multi-select',
     'type'     => 'select',
     'multi'    => true,
-    'title'    => __( 'Multi Select Option', 'redux-framework-demo' ), 
-    'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-    'desc'     => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+    'title'    => esc_html__( 'Multi Select Option', 'your-textdomain-here' ), 
+    'subtitle' => esc_html__( 'No validation can be done on this field type', 'your-textdomain-here' ),
+    'desc'     => esc_html__( 'This is the description field, again good for additional info.', 'your-textdomain-here' ),
     //Must provide key => value pairs for radio options
     'options'  => array(
         '1' => 'Opt 1',
@@ -105,7 +105,7 @@ Sometimes you don't want the user to have a null value. The "clear" icon is easi
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-multi-select',
     'type'     => 'select',
-    'title'    => __('Disable Select2 Clear Button', 'redux-framework-demo'), 
+    'title'    => esc_html__('Disable Select2 Clear Button', 'your-textdomain-here'), 
     'options'  => array(
         '1' => 'Opt 1',
         '2' => 'Opt 2',

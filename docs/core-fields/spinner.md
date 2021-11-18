@@ -44,9 +44,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-spinner',
     'type'     => 'spinner', 
-    'title'    => __('JQuery UI Spinner Example 1', 'redux-framework-demo'),
-    'subtitle' => __('No validation can be done on this field type','redux-framework-demo'),
-    'desc'     => __('JQuery UI spinner description. Min:20, max: 100, step:20, default value: 40', 'redux-framework-demo'),
+    'title'    => esc_html__('JQuery UI Spinner Example 1', 'your-textdomain-here'),
+    'subtitle' => esc_html__('No validation can be done on this field type','your-textdomain-here'),
+    'desc'     => esc_html__('JQuery UI spinner description. Min:20, max: 100, step:20, default value: 40', 'your-textdomain-here'),
     'default'  => '40',
     'min'      => '20',
     'step'     => '20',

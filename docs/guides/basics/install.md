@@ -23,12 +23,6 @@ is highly active.  We work with the community to vet any changes or improvements
 
 [GitHub Repository](https://github.com/reduxframework/redux-framework/)
 
-### Custom Bundle
-Looking for a custom build? Do you want to customize Redux for your needs or want to have a solid example of where to begin? 
-Try the [builder](https://build.redux.io) and you'll be developing in no time at all.
-
-[Redux Builder](https://build.redux.io)
-
 ## Using Composer
 You're not a developer, you're a code jedi. You laugh at copy and paste! Why not try Composer and Redux. It will make 
 your development time that much easier.

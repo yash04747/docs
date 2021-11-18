@@ -36,24 +36,24 @@ We hope you'll customize our examples and adapt them to suit your needs.
     $args = array(
         'display_name'         => $theme->get( 'Name' ),
         'display_version'      => $theme->get( 'Version' ),
-        'menu_title'           => esc_html__( 'Sample Options', 'redux-framework-demo' ),
+        'menu_title'           => esc_html__( 'Sample Options', 'your-textdomain-here' ),
         'customizer'           => true,
     );
 
     Redux::setArgs( $opt_name, $args );
 
     Redux::setSection( $opt_name, array(
-        'title'  => esc_html__( 'Basic Field', 'redux-framework-demo' ),
+        'title'  => esc_html__( 'Basic Field', 'your-textdomain-here' ),
         'id'     => 'basic',
-        'desc'   => esc_html__( 'Basic field with no subsections.', 'redux-framework-demo' ),
+        'desc'   => esc_html__( 'Basic field with no subsections.', 'your-textdomain-here' ),
         'icon'   => 'el el-home',
         'fields' => array(
             array(
                 'id'       => 'opt-text',
                 'type'     => 'text',
-                'title'    => esc_html__( 'Example Text', 'redux-framework-demo' ),
-                'desc'     => esc_html__( 'Example description.', 'redux-framework-demo' ),
-                'subtitle' => esc_html__( 'Example subtitle.', 'redux-framework-demo' ),
+                'title'    => esc_html__( 'Example Text', 'your-textdomain-here' ),
+                'desc'     => esc_html__( 'Example description.', 'your-textdomain-here' ),
+                'subtitle' => esc_html__( 'Example subtitle.', 'your-textdomain-here' ),
                 'hint'     => array(
                     'content' => 'This is a <b>hint</b> tool-tip for the text field.<br/><br/>Add any HTML based text you like here.',
                 )

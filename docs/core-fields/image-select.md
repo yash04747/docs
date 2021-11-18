@@ -61,8 +61,8 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-layout',
     'type'     => 'image_select',
-    'title'    => __('Main Layout', 'redux-framework-demo'), 
-    'subtitle' => __('Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.', 'redux-framework-demo'),
+    'title'    => esc_html__('Main Layout', 'your-textdomain-here'), 
+    'subtitle' => esc_html__('Select main content and sidebar alignment. Choose between 1, 2 or 3 column layout.', 'your-textdomain-here'),
     'options'  => array(
         '1'      => array(
             'alt'   => '1 Column', 
@@ -100,10 +100,10 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-presets',
     'type'     => 'image_select', 
     'presets'  => true,
-    'title'    => __('Preset', 'redux-framework-demo'),
-    'subtitle' => __('This allows you to set a json string or array to override multiple preferences in your theme.', 'redux-framework-demo'),
+    'title'    => esc_html__('Preset', 'your-textdomain-here'),
+    'subtitle' => esc_html__('This allows you to set a json string or array to override multiple preferences in your theme.', 'your-textdomain-here'),
     'default'  => 0,
-'desc'     => __('This allows you to set a json string or array to override multiple preferences in your theme.', 'redux-framework-demo'),
+'desc'     => esc_html__('This allows you to set a json string or array to override multiple preferences in your theme.', 'your-textdomain-here'),
     'options'  => array(
         // Array of preset options
         '1'      => array(

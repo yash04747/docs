@@ -16,6 +16,7 @@ With the Link Color field, setting the hyperlink properties in a project is as e
 |hover|bool|`true`|Flag to display the hover hyperlink color picker.|
 |visited|bool|`true`|Flag to display the visited hyperlink color picker.|
 |active|bool|`true`|Flag to display the active hyperlink color picker.|
+|color_alpha|bool|`false`|Flag to set the color picker to accept an alpha value.
 
 ::: tip Also See
 - [Global Field Arguments](../configuration/fields/arguments.md)
@@ -53,19 +54,23 @@ export default {
 
 ## Example Config
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
-    'id'       => 'opt-link-color',
-    'type'     => 'link_color',
-    'title'    => __('Links Color Option', 'redux-framework-demo'),
-    'subtitle' => __('Only color validation can be done on this field type', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
-    'default'  => array(
-        'regular'  => '#1e73be', // blue
-        'hover'    => '#dd3333', // red
-        'active'   => '#8224e3',  // purple
-        'visited'  => '#8224e3',  // purple
-    )
-) );
+Redux::add_field( 
+    'OPT_NAME', 
+    'SECTION_ID', 
+    array(
+        'id'       => 'opt-link-color',
+        'type'     => 'link_color',
+        'title'    => esc_html__('Links Color Option', 'your-textdomain-here'),
+        'subtitle' => esc_html__('Only color validation can be done on this field type', 'your-textdomain-here'),
+        'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
+        'default'  => array(
+            'regular'  => '#1e73be', // blue
+            'hover'    => '#dd3333', // red
+            'active'   => '#8224e3',  // purple
+            'visited'  => '#8224e3',  // purple
+        )
+    ) 
+);
 ```
 
 ## Example Usage

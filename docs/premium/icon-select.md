@@ -52,8 +52,8 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'=>'icon_select_field',
     'type' => 'icon_select', 
     //'required' => array('switch-fold','equals','0'),	
-    'title' => __('Icon Select', 'redux-framework-demo'),
-    'subtitle'	=> __('Select an icon.', 'redux-framework-demo'),
+    'title' => esc_html__('Icon Select', 'your-textdomain-here'),
+    'subtitle'	=> esc_html__('Select an icon.', 'your-textdomain-here'),
     //'default' 	=> '',
     //'options' => array(), // key/value pair, value is the title
     //'enqueue' => false, // Disable auto-enqueue of stylesheet if present in the panel

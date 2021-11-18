@@ -40,9 +40,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-gallery',
     'type'     => 'gallery',
-    'title'    => __('Add/Edit Gallery', 'redux-framework-demo'),
-    'subtitle' => __('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Add/Edit Gallery', 'your-textdomain-here'),
+    'subtitle' => esc_html__('Create a new Gallery by selecting existing or uploading new images using the WordPress native uploader', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
 ) );
 ```
 ## Example Usage

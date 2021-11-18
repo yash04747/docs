@@ -47,8 +47,8 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
    'id' => 'section-start',
    'type' => 'section',
-   'title' => __('Indented Options', 'redux-framework-demo'),
-   'subtitle' => __('With the "section" field you can create indent option sections.', 'redux-framework-demo'),
+   'title' => esc_html__('Indented Options', 'your-textdomain-here'),
+   'subtitle' => esc_html__('With the "section" field you can create indent option sections.', 'your-textdomain-here'),
    'indent' => true 
 );
 
@@ -56,7 +56,7 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'     => 'text-field-in-section-id',
     'type'   => 'text',
-    'title'  => __( 'Indented text field', 'redux-framework-demo' )
+    'title'  => esc_html__( 'Indented text field', 'your-textdomain-here' )
 ) );
 
 // End the section

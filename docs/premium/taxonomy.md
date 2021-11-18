@@ -34,7 +34,7 @@ add a level above called a "term" box, and away we go!
 ```php
 Redux_Taxonomy::setTerm( $opt_name, array(
         'id'             => 'demo-taxonomy',
-        'title'          => __( 'Cool Options', 'redux-framework-demo' ),
+        'title'          => esc_html__( 'Cool Options', 'your-textdomain-here' ),
         'taxonomy_types' => array( 'category', 'post_tag' ),
         // Slug for every taxonomy you want
         'sidebar'        => false,
@@ -44,25 +44,25 @@ Redux_Taxonomy::setTerm( $opt_name, array(
         //'add_visibility' => true, // Can bet set on term, section, or field level. Denotes what fields to be displayed on the add {TERM} pages.
         'sections'       => array(
             array(
-                'title'  => __( 'Home Settings', 'redux-framework-demo' ),
+                'title'  => esc_html__( 'Home Settings', 'your-textdomain-here' ),
                 'icon'   => 'el-icon-home',
                 'fields' => array(
                     array(
                         'id'             => 'text1',
                         'type'           => 'text',
                         'add_visibility' => true,
-                        'title'          => __( 'Test Input', 'redux-framework-demo' ),
+                        'title'          => esc_html__( 'Test Input', 'your-textdomain-here' ),
                     ),
                     array(
                         'id'    => 'text1',
                         'type'  => 'text',
-                        'title' => __( 'Test Input2', 'redux-framework-demo' ),
+                        'title' => esc_html__( 'Test Input2', 'your-textdomain-here' ),
                     ),
                 )
             ),
             array(
-                'title'  => __( 'Home Layout', 'redux-framework-demo' ),
-                'desc'   => __( 'Redux Framework was created with the developer in mind. It allows for any theme developer to have an advanced theme panel with most of the features a developer would need. For more information check out the GitHub repo at: <a href="https://github.com/ReduxFramework/Redux-Framework">https://github.com/ReduxFramework/Redux-Framework</a>', 'redux-framework-demo' ),
+                'title'  => esc_html__( 'Home Layout', 'your-textdomain-here' ),
+                'desc'   => esc_html__( 'Redux Framework was created with the developer in mind. It allows for any theme developer to have an advanced theme panel with most of the features a developer would need. For more information check out the GitHub repo at: <a href="https://github.com/ReduxFramework/Redux-Framework">https://github.com/ReduxFramework/Redux-Framework</a>', 'your-textdomain-here' ),
                 'icon'   => 'el-icon-home',
                 'fields' => array(
                     array(

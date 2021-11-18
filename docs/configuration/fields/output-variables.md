@@ -76,10 +76,10 @@ To pass only a CSS selector and have Redux generate the CSS, use the [output](ou
 array(
     'id'        => 'opt-header-border',
     'type'      => 'border',
-    'title'     => __('Header Border Option', 'redux-framework-demo'),
-    'subtitle'  => __('Subtitle goes here', 'redux-framework-demo'),
+    'title'     => esc_html__('Header Border Option', 'your-textdomain-here'),
+    'subtitle'  => esc_html__('Subtitle goes here', 'your-textdomain-here'),
     'output_variables' => true,
-    'desc'      => __('This is the description field.', 'redux-framework-demo'),
+    'desc'      => esc_html__('This is the description field.', 'your-textdomain-here'),
     'default'   => array(
         'border-color'  => '#1e73be', 
         'border-style'  => 'solid', 

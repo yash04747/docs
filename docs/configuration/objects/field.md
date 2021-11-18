@@ -17,15 +17,16 @@ default arguments.
 |--- |--- |--- |--- |
 |id|string|`true`|The unique identifier of a field. MUST be unique to the [opt_name](../global_arguments.md#opt-name) except when used by the [metaboxes API](../premium/metaboxes.md).|
 |type|string|`true`|Denotes the [field type](../core-fields/). If the field type does not exist a warning will be displayed.|
-|title|string||The title of the field that will be displayed.|
-|subtitle|string||Subtitle of the option placed beneath the title.|
-|desc|string||Text to appear under the field title. HTML is permitted.|
-|default|string||Default value for the field.|
-|class|string||Appends any number of classes to the field's class attribute.|
-|customizer_only|bool||A flag to set this field to [customizer_only](../global_arguments.md#customizer-only) display. This argument will override the [customizer_only](../global_arguments.md#customizer-only) setting at the [sections](section.md) level as well as the [global arguments](../global_arguments.md#customizer-only) level.|
-|output|bool||A flag to set all [enable CSS output](../fields/output.md) for any fields that support this argument.|
-|compiler|bool||A flag to set the [compiler hook](../fields/compiler.md) to fire if this field's value is changed. This can override the [compiler](../fields/compiler.md) setting at the [sections](section.md) level.|
-|hints|bool||A flag to set the [hints](../fields/hints.md) object that displays a animated window with more details about this field.|
+|title|string| |The title of the field that will be displayed.|
+|subtitle|string| |Subtitle of the option placed beneath the title.|
+|desc|string| |Text to appear under the field title. HTML is permitted.|
+|default|string| |Default value for the field.|
+|class|string| |Appends any number of classes to the field's class attribute.|
+|customizer_only|bool| |A flag to set this field to [customizer_only](../global_arguments.md#customizer-only) display. This argument will override the [customizer_only](../global_arguments.md#customizer-only) setting at the [sections](section.md) level as well as the [global arguments](../global_arguments.md#customizer-only) level.|
+|output|bool| |A flag to set all [enable CSS output](../fields/output.md) for any fields that support this argument.|
+|compiler|bool| |A flag to set the [compiler hook](../fields/compiler.md) to fire if this field's value is changed. This can override the [compiler](../fields/compiler.md) setting at the [sections](section.md) level.|
+|disabled|bool|`false`| Flag to set disabling on the field.| 
+|hints|array| |Array of attributes to set [hints](../fields/hints.md) object that displays a animated window with more details about this field.|
 
 ::: tip Also See
 - [Using the `compiler` Argument](../fields/compiler.md)
@@ -48,7 +49,7 @@ If the section you are attaching to doesn't exist, that field will never show. I
 to define a [section](section.md) with embedded fields all at once.
 :::
 
-### Redux::setField()
+### Redux::set_field()
 
 Used to declare a single field and attach to an existing [section](section.md).
 
@@ -60,14 +61,18 @@ Used to declare a single field and attach to an existing [section](section.md).
 |section_id|string|Section ID to add this field to. Must previously exist.|
 
 ```php
-Redux::setField( 'OPT_NAME', 'SECTION_ID', array(
-    'id'    => 'opt-text',   
-    'type'  => 'text',
-    'title' => 'A sample text box',
-) );
+Redux::set_field( 
+    'OPT_NAME', 
+    'SECTION_ID', 
+    array(
+        'id'    => 'opt-text',   
+        'type'  => 'text',
+        'title' => 'A sample text box',
+    ) 
+);
 ```
 
-### Redux::setFields()
+### Redux::set_fields()
 
 Similar to [::set_field()](#set-field), but used to set an unlimited number of fields at once.
 
@@ -82,18 +87,22 @@ This method allows for multiple sections to be added at once. Keep in mind that 
 seen below, but you should remember to wrap the section in an array.
 
 ```php
-Redux::setFields( 'OPT_NAME', 'SECTION_ID', array(
+Redux::set_fields( 
+    'OPT_NAME', 
+    'SECTION_ID', 
     array(
-        'id'    => 'opt-text1',   
-        'type'  => 'text',
-        'title' => 'A sample text box1'
-    ),
-    array(
-        'id'    => 'opt-text2',   
-        'type'  => 'text',
-        'title' => 'A sample text box2'
-    )
-) );
+        array(
+            'id'    => 'opt-text1',   
+            'type'  => 'text',
+            'title' => 'A sample text box1'
+        ),
+        array(
+            'id'    => 'opt-text2',   
+            'type'  => 'text',
+            'title' => 'A sample text box2'
+        )
+    ) 
+);
 ```
 
 ## Field Helper Functions
@@ -149,7 +158,7 @@ This method allows you to remove a section by ID from Redux. It can be useful to
 
 ```php
 $section = Redux::get_section( 'OPT_NAME', 'SECTION_ID' );
-$section['title'] = __( 'A New Section Title', 'redux-framework' );
+$section['title'] = esc_html__( 'A New Section Title', 'redux-framework' );
 Redux::setSection( 'OPT_NAME', $section );
 ```
 

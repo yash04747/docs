@@ -72,15 +72,15 @@ By default, each repeater block is sortable and the values will be returned to t
 ## Example Config
 ```php
 Redux::setSection( 'OPT_NAME',  array(
-    'title' => __('Repeater Field', 'redux-framework-demo' ),
+    'title' => esc_html__('Repeater Field', 'your-textdomain-here' ),
     'icon' => 'el-icon-thumbs-up',
     'fields' => array(
         array(
             'id'             => 'repeater-field-id',
             'type'           => 'repeater',
-            'title'          => __( 'Title', 'redux-framework-demo' ),
-            'subtitle'       => __( '', 'redux-framework-demo' ),
-            'desc'           => __( '', 'redux-framework-demo' ),
+            'title'          => esc_html__( 'Title', 'your-textdomain-here' ),
+            'subtitle'       => esc_html__( '', 'your-textdomain-here' ),
+            'desc'           => esc_html__( '', 'your-textdomain-here' ),
             //'group_values' => true, // Group all fields below within the repeater ID
             //'item_name'    => '', // Add a repeater block name to the Add and Delete buttons
             //'bind_title'   => '', // Bind the repeater block title to this field ID
@@ -91,23 +91,23 @@ Redux::setSection( 'OPT_NAME',  array(
                 array(
                     'id'          => 'title_field',
                     'type'        => 'text',
-                    'placeholder' => __( 'Title', 'redux-framework-demo' ),
+                    'placeholder' => esc_html__( 'Title', 'your-textdomain-here' ),
                 ),
                 array(
                     'id'          => 'text_field',
                     'type'        => 'text',
-                    'placeholder' => __( 'Text Field', 'redux-framework-demo' ),
+                    'placeholder' => esc_html__( 'Text Field', 'your-textdomain-here' ),
                 ),
                 array(
                     'id'      => 'select_field',
                     'type'    => 'select',
-                    'title'   => __( 'Select Field', 'redux-framework-demo' ),
+                    'title'   => esc_html__( 'Select Field', 'your-textdomain-here' ),
                     'options' => array(
-                        '1'      => __( 'Option 1', 'redux-framework-demo' ),
-                        '2'      => __( 'Option 2', 'redux-framework-demo' ),
-                        '3'      => __( 'Option 3', 'redux-framework-demo' ),
+                        '1'      => esc_html__( 'Option 1', 'your-textdomain-here' ),
+                        '2'      => esc_html__( 'Option 2', 'your-textdomain-here' ),
+                        '3'      => esc_html__( 'Option 3', 'your-textdomain-here' ),
                     ),
-                    'placeholder' => __( 'Listing Field', 'redux-framework-demo' ),
+                    'placeholder' => esc_html__( 'Listing Field', 'your-textdomain-here' ),
                 ),
             )
         )

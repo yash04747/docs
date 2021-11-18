@@ -155,7 +155,7 @@ The following example would add a PayPal profile to the social profile icon set:
         'id'         => 'paypal',
         'icon'       => 'fa-paypal',
         'enabled'    => false,
-        'name'       => __ ( 'PayPal', 'redux-framework-demo' ),
+        'name'       => __ ( 'PayPal', 'your-textdomain-here' ),
         'background' => '',
         'color'      => '#1769ff',
         'url'        => '',
@@ -170,7 +170,7 @@ The `icons` argument may also be used to edit profiles from the default set.  In
     array (
         'id'      => 'apple',
         'enabled' => true,
-        'name'    => __( 'CrApple', 'redux-framework-demo' ),
+        'name'    => esc_html__( 'CrApple', 'your-textdomain-here' ),
         'label'   => 'Enter username:',
     )
 )
@@ -184,8 +184,8 @@ The following sets up the basic social profile field without the additions or al
 Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'        => 'opt-social-profiles',
     'type'      => 'social_profiles',
-    'title'     => __( 'Social Profiles', 'redux-framework-demo' ),
-    'subtitle'  => __( 'Click an icon to activate it, drag and drop to change the icon order.', 'redux-framework-demo' ),
+    'title'     => esc_html__( 'Social Profiles', 'your-textdomain-here' ),
+    'subtitle'  => esc_html__( 'Click an icon to activate it, drag and drop to change the icon order.', 'your-textdomain-here' ),
 ) );
 ```
 

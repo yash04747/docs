@@ -64,13 +64,13 @@ Redux::set_field( 'OPT_NAME', 'SECTION_ID', array(
     'title'     => 'Multi Media Selector',
     'subtitle'  => 'Multi file media selector',
     'labels'    => array(
-        'upload_file'       => __('Select File(s)', 'redux-framework-demo'),
-        'remove_image'      => __('Remove Image', 'redux-framework-demo'),
-        'remove_file'       => __('Remove', 'redux-framework-demo'),
-        'file'              => __('File: ', 'redux-framework-demo'),
-        'download'          => __('Download', 'redux-framework-demo'),
-        'title'             => __('Multi Media Selector', 'redux-framework-demo'),
-        'button'            => __('Add or Upload File','redux-framework-demo')
+        'upload_file'       => esc_html__('Select File(s)', 'your-textdomain-here'),
+        'remove_image'      => esc_html__('Remove Image', 'your-textdomain-here'),
+        'remove_file'       => esc_html__('Remove', 'your-textdomain-here'),
+        'file'              => esc_html__('File: ', 'your-textdomain-here'),
+        'download'          => esc_html__('Download', 'your-textdomain-here'),
+        'title'             => esc_html__('Multi Media Selector', 'your-textdomain-here'),
+        'button'            => esc_html__('Add or Upload File','your-textdomain-here')
     ),
     'library_filter'  => array('gif','jpg','png'),
     'max_file_upload' => 5

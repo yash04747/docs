@@ -23,9 +23,9 @@ Creating this magic is really quite easy. Let’s begin with this basic field:
 array(
     'id'       =>'text',
     'type'     => 'text',
-    'title'    => __('Test Compiler', 'redux-framework-demo'),
-    'subtitle' => __('This is to test the compiler hook.', 'redux-framework-demo'),
-    'desc'     => __('Each time this field is set, a flag is set. On save, that flag initiates a compiler hook!', 'redux-framework-demo'),
+    'title'    => esc_html__('Test Compiler', 'your-textdomain-here'),
+    'subtitle' => esc_html__('This is to test the compiler hook.', 'your-textdomain-here'),
+    'desc'     => esc_html__('Each time this field is set, a flag is set. On save, that flag initiates a compiler hook!', 'your-textdomain-here'),
     'compiler' => true,
     'default'  => 'Test Compiler'
 ),

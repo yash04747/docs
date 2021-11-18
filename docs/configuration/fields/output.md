@@ -40,10 +40,10 @@ For this example, we'll use the border field, found in the
 array(
     'id'        => 'opt-header-border',
     'type'      => 'border',
-    'title'     => __('Header Border Option', 'redux-framework-demo'),
-    'subtitle'  => __('Subtitle goes here', 'redux-framework-demo'),
+    'title'     => esc_html__('Header Border Option', 'your-textdomain-here'),
+    'subtitle'  => esc_html__('Subtitle goes here', 'your-textdomain-here'),
     'output'    => array('.site-header'), // An array of CSS selectors
-    'desc'      => __('This is the description field.', 'redux-framework-demo'),
+    'desc'      => esc_html__('This is the description field.', 'your-textdomain-here'),
     'default'   => array(
         'border-color'  => '#1e73be', 
         'border-style'  => 'solid', 
@@ -75,8 +75,8 @@ The color and color_rgba fields can be used exactly as shown above for the defau
 array(
     'id'        => 'opt-color-demo',
     'type'      => 'color',
-    'title'     => __('Background Color', 'redux-framework-demo'),
-    'subtitle'  => __('Pick a background color.', 'redux-framework-demo'),
+    'title'     => esc_html__('Background Color', 'your-textdomain-here'),
+    'subtitle'  => esc_html__('Pick a background color.', 'your-textdomain-here'),
     'default'   => '#dd9933',
     'output'    => array('background-color' => '.site-header')
 ),
@@ -88,8 +88,8 @@ Alternatively, multiple elements could be specified for different selectors.
 array(
     'id'        => 'opt-color-demo',
     'type'      => 'color',
-    'title'     => __('Background Color', 'redux-framework-demo'),
-    'subtitle'  => __('Pick a background color.', 'redux-framework-demo'),
+    'title'     => esc_html__('Background Color', 'your-textdomain-here'),
+    'subtitle'  => esc_html__('Pick a background color.', 'your-textdomain-here'),
     'default'   => '#dd9933',
     'output'    => array(
         'background-color' => '.site-header', 
@@ -104,8 +104,8 @@ Multiple selectors are also supported.  Separate them with commas.
 array(
     'id'        => 'opt-color-demo',
     'type'      => 'color',
-    'title'     => __('Background Color', 'redux-framework-demo'),
-    'subtitle'  => __('Pick a background color.', 'redux-framework-demo'),
+    'title'     => esc_html__('Background Color', 'your-textdomain-here'),
+    'subtitle'  => esc_html__('Pick a background color.', 'your-textdomain-here'),
     'default'   => '#dd9933',
     'output'    => array('background-color' => '.site-header, .site-footer')
 ),

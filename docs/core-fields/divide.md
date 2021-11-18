@@ -42,7 +42,7 @@ export default {
 ```php
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'   =>'divider_1',
-    'desc' => __('This is the description field.', 'redux-framework-demo'),
+    'desc' => esc_html__('This is the description field.', 'your-textdomain-here'),
     'type' => 'divide'
 ) );
 ```

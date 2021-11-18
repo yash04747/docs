@@ -45,7 +45,7 @@ what data is retrieved.
 $fields = array(
     'id'    => 'opt-select-post',
     'type'  => 'select',
-    'title' => __( 'Select Post', 'redux-framework-demo' ), 
+    'title' => esc_html__( 'Select Post', 'your-textdomain-here' ), 
     'data'  => 'posts',
     'args'  => array(
         'post_type'      => 'post_type_name',
@@ -63,7 +63,7 @@ $fields = array(
     $fields = array(
         'id'    => 'opt-button-set-term',
         'type'  => 'select',
-        'title' => __( 'Select Term', 'redux-framework-demo' ), 
+        'title' => esc_html__( 'Select Term', 'your-textdomain-here' ), 
         'data'  => 'terms',
         'args'  => array(
             'taxonomies' => array( 'taxonomy_name' ),

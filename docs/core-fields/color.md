@@ -13,7 +13,8 @@ The Color field redefines simplicity. Point and click to choose any color in the
 |--- |--- |--- |--- |
 |type|string|`color`|Value identifying the field type.|
 |transparent|bool|`true`|Flag to set the display of the transparency checkbox.|
-|validate|string||The only accepted validation type is `color`.|
+|validate|string| |The only accepted validation type is `color`.|
+|color_alpha|bool|`false`|Flag to set the color picker to accept an alpha value.
 
 ::: warning Transparency
 To set the transparency checkbox by default, use the string `transparent` in place of a string hex value  in the `default` argument.
@@ -46,11 +47,11 @@ export default {
 ## Example Config
 
 ```php
-Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
+Redux::add_field( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'opt-color',
     'type'     => 'color',
-    'title'    => __('Body Background Color', 'redux-framework-demo'), 
-    'subtitle' => __('Pick a background color for the theme (default: #fff).', 'redux-framework-demo'),
+    'title'    => esc_html__('Body Background Color', 'your-textdomain-here'), 
+    'subtitle' => esc_html__('Pick a background color for the theme (default: #fff).', 'your-textdomain-here'),
     'default'  => '#FFFFFF',
     'validate' => 'color',
 ) );

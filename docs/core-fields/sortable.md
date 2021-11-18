@@ -45,9 +45,9 @@ export default {
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'text-sortable',
     'type'     => 'sortable',
-    'title'    => __('Sortable Text Option', 'redux-framework-demo'),
-    'subtitle' => __('Define and reorder these however you want.', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Sortable Text Option', 'your-textdomain-here'),
+    'subtitle' => esc_html__('Define and reorder these however you want.', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
     'mode'     => 'checkbox',
     'options'  => array(
         '1'     => 'Item 1',
@@ -69,9 +69,9 @@ Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
 Redux::addField( 'OPT_NAME', 'SECTION_ID', array(
     'id'       => 'text-sortable',
     'type'     => 'sortable',
-    'title'    => __('Sortable Text Option', 'redux-framework-demo'),
-    'subtitle' => __('Define and reorder these however you want.', 'redux-framework-demo'),
-    'desc'     => __('This is the description field, again good for additional info.', 'redux-framework-demo'),
+    'title'    => esc_html__('Sortable Text Option', 'your-textdomain-here'),
+    'subtitle' => esc_html__('Define and reorder these however you want.', 'your-textdomain-here'),
+    'desc'     => esc_html__('This is the description field, again good for additional info.', 'your-textdomain-here'),
     'mode'     => 'text',
     'options' => array(
          '1' => 'Item number one',
