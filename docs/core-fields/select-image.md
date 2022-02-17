@@ -68,5 +68,4 @@ This example in based on the example usage provided above. Be sure to change `$r
 ```php
 global $redux_demo;
 
-echo '' . $redux_demo['opt-select-image'];
-```
+echo '' . $redux_demo['opt-select-image'];       ```
